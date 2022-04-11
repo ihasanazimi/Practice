@@ -1,6 +1,6 @@
 package ir.ha.myapplication.model
 
-data class ArticleModel(
+data class Article(
     val category: List<String>,
     val description: String,
     val id: Int,

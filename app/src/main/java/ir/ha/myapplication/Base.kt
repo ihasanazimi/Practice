@@ -6,12 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
-import ir.ha.myapplication.services.MyApiService
-import org.koin.java.KoinJavaComponent.inject
 
 abstract class BaseFragment : Fragment() , BaseView {
     override val rootView: ViewGroup?

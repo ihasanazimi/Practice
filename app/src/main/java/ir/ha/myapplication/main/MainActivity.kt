@@ -9,6 +9,6 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        supportFragmentManager.beginTransaction().add(R.id.frame, SampleFragment() , null).commit()
+        supportFragmentManager.beginTransaction().add(R.id.frameee, SampleFragment() , null).commit()
     }
 }

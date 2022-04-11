@@ -1,4 +1,4 @@
-package ir.ha.myapplication.services
+package ir.ha.myapplication.services.http
 
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
