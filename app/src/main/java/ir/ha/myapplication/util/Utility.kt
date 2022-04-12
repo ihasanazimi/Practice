@@ -27,6 +27,10 @@ fun convertDpToPixel(dp : Float , context : Context?) : Float {
 }
 
 
+/**
+ * first imp this dependency on build.gradle :
+ * implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'
+ */
 fun View.implementSpringAnimationTrait(){
     val scaleXAnim = SpringAnimation(this,DynamicAnimation.SCALE_X,0.9f)
     val scaleYanim = SpringAnimation(this,DynamicAnimation.SCALE_Y,0.9f)
@@ -40,11 +44,9 @@ fun View.implementSpringAnimationTrait(){
                 scaleXAnim.spring.stiffness = SpringForce.STIFFNESS_LOW
                 scaleXAnim.spring.dampingRatio = SpringForce.DAMPING_RATIO_LOW_BOUNCY
                 scaleXAnim.start()
-
                 scaleYanim.spring.dampingRatio = SpringForce.STIFFNESS_LOW
                 scaleYanim.spring.dampingRatio = SpringForce.DAMPING_RATIO_LOW_BOUNCY
             }
-
 
             MotionEvent.ACTION_UP , MotionEvent.ACTION_CANCEL ->{
                 scaleXAnim.cancel()
@@ -52,7 +54,6 @@ fun View.implementSpringAnimationTrait(){
                 val reverseScaleXAnim = SpringAnimation(this,DynamicAnimation.SCALE_Y,0.9f)
                 reverseScaleXAnim.spring.stiffness = SpringForce.STIFFNESS_LOW
                 reverseScaleXAnim.spring.dampingRatio = SpringForce.DAMPING_RATIO_LOW_BOUNCY
-
                 val reverseScaleYAnim = SpringAnimation(this,DynamicAnimation.SCALE_Y,0.9f)
                 reverseScaleYAnim.spring.stiffness = SpringForce.STIFFNESS_LOW
                 reverseScaleYAnim.spring.dampingRatio = SpringForce.DAMPING_RATIO_LOW_BOUNCY
