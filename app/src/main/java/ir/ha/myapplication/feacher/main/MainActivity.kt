@@ -1,8 +1,7 @@
-package ir.ha.myapplication.main
+package ir.ha.myapplication.feacher.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import ir.ha.myapplication.BaseActivity
+import ir.ha.myapplication.feacher.BaseActivity
 import ir.ha.myapplication.R
 
 class MainActivity : BaseActivity() {

@@ -1,9 +1,9 @@
-package ir.ha.myapplication.main
+package ir.ha.myapplication.feacher.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import ir.ha.myapplication.BaseViewModel
+import ir.ha.myapplication.feacher.BaseViewModel
 import ir.ha.myapplication.model.Article
 import ir.ha.myapplication.model.Banner
 import ir.ha.myapplication.repo.BannerRepository

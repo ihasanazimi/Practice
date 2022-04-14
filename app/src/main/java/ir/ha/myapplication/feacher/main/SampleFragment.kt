@@ -1,11 +1,11 @@
-package ir.ha.myapplication.main
+package ir.ha.myapplication.feacher.main
 
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import ir.ha.myapplication.BaseFragment
+import ir.ha.myapplication.feacher.BaseFragment
 import ir.ha.myapplication.R
 import ir.ha.myapplication.model.adapters.BannerAdapter
 import kotlinx.android.synthetic.main.fragment_sample.*

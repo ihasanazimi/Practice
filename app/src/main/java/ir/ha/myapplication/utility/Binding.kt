@@ -1,9 +1,4 @@
-package ir.ha.myapplication.util
-
-import android.widget.ImageView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import ir.ha.myapplication.R
+package ir.ha.myapplication.utility
 
 
 object Binding {

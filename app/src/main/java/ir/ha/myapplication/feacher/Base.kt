@@ -1,4 +1,4 @@
-package ir.ha.myapplication
+package ir.ha.myapplication.feacher
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
+import ir.ha.myapplication.R
 
 abstract class BaseFragment : Fragment() , BaseView {
     override val rootView: ViewGroup?

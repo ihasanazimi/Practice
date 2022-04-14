@@ -3,7 +3,7 @@ package ir.ha.myapplication
 import android.app.Application
 import com.facebook.drawee.backends.pipeline.Fresco
 import ir.ha.myapplication.repo.datasource.BannerLocalDataSource
-import ir.ha.myapplication.main.SampleViewModel
+import ir.ha.myapplication.feacher.main.SampleViewModel
 import ir.ha.myapplication.repo.BannerRepository
 import ir.ha.myapplication.repo.BannerRepositoryImpl
 import ir.ha.myapplication.services.ImageLoadingService
