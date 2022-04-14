@@ -1,5 +1,6 @@
 package ir.ha.myapplication.util
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.Resources
 import android.net.ConnectivityManager
@@ -7,6 +8,7 @@ import android.net.NetworkCapabilities
 import android.os.Build
 import android.util.DisplayMetrics
 import android.util.Log
+import android.util.TypedValue
 import android.view.MotionEvent
 import android.view.View
 import androidx.core.content.ContextCompat.getSystemService
@@ -27,10 +29,29 @@ fun convertDpToPixel(dp : Float , context : Context?) : Float {
 }
 
 
+
+fun convertDpToPx(dp: Float): Float {
+    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, Resources.getSystem().displayMetrics)
+}
+
+fun isNonNull(o: Any?): Boolean {
+    return o != null
+}
+
+fun isNull(o: Any?): Boolean {
+    return o == null
+}
+
+fun isNotZero(f: Float): Boolean {
+    return f != 0f
+}
+
+
 /**
  * first imp this dependency on build.gradle :
  * implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'
  */
+@SuppressLint("ClickableViewAccessibility")
 fun View.implementSpringAnimationTrait(){
     val scaleXAnim = SpringAnimation(this,DynamicAnimation.SCALE_X,0.9f)
     val scaleYanim = SpringAnimation(this,DynamicAnimation.SCALE_Y,0.9f)
