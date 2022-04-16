@@ -11,9 +11,13 @@ import android.util.Log
 import android.util.TypedValue
 import android.view.MotionEvent
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.dynamicanimation.animation.DynamicAnimation
 import androidx.dynamicanimation.animation.SpringAnimation
 import androidx.dynamicanimation.animation.SpringForce
+import androidx.fragment.app.Fragment
+import ir.ha.myapplication.R
+import kotlin.math.ceil
 
 
 fun convertDpToPixel(dp : Float , context : Context?) : Float {
@@ -25,6 +29,12 @@ fun convertDpToPixel(dp : Float , context : Context?) : Float {
         val metrics = Resources.getSystem().displayMetrics
         dp * (metrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)
     }
+}
+
+fun View.dp(value: Float): Int {
+    return if (value == 0f) {
+        0
+    } else ceil(context.resources.displayMetrics.density * value.toDouble()).toInt()
 }
 
 
@@ -45,6 +55,54 @@ fun isNotZero(f: Float): Boolean {
     return f != 0f
 }
 
+
+fun View.show() {
+    visibility = View.VISIBLE
+}
+
+fun View.hide() {
+    visibility = View.GONE
+}
+
+fun View.invisible() {
+    visibility = View.INVISIBLE
+}
+
+
+
+fun AppCompatActivity.showFragment(
+    fragment: Fragment,
+    tag: String,
+    addToBackStack: Boolean,
+    customAnimations: Boolean,
+    containerViewId: Int,
+    commitAllowingStateLoss: Boolean = false
+) {
+    val fragmentTransaction = supportFragmentManager
+        .beginTransaction()
+
+
+
+    if (customAnimations) {
+        fragmentTransaction.setCustomAnimations(
+            R.anim.enter_from_right,
+            R.anim.exit_to_left,
+            R.anim.enter_from_left,
+            R.anim.exit_to_right
+        )
+    }
+
+
+    if (addToBackStack) {
+        fragmentTransaction.addToBackStack(tag)
+    }
+    fragmentTransaction.add(containerViewId, fragment, tag)
+    if (commitAllowingStateLoss) {
+        fragmentTransaction.commitAllowingStateLoss()
+    } else {
+        fragmentTransaction.commit()
+    }
+}
 
 /**
  * first imp this dependency on build.gradle :

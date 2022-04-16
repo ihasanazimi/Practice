@@ -5,13 +5,16 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import ir.ha.myapplication.feacher.BaseFragment
 import ir.ha.myapplication.R
+import ir.ha.myapplication.model.Banner
 import ir.ha.myapplication.model.adapters.BannerAdapter
 import kotlinx.android.synthetic.main.fragment_sample.*
+import kotlinx.android.synthetic.main.slider_item.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class SampleFragment : BaseFragment() {
+class SampleFragment : BaseFragment(), BannerAdapter.BannersEventListener {
 
     val viewModel by viewModel<SampleViewModel>()
 
@@ -41,11 +44,18 @@ class SampleFragment : BaseFragment() {
 
 
         viewModel.getBanners().observe(viewLifecycleOwner){banners->
-            val adapter = BannerAdapter(this,banners)
+            val adapter = BannerAdapter(this,banners,this)
             viewPager.adapter = adapter
+//            adapter.getFragmentByPosition(2).item.setOnClickListener{
+//                Toast.makeText(requireContext(),"test",Toast.LENGTH_LONG).show()
+//            }
         }
 
 
 
+    }
+
+    override fun onBannerClickListener(banner: Banner) {
+        Toast.makeText(requireContext(),banner.title,Toast.LENGTH_LONG).show()
     }
 }
