@@ -31,6 +31,3 @@ fun convertDpToPx(dp: Float): Float {
 
 
 
-inline fun <reified T:Any> String.fromJson(): T? {
-    return Gson().fromJson(this, T::class.java)
-}
