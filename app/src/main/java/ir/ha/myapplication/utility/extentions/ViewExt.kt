@@ -1,4 +1,4 @@
-package ir.ha.myapplication.utility
+package ir.ha.myapplication.utility.extentions
 
 import android.annotation.SuppressLint
 import android.util.Log
