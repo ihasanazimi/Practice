@@ -30,6 +30,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
 }
 
 dependencies {
@@ -85,6 +90,9 @@ dependencies {
 
     // Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // Coil (load images)
+    implementation("io.coil-kt:coil:2.0.0-rc03")
 
     // Dynamic Animation
     implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'
