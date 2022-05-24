@@ -74,6 +74,9 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.4.1"
+    implementation 'android.arch.lifecycle:viewmodel:1.1.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-core:2.4.1'
 
     // KOiN
     def koin_version= "3.2.0-beta-1"
@@ -101,9 +104,20 @@ dependencies {
     implementation("org.greenrobot:eventbus:3.3.1")
 
     // Room DB
-    annotationProcessor "androidx.room:room-compiler:2.4.2"
-    implementation "androidx.room:room-ktx:2.4.2"
-    implementation "androidx.room:room-runtime:2.4.2"
+    def room_version = "2.4.2"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    // optional - RxJava2 support for Room
+    implementation "androidx.room:room-rxjava2:$room_version"
+    // optional - RxJava3 support for Room
+    implementation "androidx.room:room-rxjava3:$room_version"
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    implementation "androidx.room:room-guava:$room_version"
+    // optional - Test helpers
+    testImplementation "androidx.room:room-testing:$room_version"
+    // optional - Paging 3 Integration
+    implementation "androidx.room:room-paging:2.5.0-alpha01"
+
 
     // Nav Component
     def navigationVersion = "2.4.0-alpha08"

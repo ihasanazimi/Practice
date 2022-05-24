@@ -1,15 +1,27 @@
 package ir.ha.myapplication.utility.extentions
 
+import android.app.Activity
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+import android.view.View
+import android.view.ViewGroup
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import androidx.annotation.ChecksSdkIntAtLeast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import ir.ha.myapplication.R
+import java.util.*
+import java.util.concurrent.TimeUnit
 
 
 fun isNonNull(o: Any?): Boolean {
@@ -25,6 +37,34 @@ fun isNotZero(f: Float): Boolean {
 }
 
 
+@ChecksSdkIntAtLeast(api = Build.VERSION_CODES.M)
+fun isMarshmallowPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+
+@ChecksSdkIntAtLeast(api = Build.VERSION_CODES.N)
+fun isNougatPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.N
+
+@ChecksSdkIntAtLeast(api = Build.VERSION_CODES.N_MR1)
+fun isNougatMR1Plus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1
+
+@ChecksSdkIntAtLeast(api = Build.VERSION_CODES.O)
+fun isOreoPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O
+
+@ChecksSdkIntAtLeast(api = Build.VERSION_CODES.O_MR1)
+fun isOreoMr1Plus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1
+
+@ChecksSdkIntAtLeast(api = Build.VERSION_CODES.P)
+fun isPiePlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.P
+
+@ChecksSdkIntAtLeast(api = Build.VERSION_CODES.Q)
+fun isQPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q
+
+@ChecksSdkIntAtLeast(api = Build.VERSION_CODES.R)
+fun isRPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R
+
+@ChecksSdkIntAtLeast(api = Build.VERSION_CODES.S)
+fun isSPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
+
+
 fun EditText.hideKeyboard() {
     val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as
             InputMethodManager
@@ -35,6 +75,24 @@ fun EditText.showKeyboard() {
     this.requestFocus()
     val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     imm.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
+}
+
+
+fun setStatusBarTransparent(activity: Activity, view: View) {
+    activity.apply {
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.transparent)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        ViewCompat.setOnApplyWindowInsetsListener(view) { root, windowInset ->
+            val inset = windowInset.getInsets(WindowInsetsCompat.Type.systemBars())
+            root.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                leftMargin = inset.left
+                bottomMargin = inset.bottom
+                rightMargin = inset.right
+            }
+            WindowInsetsCompat.CONSUMED
+        }
+    }
 }
 
 
@@ -73,6 +131,13 @@ fun AppCompatActivity.showFragment(
     }
 }
 
+ fun convertMilliSecondToMinute(millisecond: Long): String? {
+//     val sec: Long = TimeUnit.MILLISECONDS.toSeconds(millisecond) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisecond))
+//     val min: Long = TimeUnit.MILLISECONDS.toMinutes(millisecond)
+     val second = (millisecond / 1000) % 60
+     val minute = (millisecond / (1000 * 60)) % 60
+    return String.format(Locale.US,"%02d:%02d",minute,second)
+}
 
 fun checkConnection(context: Context?): Boolean {
     var isConnected = false

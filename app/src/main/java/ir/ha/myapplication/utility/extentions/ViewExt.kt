@@ -21,6 +21,13 @@ fun View.invisible() {
 }
 
 
+fun View.beHideIf(beInvisible: Boolean) = if (beInvisible) hide() else show()
+
+fun View.beShowIf(beVisible: Boolean) = if (beVisible) show() else hide()
+
+fun View.beGoneIf(beGone: Boolean) = beShowIf(!beGone)
+
+
 fun View.setPaddingLeft(value: Int) {
     setPadding(value, paddingTop, paddingRight, paddingBottom)
 }
@@ -34,6 +41,13 @@ fun View.setPaddingBottom(value: Int) {
     setPadding(paddingLeft, paddingTop, paddingRight, value)
 }
 
+fun View.showByFadeIn() {
+    animate().alpha(1f).setDuration(150L).withStartAction { show() }.start()
+}
+
+fun View.hideFadeOut() {
+    animate().alpha(0f).setDuration(150L).withEndAction { hide() }.start()
+}
 
 
 
