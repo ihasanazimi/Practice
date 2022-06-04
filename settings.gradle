@@ -14,5 +14,5 @@ dependencyResolutionManagement {
         maven { url "https://oss.jfrog.org/libs-snapshot" }
     }
 }
-rootProject.name = "Android Dependencies - TST"
+rootProject.name = "Android Dependencies"
 include ':app'
