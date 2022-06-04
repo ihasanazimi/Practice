@@ -26,6 +26,7 @@ fun View.hide() { visibility = View.GONE }
 fun View.invisible() { visibility = View.INVISIBLE }
 
 
+
 /** get resources */
 fun View.getDrawable(drawableResID: Int): Drawable? =
     ContextCompat.getDrawable(context, drawableResID)?.mutate()
@@ -43,7 +44,6 @@ fun EditText.customRequestFocus() {
                 as InputMethodManager
     imm.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
 }
-
 
 fun EditText.setReadOnly(value: Boolean, inputType: Int = InputType.TYPE_NULL) {
     isFocusable = !value
@@ -120,6 +120,8 @@ fun View.beShowIf(beVisible: Boolean) = if (beVisible) show() else hide()
 fun View.beGoneIf(beGone: Boolean) = beShowIf(!beGone)
 
 
+
+
 fun View.setPaddingLeft(value: Int) {
     setPadding(value, paddingTop, paddingRight, paddingBottom)
 }
@@ -132,6 +134,9 @@ fun View.setPaddingRight(value: Int) {
 fun View.setPaddingBottom(value: Int) {
     setPadding(paddingLeft, paddingTop, paddingRight, value)
 }
+
+
+
 
 fun View.showByFadeIn() {
     animate().alpha(1f).setDuration(150L).withStartAction { show() }.start()
@@ -196,6 +201,8 @@ fun View.springAnimImpl(){
         false
     }
 }
+
+
 
 
 fun View.dp(value: Float): Int {
