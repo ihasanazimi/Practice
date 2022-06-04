@@ -30,6 +30,7 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
+import com.google.gson.Gson
 import ir.ha.dep.R
 import java.util.*
 
@@ -111,9 +112,7 @@ fun PopupMenu.insertMenuItemIcon(context: Context, menuItem: MenuItem) {
 
 
 
-fun Context.drawable(@DrawableRes drawableRes: Int) =
-    ResourcesCompat.getDrawable(resources, drawableRes, theme)
-
+fun Context.drawable(@DrawableRes drawableRes: Int) = ResourcesCompat.getDrawable(resources, drawableRes, theme)
 
 
 fun convertDpToPixel(dp : Float , context : Context?) : Float {
@@ -133,6 +132,35 @@ fun convertDpToPixel2(dp: Float): Float {
     return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, Resources.getSystem().displayMetrics)
 }
 
+
+
+
+fun convertNumbersToFarsiNum(faNumbers: String): String {
+    var changedVariable = ""
+    val mChars = arrayOf(
+        arrayOf("0", "۰"),
+        arrayOf("1", "۱"),
+        arrayOf("2", "۲"),
+        arrayOf("3", "۳"),
+        arrayOf("4", "۴"),
+        arrayOf("5", "۵"),
+        arrayOf("6", "۶"),
+        arrayOf("7", "۷"),
+        arrayOf("8", "۸"),
+        arrayOf("9", "۹")
+    )
+    for (num in mChars) {
+        changedVariable = faNumbers.replace(num[0], num[1])
+    }
+    return faNumbers
+}
+
+
+
+
+inline fun <reified T:Any> String.fromJson(): T? {
+    return Gson().fromJson(this, T::class.java)
+}
 
 
 
@@ -180,17 +208,6 @@ fun isSPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
 
 
 
-fun EditText.hideKeyboard() {
-    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as
-            InputMethodManager
-    imm.hideSoftInputFromWindow(this.windowToken, 0)
-}
-
-fun EditText.showKeyboard() {
-    this.requestFocus()
-    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-    imm.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
-}
 
 
 

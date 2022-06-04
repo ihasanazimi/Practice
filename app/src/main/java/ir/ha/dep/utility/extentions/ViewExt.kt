@@ -143,6 +143,22 @@ fun View.hideFadeOut() {
 
 
 
+
+
+fun EditText.hideKeyboard() {
+    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as
+            InputMethodManager
+    imm.hideSoftInputFromWindow(this.windowToken, 0)
+}
+
+fun EditText.showKeyboard() {
+    this.requestFocus()
+    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    imm.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
+}
+
+
+
 /**
  * first imp this dependency on build.gradle :
  * implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'

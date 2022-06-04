@@ -14,7 +14,7 @@ import org.koin.android.ext.android.inject
 class BannerFragment : BaseFragment() {
 
 
-    val imageLoadingService : ImageLoadingService by inject()
+    private val imageLoadingService : ImageLoadingService by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater,
