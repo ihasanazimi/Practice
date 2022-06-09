@@ -20,16 +20,19 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        // initialize fresco
-        Fresco.initialize(this);
+        /** initialize fresco */
+        Fresco.initialize(this)
 
+
+        /** 1- Koin -> modules.. */
         val myModules = module {
             single<MyApiService> { apiService }
             factory<BannerRepository> { BannerRepositoryImpl(BannerLocalDataSource()) }
-            single<ImageLoadingService> { ImageLoadingServiceImpl() }
+            single<ImageLoadingService> { ImageLoadingServiceImpl() } // fresco
             viewModel{ SampleViewModel(get()) }
         }
 
+        /** Start Coin By Modules... */
         startKoin {
             androidContext(this@App)
             modules(myModules)

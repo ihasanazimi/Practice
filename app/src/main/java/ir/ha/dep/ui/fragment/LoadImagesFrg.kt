@@ -13,7 +13,7 @@ import ir.ha.dep.R
 import ir.ha.dep.databinding.LoadImagesLayoutBinding
 import ir.ha.dep.feacher.BaseFragment
 
-class LoadImagesFragment : BaseFragment() {
+class LoadImagesFrg : BaseFragment() {
 
     lateinit var binding : LoadImagesLayoutBinding
     val imageUrl = "https://media.wired.com/photos/5ec6fb698971d7886fd36024/125:94/w_1749,h_1315,c_limit/astronaut-urine-elena-lacey-wired-science.jpg"
@@ -54,10 +54,10 @@ class LoadImagesFragment : BaseFragment() {
         }
 
 
-        /** Fresco By Custom View*/
-        /**
-         * first initialize fresco in application class
-         * tip : place holder set im layout.xml
+        /** Fresco By Custom View :
+         Doc -> https://frescolib.org/docs/
+         - first initialize fresco in application class
+         - tip : place holder set im layout.xml
          * */
         binding.frescoImageView.setImageURI(Uri.parse(imageUrl))
 
