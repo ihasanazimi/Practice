@@ -2,7 +2,7 @@ package ir.ha.dep.model.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import ir.ha.dep.feacher.main.fragment.BannerFragment
+import ir.ha.dep.ui.fragment.BannerFragment
 import ir.ha.dep.model.Banner
 
 class BannerAdapter(val fragment:Fragment, val banners : List<Banner> , val calback : BannersEventListener) : FragmentStateAdapter(fragment) {

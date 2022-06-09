@@ -1,4 +1,4 @@
-package ir.ha.dep.feacher.main
+package ir.ha.dep.ui.viewModels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

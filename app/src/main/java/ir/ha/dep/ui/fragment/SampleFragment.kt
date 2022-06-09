@@ -1,4 +1,4 @@
-package ir.ha.dep.feacher.main.fragment
+package ir.ha.dep.ui.fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import ir.ha.dep.R
 import ir.ha.dep.feacher.BaseFragment
-import ir.ha.dep.feacher.main.SampleViewModel
+import ir.ha.dep.ui.viewModels.SampleViewModel
 import ir.ha.dep.model.Banner
 import ir.ha.dep.model.adapters.BannerAdapter
 import kotlinx.android.synthetic.main.fragment_sample.*

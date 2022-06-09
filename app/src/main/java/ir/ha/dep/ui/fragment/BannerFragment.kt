@@ -1,4 +1,4 @@
-package ir.ha.dep.feacher.main.fragment
+package ir.ha.dep.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

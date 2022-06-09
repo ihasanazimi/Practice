@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="menu_item_icon_size">8dp</dimen>
+
+    // text sizes
+    <dimen name="text_size_12sp">12sp</dimen>
+    <dimen name="text_size_14sp">14sp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="text_size_20sp">20sp</dimen>
+    <dimen name="text_size_22sp">20sp</dimen>
+    <dimen name="text_size_24sp">22sp</dimen>
+    <dimen name="text_size_26sp">24sp</dimen>
+
+
+    // view sizes
+    <dimen name="size_2dp">2dp</dimen>
+    <dimen name="size_4dp">2dp</dimen>
+    <dimen name="size_8dp">2dp</dimen>
+    <dimen name="size_16dp">2dp</dimen>
+    <dimen name="size_32dp">2dp</dimen>
+    <dimen name="size_64dp">2dp</dimen>
+    <dimen name="size_128dp">128dp</dimen>
+
 </resources>
