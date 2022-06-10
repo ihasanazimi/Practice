@@ -1,4 +1,4 @@
-package ir.ha.dep.ui.fragment.bannerFrg
+package ir.ha.dep.ui.fragment.viewPager
 
 import android.os.Bundle
 import android.util.Log
@@ -6,23 +6,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import ir.ha.dep.R
-import ir.ha.dep.databinding.BannerSliderFragmentBinding
-import ir.ha.dep.feacher.BaseFragment
-import ir.ha.dep.model.adapters.BannerAdapter
+import ir.ha.dep.databinding.FragmentViewPagerSampleBinding
+import ir.ha.dep.ui.BaseFragment
 import ir.ha.dep.ui.viewModels.SampleViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class BannerSliderSampleFrg : BaseFragment() {
+class ViewPagerSampleFrg : BaseFragment() {
 
     private val viewModel by viewModel<SampleViewModel>()
-    private lateinit var binding : BannerSliderFragmentBinding
+    private lateinit var binding : FragmentViewPagerSampleBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = getBinding(R.layout.banner_slider_fragment, container!!)
+        binding = getBinding(R.layout.fragment_view_pager_sample, container!!)
         return binding.root
     }
 
@@ -31,7 +30,7 @@ class BannerSliderSampleFrg : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.getBanners().observe(viewLifecycleOwner){banners->
-            binding.viewPager.adapter = BannerAdapter(this,banners)
+            binding.viewPager.adapter = ViewPagerAdapter(this,banners)
         }
 
         viewModel.errorLiveData.observe(viewLifecycleOwner){

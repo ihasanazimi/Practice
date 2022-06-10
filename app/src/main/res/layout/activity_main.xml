@@ -22,15 +22,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:text="Load Images Btn" />
+                android:textSize="@dimen/text_size_12sp"
+                android:text="Load Images By 4 Libraries" />
 
              <com.google.android.material.button.MaterialButton
                  android:id="@+id/bannerSliderBtn"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
                  android:textAllCaps="false"
-                 android:text="Banner Slider Btn" />
+                 android:textSize="@dimen/text_size_12sp"
+                 android:text="Banner Slider By Frg" />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/recyclerViewSampleBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text_size_12sp"
+                android:text="RecyclerView Sample" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/FragmentSample"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text_size_12sp"
+                android:text="Sample Of Fragment - Pass Data" />
 
         </LinearLayout>
 

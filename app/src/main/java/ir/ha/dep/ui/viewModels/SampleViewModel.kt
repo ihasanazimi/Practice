@@ -3,7 +3,7 @@ package ir.ha.dep.ui.viewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import ir.ha.dep.feacher.BaseViewModel
+import ir.ha.dep.ui.BaseViewModel
 import ir.ha.dep.model.Article
 import ir.ha.dep.model.Banner
 import ir.ha.dep.repo.BannerRepository

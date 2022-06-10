@@ -32,7 +32,7 @@ class App : Application() {
             viewModel{ SampleViewModel(get()) }
         }
 
-        /** Start Coin By Modules... */
+        /** 2- Start Coin By Modules... */
         startKoin {
             androidContext(this@App)
             modules(myModules)
