@@ -69,6 +69,9 @@ fun Fragment.getDrawable(drawableResID: Int): Drawable? =
 fun Fragment.getColor(colorResID: Int): Int =
     ContextCompat.getColor(requireContext(), colorResID)
 
+
+
+
 fun AppCompatActivity.getDrawable(drawableResID: Int): Drawable? =
     ContextCompat.getDrawable(this, drawableResID)?.mutate()
 

@@ -18,9 +18,14 @@ class ViewPagerItem : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+
+        // inflate item
         val item = inflater.inflate(R.layout.item_view_pager,container,false) as FrescoImageView
-        val banner = requireArguments().getParcelable<Banner>("data")
-        imageLoadingService.load(item,banner!!.ImageUrl) // fresco
+
+        // (load) fresco custom function
+        imageLoadingService.load(item,requireArguments().getParcelable<Banner>("data")!!.ImageUrl)
+
+        // return item view
         return item
     }
 

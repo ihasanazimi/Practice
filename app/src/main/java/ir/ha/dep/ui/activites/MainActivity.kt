@@ -9,7 +9,8 @@ import ir.ha.dep.model.FakeDataModel
 import ir.ha.dep.ui.fragment.viewPager.ViewPagerSampleFrg
 import ir.ha.dep.ui.fragment.LoadImagesFrg
 import ir.ha.dep.ui.fragment.RecyclerViewSampleFrg
-import ir.ha.dep.ui.fragment.SampleOfFragment
+import ir.ha.dep.ui.fragment.SampleOfFrg
+import ir.ha.dep.utility.extentions.addAndShowFragmentByAnimation
 
 class MainActivity : BaseActivity(), View.OnClickListener {
 
@@ -18,6 +19,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         binding = getBinding(R.layout.activity_main)
         setContentView(binding.root)
+
         binding.imageLoaderBtn.setOnClickListener(this)
         binding.bannerSliderBtn.setOnClickListener(this)
         binding.recyclerViewSampleBtn.setOnClickListener(this)
@@ -27,26 +29,33 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id){
             R.id.imageLoaderBtn -> {
-                supportFragmentManager.beginTransaction()
-                    .add(R.id.mainFrame,LoadImagesFrg(),"loadImagesTag")
-                    .addToBackStack("loadImagesTag")
-                    .commit()
+                addAndShowFragmentByAnimation(LoadImagesFrg(),"loadImagesTag",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false
+                )
             }
 
 
             R.id.bannerSliderBtn ->{
-                supportFragmentManager.beginTransaction()
-                    .add(R.id.mainFrame, ViewPagerSampleFrg(),"BannerSliderTag")
-                    .addToBackStack("BannerSliderTag")
-                    .commit()
+
+                addAndShowFragmentByAnimation(ViewPagerSampleFrg(),"BannerSliderTag",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false
+                )
             }
 
 
             R.id.recyclerViewSampleBtn -> {
-                supportFragmentManager.beginTransaction()
-                    .add(R.id.mainFrame,RecyclerViewSampleFrg(),"RecyclerViewSampleFrg")
-                    .addToBackStack("RecyclerViewSampleFrg")
-                    .commit()
+                addAndShowFragmentByAnimation(RecyclerViewSampleFrg(),"RecyclerViewSampleFrg",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false
+                )
             }
 
 
@@ -54,11 +63,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
                 /** how to pass data model into fragment by newInstance method...  */
                 val fakeDataModel = FakeDataModel("Hsn", "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/326012_1100-800x825.jpg")
-                val frg = SampleOfFragment().newInstance(fakeDataModel)
-                supportFragmentManager.beginTransaction()
-                    .add(R.id.mainFrame, frg, "SampleOfFragment")
-                    .addToBackStack("SampleOfFragment")
-                    .commit()
+                val frg = SampleOfFrg().newInstance(fakeDataModel)
+                addAndShowFragmentByAnimation(frg,"SampleOfFragment",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false
+                )
             }
 
             else -> {}

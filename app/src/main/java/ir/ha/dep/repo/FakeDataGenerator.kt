@@ -1,4 +1,6 @@
-package ir.ha.dep.model
+package ir.ha.dep.repo
+
+import ir.ha.dep.model.FakeDataModel
 
 object FakeDataGenerator {
 

@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import ir.ha.dep.R
 import ir.ha.dep.databinding.FragmentRecyclerViewSampleBinding
-import ir.ha.dep.model.FakeDataGenerator
+import ir.ha.dep.repo.FakeDataGenerator
 import ir.ha.dep.model.FakeDataModel
 import ir.ha.dep.model.adapters.FakeDataAdapter
 import ir.ha.dep.ui.BaseFragment

@@ -11,7 +11,7 @@ import ir.ha.dep.databinding.FragmentSampleOfNewCreateFrgBinding
 import ir.ha.dep.model.FakeDataModel
 import ir.ha.dep.ui.BaseFragment
 
-class SampleOfFragment : BaseFragment(), View.OnClickListener {
+class SampleOfFrg : BaseFragment(), View.OnClickListener {
 
     lateinit var binding : FragmentSampleOfNewCreateFrgBinding
     private val dataConstant = "data"
@@ -36,8 +36,8 @@ class SampleOfFragment : BaseFragment(), View.OnClickListener {
     }
 
 
-    fun newInstance(fakeModel :FakeDataModel): SampleOfFragment {
-        val fragment = SampleOfFragment()
+    fun newInstance(fakeModel :FakeDataModel): SampleOfFrg {
+        val fragment = SampleOfFrg()
         val args = Bundle()
         args.putParcelable(dataConstant,fakeModel)
         fragment.arguments = args
@@ -48,7 +48,7 @@ class SampleOfFragment : BaseFragment(), View.OnClickListener {
 
         when(p0?.id){
             R.id.dialogFragment -> {
-                DialogFragmentSample().show(requireActivity().supportFragmentManager,"DialogFragmentSample")
+                DialogFrgSample().show(requireActivity().supportFragmentManager,"DialogFragmentSample")
             }
 
             R.id.bottomSheetDialogFragment -> {
