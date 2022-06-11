@@ -19,6 +19,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.Toast
 import androidx.annotation.ChecksSdkIntAtLeast
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
@@ -32,10 +33,11 @@ import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
 import com.google.gson.Gson
 import ir.ha.dep.R
+import ir.ha.dep.ui.App
 import java.util.*
 
 
-fun AppCompatActivity.addAndShowFragmentByAnimation(
+fun AppCompatActivity.addFragmentByAnimation(
     fragment: Fragment,
     tag: String,
     addToBackStack: Boolean,
@@ -209,9 +211,9 @@ fun isRPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R
 fun isSPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
 
 
-
-
-
+fun showToast(message : String){
+    Toast.makeText(App().applicationContext,message.trim() ,Toast.LENGTH_LONG).show()
+}
 
 
 fun setStatusBarTransparent(activity: Activity, view: View) {

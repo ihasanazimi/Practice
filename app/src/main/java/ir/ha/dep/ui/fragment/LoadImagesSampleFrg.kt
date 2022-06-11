@@ -13,7 +13,7 @@ import ir.ha.dep.R
 import ir.ha.dep.databinding.FragmentLoadImagesBinding
 import ir.ha.dep.ui.BaseFragment
 
-class LoadImagesFrg : BaseFragment() {
+class LoadImagesSampleFrg : BaseFragment() {
 
     lateinit var binding : FragmentLoadImagesBinding
     val imageUrl = "https://media.wired.com/photos/5ec6fb698971d7886fd36024/125:94/w_1749,h_1315,c_limit/astronaut-urine-elena-lacey-wired-science.jpg"

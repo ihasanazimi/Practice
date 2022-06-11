@@ -7,10 +7,11 @@ import ir.ha.dep.databinding.ActivityMainBinding
 import ir.ha.dep.ui.BaseActivity
 import ir.ha.dep.model.FakeDataModel
 import ir.ha.dep.ui.fragment.viewPager.ViewPagerSampleFrg
-import ir.ha.dep.ui.fragment.LoadImagesFrg
+import ir.ha.dep.ui.fragment.LoadImagesSampleFrg
 import ir.ha.dep.ui.fragment.RecyclerViewSampleFrg
 import ir.ha.dep.ui.fragment.SampleOfFrg
-import ir.ha.dep.utility.extentions.addAndShowFragmentByAnimation
+import ir.ha.dep.utility.extentions.addFragmentByAnimation
+import ir.ha.dep.utility.extentions.showToast
 
 class MainActivity : BaseActivity(), View.OnClickListener {
 
@@ -29,7 +30,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id){
             R.id.imageLoaderBtn -> {
-                addAndShowFragmentByAnimation(LoadImagesFrg(),"loadImagesTag",
+                addFragmentByAnimation(LoadImagesSampleFrg(),"loadImagesTag",
                     addToBackStack = true,
                     customAnimations = true,
                     containerViewId = R.id.mainFrame,
@@ -40,7 +41,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
             R.id.bannerSliderBtn ->{
 
-                addAndShowFragmentByAnimation(ViewPagerSampleFrg(),"BannerSliderTag",
+                addFragmentByAnimation(ViewPagerSampleFrg(),"BannerSliderTag",
                     addToBackStack = true,
                     customAnimations = true,
                     containerViewId = R.id.mainFrame,
@@ -50,7 +51,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
 
             R.id.recyclerViewSampleBtn -> {
-                addAndShowFragmentByAnimation(RecyclerViewSampleFrg(),"RecyclerViewSampleFrg",
+                addFragmentByAnimation(RecyclerViewSampleFrg(),"RecyclerViewSampleFrg",
                     addToBackStack = true,
                     customAnimations = true,
                     containerViewId = R.id.mainFrame,
@@ -64,7 +65,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 /** how to pass data model into fragment by newInstance method...  */
                 val fakeDataModel = FakeDataModel("Hsn", "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/326012_1100-800x825.jpg")
                 val frg = SampleOfFrg().newInstance(fakeDataModel)
-                addAndShowFragmentByAnimation(frg,"SampleOfFragment",
+                addFragmentByAnimation(frg,"SampleOfFragment",
                     addToBackStack = true,
                     customAnimations = true,
                     containerViewId = R.id.mainFrame,
@@ -72,7 +73,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 )
             }
 
-            else -> {}
-        }
+            else -> { showToast("unKnow Error")} }
     }
 }
