@@ -49,8 +49,7 @@ interface BaseView {
             viewContext.let { context ->
                 var loadingBar = it?.findViewById<View>(R.id.loadingView)
                 if (loadingBar == null && mustShow) {
-                    loadingBar = LayoutInflater.from(context)
-                        .inflate(R.layout.loading_bar, it, false) as FrameLayout?
+                    loadingBar = LayoutInflater.from(context).inflate(R.layout.loading_bar, it, false) as FrameLayout?
                     rootView?.addView(loadingBar)
                 }
                 rootView?.visibility = if (mustShow) View.VISIBLE else View.GONE
