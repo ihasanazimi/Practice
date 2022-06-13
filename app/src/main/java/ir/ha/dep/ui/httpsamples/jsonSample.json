@@ -1,0 +1,12 @@
+{
+  "id" : 25,
+  "fName" : " Hasan",
+  "lName" : "Azimi",
+  "jon" : "Android Developer",
+  "Birth Date" : "1376/07/02",
+  "resume" : {
+    "organize" : [
+      "android developer from april 2022" , "android developer in teavana from jun2021"
+      ]
+    }
+  }

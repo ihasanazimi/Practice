@@ -3,20 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/activity_main.xml" value="0.23718887262079064" />
+        <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/drawable/ic_baseline_image_24.xml" value="0.1145" />
+        <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/banner_slider_fragment.xml" value="0.35572916666666665" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/bottomSheet_dialog_fragment.xml" value="0.35572916666666665" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/bottom_sheet_dialog_fragment.xml" value="0.1" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/dialog_fragment.xml" value="0.35572916666666665" />
+        <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/dialog_fragment_bottom_sheet.xml" value="0.35572916666666665" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fake_data_model_item.xml" value="0.35572916666666665" />
+        <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_animation.xml" value="0.22" />
+        <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_material_toolbar.xml" value="0.16666666666666666" />
+        <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_multi_threading.xml" value="0.3546875" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_sample.xml" value="0.35572916666666665" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_sample_of_new_create_frg.xml" value="0.2490740740740741" />
+        <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_sample_request.xml" value="0.35572916666666665" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_view_pager_sample.xml" value="0.2490740740740741" />
+        <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/item_view_pager.xml" value="0.35572916666666665" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/load_images_layout.xml" value="0.3546875" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/loading_bar.xml" value="0.35572916666666665" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/recycler_view_sample_frg.xml" value="0.35572916666666665" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/sample_of_fragments.xml" value="0.22" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/slider_item.xml" value="0.18072916666666666" />
+        <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/menu/bottom_nav_menu.xml" value="0.35572916666666665" />
         <entry key="..\:/Users/Hsn/Desktop/T/app/src/main/res/layout/activity_main.xml" value="0.152" />
         <entry key="..\:/Users/Hsn/Desktop/T/app/src/main/res/layout/fragment_sample.xml" value="0.1" />
         <entry key="..\:/Users/Hsn/Desktop/T/app/src/main/res/layout/loading_bar.xml" value="0.12395833333333334" />

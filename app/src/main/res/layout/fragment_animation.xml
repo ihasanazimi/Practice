@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?colorSurface">
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleGroup"
+            android:layout_width="match_parent"
+            app:singleSelection="true"
+            android:layout_margin="@dimen/size_16dp"
+            app:selectionRequired="true"
+            app:checkedButton="@id/scaleAnimBtn"
+            android:layout_height="50dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/scaleAnimBtn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/text_size_10sp"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_height="50dp"
+                android:text="SCALE" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/alphaAnimBtn"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:textSize="@dimen/text_size_10sp"
+                android:layout_weight="1"
+                style="?attr/materialButtonOutlinedStyle"
+                android:text="Alpha" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/translateAnimBtn"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:textSize="@dimen/text_size_10sp"
+                android:layout_weight="1"
+                style="?attr/materialButtonOutlinedStyle"
+                android:text="TRANS" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/rotateAnimBtn"
+                android:layout_width="0dp"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_height="50dp"
+                android:textSize="@dimen/text_size_10sp"
+                android:layout_weight="1"
+                android:text="ROTATE" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/setAnimBtn"
+                android:layout_width="0dp"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_height="50dp"
+                android:textSize="@dimen/text_size_10sp"
+                android:layout_weight="1"
+                android:text="SET" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieAnimationView"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            app:lottie_autoPlay="true" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:id="@+id/play"
+            android:layout_gravity="bottom"
+            android:text="play"
+            android:layout_margin="@dimen/size_16dp"
+            android:layout_height="wrap_content"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -70,10 +70,7 @@ public class IntentActions {
             myIntent.putExtra(Intent.EXTRA_TEXT, msg);//
             context.startActivity(Intent.createChooser(myIntent, "Share with"));
         }
-        else
-        {
-            Toast.makeText(context, "Telegram not Installed", Toast.LENGTH_SHORT).show();
-        }
+        else Toast.makeText(context, "Telegram not Installed", Toast.LENGTH_SHORT).show();
     }
 
 

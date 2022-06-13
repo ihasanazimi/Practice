@@ -5,4 +5,5 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:roundedCornerRadius="12dp"
     android:padding="12dp"
-    android:id="@+id/itemViewww" />
+    app:placeholderImage="@drawable/ic_baseline_image_24"
+    android:id="@+id/itemView" />

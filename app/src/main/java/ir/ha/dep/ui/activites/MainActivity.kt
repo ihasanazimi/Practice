@@ -1,15 +1,16 @@
 package ir.ha.dep.ui.activites
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import ir.ha.dep.R
 import ir.ha.dep.databinding.ActivityMainBinding
 import ir.ha.dep.ui.BaseActivity
 import ir.ha.dep.model.FakeDataModel
+import ir.ha.dep.ui.fragment.*
 import ir.ha.dep.ui.fragment.viewPager.ViewPagerSampleFrg
-import ir.ha.dep.ui.fragment.LoadImagesSampleFrg
-import ir.ha.dep.ui.fragment.RecyclerViewSampleFrg
-import ir.ha.dep.ui.fragment.SampleOfFrg
+import ir.ha.dep.ui.fragment.material.MaterialViews
+import ir.ha.dep.ui.httpsamples.RequestSampleFrg
 import ir.ha.dep.utility.extentions.addFragmentByAnimation
 import ir.ha.dep.utility.extentions.showToast
 
@@ -25,6 +26,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding.bannerSliderBtn.setOnClickListener(this)
         binding.recyclerViewSampleBtn.setOnClickListener(this)
         binding.FragmentSample.setOnClickListener(this)
+        binding.materialDesign.setOnClickListener(this)
+        binding.lottieAnimationView.setOnClickListener(this)
+        binding.multiThreadingBtn.setOnClickListener(this)
+        binding.retrofitOkHttpBtn.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -73,6 +78,57 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 )
             }
 
-            else -> { showToast("unKnow Error")} }
+
+            R.id.materialDesign -> {
+                addFragmentByAnimation(MaterialViews(),"ToolbarFrgSample",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
+            }
+
+            R.id.lottieAnimationView -> {
+                    addFragmentByAnimation(AnimationsFrg(),"AnimationsFrg",
+                        addToBackStack = true,
+                        customAnimations = true,
+                        containerViewId = R.id.mainFrame,
+                        commitAllowingStateLoss = false)
+            }
+
+            R.id.retrofitOkHttpBtn -> {
+                addFragmentByAnimation(RequestSampleFrg(),"RequestFrgSample",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
+            }
+
+
+
+            R.id.multiThreadingBtn -> {
+
+                showToast(this,"output in Logcat..")
+
+                // solution 1
+                MultiThreadingClass().start() // outPut -> multiThreading current threadName in Log.e / tag = hsn
+
+
+                // solution 2
+                Thread(object  : MyRunnableThread() {
+                    override fun run() {
+                        // done superClass code block
+                        super.run() // outPut -> multiThreading current threadName in Log.e / tag = hsn
+                    }
+                }).start()
+
+
+                // solution 3 by lambda
+                Thread {
+                    Log.e("hsn", "solution 3 by lambda  ->  " + Thread.currentThread().name)
+                }.start()
+
+            }
+
+            else -> { showToast(this,"unKnow Error")} }
     }
 }

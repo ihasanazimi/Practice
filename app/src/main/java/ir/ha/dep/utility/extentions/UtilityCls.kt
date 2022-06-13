@@ -211,8 +211,8 @@ fun isRPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R
 fun isSPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
 
 
-fun showToast(message : String){
-    Toast.makeText(App().applicationContext,message.trim() ,Toast.LENGTH_LONG).show()
+fun showToast(ctx : Context , message : String){
+    Toast.makeText(ctx,message.trim() ,Toast.LENGTH_LONG).show()
 }
 
 

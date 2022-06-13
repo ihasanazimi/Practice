@@ -60,86 +60,109 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.8.1' // GSON Converter
     implementation 'com.squareup.retrofit2:converter-jackson:2.1.0' // Jackson Converter
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0' // RX adapter
-    implementation 'com.google.code.gson:gson:2.9.0' // GSON
+
+    // GSON
+    implementation 'com.google.code.gson:gson:2.9.0'
 
 //    // RxJava  // RxAndroid
-//    implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
-//    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
-//    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
-//
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.9'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
+
     // Kotlin Coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
-    // lifeCycles
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
-    implementation "androidx.lifecycle:lifecycle-viewmodel:2.4.1"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.2'
+
+
+    // lifeCycles - Architecture Components
+    def arch_component_version = "2.4.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$arch_component_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$arch_component_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$arch_component_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$arch_component_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-core:$arch_component_version"
     implementation 'android.arch.lifecycle:viewmodel:1.1.1'
-    implementation 'androidx.lifecycle:lifecycle-livedata-core:2.4.1'
-//
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.5.0-rc01"
+
+
     // KOiN
     def koin_version= "3.2.0-beta-1"
     // Koin main features for Android
     implementation "io.insert-koin:koin-android:$koin_version"
-    // No more koin-android-viewmodel, koin-android-scope, koin-android-fragment
-//
+    // No more koin-android-viewModel, koin-android-scope, koin-android-fragment
+
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.13.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
-//
+
     // Fresco
     implementation 'com.facebook.fresco:fresco:2.6.0'
-//
+
     // Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
-//
+
     // Coil (load images)
     implementation("io.coil-kt:coil:2.0.0-rc03")
-//
-//    // Dynamic Animation
-//    implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'
-//
-//    //Event Bus
-//    implementation("org.greenrobot:eventbus:3.3.1")
-//
+
+    // Dynamic Animation
+    implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'
+
+    //Event Bus
+    implementation("org.greenrobot:eventbus:3.3.1")
+
+
 //    // Room DB
-//    def room_version = "2.4.2"
-//    implementation "androidx.room:room-runtime:$room_version"
-//    annotationProcessor "androidx.room:room-compiler:$room_version"
-//    // optional - RxJava2 support for Room
-//    implementation "androidx.room:room-rxjava2:$room_version"
-//    // optional - RxJava3 support for Room
-//    implementation "androidx.room:room-rxjava3:$room_version"
-//    // optional - Guava support for Room, including Optional and ListenableFuture
-//    implementation "androidx.room:room-guava:$room_version"
-//    // optional - Test helpers
-//    testImplementation "androidx.room:room-testing:$room_version"
-//    // optional - Paging 3 Integration
-//    implementation "androidx.room:room-paging:2.5.0-alpha01"
-//
-//
-//    // Nav Component
-//    def navigationVersion = "2.4.0-alpha08"
-//    implementation "androidx.navigation:navigation-runtime:$navigationVersion"
-//    implementation "androidx.navigation:navigation-runtime-ktx:$navigationVersion"
-//    implementation "androidx.navigation:navigation-fragment:$navigationVersion"
-//    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
-//    implementation "androidx.navigation:navigation-testing:$navigationVersion"
-//    implementation "androidx.navigation:navigation-ui:$navigationVersion"
-//    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+    def room_version = "2.4.2"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    // optional - RxJava2 support for Room
+    implementation "androidx.room:room-rxjava2:$room_version"
+    // optional - RxJava3 support for Room
+    implementation "androidx.room:room-rxjava3:$room_version"
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    implementation "androidx.room:room-guava:$room_version"
+    // optional - Test helpers
+    testImplementation "androidx.room:room-testing:$room_version"
+    // optional - Paging 3 Integration
+    implementation "androidx.room:room-paging:2.5.0-alpha02"
+
+
+    // Nav Component
+    def navigationVersion = "2.5.0-rc01"
+    implementation "androidx.navigation:navigation-runtime:$navigationVersion"
+    implementation "androidx.navigation:navigation-runtime-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-fragment:$navigationVersion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-testing:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 
     // Dagger Hilt
-//    annotationProcessor  "androidx.hilt:hilt-compiler:1.0.0-alpha01"
-//    implementation  "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01"
-//    implementation  "com.google.dagger:hilt-android:2.28-alpha"
+    annotationProcessor  "androidx.hilt:hilt-compiler:1.0.0"
+    implementation  "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+    implementation  "com.google.dagger:hilt-android:2.40.1"
 
-//    // Circle Image View
-//    implementation 'de.hdodenhof:circleimageview:3.1.0'
-//
-//
-//    // Compose tooling
+    // Circle Image View
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+
+    // Compose tooling
 //    debugImplementation "androidx.compose.ui:ui-tooling:1.1.1"
 //    implementation "androidx.compose.ui:ui-tooling-preview:1.1.1"
+
+    // lottie Animation
+    implementation "com.airbnb.android:lottie:5.2.0"
+
+
+    // Preferences DataStore
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+
+//    // statusBarUtil
+//    implementation'com.jaeger.statusbarutil:library:1.5.1'
+//
+//
+//    //Encrypted Pref
+//    implementation "androidx.security:security-crypto:1.1.0-alpha03" // Encrypted prefManager By Crypto
 
 }
 

@@ -1,6 +1,7 @@
 package ir.ha.dep.ui
 
 import android.app.Application
+import android.content.Context
 import com.facebook.drawee.backends.pipeline.Fresco
 import ir.ha.dep.services.ImageLoadingService
 import ir.ha.dep.services.ImageLoadingServiceImpl
@@ -13,8 +14,11 @@ import org.koin.dsl.module
 
 class App : Application() {
 
+    var context :Context ?= null
+
     override fun onCreate() {
         super.onCreate()
+        context = this.applicationContext
 
         /** initialize fresco */
         Fresco.initialize(this)
