@@ -61,7 +61,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginVertical="@dimen/size_16dp"
+                android:layout_marginVertical="@dimen/space_16dp"
                 android:orientation="vertical">
 
                 <com.google.android.material.card.MaterialCardView
@@ -69,12 +69,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="@dimen/size_16dp"
+                    android:layout_margin="@dimen/space_16dp"
                     android:checkable="true"
                     android:clickable="true"
                     app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="@dimen/size_8dp"
-                    app:cardElevation="@dimen/size_4dp"
+                    app:cardCornerRadius="@dimen/space_8dp"
+                    app:cardElevation="@dimen/space_4dp"
                     app:strokeColor="@color/black"
                     app:strokeWidth="1dp">
 
@@ -82,13 +82,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:padding="@dimen/size_8dp">
+                        android:padding="@dimen/space_8dp">
 
                         <TextView
                             android:id="@+id/title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginVertical="@dimen/size_8dp"
+                            android:layout_marginVertical="@dimen/space_8dp"
                             android:text="Title Txt"
                             android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
@@ -97,7 +97,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginBottom="@dimen/size_8dp"
+                            android:layout_marginBottom="@dimen/space_8dp"
                             android:background="@android:color/transparent"
                             android:gravity="start|top"
                             android:text="this is a test message..this is a test message..this is a test message..this is a test message..this is a test message..this is a test message..this is a test message.."
@@ -112,12 +112,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:layout_marginHorizontal="@dimen/size_16dp"
-                    android:layout_marginVertical="@dimen/size_4dp"
+                    android:layout_marginHorizontal="@dimen/space_16dp"
+                    android:layout_marginVertical="@dimen/space_4dp"
                     android:clickable="true"
                     app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="@dimen/size_8dp"
-                    app:cardElevation="@dimen/size_4dp">
+                    app:cardCornerRadius="@dimen/space_8dp"
+                    app:cardElevation="@dimen/space_4dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -134,12 +134,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:layout_marginHorizontal="@dimen/size_16dp"
-                    android:layout_marginVertical="@dimen/size_4dp"
+                    android:layout_marginHorizontal="@dimen/space_16dp"
+                    android:layout_marginVertical="@dimen/space_4dp"
                     android:clickable="true"
                     app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="@dimen/size_8dp"
-                    app:cardElevation="@dimen/size_4dp">
+                    app:cardCornerRadius="@dimen/space_8dp"
+                    app:cardElevation="@dimen/space_4dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -156,12 +156,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:layout_marginHorizontal="@dimen/size_16dp"
-                    android:layout_marginVertical="@dimen/size_4dp"
+                    android:layout_marginHorizontal="@dimen/space_16dp"
+                    android:layout_marginVertical="@dimen/space_4dp"
                     android:clickable="true"
                     app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="@dimen/size_8dp"
-                    app:cardElevation="@dimen/size_4dp">
+                    app:cardCornerRadius="@dimen/space_8dp"
+                    app:cardElevation="@dimen/space_4dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -185,8 +185,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start|bottom"
-            android:layout_marginStart="@dimen/size_16dp"
-            android:layout_marginBottom="@dimen/size_64dp"
+            android:layout_marginStart="@dimen/space_16dp"
+            android:layout_marginBottom="@dimen/space_64dp"
             android:text="sample fab"
             android:textAppearance="@style/TextAppearance.AppCompat.Caption"
             android:textColor="@color/white"

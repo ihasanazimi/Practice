@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    // text sizes
+    <!-- texts size -->
     <dimen name="text_size_10sp">10sp</dimen>
     <dimen name="text_size_12sp">12sp</dimen>
     <dimen name="text_size_14sp">14sp</dimen>
@@ -11,15 +11,23 @@
     <dimen name="text_size_22sp">20sp</dimen>
     <dimen name="text_size_24sp">22sp</dimen>
     <dimen name="text_size_26sp">24sp</dimen>
+    <dimen name="text_size_28sp">24sp</dimen>
+    <dimen name="text_size_30sp">30sp</dimen>
+    <dimen name="text_size_32sp">32sp</dimen>
+    <dimen name="text_size_34sp">34sp</dimen>
+    <dimen name="text_size_36sp">36sp</dimen>
+    <dimen name="text_size_38sp">38sp</dimen>
+    <dimen name="text_size_40sp">40sp</dimen>
 
 
-    // view sizes
-    <dimen name="size_2dp">2dp</dimen>
-    <dimen name="size_4dp">4dp</dimen>
-    <dimen name="size_8dp">8dp</dimen>
-    <dimen name="size_16dp">16dp</dimen>
-    <dimen name="size_32dp">32dp</dimen>
-    <dimen name="size_64dp">64dp</dimen>
-    <dimen name="size_128dp">128dp</dimen>
+    <!-- views size -->
+    <dimen name="space_2dp">2dp</dimen>
+    <dimen name="space_4dp">4dp</dimen>
+    <dimen name="space_8dp">8dp</dimen>
+    <dimen name="space_16dp">16dp</dimen>
+    <dimen name="space_32dp">32dp</dimen>
+    <dimen name="space_64dp">64dp</dimen>
+    <dimen name="space_128dp">128dp</dimen>
+    <dimen name="space_256dp">256dp</dimen>
 
 </resources>

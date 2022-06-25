@@ -30,6 +30,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding.lottieAnimationView.setOnClickListener(this)
         binding.multiThreadingBtn.setOnClickListener(this)
         binding.retrofitOkHttpBtn.setOnClickListener(this)
+        binding.btnSharedPreferences.setOnClickListener(this)
+        binding.btnDataStorePreferences.setOnClickListener(this)
+        binding.btnRoomDb.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -97,6 +100,30 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
             R.id.retrofitOkHttpBtn -> {
                 addFragmentByAnimation(RequestSampleFrg(),"RequestFrgSample",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
+            }
+
+            R.id.btn_shared_preferences -> {
+                addFragmentByAnimation(SharedPreferencesSampleFrg(),"SharedPreferencesSampleClass",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
+            }
+
+            R.id.btn_data_store_preferences -> {
+                addFragmentByAnimation(DataStoreSampleFrg(),"DataStoreSampleFrg",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
+            }
+
+            R.id.btn_room_db -> {
+                addFragmentByAnimation(RoomDBSamplerFrg(),"RoomDBSamplerFrg",
                     addToBackStack = true,
                     customAnimations = true,
                     containerViewId = R.id.mainFrame,

@@ -8,8 +8,10 @@ import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import io.reactivex.disposables.CompositeDisposable
 import ir.ha.dep.R
 
@@ -39,6 +41,37 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
 }
 
 
+
+abstract class BaseBottomSheetDialogFrg: BottomSheetDialogFragment() , BaseView {
+
+    override val rootView: ViewGroup?
+        get() = dialog?.window?.decorView?.rootView as ViewGroup
+    override val viewContext: Context?
+        get() = this.requireContext()
+
+    fun <T : ViewDataBinding?> getBinding(layout: Int): T {
+        return DataBindingUtil.inflate(LayoutInflater.from(requireContext()), layout, null, false)
+    }
+
+}
+
+
+
+abstract class BaseDialogFrg : DialogFragment() , BaseView {
+
+    override val rootView: ViewGroup?
+        get() = dialog?.window?.decorView?.rootView as ViewGroup
+    override val viewContext: Context?
+        get() = this.requireContext()
+
+    fun <T : ViewDataBinding?> getBinding(layout: Int): T {
+        return DataBindingUtil.inflate(LayoutInflater.from(requireContext()), layout, null, false)
+    }
+
+}
+
+
+
 interface BaseView {
 
     val rootView: ViewGroup?
@@ -60,12 +93,12 @@ interface BaseView {
 
 
 abstract class BaseViewModel : ViewModel() {
-    open val com = CompositeDisposable()
+    open val composable = CompositeDisposable()
         get() = field
 
 
     override fun onCleared() {
-        com.clear()
+        composable.clear()
         super.onCleared()
     }
 }

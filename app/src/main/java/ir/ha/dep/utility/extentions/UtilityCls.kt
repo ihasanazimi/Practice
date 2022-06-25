@@ -17,8 +17,6 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.ChecksSdkIntAtLeast
 import androidx.annotation.DrawableRes
@@ -33,7 +31,6 @@ import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
 import com.google.gson.Gson
 import ir.ha.dep.R
-import ir.ha.dep.ui.App
 import java.util.*
 
 
@@ -106,7 +103,7 @@ fun PopupMenu.hasIcon(): Boolean {
 fun PopupMenu.insertMenuItemIcon(context: Context, menuItem: MenuItem) {
     var icon: Drawable? = menuItem.icon
     if (icon == null) icon = ColorDrawable(Color.TRANSPARENT)
-    val iconSize: Int = context.resources.getDimensionPixelSize(R.dimen.size_8dp)
+    val iconSize: Int = context.resources.getDimensionPixelSize(R.dimen.space_8dp)
     icon.setBounds(0, 0, iconSize, iconSize)
     val imageSpan = ImageSpan(icon)
     val ssb = SpannableStringBuilder("     " + menuItem.title)

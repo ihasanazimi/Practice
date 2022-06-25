@@ -168,10 +168,9 @@ fun EditText.showKeyboard() {
  * first imp this dependency on build.gradle :
  * implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'
  */
-@SuppressLint("ClickableViewAccessibility")
-fun View.springAnimImpl(){
-    val scaleXAnim = SpringAnimation(this, DynamicAnimation.SCALE_X,0.9f)
-    val scaleYanim = SpringAnimation(this, DynamicAnimation.SCALE_Y,0.9f)
+fun View.implementSpringAnimationTrait(){
+    val scaleXAnim = SpringAnimation(this,DynamicAnimation.SCALE_X,0.91f)
+    val scaleYanim = SpringAnimation(this,DynamicAnimation.SCALE_Y,0.91f)
 
     setOnTouchListener { view, event ->
 
@@ -179,20 +178,26 @@ fun View.springAnimImpl(){
 
         when(event.action){
             MotionEvent.ACTION_DOWN ->{
-                scaleXAnim.spring.stiffness = SpringForce.STIFFNESS_LOW
+
+                scaleXAnim.spring.stiffness = SpringForce.STIFFNESS_MEDIUM
                 scaleXAnim.spring.dampingRatio = SpringForce.DAMPING_RATIO_LOW_BOUNCY
                 scaleXAnim.start()
-                scaleYanim.spring.dampingRatio = SpringForce.STIFFNESS_LOW
+
+                scaleYanim.spring.dampingRatio = SpringForce.STIFFNESS_MEDIUM
                 scaleYanim.spring.dampingRatio = SpringForce.DAMPING_RATIO_LOW_BOUNCY
+                scaleYanim.start()
             }
 
             MotionEvent.ACTION_UP , MotionEvent.ACTION_CANCEL ->{
                 scaleXAnim.cancel()
                 scaleYanim.cancel()
-                val reverseScaleXAnim = SpringAnimation(this, DynamicAnimation.SCALE_Y,0.9f)
+
+                val reverseScaleXAnim = SpringAnimation(this,DynamicAnimation.SCALE_X,1f)
                 reverseScaleXAnim.spring.stiffness = SpringForce.STIFFNESS_LOW
                 reverseScaleXAnim.spring.dampingRatio = SpringForce.DAMPING_RATIO_LOW_BOUNCY
-                val reverseScaleYAnim = SpringAnimation(this, DynamicAnimation.SCALE_Y,0.9f)
+                reverseScaleXAnim.start()
+
+                val reverseScaleYAnim = SpringAnimation(this,DynamicAnimation.SCALE_Y,1f)
                 reverseScaleYAnim.spring.stiffness = SpringForce.STIFFNESS_LOW
                 reverseScaleYAnim.spring.dampingRatio = SpringForce.DAMPING_RATIO_LOW_BOUNCY
                 reverseScaleYAnim.start()

@@ -17,7 +17,7 @@ class RetrofitApiService() {
             return@Interceptor it.proceed(newRequestBuilder.build())
         }).build()
 
-    private val baseUrl = "YOUR_BASE_URL"
+    private val baseUrl = "http://mobofit.ir/"
 
     val apis: Apis by lazy {
         val retrofit = Retrofit.Builder()

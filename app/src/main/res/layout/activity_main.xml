@@ -31,12 +31,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:layout_marginVertical="@dimen/size_16dp"
-                android:layout_marginHorizontal="@dimen/size_32dp">
+                android:layout_marginVertical="@dimen/space_16dp"
+                android:layout_marginHorizontal="@dimen/space_32dp">
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/imageLoaderBtn"
-                    app:cornerRadius="@dimen/size_16dp"
+                    app:cornerRadius="@dimen/space_16dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAllCaps="false"
@@ -46,7 +46,7 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/bannerSliderBtn"
                     android:layout_width="match_parent"
-                    app:cornerRadius="@dimen/size_16dp"
+                    app:cornerRadius="@dimen/space_16dp"
                     android:layout_height="wrap_content"
                     android:textAllCaps="false"
                     android:textSize="@dimen/text_size_14sp"
@@ -57,7 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAllCaps="false"
-                    app:cornerRadius="@dimen/size_16dp"
+                    app:cornerRadius="@dimen/space_16dp"
                     android:textSize="@dimen/text_size_14sp"
                     android:text="RecyclerView Sample" />
 
@@ -66,7 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAllCaps="false"
-                    app:cornerRadius="@dimen/size_16dp"
+                    app:cornerRadius="@dimen/space_16dp"
                     android:textSize="@dimen/text_size_14sp"
                     android:text="Sample Of Fragment - Pass Data" />
 
@@ -75,7 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAllCaps="false"
-                    app:cornerRadius="@dimen/size_16dp"
+                    app:cornerRadius="@dimen/space_16dp"
                     android:textSize="@dimen/text_size_14sp"
                     android:text="Material Design Samples" />
 
@@ -83,7 +83,7 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/lottieAnimationView"
                     android:layout_width="match_parent"
-                    app:cornerRadius="@dimen/size_16dp"
+                    app:cornerRadius="@dimen/space_16dp"
                     android:layout_height="wrap_content"
                     android:textAllCaps="false"
                     android:textSize="@dimen/text_size_14sp"
@@ -93,7 +93,7 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/multiThreadingBtn"
                     android:layout_width="match_parent"
-                    app:cornerRadius="@dimen/size_16dp"
+                    app:cornerRadius="@dimen/space_16dp"
                     android:layout_height="wrap_content"
                     android:textAllCaps="false"
                     android:textSize="@dimen/text_size_14sp"
@@ -103,11 +103,38 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/retrofitOkHttpBtn"
                     android:layout_width="match_parent"
-                    app:cornerRadius="@dimen/size_16dp"
+                    app:cornerRadius="@dimen/space_16dp"
                     android:layout_height="wrap_content"
                     android:textAllCaps="false"
                     android:textSize="@dimen/text_size_14sp"
                     android:text="Retrofit - OkHttp Sample" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_shared_preferences"
+                    android:layout_width="match_parent"
+                    app:cornerRadius="@dimen/space_16dp"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/text_size_14sp"
+                    android:text="Shared Preferences" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_data_store_preferences"
+                    android:layout_width="match_parent"
+                    app:cornerRadius="@dimen/space_16dp"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/text_size_14sp"
+                    android:text="Data Store Preferences" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_room_db"
+                    android:layout_width="match_parent"
+                    app:cornerRadius="@dimen/space_16dp"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/text_size_14sp"
+                    android:text="Room data Base" />
 
             </LinearLayout>
 

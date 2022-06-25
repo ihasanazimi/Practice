@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -74,15 +75,15 @@ dependencies {
 
 
     // lifeCycles - Architecture Components
-    def arch_component_version = "2.4.1"
+    def arch_component_version = "2.5.0-rc02"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$arch_component_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$arch_component_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$arch_component_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel:$arch_component_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$arch_component_version"
     implementation "androidx.lifecycle:lifecycle-livedata-core:$arch_component_version"
     implementation 'android.arch.lifecycle:viewmodel:1.1.1'
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-    implementation "androidx.lifecycle:lifecycle-common-java8:2.5.0-rc01"
 
 
     // KOiN
@@ -111,24 +112,16 @@ dependencies {
     implementation("org.greenrobot:eventbus:3.3.1")
 
 
-//    // Room DB
-    def room_version = "2.4.2"
-    implementation "androidx.room:room-runtime:$room_version"
-    annotationProcessor "androidx.room:room-compiler:$room_version"
-    // optional - RxJava2 support for Room
-    implementation "androidx.room:room-rxjava2:$room_version"
-    // optional - RxJava3 support for Room
-    implementation "androidx.room:room-rxjava3:$room_version"
-    // optional - Guava support for Room, including Optional and ListenableFuture
-    implementation "androidx.room:room-guava:$room_version"
-    // optional - Test helpers
-    testImplementation "androidx.room:room-testing:$room_version"
-    // optional - Paging 3 Integration
-    implementation "androidx.room:room-paging:2.5.0-alpha02"
+    // room dataBase
+//    def room_version = "2.4.2"
+    // Room components
+    implementation "androidx.room:room-ktx:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
+    androidTestImplementation "androidx.room:room-testing:2.4.2"
 
 
     // Nav Component
-    def navigationVersion = "2.5.0-rc01"
+    def navigationVersion = "2.5.0-rc02"
     implementation "androidx.navigation:navigation-runtime:$navigationVersion"
     implementation "androidx.navigation:navigation-runtime-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-fragment:$navigationVersion"
@@ -156,12 +149,16 @@ dependencies {
 
     // Preferences DataStore
     implementation "androidx.datastore:datastore-preferences:1.0.0"
+//    // optional - RxJava2 support
+//    implementation "androidx.datastore:datastore-preferences-rxjava2:1.0.0"
+//    // optional - RxJava3 support
+//    implementation "androidx.datastore:datastore-preferences-rxjava3:1.0.0"
+
 
 //    // statusBarUtil
 //    implementation'com.jaeger.statusbarutil:library:1.5.1'
-//
-//
-//    //Encrypted Pref
+
+    //Encrypted Pref
 //    implementation "androidx.security:security-crypto:1.1.0-alpha03" // Encrypted prefManager By Crypto
 
 }

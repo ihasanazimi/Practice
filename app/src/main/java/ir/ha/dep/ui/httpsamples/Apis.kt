@@ -6,7 +6,7 @@ import retrofit2.http.*
 
 interface Apis {
 
-    @GET("")
+    @GET("/")
     fun testRequest() : Call<String>
 
     @POST("")
