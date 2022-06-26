@@ -27,18 +27,18 @@ class App : Application() {
         Fresco.initialize(this)
         RoomDB.getDataBase(this)
 
-//        /** 1- Koin -> modules.. */
-//        val myModules = module {
-//            single<MyApiService> { apiService }
-//            single<ImageLoadingService> { ImageLoadingServiceImpl() } // fresco
-//            factory<RoomDB> { RoomDB.getDataBase(applicationContext) }
-//        }
-//
-//        /** 2- Start Coin By Modules... */
-//        startKoin {
-//            androidContext(this@App)
-//            modules(myModules)
-//        }
+        /** 1- Koin -> modules.. */
+        val myModules = module {
+            single<MyApiService> { apiService }
+            single<ImageLoadingService> { ImageLoadingServiceImpl() } // fresco
+            factory<RoomDB> { RoomDB.getDataBase(applicationContext) }
+        }
+
+        /** 2- Start Coin By Modules... */
+        startKoin {
+            androidContext(this@App)
+            modules(myModules)
+        }
 
 
     }
