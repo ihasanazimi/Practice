@@ -1,4 +1,4 @@
-package ir.ha.dep.ui.activites
+package ir.ha.dep.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -33,6 +33,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding.btnSharedPreferences.setOnClickListener(this)
         binding.btnDataStorePreferences.setOnClickListener(this)
         binding.btnRoomDb.setOnClickListener(this)
+        binding.btnBroadCastReceiverSample.setOnClickListener(this)
+        binding.btnMediaPlayer.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -124,6 +126,22 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
             R.id.btn_room_db -> {
                 addFragmentByAnimation(RoomDBSamplerFrg(),"RoomDBSamplerFrg",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
+            }
+
+            R.id.btn_broadCast_receiver_sample -> {
+                addFragmentByAnimation(BroadcastReceiverSampleFrg(),"BroadcastReceiverSampleFrg",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
+            }
+
+            R.id.btn_media_player -> {
+                addFragmentByAnimation(MediaPlayerFrg(),"MediaPlayerFrg",
                     addToBackStack = true,
                     customAnimations = true,
                     containerViewId = R.id.mainFrame,

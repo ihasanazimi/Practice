@@ -26,117 +26,141 @@
             </com.google.android.material.appbar.AppBarLayout>
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_horizontal"
-                android:layout_marginVertical="@dimen/space_16dp"
-                android:layout_marginHorizontal="@dimen/space_32dp">
+           <ScrollView
+               android:layout_marginVertical="@dimen/space_16dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/imageLoaderBtn"
-                    app:cornerRadius="@dimen/space_16dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAllCaps="false"
-                    android:textSize="@dimen/text_size_14sp"
-                    android:text="Load Images By 4 Libraries" />
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:gravity="center_horizontal"
+                   android:layout_marginHorizontal="@dimen/space_32dp">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/bannerSliderBtn"
-                    android:layout_width="match_parent"
-                    app:cornerRadius="@dimen/space_16dp"
-                    android:layout_height="wrap_content"
-                    android:textAllCaps="false"
-                    android:textSize="@dimen/text_size_14sp"
-                    android:text="Banner Slider By Frg" />
+                   <com.google.android.material.button.MaterialButton
+                       android:id="@+id/imageLoaderBtn"
+                       app:cornerRadius="@dimen/space_16dp"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textAllCaps="false"
+                       android:textSize="@dimen/text_size_14sp"
+                       android:text="Load Images By 4 Libraries" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/recyclerViewSampleBtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAllCaps="false"
-                    app:cornerRadius="@dimen/space_16dp"
-                    android:textSize="@dimen/text_size_14sp"
-                    android:text="RecyclerView Sample" />
+                   <com.google.android.material.button.MaterialButton
+                       android:id="@+id/bannerSliderBtn"
+                       android:layout_width="match_parent"
+                       app:cornerRadius="@dimen/space_16dp"
+                       android:layout_height="wrap_content"
+                       android:textAllCaps="false"
+                       android:textSize="@dimen/text_size_14sp"
+                       android:text="Banner Slider By Frg" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/FragmentSample"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAllCaps="false"
-                    app:cornerRadius="@dimen/space_16dp"
-                    android:textSize="@dimen/text_size_14sp"
-                    android:text="Sample Of Fragment - Pass Data" />
+                   <com.google.android.material.button.MaterialButton
+                       android:id="@+id/recyclerViewSampleBtn"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textAllCaps="false"
+                       app:cornerRadius="@dimen/space_16dp"
+                       android:textSize="@dimen/text_size_14sp"
+                       android:text="RecyclerView Sample" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/materialDesign"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAllCaps="false"
-                    app:cornerRadius="@dimen/space_16dp"
-                    android:textSize="@dimen/text_size_14sp"
-                    android:text="Material Design Samples" />
+                   <com.google.android.material.button.MaterialButton
+                       android:id="@+id/FragmentSample"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textAllCaps="false"
+                       app:cornerRadius="@dimen/space_16dp"
+                       android:textSize="@dimen/text_size_14sp"
+                       android:text="Sample Of Fragment - Pass Data" />
 
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/lottieAnimationView"
-                    android:layout_width="match_parent"
-                    app:cornerRadius="@dimen/space_16dp"
-                    android:layout_height="wrap_content"
-                    android:textAllCaps="false"
-                    android:textSize="@dimen/text_size_14sp"
-                    android:text="Animation" />
+                   <com.google.android.material.button.MaterialButton
+                       android:id="@+id/materialDesign"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textAllCaps="false"
+                       app:cornerRadius="@dimen/space_16dp"
+                       android:textSize="@dimen/text_size_14sp"
+                       android:text="Material Design Samples" />
 
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/multiThreadingBtn"
-                    android:layout_width="match_parent"
-                    app:cornerRadius="@dimen/space_16dp"
-                    android:layout_height="wrap_content"
-                    android:textAllCaps="false"
-                    android:textSize="@dimen/text_size_14sp"
-                    android:text="Multi Threading" />
+                   <com.google.android.material.button.MaterialButton
+                       android:id="@+id/lottieAnimationView"
+                       android:layout_width="match_parent"
+                       app:cornerRadius="@dimen/space_16dp"
+                       android:layout_height="wrap_content"
+                       android:textAllCaps="false"
+                       android:textSize="@dimen/text_size_14sp"
+                       android:text="Animation" />
 
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/retrofitOkHttpBtn"
-                    android:layout_width="match_parent"
-                    app:cornerRadius="@dimen/space_16dp"
-                    android:layout_height="wrap_content"
-                    android:textAllCaps="false"
-                    android:textSize="@dimen/text_size_14sp"
-                    android:text="Retrofit - OkHttp Sample" />
+                   <com.google.android.material.button.MaterialButton
+                       android:id="@+id/multiThreadingBtn"
+                       android:layout_width="match_parent"
+                       app:cornerRadius="@dimen/space_16dp"
+                       android:layout_height="wrap_content"
+                       android:textAllCaps="false"
+                       android:textSize="@dimen/text_size_14sp"
+                       android:text="Multi Threading" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_shared_preferences"
-                    android:layout_width="match_parent"
-                    app:cornerRadius="@dimen/space_16dp"
-                    android:layout_height="wrap_content"
-                    android:textAllCaps="false"
-                    android:textSize="@dimen/text_size_14sp"
-                    android:text="Shared Preferences" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_data_store_preferences"
-                    android:layout_width="match_parent"
-                    app:cornerRadius="@dimen/space_16dp"
-                    android:layout_height="wrap_content"
-                    android:textAllCaps="false"
-                    android:textSize="@dimen/text_size_14sp"
-                    android:text="Data Store Preferences" />
+                   <com.google.android.material.button.MaterialButton
+                       android:id="@+id/retrofitOkHttpBtn"
+                       android:layout_width="match_parent"
+                       app:cornerRadius="@dimen/space_16dp"
+                       android:layout_height="wrap_content"
+                       android:textAllCaps="false"
+                       android:textSize="@dimen/text_size_14sp"
+                       android:text="Retrofit - OkHttp Sample" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_room_db"
-                    android:layout_width="match_parent"
-                    app:cornerRadius="@dimen/space_16dp"
-                    android:layout_height="wrap_content"
-                    android:textAllCaps="false"
-                    android:textSize="@dimen/text_size_14sp"
-                    android:text="Room data Base" />
+                   <com.google.android.material.button.MaterialButton
+                       android:id="@+id/btn_shared_preferences"
+                       android:layout_width="match_parent"
+                       app:cornerRadius="@dimen/space_16dp"
+                       android:layout_height="wrap_content"
+                       android:textAllCaps="false"
+                       android:textSize="@dimen/text_size_14sp"
+                       android:text="Shared Preferences" />
 
-            </LinearLayout>
+                   <com.google.android.material.button.MaterialButton
+                       android:id="@+id/btn_data_store_preferences"
+                       android:layout_width="match_parent"
+                       app:cornerRadius="@dimen/space_16dp"
+                       android:layout_height="wrap_content"
+                       android:textAllCaps="false"
+                       android:textSize="@dimen/text_size_14sp"
+                       android:text="Data Store Preferences" />
+
+                   <com.google.android.material.button.MaterialButton
+                       android:id="@+id/btn_room_db"
+                       android:layout_width="match_parent"
+                       app:cornerRadius="@dimen/space_16dp"
+                       android:layout_height="wrap_content"
+                       android:textAllCaps="false"
+                       android:textSize="@dimen/text_size_14sp"
+                       android:text="Room data Base" />
+
+                   <com.google.android.material.button.MaterialButton
+                       android:id="@+id/btn_broadCast_receiver_sample"
+                       android:layout_width="match_parent"
+                       app:cornerRadius="@dimen/space_16dp"
+                       android:layout_height="wrap_content"
+                       android:textAllCaps="false"
+                       android:textSize="@dimen/text_size_14sp"
+                       android:text="BroadCast Receiver" />
+
+
+                   <com.google.android.material.button.MaterialButton
+                       android:id="@+id/btn_media_player"
+                       android:layout_width="match_parent"
+                       app:cornerRadius="@dimen/space_16dp"
+                       android:layout_height="wrap_content"
+                       android:textAllCaps="false"
+                       android:textSize="@dimen/text_size_14sp"
+                       android:text="media player sample" />
+
+               </LinearLayout>
+           </ScrollView>
 
         </LinearLayout>
 
