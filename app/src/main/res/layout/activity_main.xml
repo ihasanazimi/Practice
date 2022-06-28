@@ -159,6 +159,25 @@
                        android:textSize="@dimen/text_size_14sp"
                        android:text="media player sample" />
 
+
+                   <com.google.android.material.button.MaterialButton
+                       android:id="@+id/btn_video_player"
+                       android:layout_width="match_parent"
+                       app:cornerRadius="@dimen/space_16dp"
+                       android:layout_height="wrap_content"
+                       android:textAllCaps="false"
+                       android:textSize="@dimen/text_size_14sp"
+                       android:text="video player sample" />
+
+                   <com.google.android.material.button.MaterialButton
+                       android:id="@+id/btn_create_notification"
+                       android:layout_width="match_parent"
+                       app:cornerRadius="@dimen/space_16dp"
+                       android:layout_height="wrap_content"
+                       android:textAllCaps="false"
+                       android:textSize="@dimen/text_size_14sp"
+                       android:text="Create Notification - ex.." />
+
                </LinearLayout>
            </ScrollView>
 

@@ -35,6 +35,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding.btnRoomDb.setOnClickListener(this)
         binding.btnBroadCastReceiverSample.setOnClickListener(this)
         binding.btnMediaPlayer.setOnClickListener(this)
+        binding.btnVideoPlayer.setOnClickListener(this)
+        binding.btnCreateNotification.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -142,6 +144,21 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
             R.id.btn_media_player -> {
                 addFragmentByAnimation(MediaPlayerFrg(),"MediaPlayerFrg",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
+            }
+
+            R.id.btn_video_player -> {
+                addFragmentByAnimation(VideoPlayerFrg(),"VideoPlayerFrg",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
+            }
+            R.id.btn_create_notification -> {
+                addFragmentByAnimation(NotificationFrg(),"NotificationFrg",
                     addToBackStack = true,
                     customAnimations = true,
                     containerViewId = R.id.mainFrame,
