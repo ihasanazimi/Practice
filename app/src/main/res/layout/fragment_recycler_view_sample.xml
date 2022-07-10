@@ -2,6 +2,8 @@
 
 <layout>
     <FrameLayout
+        android:clickable="true"
+        android:focusable="true"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:background="?colorSurface"

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1055083015516",
+    "project_id": "dep-hasanazimi",
+    "storage_bucket": "dep-hasanazimi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055083015516:android:1f08f98a019e58fbb22599",
+        "android_client_info": {
+          "package_name": "ir.ha.dep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055083015516-5kt8ole24k0m36d7jr5i1minlg6dk4ej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJwhKtid-IQdvdr9ov3rjgR1c5Zu2yLbE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055083015516-5kt8ole24k0m36d7jr5i1minlg6dk4ej.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

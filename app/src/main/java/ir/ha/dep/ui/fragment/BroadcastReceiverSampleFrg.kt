@@ -41,8 +41,8 @@ class BroadcastReceiverSampleFrg : BaseFragment() {
 
     private fun checkNet(ctx : Context) {
         if (checkInternetConnection(this@BroadcastReceiverSampleFrg.requireContext()))
-            binding.tv.text = "network is -->  Connected"
-        else binding.tv.text = "network is -->  DisConnected..!"
+            binding.iv.setImageResource(R.drawable.ic_online)
+        else binding.iv.setImageResource(R.drawable.ic_offline)
     }
 
 

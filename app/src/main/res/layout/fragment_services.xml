@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_background_service"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/text_size_12sp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:text="background service"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_foreground_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text_size_12sp"
+                android:textColor="@color/white"
+                android:text="foreground service"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_bound_service"
+                android:layout_width="match_parent"
+                android:textAllCaps="false"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_12sp"
+                android:textColor="@color/white"
+                android:text="btn bound service"/>
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</layout>

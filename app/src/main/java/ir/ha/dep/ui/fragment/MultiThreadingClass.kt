@@ -4,11 +4,12 @@ import android.util.Log
 
 class MultiThreadingClass : Thread()  {
 
+
     override fun run() {
         super.run()
-
         Log.e("hsn", "MultiThreadingClass  ->  " + Thread.currentThread().name)
     }
+
 
 }
 

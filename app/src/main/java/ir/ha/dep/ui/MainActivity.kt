@@ -10,6 +10,7 @@ import ir.ha.dep.model.FakeDataModel
 import ir.ha.dep.ui.fragment.*
 import ir.ha.dep.ui.fragment.viewPager.ViewPagerSampleFrg
 import ir.ha.dep.ui.fragment.material.MaterialViews
+import ir.ha.dep.ui.fragment.services.ServicesFrg
 import ir.ha.dep.ui.httpsamples.RequestSampleFrg
 import ir.ha.dep.utility.extentions.addFragmentByAnimation
 import ir.ha.dep.utility.extentions.showToast
@@ -35,6 +36,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding.btnRoomDb.setOnClickListener(this)
         binding.btnBroadCastReceiverSample.setOnClickListener(this)
         binding.btnMediaPlayer.setOnClickListener(this)
+        binding.btnServices.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -142,6 +144,14 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
             R.id.btn_media_player -> {
                 addFragmentByAnimation(MediaPlayerFrg(),"MediaPlayerFrg",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
+            }
+
+            R.id.btn_services -> {
+                addFragmentByAnimation(ServicesFrg(),"ServicesFrg",
                     addToBackStack = true,
                     customAnimations = true,
                     containerViewId = R.id.mainFrame,

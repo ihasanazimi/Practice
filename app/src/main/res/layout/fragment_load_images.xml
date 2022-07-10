@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <FrameLayout
+        android:clickable="true"
+        android:focusable="true"
         android:background="?colorSurface"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

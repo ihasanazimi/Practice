@@ -3,6 +3,7 @@
     package="ir.ha.dep">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -23,6 +24,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+
+        <service android:name=".ui.fragment.services.BackgroundService" android:exported="true" />
+        <service android:name=".ui.fragment.services.ForegroundService" android:exported="true" />
+        <service android:name=".ui.fragment.services.BoundService" android:exported="true" />
+
     </application>
 
 </manifest>
