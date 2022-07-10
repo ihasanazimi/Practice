@@ -1,6 +1,7 @@
 package ir.ha.dep.utility.extentions
 
 import android.app.Activity
+import android.app.ActivityManager
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.Color
@@ -23,6 +24,7 @@ import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
@@ -206,6 +208,17 @@ fun isRPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R
 
 @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.S)
 fun isSPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
+
+
+ fun isMyServiceRunning(applicationContext: Context? , serviceClass: Class<*>): Boolean {
+    val manager = applicationContext?.getSystemService(Context.ACCOUNT_SERVICE) as ActivityManager?
+    for (service in manager!!.getRunningServices(Int.MAX_VALUE)) {
+        if (serviceClass.name == service.service.className) {
+            return true
+        }
+    }
+    return false
+}
 
 
 fun showToast(ctx : Context , message : String){

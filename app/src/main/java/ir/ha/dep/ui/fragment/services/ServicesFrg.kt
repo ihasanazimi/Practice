@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import ir.ha.dep.R
 import ir.ha.dep.databinding.FragmentServicesBinding
 import ir.ha.dep.ui.BaseFragment
+import ir.ha.dep.utility.extentions.isMyServiceRunning
 import ir.ha.dep.utility.extentions.showToast
 
 class ServicesFrg : BaseFragment(), View.OnClickListener {
@@ -46,9 +47,12 @@ class ServicesFrg : BaseFragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.btnStopService.isEnabled = false
+
         binding.btnBackgroundService.setOnClickListener(this)
         binding.btnForegroundService.setOnClickListener(this)
         binding.btnBoundService.setOnClickListener(this)
+        binding.btnStopService.setOnClickListener(this)
 
         backgroundIntent = Intent(requireContext(), BackgroundService::class.java)
         foregroundIntent = Intent(requireContext(), ForegroundService::class.java)
@@ -73,24 +77,45 @@ class ServicesFrg : BaseFragment(), View.OnClickListener {
         when(v?.id){
             R.id.btn_background_service ->{
                 backgroundIntent.apply {
-                    putExtra("key", "testValue")
+                    putExtra("key", "background_service")
                     requireActivity().startService(this)
+                    binding.btnStopService.isEnabled = true
+                    binding.btnForegroundService.isEnabled = false
+                    binding.btnBoundService.isEnabled = false
                 }
             }
             R.id.btn_foreground_service ->{
                 foregroundIntent.apply {
-                    putExtra("key", "testValue")
+                    putExtra("key", "foreground_service")
                     requireActivity().startService(this)
+                    binding.btnStopService.isEnabled = true
+                    binding.btnBackgroundService.isEnabled = false
+                    binding.btnBoundService.isEnabled = false
                 }
             }
             R.id.btn_bound_service ->{
                 boundIntent.apply {
-                    putExtra("key", "testValue")
+                    putExtra("key", "bound_service")
                     requireActivity().bindService(this,conn!! , Context.BIND_AUTO_CREATE)
+                    binding.btnStopService.isEnabled = true
+                    binding.btnBackgroundService.isEnabled = false
+                    binding.btnForegroundService.isEnabled = false
                 }
+            }
+
+            R.id.btn_stop_service ->{
+                requireActivity().stopService(backgroundIntent)
+                requireActivity().stopService(foregroundIntent)
+//                requireActivity().unbindService(conn!!)
+
+                binding.btnBackgroundService.isEnabled = true
+                binding.btnForegroundService.isEnabled = true
+                binding.btnBoundService.isEnabled = true
+                binding.btnStopService.isEnabled = false
             }
             else ->{
                 showToast(requireContext(),"unKnow error else expression")
+                binding.btnStopService.isEnabled = false
             }
         }
     }
