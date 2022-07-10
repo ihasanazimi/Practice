@@ -82,15 +82,15 @@ class MediaPlayerFrg : BaseFragment() {
                 schedule(object : TimerTask() {
                     override fun run() {
                         if (!finish) {
-                            requireActivity().runOnUiThread {
-                                if (mediaPlayer != null && timer != null) {
+                            if (mediaPlayer.isPlaying) {
+                                requireActivity().runOnUiThread {
                                     val currentPosition =
-                                        mediaPlayer?.currentPosition?.toLong() ?: 0L
+                                        (0 + mediaPlayer.currentPosition.toLong()) ?: 0L
                                     val duration = convertMilliSecondToMinute(currentPosition)
                                     binding.tv.text = duration.toString() ?: ""
                                     binding.slider.value =
-                                        mediaPlayer?.currentPosition?.toFloat() ?: 0.0F
-                                } else showToast(requireContext(), "MEDIA PLAYER IS NULL!!!")
+                                        mediaPlayer.currentPosition.toFloat() ?: 0.0F
+                                }
                             }
                         }
                     }
@@ -98,7 +98,7 @@ class MediaPlayerFrg : BaseFragment() {
             }
             // set max value for slider view
             binding.slider.value = 0.0F // reset slider view
-            binding.slider.valueTo = mediaPlayer?.duration!!.toFloat()
+            binding.slider.valueTo = mediaPlayer.duration.toFloat()
 
             thisMedia.start()
         }

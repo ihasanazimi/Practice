@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 31
 
     defaultConfig {
         applicationId "ir.ha.dep"
@@ -37,6 +37,7 @@ android {
         dataBinding true
         viewBinding true
     }
+    buildToolsVersion '31.0.0'
 }
 dependencies {
 

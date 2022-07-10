@@ -8,6 +8,5 @@
     android:layout_height="match_parent">
 
 
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

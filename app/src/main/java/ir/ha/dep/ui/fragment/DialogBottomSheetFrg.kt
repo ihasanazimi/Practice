@@ -24,5 +24,14 @@ class DialogBottomSheetFrg : BottomSheetDialogFragment() {
         return binding.root
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
+
+
 
 }

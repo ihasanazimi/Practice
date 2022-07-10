@@ -36,6 +36,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding.btnRoomDb.setOnClickListener(this)
         binding.btnBroadCastReceiverSample.setOnClickListener(this)
         binding.btnMediaPlayer.setOnClickListener(this)
+        binding.btnVideoPlayer.setOnClickListener(this)
+        binding.btnCreateNotification.setOnClickListener(this)
         binding.btnServices.setOnClickListener(this)
     }
 
@@ -150,6 +152,22 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     commitAllowingStateLoss = false)
             }
 
+
+            R.id.btn_video_player -> {
+                addFragmentByAnimation(VideoPlayerFrg(),"VideoPlayerFrg",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
+            }
+            R.id.btn_create_notification -> {
+                addFragmentByAnimation(NotificationFrg(),"NotificationFrg",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
+            }
+
             R.id.btn_services -> {
                 addFragmentByAnimation(ServicesFrg(),"ServicesFrg",
                     addToBackStack = true,
@@ -157,7 +175,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     containerViewId = R.id.mainFrame,
                     commitAllowingStateLoss = false)
             }
-
 
 
             R.id.multiThreadingBtn -> {

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true">
+
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_8dp"
+            android:text="Notification Samples"
+            android:textSize="@dimen/text_size_28sp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/space_16dp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/btn_simple_notification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="simple_notification" />
+
+            <Button
+                android:id="@+id/btn_big_Picture_notification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="big_Picture_notification" />
+
+            <Button
+                android:id="@+id/btn_big_text_notification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="big_text_notification" />
+
+            <Button
+                android:id="@+id/btn_inbox_notification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="inbox_notification" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
