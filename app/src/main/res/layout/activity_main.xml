@@ -160,15 +160,6 @@
                        android:text="media player sample" />
 
                    <com.google.android.material.button.MaterialButton
-                       android:id="@+id/btn_services"
-                       android:layout_width="match_parent"
-                       app:cornerRadius="@dimen/space_32dp"
-                       android:layout_height="wrap_content"
-                       android:textAllCaps="false"
-                       android:textSize="@dimen/text_size_14sp"
-                       android:text="services sample" />
-
-                   <com.google.android.material.button.MaterialButton
                        android:id="@+id/btn_video_player"
                        android:layout_width="match_parent"
                        app:cornerRadius="@dimen/space_16dp"
@@ -185,6 +176,17 @@
                        android:textAllCaps="false"
                        android:textSize="@dimen/text_size_14sp"
                        android:text="Create Notification - ex.." />
+
+
+                   <com.google.android.material.button.MaterialButton
+                       android:id="@+id/btn_services"
+                       android:layout_width="match_parent"
+                       app:cornerRadius="@dimen/space_32dp"
+                       android:layout_height="wrap_content"
+                       android:textAllCaps="false"
+                       android:textSize="@dimen/text_size_14sp"
+                       android:text="services sample" />
+
 
                </LinearLayout>
            </ScrollView>
