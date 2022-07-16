@@ -7,6 +7,7 @@ import ir.ha.dep.R
 import ir.ha.dep.model.FakeDataModel
 import ir.ha.dep.ui.fragment.*
 import ir.ha.dep.ui.fragment.material.MaterialViews
+import ir.ha.dep.ui.fragment.rxjava.RxJavaContainer
 import ir.ha.dep.ui.fragment.services.ServicesFrg
 import ir.ha.dep.ui.fragment.viewPager.ViewPagerSampleFrg
 import ir.ha.dep.ui.httpSamples.RequestSampleFrg
@@ -40,6 +41,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding.btnVideoPlayer.setOnClickListener(this)
         binding.btnCreateNotification.setOnClickListener(this)
         binding.btnServices.setOnClickListener(this)
+        binding.btnRxJava.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -185,6 +187,15 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             R.id.btn_services -> {
                 binding.btnServices.isChecked = true
                 addFragmentByAnimation(ServicesFrg(),"ServicesFrg",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
+            }
+
+            R.id.btn_rxJava -> {
+                binding.btnRxJava.isChecked = true
+                addFragmentByAnimation(RxJavaContainer(),"RxJavaContainer",
                     addToBackStack = true,
                     customAnimations = true,
                     containerViewId = R.id.mainFrame,

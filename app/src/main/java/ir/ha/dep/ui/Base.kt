@@ -23,8 +23,8 @@ abstract class BaseFragment : Fragment(), BaseView {
         get() = context
 
 
-    fun <T : ViewDataBinding?> getBinding(layout: Int, parent: ViewGroup): T {
-        return DataBindingUtil.inflate(LayoutInflater.from(requireContext()), layout, parent, false)
+    fun <T : ViewDataBinding> getBinding(layoutID: Int , parent : ViewGroup): T {
+        return DataBindingUtil.inflate(LayoutInflater.from(requireContext()), layoutID , parent , false)
     }
 }
 
@@ -35,8 +35,8 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
     override val viewContext: Context?
         get() = this
 
-    fun <T : ViewDataBinding?> getBinding(layout: Int): T {
-        return DataBindingUtil.setContentView(this, layout)
+    fun <T : ViewDataBinding?> getBinding(layoutID: Int): T {
+        return DataBindingUtil.setContentView(this, layoutID)
     }
 }
 
