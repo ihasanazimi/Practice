@@ -107,7 +107,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     addToBackStack = true,
                     customAnimations = true,
                     containerViewId = R.id.mainFrame,
-                    commitAllowingStateLoss = false)
+                    commitAllowingStateLoss = false) // test
             }
 
             R.id.retrofitOkHttpBtn -> {
