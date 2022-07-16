@@ -1,6 +1,5 @@
-package ir.ha.dep.ui.httpsamples
+package ir.ha.dep.ui.httpSamples
 
-import io.reactivex.Single
 import retrofit2.Call
 import retrofit2.http.*
 

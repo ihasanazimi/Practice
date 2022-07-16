@@ -1,4 +1,4 @@
-package ir.ha.dep.ui.httpsamples
+package ir.ha.dep.ui.httpSamples
 
 import org.json.JSONArray
 import org.json.JSONException

@@ -1,13 +1,9 @@
-package ir.ha.dep.ui.httpsamples
+package ir.ha.dep.ui.httpSamples
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.gson.Gson
-import com.google.gson.JsonObject
-import io.reactivex.Scheduler
-import io.reactivex.schedulers.Schedulers
 import ir.ha.dep.R
 import ir.ha.dep.databinding.FragmentSampleRequestBinding
 import ir.ha.dep.ui.BaseFragment

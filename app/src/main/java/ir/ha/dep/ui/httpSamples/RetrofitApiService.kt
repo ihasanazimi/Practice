@@ -1,4 +1,4 @@
-package ir.ha.dep.ui.httpsamples
+package ir.ha.dep.ui.httpSamples
 
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient

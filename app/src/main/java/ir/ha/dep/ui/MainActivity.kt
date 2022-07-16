@@ -4,25 +4,26 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import ir.ha.dep.R
-import ir.ha.dep.databinding.ActivityMainBinding
-import ir.ha.dep.ui.BaseActivity
 import ir.ha.dep.model.FakeDataModel
 import ir.ha.dep.ui.fragment.*
-import ir.ha.dep.ui.fragment.viewPager.ViewPagerSampleFrg
 import ir.ha.dep.ui.fragment.material.MaterialViews
 import ir.ha.dep.ui.fragment.services.ServicesFrg
-import ir.ha.dep.ui.httpsamples.RequestSampleFrg
+import ir.ha.dep.ui.fragment.viewPager.ViewPagerSampleFrg
+import ir.ha.dep.ui.httpSamples.RequestSampleFrg
 import ir.ha.dep.utility.extentions.addFragmentByAnimation
 import ir.ha.dep.utility.extentions.showToast
 
 class MainActivity : BaseActivity(), View.OnClickListener {
 
-    lateinit var binding : ActivityMainBinding
+    lateinit var binding : ir.ha.dep.databinding.ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = getBinding(R.layout.activity_main)
         setContentView(binding.root)
 
+        binding.imageLoaderBtn.setOnCheckedChangeListener { compoundButton, b ->
+                compoundButton.isChecked = b
+        }
         binding.imageLoaderBtn.setOnClickListener(this)
         binding.bannerSliderBtn.setOnClickListener(this)
         binding.recyclerViewSampleBtn.setOnClickListener(this)
@@ -42,8 +43,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
+        binding.chipGroup.clearCheck()
         when(v?.id){
             R.id.imageLoaderBtn -> {
+                binding.imageLoaderBtn.isChecked = true
                 addFragmentByAnimation(LoadImagesSampleFrg(),"loadImagesTag",
                     addToBackStack = true,
                     customAnimations = true,
@@ -54,7 +57,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
 
             R.id.bannerSliderBtn ->{
-
+                binding.bannerSliderBtn.isChecked = true
                 addFragmentByAnimation(ViewPagerSampleFrg(),"BannerSliderTag",
                     addToBackStack = true,
                     customAnimations = true,
@@ -65,6 +68,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
 
             R.id.recyclerViewSampleBtn -> {
+                binding.recyclerViewSampleBtn.isChecked = true
                 addFragmentByAnimation(RecyclerViewSampleFrg(),"RecyclerViewSampleFrg",
                     addToBackStack = true,
                     customAnimations = true,
@@ -75,7 +79,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
 
             R.id.FragmentSample -> {
-
+                binding.FragmentSample.isChecked = true
                 /** how to pass data model into fragment by newInstance method...  */
                 val fakeDataModel = FakeDataModel("Hsn", "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/326012_1100-800x825.jpg")
                 val frg = SampleOfFrg().newInstance(fakeDataModel)
@@ -89,6 +93,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
 
             R.id.materialDesign -> {
+                binding.materialDesign.isChecked = true
                 addFragmentByAnimation(MaterialViews(),"ToolbarFrgSample",
                     addToBackStack = true,
                     customAnimations = true,
@@ -97,14 +102,16 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.lottieAnimationView -> {
-                    addFragmentByAnimation(AnimationsFrg(),"AnimationsFrg",
-                        addToBackStack = true,
-                        customAnimations = true,
-                        containerViewId = R.id.mainFrame,
-                        commitAllowingStateLoss = false)
+                binding.lottieAnimationView.isChecked = true
+                addFragmentByAnimation(AnimationsFrg(),"AnimationsFrg",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
             }
 
             R.id.retrofitOkHttpBtn -> {
+                binding.retrofitOkHttpBtn.isChecked = true
                 addFragmentByAnimation(RequestSampleFrg(),"RequestFrgSample",
                     addToBackStack = true,
                     customAnimations = true,
@@ -113,6 +120,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.btn_shared_preferences -> {
+                binding.btnSharedPreferences.isChecked = true
                 addFragmentByAnimation(SharedPreferencesSampleFrg(),"SharedPreferencesSampleClass",
                     addToBackStack = true,
                     customAnimations = true,
@@ -121,6 +129,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.btn_data_store_preferences -> {
+                binding.btnDataStorePreferences.isChecked = true
                 addFragmentByAnimation(DataStoreSampleFrg(),"DataStoreSampleFrg",
                     addToBackStack = true,
                     customAnimations = true,
@@ -129,6 +138,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.btn_room_db -> {
+                binding.btnRoomDb.isChecked = true
                 addFragmentByAnimation(RoomDBSamplerFrg(),"RoomDBSamplerFrg",
                     addToBackStack = true,
                     customAnimations = true,
@@ -137,6 +147,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.btn_broadCast_receiver_sample -> {
+                binding.btnBroadCastReceiverSample.isChecked = true
                 addFragmentByAnimation(BroadcastReceiverSampleFrg(),"BroadcastReceiverSampleFrg",
                     addToBackStack = true,
                     customAnimations = true,
@@ -145,6 +156,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.btn_media_player -> {
+                binding.btnMediaPlayer.isChecked = true
                 addFragmentByAnimation(MediaPlayerFrg(),"MediaPlayerFrg",
                     addToBackStack = true,
                     customAnimations = true,
@@ -154,6 +166,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
 
             R.id.btn_video_player -> {
+                binding.btnVideoPlayer.isChecked = true
                 addFragmentByAnimation(VideoPlayerFrg(),"VideoPlayerFrg",
                     addToBackStack = true,
                     customAnimations = true,
@@ -161,6 +174,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     commitAllowingStateLoss = false)
             }
             R.id.btn_create_notification -> {
+                binding.btnCreateNotification.isChecked = true
                 addFragmentByAnimation(NotificationFrg(),"NotificationFrg",
                     addToBackStack = true,
                     customAnimations = true,
@@ -169,6 +183,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.btn_services -> {
+                binding.btnServices.isChecked = true
                 addFragmentByAnimation(ServicesFrg(),"ServicesFrg",
                     addToBackStack = true,
                     customAnimations = true,
@@ -178,6 +193,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
 
             R.id.multiThreadingBtn -> {
+
+                binding.multiThreadingBtn.isChecked = true
 
                 showToast(this,"output in Logcat..")
 

@@ -17,179 +17,192 @@
             <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <androidx.appcompat.widget.Toolbar
-                    app:title="@string/app_name"
-                    app:titleTextColor="@color/white"
                     android:id="@+id/mainToolbar"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"/>
+                    android:layout_height="?attr/actionBarSize"
+                    app:title="@string/app_name"
+                    app:titleTextColor="@color/white" />
             </com.google.android.material.appbar.AppBarLayout>
 
 
-           <ScrollView
-               android:layout_marginVertical="@dimen/space_32dp"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_16dp">
 
-               <LinearLayout
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:orientation="vertical"
-                   android:gravity="center_horizontal"
-                   android:layout_marginHorizontal="42dp">
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
 
-                   <com.google.android.material.button.MaterialButton
-                       android:id="@+id/imageLoaderBtn"
-                       app:cornerRadius="@dimen/space_32dp"
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:textAllCaps="false"
-                       android:textSize="@dimen/text_size_14sp"
-                       android:text="Load Images By 4 Libraries" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/imageLoaderBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:text="Load Images"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_14sp"
+                        app:cornerRadius="@dimen/space_32dp" />
 
-                   <com.google.android.material.button.MaterialButton
-                       android:id="@+id/bannerSliderBtn"
-                       android:layout_width="match_parent"
-                       app:cornerRadius="@dimen/space_32dp"
-                       android:layout_height="wrap_content"
-                       android:textAllCaps="false"
-                       android:textSize="@dimen/text_size_14sp"
-                       android:text="Banner Slider By Frg" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/bannerSliderBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:text="ViewPager2"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_14sp"
+                        app:cornerRadius="@dimen/space_32dp" />
 
-                   <com.google.android.material.button.MaterialButton
-                       android:id="@+id/recyclerViewSampleBtn"
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:textAllCaps="false"
-                       app:cornerRadius="@dimen/space_32dp"
-                       android:textSize="@dimen/text_size_14sp"
-                       android:text="RecyclerView Sample" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/recyclerViewSampleBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:text="RecyclerView"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_14sp"
+                        app:cornerRadius="@dimen/space_32dp" />
 
-                   <com.google.android.material.button.MaterialButton
-                       android:id="@+id/FragmentSample"
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:textAllCaps="false"
-                       app:cornerRadius="@dimen/space_32dp"
-                       android:textSize="@dimen/text_size_14sp"
-                       android:text="Sample Of Fragment - Pass Data" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/FragmentSample"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:text="Fragments-Pass Data"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_14sp"
+                        app:cornerRadius="@dimen/space_32dp" />
 
-                   <com.google.android.material.button.MaterialButton
-                       android:id="@+id/materialDesign"
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:textAllCaps="false"
-                       app:cornerRadius="@dimen/space_32dp"
-                       android:textSize="@dimen/text_size_14sp"
-                       android:text="Material Design Samples" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/materialDesign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:text="Material Design"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_14sp"
+                        app:cornerRadius="@dimen/space_32dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/lottieAnimationView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:text="Animation"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_14sp"
+                        app:cornerRadius="@dimen/space_32dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/multiThreadingBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:text="MultiThreading"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_14sp"
+                        app:cornerRadius="@dimen/space_32dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/retrofitOkHttpBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:text="Retrofit-OkHttp"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_14sp"
+                        app:cornerRadius="@dimen/space_32dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/btn_shared_preferences"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:text="SharedPreferences"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_14sp"
+                        app:cornerRadius="@dimen/space_32dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/btn_data_store_preferences"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:text="DataStorePref"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_14sp"
+                        app:cornerRadius="@dimen/space_32dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/btn_room_db"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:text="RoomDB"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_14sp"
+                        app:cornerRadius="@dimen/space_32dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/btn_broadCast_receiver_sample"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:text="BroadCastReceiver"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_14sp"
+                        app:cornerRadius="@dimen/space_32dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/btn_media_player"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:text="MediaPlayer"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_14sp"
+                        app:cornerRadius="@dimen/space_32dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/btn_video_player"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:text="VideoPlayer"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_14sp"
+                        app:cornerRadius="@dimen/space_16dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/btn_create_notification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:text="Notifications - ex.."
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_14sp"
+                        app:cornerRadius="@dimen/space_16dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/btn_services"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:text="Services"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_14sp"
+                        app:cornerRadius="@dimen/space_32dp" />
 
 
-                   <com.google.android.material.button.MaterialButton
-                       android:id="@+id/lottieAnimationView"
-                       android:layout_width="match_parent"
-                       app:cornerRadius="@dimen/space_32dp"
-                       android:layout_height="wrap_content"
-                       android:textAllCaps="false"
-                       android:textSize="@dimen/text_size_14sp"
-                       android:text="Animation" />
+                </com.google.android.material.chip.ChipGroup>
 
-
-                   <com.google.android.material.button.MaterialButton
-                       android:id="@+id/multiThreadingBtn"
-                       android:layout_width="match_parent"
-                       app:cornerRadius="@dimen/space_32dp"
-                       android:layout_height="wrap_content"
-                       android:textAllCaps="false"
-                       android:textSize="@dimen/text_size_14sp"
-                       android:text="Multi Threading" />
-
-
-                   <com.google.android.material.button.MaterialButton
-                       android:id="@+id/retrofitOkHttpBtn"
-                       android:layout_width="match_parent"
-                       app:cornerRadius="@dimen/space_32dp"
-                       android:layout_height="wrap_content"
-                       android:textAllCaps="false"
-                       android:textSize="@dimen/text_size_14sp"
-                       android:text="Retrofit - OkHttp Sample" />
-
-                   <com.google.android.material.button.MaterialButton
-                       android:id="@+id/btn_shared_preferences"
-                       android:layout_width="match_parent"
-                       app:cornerRadius="@dimen/space_32dp"
-                       android:layout_height="wrap_content"
-                       android:textAllCaps="false"
-                       android:textSize="@dimen/text_size_14sp"
-                       android:text="Shared Preferences" />
-
-                   <com.google.android.material.button.MaterialButton
-                       android:id="@+id/btn_data_store_preferences"
-                       android:layout_width="match_parent"
-                       app:cornerRadius="@dimen/space_32dp"
-                       android:layout_height="wrap_content"
-                       android:textAllCaps="false"
-                       android:textSize="@dimen/text_size_14sp"
-                       android:text="Data Store Preferences" />
-
-                   <com.google.android.material.button.MaterialButton
-                       android:id="@+id/btn_room_db"
-                       android:layout_width="match_parent"
-                       app:cornerRadius="@dimen/space_32dp"
-                       android:layout_height="wrap_content"
-                       android:textAllCaps="false"
-                       android:textSize="@dimen/text_size_14sp"
-                       android:text="Room data Base" />
-
-                   <com.google.android.material.button.MaterialButton
-                       android:id="@+id/btn_broadCast_receiver_sample"
-                       android:layout_width="match_parent"
-                       app:cornerRadius="@dimen/space_32dp"
-                       android:layout_height="wrap_content"
-                       android:textAllCaps="false"
-                       android:textSize="@dimen/text_size_14sp"
-                       android:text="BroadCast Receiver" />
-
-
-                   <com.google.android.material.button.MaterialButton
-                       android:id="@+id/btn_media_player"
-                       android:layout_width="match_parent"
-                       app:cornerRadius="@dimen/space_32dp"
-                       android:layout_height="wrap_content"
-                       android:textAllCaps="false"
-                       android:textSize="@dimen/text_size_14sp"
-                       android:text="media player sample" />
-
-                   <com.google.android.material.button.MaterialButton
-                       android:id="@+id/btn_video_player"
-                       android:layout_width="match_parent"
-                       app:cornerRadius="@dimen/space_16dp"
-                       android:layout_height="wrap_content"
-                       android:textAllCaps="false"
-                       android:textSize="@dimen/text_size_14sp"
-                       android:text="video player sample" />
-
-                   <com.google.android.material.button.MaterialButton
-                       android:id="@+id/btn_create_notification"
-                       android:layout_width="match_parent"
-                       app:cornerRadius="@dimen/space_16dp"
-                       android:layout_height="wrap_content"
-                       android:textAllCaps="false"
-                       android:textSize="@dimen/text_size_14sp"
-                       android:text="Create Notification - ex.." />
-
-
-                   <com.google.android.material.button.MaterialButton
-                       android:id="@+id/btn_services"
-                       android:layout_width="match_parent"
-                       app:cornerRadius="@dimen/space_32dp"
-                       android:layout_height="wrap_content"
-                       android:textAllCaps="false"
-                       android:textSize="@dimen/text_size_14sp"
-                       android:text="services sample" />
-
-
-               </LinearLayout>
-           </ScrollView>
+            </ScrollView>
 
         </LinearLayout>
 
