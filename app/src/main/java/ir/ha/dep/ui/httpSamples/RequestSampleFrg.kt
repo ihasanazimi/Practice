@@ -30,17 +30,19 @@ class RequestSampleFrg : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        /** sample of request by retrofit */
-        val apiService = RetrofitApiService()
-        apiService.apis.testRequest().enqueue(object : Callback<String>{
-            override fun onResponse(call: Call<String>, response: Response<String>) {
-                if (response.isSuccessful)
-                showToast(requireContext(),"$response")
-            }
-            override fun onFailure(call: Call<String>, t: Throwable) {
-                 showToast(requireContext(),t.message.toString())
-            }
-        })
+        binding.requestBtn.setOnClickListener{
+            /** sample of request by retrofit */
+            val apiService = RetrofitApiService()
+            apiService.apis.testRequest().enqueue(object : Callback<String>{
+                override fun onResponse(call: Call<String>, response: Response<String>) {
+                    if (response.isSuccessful)
+                        showToast(requireContext(),"$response")
+                }
+                override fun onFailure(call: Call<String>, t: Throwable) {
+                    showToast(requireContext(),t.message.toString())
+                }
+            })
+        }
 
 
         /** Gson Sample */

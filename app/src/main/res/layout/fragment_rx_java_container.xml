@@ -44,10 +44,23 @@
                 android:layout_width="wrap_content"
                 android:backgroundTint="@color/black"
                 android:textSize="@dimen/text_size_12sp"
-
                 android:layout_gravity="end"
                 android:textColor="@color/white"
                 android:text="clear TEXT"
+                android:layout_height="wrap_content"
+                app:cornerRadius="@dimen/space_32dp"/>
+
+            <TextView
+                android:id="@+id/currentOperator"
+                android:layout_width="wrap_content"
+                android:backgroundTint="@color/black"
+                android:textSize="@dimen/text_size_14sp"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/space_8dp"
+                android:layout_gravity="start"
+                android:paddingHorizontal="@dimen/space_16dp"
+                android:textColor="@color/purple_200"
+                tools:text="just"
                 android:layout_height="wrap_content"
                 app:cornerRadius="@dimen/space_32dp"/>
 
