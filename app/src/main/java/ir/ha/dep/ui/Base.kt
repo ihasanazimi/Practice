@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import io.reactivex.disposables.CompositeDisposable
 import ir.ha.dep.R
+import kotlinx.android.synthetic.main.fragment_material_views.*
 
 
 abstract class BaseFragment : Fragment(), BaseView {
@@ -23,8 +24,14 @@ abstract class BaseFragment : Fragment(), BaseView {
         get() = context
 
 
+    // default
     fun <T : ViewDataBinding> getBinding(layoutID: Int , parent : ViewGroup): T {
         return DataBindingUtil.inflate(LayoutInflater.from(requireContext()), layoutID , parent , false)
+    }
+
+    // for custom views
+    fun <T : ViewDataBinding> getBinding(layoutID: Int , parent : ViewGroup , attachToRoot : Boolean): T {
+        return DataBindingUtil.inflate(LayoutInflater.from(requireContext()), layoutID , parent ,attachToRoot)
     }
 }
 
@@ -45,7 +52,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
 abstract class BaseBottomSheetDialogFrg: BottomSheetDialogFragment() , BaseView {
 
     override val rootView: ViewGroup?
-        get() = dialog?.window?.decorView?.rootView as ViewGroup
+        get() = dialog?.window?.decorView?.parent as ViewGroup
     override val viewContext: Context?
         get() = this.requireContext()
 

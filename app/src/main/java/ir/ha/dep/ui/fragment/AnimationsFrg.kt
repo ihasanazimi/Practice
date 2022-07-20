@@ -36,10 +36,7 @@ class AnimationsFrg : BaseFragment() {
         binding.lottieAnimationView.apply {
             setAnimation(R.raw.anim_file)
             repeatMode
-            addAnimatorUpdateListener { valueAnimator ->
-                // TODO
-            }
-
+            addAnimatorUpdateListener { valueAnimator -> // TODO }
             addAnimatorListener(object :Animator.AnimatorListener{
                 override fun onAnimationStart(p0: Animator?) {
 
@@ -122,4 +119,5 @@ class AnimationsFrg : BaseFragment() {
                 binding.lottieAnimationView.startAnimation(activeAnim)
         }
     }
+}
 }
