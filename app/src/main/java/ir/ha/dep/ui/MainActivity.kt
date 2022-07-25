@@ -42,10 +42,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding.btnCreateNotification.setOnClickListener(this)
         binding.btnServices.setOnClickListener(this)
         binding.btnRxJava.setOnClickListener(this)
+        binding.btnEventBus.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
+
         binding.chipGroup.clearCheck()
+
         when(v?.id){
             R.id.imageLoaderBtn -> {
                 binding.imageLoaderBtn.isChecked = true
@@ -196,6 +199,15 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             R.id.btn_rxJava -> {
                 binding.btnRxJava.isChecked = true
                 addFragmentByAnimation(RxJavaContainer(),"RxJavaContainer",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
+            }
+
+            R.id.btn_eventBus -> {
+                binding.btnRxJava.isChecked = true
+                addFragmentByAnimation(EventBusFrg(),"EventBusFrg",
                     addToBackStack = true,
                     customAnimations = true,
                     containerViewId = R.id.mainFrame,
