@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import es.dmoral.toasty.Toasty
 import ir.ha.dep.R
 import ir.ha.dep.databinding.FragmentSampleRequestBinding
+import ir.ha.dep.model.UserModel
 import ir.ha.dep.ui.BaseFragment
 import ir.ha.dep.utility.extentions.showToast
 import retrofit2.Call
@@ -28,18 +30,25 @@ class RequestSampleFrg : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding.pb.visibility = View.INVISIBLE
 
         binding.requestBtn.setOnClickListener{
             /** sample of request by retrofit */
+
+            binding.pb.visibility = View.VISIBLE
             val apiService = RetrofitApiService()
-            apiService.apis.testRequest().enqueue(object : Callback<String>{
-                override fun onResponse(call: Call<String>, response: Response<String>) {
-                    if (response.isSuccessful)
-                        showToast(requireContext(),"$response")
+            apiService.apis.getPostsByRetrofit().enqueue(object : Callback<List<UserModel>>{
+                override fun onResponse(call: Call<List<UserModel>>, response: Response<List<UserModel>>) {
+                    if (response.isSuccessful) {
+                        binding.tv.text = "${response.body()?.get(0)?.title}"
+                        Toasty.success(requireContext(), "با موفقیت انجام شد").show()
+                        binding.pb.visibility = View.INVISIBLE
+                    }
                 }
-                override fun onFailure(call: Call<String>, t: Throwable) {
+
+                override fun onFailure(call: Call<List<UserModel>>, t: Throwable) {
                     showToast(requireContext(),t.message.toString())
+                    binding.pb.visibility = View.INVISIBLE
                 }
             })
         }
