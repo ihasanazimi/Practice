@@ -3,6 +3,7 @@ package ir.ha.dep.utility.extentions
 import android.app.Activity
 import android.app.ActivityManager
 import android.content.Context
+import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -24,7 +25,6 @@ import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
@@ -287,6 +287,16 @@ fun checkInternetConnection(context: Context?): Boolean {
     val connectivityManager = context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
     val activeNetworkInfo = connectivityManager!!.activeNetworkInfo
     return activeNetworkInfo != null && activeNetworkInfo.isConnected
+}
+
+fun isAppAvailable(context: Context, appName: String): Boolean {
+    val pm = context.packageManager
+    return try {
+        pm.getPackageInfo(appName, PackageManager.GET_ACTIVITIES)
+        true
+    } catch (e: PackageManager.NameNotFoundException) {
+        false
+    }
 }
 
 

@@ -1,5 +1,7 @@
 package ir.ha.dep.utility;
 
+import static ir.ha.dep.utility.extentions.UtilityClsKt.isAppAvailable;
+
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -74,18 +76,6 @@ public class IntentActions {
     }
 
 
-    private static boolean isAppAvailable(Context context, String appName)
-    {
-        PackageManager pm = context.getPackageManager();
-        try
-        {
-            pm.getPackageInfo(appName, PackageManager.GET_ACTIVITIES);
-            return true;
-        }
-        catch (PackageManager.NameNotFoundException e)
-        {
-            return false;
-        }
-    }
+
 
 }
