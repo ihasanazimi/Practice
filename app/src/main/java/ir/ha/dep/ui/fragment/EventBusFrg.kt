@@ -56,4 +56,4 @@ class EventBusFrg : BaseFragment() {
 
 
 
-class MyEvent(val message : String = "hello")
+class MyEvent(val message : String = "Hello EventBus")

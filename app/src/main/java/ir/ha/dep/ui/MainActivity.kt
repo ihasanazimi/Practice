@@ -7,6 +7,7 @@ import ir.ha.dep.R
 import ir.ha.dep.model.FakeDataModel
 import ir.ha.dep.ui.fragment.*
 import ir.ha.dep.ui.fragment.material.MaterialViews
+import ir.ha.dep.ui.fragment.mvvm_rx.MVVMRxJavaFrg
 import ir.ha.dep.ui.fragment.rxjava.RxJavaContainer
 import ir.ha.dep.ui.fragment.services.ServicesFrg
 import ir.ha.dep.ui.fragment.viewPager.ViewPagerSampleFrg
@@ -43,6 +44,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding.btnServices.setOnClickListener(this)
         binding.btnRxJava.setOnClickListener(this)
         binding.btnEventBus.setOnClickListener(this)
+        binding.btnMvvmRx.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -206,8 +208,17 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.btn_eventBus -> {
-                binding.btnRxJava.isChecked = true
+                binding.btnEventBus.isChecked = true
                 addFragmentByAnimation(EventBusFrg(),"EventBusFrg",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
+            }
+
+            R.id.btn_mvvm_rx -> {
+                binding.btnMvvmRx.isChecked = true
+                addFragmentByAnimation(MVVMRxJavaFrg(),"MVVMRxJavaFrg",
                     addToBackStack = true,
                     customAnimations = true,
                     containerViewId = R.id.mainFrame,

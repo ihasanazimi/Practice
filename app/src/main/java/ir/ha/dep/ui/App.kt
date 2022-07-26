@@ -49,7 +49,7 @@ class App : Application() {
             it.schedule(object : TimerTask(){
                 override fun run() {
                     EventBus.getDefault().post(MyEvent())
-                } },5000,5000)
+                } },0,4000)
         }
 
     }
