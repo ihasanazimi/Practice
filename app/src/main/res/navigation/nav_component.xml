@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_component"
+    app:startDestination="@id/frg1">
+
+    <fragment
+        android:id="@+id/frg1"
+        android:name="ir.ha.dep.ui.fragment.navigation_component.Frg1"
+        android:label="Frg1"
+        tools:layout="@layout/fragment_1">
+        <action
+            android:id="@+id/action_frg1_to_frg2"
+            app:destination="@id/frg2" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/frg2"
+        android:name="ir.ha.dep.ui.fragment.navigation_component.Frg2"
+        android:label="Frg2"
+        tools:layout="@layout/fragment_2">
+        <action
+            android:id="@+id/action_frg2_to_frg3"
+            app:destination="@id/frg3"
+          />
+        <action
+            android:id="@+id/action_frg2_to_frg1"
+            app:destination="@id/frg1" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/frg3"
+        android:name="ir.ha.dep.ui.fragment.navigation_component.Frg3"
+        android:label="Frg3"
+        tools:layout="@layout/fragment_3">
+        <action
+            android:id="@+id/action_frg3_to_frg1"
+            app:destination="@id/frg1"
+            app:popUpTo="@id/frg1"
+            app:popUpToInclusive="true"
+          />
+        <action
+            android:id="@+id/action_frg3_to_frg2"
+            app:destination="@id/frg2" />
+    </fragment>
+</navigation>
