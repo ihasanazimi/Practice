@@ -14,6 +14,8 @@ import io.reactivex.disposables.Disposable
 import ir.ha.dep.R
 import ir.ha.dep.databinding.FragmentRxJavaContainerBinding
 import ir.ha.dep.ui.BaseFragment
+import ir.ha.dep.utility.extentions.hide
+import ir.ha.dep.utility.extentions.show
 import ir.ha.dep.utility.extentions.showToast
 import java.io.IOException
 import java.util.concurrent.TimeUnit
@@ -36,6 +38,8 @@ class RxJavaContainer : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.pb.hide()
 
         disposable = CompositeDisposable()
         compositeDisposable = CompositeDisposable()
@@ -107,11 +111,13 @@ class RxJavaContainer : BaseFragment() {
 
     private fun justOperator(operatorName: String) {
 
+        binding.pb.show()
         removeCurrentOperatorTextOnTV()
         addCurrentOperatorTitleOnTV(operatorName)
 
 
         getMyObservable()
+            .doFinally { requireActivity().runOnUiThread{binding.pb.hide()} }
             .subscribe(object : Observer<Int> {
                 override fun onSubscribe(d: Disposable) {
                     disposable = d
@@ -133,11 +139,12 @@ class RxJavaContainer : BaseFragment() {
 
     private fun filter(operatorName: String) {
 
+        binding.pb.show()
         removeCurrentOperatorTextOnTV()
         addCurrentOperatorTitleOnTV(operatorName)
 
-
         getMyObservable()
+            .doFinally { requireActivity().runOnUiThread{binding.pb.hide()} }
             .filter { x -> x > 2 } // by lambda expression
             .subscribe(object : Observer<Int> {
                 override fun onSubscribe(d: Disposable) {
@@ -160,11 +167,12 @@ class RxJavaContainer : BaseFragment() {
 
     private fun skip(operatorName: String) {
 
+        binding.pb.show()
         removeCurrentOperatorTextOnTV()
         addCurrentOperatorTitleOnTV(operatorName)
 
-
         getMyObservable()
+            .doFinally { requireActivity().runOnUiThread{binding.pb.hide()} }
             .skip(3) // by lambda expression - yani 3 taye aval ro dar nazar naghir
             .subscribe(object : Observer<Int> {
                 override fun onSubscribe(d: Disposable) {
@@ -187,11 +195,12 @@ class RxJavaContainer : BaseFragment() {
 
     private fun take(operatorName: String) {
 
+        binding.pb.show()
         removeCurrentOperatorTextOnTV()
         addCurrentOperatorTitleOnTV(operatorName)
 
-
         getMyObservable()
+            .doFinally { requireActivity().runOnUiThread{binding.pb.hide()} }
             .take(3) // by lambda expression - yani 3 taye aval ro fagat barghardoon - barAx skip
             .subscribe(object : Observer<Int> {
                 override fun onSubscribe(d: Disposable) {
@@ -214,11 +223,13 @@ class RxJavaContainer : BaseFragment() {
 
     private fun takeLast(operatorName: String) {
 
+        binding.pb.show()
         removeCurrentOperatorTextOnTV()
         addCurrentOperatorTitleOnTV(operatorName)
 
 
         getMyObservable()
+            .doFinally { requireActivity().runOnUiThread{binding.pb.hide()} }
             .take(3) // by lambda expression - yani 3 taye akhar ro fagat barghardoon
             .subscribe(object : Observer<Int> {
                 override fun onSubscribe(d: Disposable) {
@@ -241,11 +252,13 @@ class RxJavaContainer : BaseFragment() {
 
     private fun map(operatorName: String) {
 
+        binding.pb.show()
         removeCurrentOperatorTextOnTV()
         addCurrentOperatorTitleOnTV(operatorName)
 
 
         getMyObservable()
+            .doFinally { requireActivity().runOnUiThread{binding.pb.hide()} }
             .map { n -> "$n conveted to Sting " }
             // tarkib va tabdil mikone be String masalan  (karbordi)
             // masalan unja mishe fName va lName ro bechasbuni be ham va khuruji beghiri
@@ -270,11 +283,13 @@ class RxJavaContainer : BaseFragment() {
 
     private fun flatMap(operatorName: String) {
 
+        binding.pb.show()
         removeCurrentOperatorTextOnTV()
         addCurrentOperatorTitleOnTV(operatorName)
 
 
         getMyObservable()
+            .doFinally { requireActivity().runOnUiThread{binding.pb.hide()} }
             .flatMap { n -> Observable.just(n * 10).delay(1, TimeUnit.SECONDS) }
             // tafavof ba map mishe inke flatMap bejaye n - obserable E az n barmighardoone ba delay
             // emit shodan item ha monazam nist
@@ -299,11 +314,13 @@ class RxJavaContainer : BaseFragment() {
 
     private fun concatMap(operatorName: String) {
 
+        binding.pb.show()
         removeCurrentOperatorTextOnTV()
         addCurrentOperatorTitleOnTV(operatorName)
 
 
         getMyObservable()
+            .doFinally { requireActivity().runOnUiThread{binding.pb.hide()} }
             .concatMap { n -> Observable.just(n * 10).delay(1, TimeUnit.SECONDS) }
             //  obserable E az n barmighardoone ba delay
             // emit shodan item ha monazam haaaaaast va tartiz zamani barAxe flatMap monazam hastan
@@ -328,11 +345,13 @@ class RxJavaContainer : BaseFragment() {
 
     private fun switchMap(operatorName: String) {
 
+        binding.pb.show()
         removeCurrentOperatorTextOnTV()
         addCurrentOperatorTitleOnTV(operatorName)
 
 
         getMyObservable()
+            .doFinally { requireActivity().runOnUiThread{binding.pb.hide()} }
             .switchMap { n -> Observable.just(n * 10).delay(1, TimeUnit.SECONDS) }
             //  hame observable haro dooz mirize va fagat akharin observable ro return mikone
             // emit shodan item ha monazam haaaaaast va tartiz zamani barAxe flatMap monazam hastan
@@ -357,12 +376,13 @@ class RxJavaContainer : BaseFragment() {
 
     private fun intervalOperator(operatorName: String) {
 
+        binding.pb.show()
         removeCurrentOperatorTextOnTV()
         addCurrentOperatorTitleOnTV(operatorName)
 
 
         Observable
-            .interval(1, 1, TimeUnit.SECONDS)
+            .interval(0, 1, TimeUnit.SECONDS)
             // jayGozin dorost baraye timer android
             .subscribe(object : Observer<Long> {
                 override fun onSubscribe(d: Disposable) {
@@ -385,13 +405,13 @@ class RxJavaContainer : BaseFragment() {
 
     private fun timerOperator(operatorName: String) {
 
+        binding.pb.show()
         removeCurrentOperatorTextOnTV()
         addCurrentOperatorTitleOnTV(operatorName)
 
-
         Observable
-            .timer(4, TimeUnit.SECONDS)
-            // timer ya alarm set mikone k masalan bad az 4 seconds biyad ye kario anjam bede va emit kone
+            .timer(3, TimeUnit.SECONDS)
+            // timer ya alarm set mikone k masalan bad az 3 seconds biyad ye kario anjam bede va emit kone
             // dar kol miyad ye kario ba ye delay anjam mide
             .subscribe(object : Observer<Long> {
                 override fun onSubscribe(d: Disposable) {
@@ -416,11 +436,13 @@ class RxJavaContainer : BaseFragment() {
 
         // switchMap ya switchMap baraye Obserable karbord dare na single!
 
+        binding.pb.show()
         removeCurrentOperatorTextOnTV()
         addCurrentOperatorTitleOnTV(operatorName)
 
 
         getMyObservable().filter { n -> n > 2 }
+            .doFinally { requireActivity().runOnUiThread{binding.pb.hide()} }
             .map { n -> n * 10 }
             .concatMap { n -> Observable.just(n * 10).delay(1, TimeUnit.SECONDS) }
             .doFinally {
@@ -471,7 +493,9 @@ class RxJavaContainer : BaseFragment() {
 
 
     private fun clearCheckedChips() = binding.chipGroupRxJavaContainer.clearCheck()
-    private fun removeCurrentOperatorTextOnTV() = binding.currentOperator.setText("")
+    private fun removeCurrentOperatorTextOnTV() {
+        binding.currentOperator.setText("")
+    }
     private fun addCurrentOperatorTitleOnTV(operatorName: String) = binding.currentOperator.setText(operatorName)
 
 
@@ -497,6 +521,7 @@ class RxJavaContainer : BaseFragment() {
             )
         )
         disposable.dispose()
+        requireActivity().runOnUiThread{binding.pb.hide()}
     }
 
     private fun negativeMode() {
