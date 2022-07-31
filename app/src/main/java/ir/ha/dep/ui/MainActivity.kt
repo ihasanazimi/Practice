@@ -9,7 +9,7 @@ import ir.ha.dep.model.FakeDataModel
 import ir.ha.dep.ui.fragment.*
 import ir.ha.dep.ui.fragment.material.MaterialViews
 import ir.ha.dep.ui.fragment.mvvm_rx.MVVMRxJavaFrg
-import ir.ha.dep.ui.fragment.navigation_component.NavComponentContainerActivty
+import ir.ha.dep.ui.fragment.navigation_component.NavComponentActivty
 import ir.ha.dep.ui.fragment.rxjava.RxJavaContainer
 import ir.ha.dep.ui.fragment.services.ServicesFrg
 import ir.ha.dep.ui.fragment.viewPager.ViewPagerSampleFrg
@@ -230,7 +230,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
             R.id.btn_nav_component -> {
                 binding.btnNavComponent.isChecked = true
-                startActivity(Intent(this, NavComponentContainerActivty::class.java))
+                startActivity(Intent(this, NavComponentActivty::class.java))
             }
 
 
