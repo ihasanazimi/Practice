@@ -124,7 +124,7 @@ dependencies {
 
 
     // Nav Component
-    def navigationVersion = "2.5.0-rc02"
+    def navigationVersion = "2.5.0"
     implementation "androidx.navigation:navigation-runtime:$navigationVersion"
     implementation "androidx.navigation:navigation-runtime-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-fragment:$navigationVersion"

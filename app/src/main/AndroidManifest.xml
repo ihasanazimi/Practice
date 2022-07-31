@@ -25,6 +25,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ui.fragment.navigation_component.NavComponentActivty"/>
+
 
 
         <service android:name=".ui.fragment.services.BackgroundService" android:exported="false" />

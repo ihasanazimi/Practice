@@ -1,5 +1,6 @@
 package ir.ha.dep.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -8,6 +9,7 @@ import ir.ha.dep.model.FakeDataModel
 import ir.ha.dep.ui.fragment.*
 import ir.ha.dep.ui.fragment.material.MaterialViews
 import ir.ha.dep.ui.fragment.mvvm_rx.MVVMRxJavaFrg
+import ir.ha.dep.ui.fragment.navigation_component.NavComponentActivty
 import ir.ha.dep.ui.fragment.rxjava.RxJavaContainer
 import ir.ha.dep.ui.fragment.services.ServicesFrg
 import ir.ha.dep.ui.fragment.viewPager.ViewPagerSampleFrg
@@ -45,6 +47,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding.btnRxJava.setOnClickListener(this)
         binding.btnEventBus.setOnClickListener(this)
         binding.btnMvvmRx.setOnClickListener(this)
+        binding.btnNavComponent.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -225,6 +228,11 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     commitAllowingStateLoss = false)
             }
 
+            R.id.btn_nav_component -> {
+                binding.btnNavComponent.isChecked = true
+                startActivity(Intent(this, NavComponentActivty::class.java))
+            }
+
 
             R.id.multiThreadingBtn -> {
 
@@ -252,6 +260,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
             }
 
-            else -> { showToast(this,"unKnow Error")} }
+            else -> { showToast(this,"ای دی مربوطه پیدا نشد")} }
     }
 }
