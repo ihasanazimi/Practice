@@ -8,6 +8,7 @@ import ir.ha.dep.R
 import ir.ha.dep.model.FakeDataModel
 import ir.ha.dep.ui.fragment.*
 import ir.ha.dep.ui.fragment.material.MaterialViews
+import ir.ha.dep.ui.fragment.mvvm_arch.MvvmContainerFrg
 import ir.ha.dep.ui.fragment.mvvm_rx.MVVMRxJavaFrg
 import ir.ha.dep.ui.fragment.navigation_component.NavComponentActivty
 import ir.ha.dep.ui.fragment.rxjava.RxJavaContainer
@@ -48,6 +49,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding.btnEventBus.setOnClickListener(this)
         binding.btnMvvmRx.setOnClickListener(this)
         binding.btnNavComponent.setOnClickListener(this)
+        binding.btnNavComponent.setOnClickListener(this)
+        binding.btnMVVM.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -228,10 +231,23 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     commitAllowingStateLoss = false)
             }
 
+
             R.id.btn_nav_component -> {
                 binding.btnNavComponent.isChecked = true
                 startActivity(Intent(this, NavComponentActivty::class.java))
             }
+
+
+            R.id.btn_MVVM -> {
+                binding.btnMVVM.isChecked = true
+                addFragmentByAnimation(MvvmContainerFrg(),"MvvmContainerFrg",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
+            }
+
+
 
 
             R.id.multiThreadingBtn -> {

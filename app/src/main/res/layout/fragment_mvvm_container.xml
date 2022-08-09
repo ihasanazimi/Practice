@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <com.google.android.material.chip.ChipGroup
+      android:layout_margin="@dimen/space_8dp"
+      android:layout_width="match_parent"
+      app:singleSelection="true"
+      app:selectionRequired="true"
+      android:layout_height="wrap_content">
+
+      <com.google.android.material.chip.Chip
+          android:id="@+id/btn_lifecycle_observer"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="lifeCycle observer"/>
+
+      <com.google.android.material.chip.Chip
+          android:id="@+id/btn_live_data"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="liveData"/>
+
+  </com.google.android.material.chip.ChipGroup>
+
+    <FrameLayout
+        android:background="@color/gray"
+        android:id="@+id/mvvmContainerFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
