@@ -5,19 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import ir.ha.dep.R
-import ir.ha.dep.databinding.FragmentLiveDataBinding
+import ir.ha.dep.databinding.FragmentTransformationLiveDataBinding
 import ir.ha.dep.ui.BaseFragment
-import ir.ha.dep.utility.extentions.showToast
 
-class LiveDataFrg : BaseFragment() {
+class TransformationLiveDataFrg : BaseFragment(){
 
-
-    lateinit var myLocationCheckerByLiveData: MyLocationCheckerByLiveData
-    private lateinit var binding : FragmentLiveDataBinding
+    private lateinit var binding :  FragmentTransformationLiveDataBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        myLocationCheckerByLiveData = MyLocationCheckerByLiveData()
     }
 
 
@@ -26,18 +22,14 @@ class LiveDataFrg : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = getBinding(R.layout.fragment_live_data,container!!)
+        binding = getBinding(R.layout.fragment_transformation_live_data,container!!)
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        myLocationCheckerByLiveData.locationLiveData.observe(viewLifecycleOwner) {
-            requireActivity().runOnUiThread{
-                showToast(requireContext(),it)
-            }
-        }
 
     }
 }

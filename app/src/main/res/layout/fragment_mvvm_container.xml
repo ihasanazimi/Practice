@@ -27,6 +27,18 @@
           android:layout_height="wrap_content"
           android:text="liveData"/>
 
+      <com.google.android.material.chip.Chip
+          android:id="@+id/btn_mediator_live_data"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Mediator LiveData"/>
+
+      <com.google.android.material.chip.Chip
+          android:id="@+id/btn_viewModel"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="shared / View Model"/>
+
   </com.google.android.material.chip.ChipGroup>
 
     <FrameLayout

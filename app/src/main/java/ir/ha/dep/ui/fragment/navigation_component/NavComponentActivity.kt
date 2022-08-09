@@ -6,7 +6,7 @@ import ir.ha.dep.R
 import ir.ha.dep.databinding.ActivityNavComponentBinding
 import ir.ha.dep.ui.BaseActivity
 
-class NavComponentActivty : BaseActivity() {
+class NavComponentActivity : BaseActivity() {
 
     private lateinit var binding : ActivityNavComponentBinding
 

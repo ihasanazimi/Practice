@@ -23,7 +23,9 @@
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_load_images.xml" value="0.35572916666666665" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_material_toolbar.xml" value="0.16666666666666666" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_material_views.xml" value="0.35572916666666665" />
+        <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_medaitor_live_data.xml" value="0.35572916666666665" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_media_player.xml" value="0.16018518518518518" />
+        <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_mediator_live_data.xml" value="0.22" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_multi_threading.xml" value="0.3546875" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_mvvm_container.xml" value="0.16666666666666666" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_recycler_view_sample.xml" value="0.35572916666666665" />
@@ -35,6 +37,8 @@
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_services.xml" value="0.22" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_shared_prefernces_sample.xml" value="0.35572916666666665" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_shared_prefernces_sample_class.xml" value="0.22" />
+        <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_transformation_live_data.xml" value="0.16666666666666666" />
+        <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_view_model_sample.xml" value="0.22" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/fragment_view_pager_sample.xml" value="0.2490740740740741" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/item_fake_data.xml" value="0.35572916666666665" />
         <entry key="..\:/Development/AndroidStudioProjects/Projects/Android Dependencies  - TST/app/src/main/res/layout/item_view_pager.xml" value="0.35572916666666665" />

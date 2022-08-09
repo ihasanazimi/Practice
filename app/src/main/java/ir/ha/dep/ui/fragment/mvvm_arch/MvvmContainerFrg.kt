@@ -6,10 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import ir.ha.dep.R
 import ir.ha.dep.databinding.FragmentMvvmContainerBinding
-import ir.ha.dep.databinding.FragmentMvvmRxJavaBinding
 import ir.ha.dep.ui.BaseFragment
 import ir.ha.dep.ui.fragment.mvvm_arch.lifecycleObserver.LifecycleOwnerFrg
-import ir.ha.dep.ui.fragment.mvvm_arch.live_data.LiveDataFrg
+import ir.ha.dep.ui.fragment.mvvm_arch.live_data.SimpleLiveDataFrg
+import ir.ha.dep.ui.fragment.mvvm_arch.live_data.MediatorLiveDataFrg
+import ir.ha.dep.ui.fragment.mvvm_arch.viewModel.SampleViewModelFrg
 
 class MvvmContainerFrg : BaseFragment() {
 
@@ -40,7 +41,16 @@ class MvvmContainerFrg : BaseFragment() {
 
 
         binding.btnLiveData.setOnClickListener{
-            childFragmentManager.beginTransaction().replace(R.id.mvvmContainerFrame , LiveDataFrg()).addToBackStack(LiveDataFrg().tag).commit()
+            childFragmentManager.beginTransaction().replace(R.id.mvvmContainerFrame , SimpleLiveDataFrg()).addToBackStack(SimpleLiveDataFrg().tag).commit()
+        }
+
+        binding.btnViewModel.setOnClickListener{
+            childFragmentManager.beginTransaction().replace(R.id.mvvmContainerFrame , SampleViewModelFrg()).addToBackStack(SampleViewModelFrg().tag).commit()
+        }
+
+
+        binding.btnMediatorLiveData.setOnClickListener{
+            childFragmentManager.beginTransaction().replace(R.id.mvvmContainerFrame , MediatorLiveDataFrg()).addToBackStack(MediatorLiveDataFrg().tag).commit()
         }
     }
 }
