@@ -1,5 +1,6 @@
 package ir.ha.dep.utility.extentions
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.ActivityManager
 import android.content.Context
@@ -210,7 +211,8 @@ fun isRPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R
 fun isSPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
 
 
- fun isMyServiceRunning(applicationContext: Context? , serviceClass: Class<*>): Boolean {
+ @SuppressLint("ServiceCast")
+ fun isMyServiceRunning(applicationContext: Context?, serviceClass: Class<*>): Boolean {
     val manager = applicationContext?.getSystemService(Context.ACCOUNT_SERVICE) as ActivityManager?
     for (service in manager!!.getRunningServices(Int.MAX_VALUE)) {
         if (serviceClass.name == service.service.className) {

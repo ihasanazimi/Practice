@@ -17,6 +17,7 @@ import ir.ha.dep.R
 import ir.ha.dep.databinding.FragmentNotificationBinding
 import ir.ha.dep.ui.BaseFragment
 import ir.ha.dep.ui.MainActivity
+import ir.ha.dep.utility.extentions.isOreoPlus
 
 class NotificationFrg: BaseFragment() {
 
@@ -31,7 +32,11 @@ class NotificationFrg: BaseFragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        createNotificationChannel()
+
+        notificationManager = requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+        // if sdk Integer was bigger than oreo -> create notification channel
+        if (isOreoPlus()) createNotificationChannel()
     }
 
 
@@ -129,7 +134,6 @@ class NotificationFrg: BaseFragment() {
             FLAG_UPDATE_CURRENT or FLAG_IMMUTABLE)
     }
     private fun createNotificationChannel() {
-        notificationManager = requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val channel = NotificationChannel(channelId, "DEFAULT_CHANNEL", NotificationManager.IMPORTANCE_HIGH)
         channel.description = "this is channel description"
         notificationManager.createNotificationChannel(channel)
