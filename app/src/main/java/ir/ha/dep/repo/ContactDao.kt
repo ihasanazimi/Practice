@@ -6,15 +6,15 @@ import androidx.room.*
 interface ContactDao {
 
     @Insert(onConflict =  OnConflictStrategy.REPLACE)
-    fun insertContact(item: Contact) : Long
+    fun insertContact(contactModel: ContactModel) : Long
 
     @Delete
-    fun deleteContact(item: Contact) : Int
+    fun deleteContact(contactModel: ContactModel) : Int
 
     @Update
-    fun updateContact(item  :Contact)
+    fun updateContact(contactModel  :ContactModel)
 
-    @Query("select * from Contact")
-    fun allContacts() : List<Contact>
+    @Query("select * from ContactModel")
+    fun allContacts() : List<ContactModel>
 
 }

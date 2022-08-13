@@ -9,7 +9,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 @Entity
-class Contact():Parcelable{
+class ContactModel():Parcelable{
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo
@@ -30,8 +30,8 @@ class Contact():Parcelable{
     }
 
 companion object{
-    fun fullName(contact : Contact) : String {
-        return contact.fName + " " + contact.lName
+    fun fullName(contactModel : ContactModel) : String {
+        return contactModel.fName + " " + contactModel.lName
     }
 }
 }
