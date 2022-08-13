@@ -31,7 +31,7 @@ class VideoPlayerFrg :  BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.videoPlayer.setVideoPath("https://hajifirouz12.asset.aparat.com/aparat-video/47eb96d277aa7ca56b889ee7c2f78ec745830656-144p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjVkNWQwM2EzNDI0ZDQ3MDM3YzM5ZGQ1NGNlNzQ4ZjI1IiwiZXhwIjoxNjU2NDE4NzIxLCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.7HvnHEcHFqHTzssHlVMKnXqMp7C_7_xkd2THtVwSJ18")
+        binding.videoPlayer.setVideoPath("https://hajifirouz6.asset.aparat.com/aparat-video/41d9bd95cd3f6d419b4b9435f9b2ee9146709585-360p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6ImNiMTQyMTZiYmQ5MjU1YWM0ZGVjZGRjYmRiYTJmOTI1IiwiZXhwIjoxNjYwNDEyMDY1LCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.lW-MHak7uNL66sk8OaoiRA4KnEIzlr_2JvIfRlGPQ_U")
         binding.videoPlayer.setOnPreparedListener {
             // set controller for video player
             MediaController(requireContext()).apply {
