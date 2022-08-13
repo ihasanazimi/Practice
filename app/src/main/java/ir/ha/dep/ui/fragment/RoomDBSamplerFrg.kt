@@ -14,7 +14,6 @@ import ir.ha.dep.repo.ContactModel
 import ir.ha.dep.repo.RoomDB
 import ir.ha.dep.ui.BaseFragment
 import ir.ha.dep.utility.extentions.showToast
-import retrofit2.http.POST
 
 
 class RoomDBSamplerFrg : BaseFragment(), ContactAdapter.ContactEventListener {
@@ -64,18 +63,21 @@ class RoomDBSamplerFrg : BaseFragment(), ContactAdapter.ContactEventListener {
     }
 
     private fun showContacts() {
-        val contactList = arrayListOf<ContactModel>()
-        contactList.clear()
-        contactList.addAll(RoomDB.database!!.contactDao().allContacts())
-        contactAdapter = ContactAdapter(this)
-        binding.rv.apply {
-            adapter = contactAdapter
-            layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
-            contactAdapter.setNewList(contactList)
-        }
+        arrayListOf<ContactModel>().apply {
 
-        // set divider for items
-        binding.rv.addItemDecoration(DividerItemDecoration(requireContext(), RecyclerView.VERTICAL))
+            clear()
+            addAll(RoomDB.database!!.contactDao().allContacts())
+
+            contactAdapter = ContactAdapter(this@RoomDBSamplerFrg)
+            binding.rv.apply {
+                adapter = contactAdapter
+                // set vertical orientation for recyclerview
+                layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+                // set divider for items
+                addItemDecoration(DividerItemDecoration(requireContext(), (layoutManager as LinearLayoutManager).orientation ))
+            }
+            contactAdapter.setNewList(this)
+        }
     }
 
     override fun onContactClickListener(contact: ContactModel , position : Int) {
