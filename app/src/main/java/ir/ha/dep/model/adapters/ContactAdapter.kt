@@ -1,6 +1,5 @@
 package ir.ha.dep.model.adapters
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -10,8 +9,7 @@ import coil.load
 import coil.transform.CircleCropTransformation
 import ir.ha.dep.R
 import ir.ha.dep.databinding.ItemFakeDataBinding
-import ir.ha.dep.model.FakeDataModel
-import ir.ha.dep.repo.ContactModel
+import ir.ha.dep.model.ContactModel
 
 class ContactAdapter(val callback : ContactEventListener) : RecyclerView.Adapter<ContactAdapter.VH>() {
 
@@ -65,7 +63,7 @@ class ContactAdapter(val callback : ContactEventListener) : RecyclerView.Adapter
     }
 
     interface ContactEventListener{
-        fun onContactClickListener(contact : ContactModel , position: Int)
+        fun onContactClickListener(contact : ContactModel, position: Int)
     }
 
 }

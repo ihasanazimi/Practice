@@ -14,8 +14,6 @@ import androidx.lifecycle.ViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import io.reactivex.disposables.CompositeDisposable
 import ir.ha.dep.R
-import kotlinx.android.synthetic.main.fragment_material_views.*
-
 
 abstract class BaseFragment : Fragment(), BaseView {
     override val rootView: ViewGroup?

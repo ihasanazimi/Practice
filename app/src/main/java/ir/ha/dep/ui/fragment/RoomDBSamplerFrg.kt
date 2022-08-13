@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ir.ha.dep.R
 import ir.ha.dep.databinding.FragmentRoomDbSamplerBinding
 import ir.ha.dep.model.adapters.ContactAdapter
-import ir.ha.dep.repo.ContactModel
+import ir.ha.dep.model.ContactModel
 import ir.ha.dep.repo.RoomDB
 import ir.ha.dep.ui.BaseFragment
 import ir.ha.dep.utility.extentions.showToast
@@ -46,7 +46,7 @@ class RoomDBSamplerFrg : BaseFragment(), ContactAdapter.ContactEventListener {
         binding.saveBtn.setOnClickListener{
             val contactModel = ContactModel(binding.etFirstName.text.toString() , binding.etLastName.text.toString())
             RoomDB.database!!.contactDao().insertContact(contactModel)
-            showToast(requireContext(),ContactModel.fullName(contactModel))
+            showToast(requireContext(), ContactModel.fullName(contactModel))
             showContacts()
         }
 
@@ -56,7 +56,7 @@ class RoomDBSamplerFrg : BaseFragment(), ContactAdapter.ContactEventListener {
             if (contacts.isNotEmpty()){
                 binding.etFirstName.setText(contacts[0].fName)
                 binding.etLastName.setText(contacts[0].lName)
-                showToast(requireContext(),ContactModel.fullName(contacts[0]))
+                showToast(requireContext(), ContactModel.fullName(contacts[0]))
                 showContacts()
             }else showToast(requireContext(),"آیتمی در دیتابیس یافت نشد")
         }
@@ -80,7 +80,7 @@ class RoomDBSamplerFrg : BaseFragment(), ContactAdapter.ContactEventListener {
         }
     }
 
-    override fun onContactClickListener(contact: ContactModel , position : Int) {
+    override fun onContactClickListener(contact: ContactModel, position : Int) {
         showToast(requireContext(),contact.fName.toString() + "  item deleted")
         RoomDB.database!!.contactDao().deleteContact(contact)
         contactAdapter.removeItem(contact)

@@ -1,6 +1,7 @@
 package ir.ha.dep.repo
 
 import androidx.room.*
+import ir.ha.dep.model.ContactModel
 
 @Dao
 interface ContactDao {
@@ -12,7 +13,7 @@ interface ContactDao {
     fun deleteContact(contactModel: ContactModel) : Int
 
     @Update
-    fun updateContact(contactModel  :ContactModel)
+    fun updateContact(contactModel  : ContactModel)
 
     @Query("select * from ContactModel")
     fun allContacts() : List<ContactModel>
