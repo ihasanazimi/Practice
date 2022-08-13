@@ -7,7 +7,7 @@ object BannerDataGenerator {
     fun getBanners() : List<Banner> {
         banners.clear()
         for (i in 0..20){
-            banners.add(Banner("https://media.wired.com/photos/5ec6fb698971d7886fd36024/125:94/w_1749,h_1315,c_limit/astronaut-urine-elena-lacey-wired-science.jpg","this is tittle"))
+            banners.add(Banner("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Android_logo_2019.png/800px-Android_logo_2019.png","this is tittle"))
         }
         return banners
     }
