@@ -34,8 +34,6 @@ class EventBusFrg : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
     }
 
 
@@ -53,7 +51,4 @@ class EventBusFrg : BaseFragment() {
 
 
 
-
-
-
-class MyEvent(val message : String = "Hello EventBus")
+class MyEvent(val message : String = "Hellooooo Event Bus")
