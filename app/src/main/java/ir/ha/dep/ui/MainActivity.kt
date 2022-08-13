@@ -7,7 +7,7 @@ import android.view.View
 import ir.ha.dep.R
 import ir.ha.dep.model.FakeDataModel
 import ir.ha.dep.ui.fragment.*
-import ir.ha.dep.ui.fragment.firebase.FirebaseFrg
+import ir.ha.dep.ui.fragment.firebase.FirebaseCloudMessagingFrg
 import ir.ha.dep.ui.fragment.material.MaterialViews
 import ir.ha.dep.ui.fragment.mvvm_arch.MvvmContainerFrg
 import ir.ha.dep.ui.fragment.mvvm_rx.MVVMRxJavaFrg
@@ -252,7 +252,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
             R.id.btn_firbase -> {
                 binding.btnFirbase.isChecked = true
-                addFragmentByAnimation(FirebaseFrg(),"FirebaseFrg",
+                addFragmentByAnimation(FirebaseCloudMessagingFrg(),"FirebaseFrg",
                     addToBackStack = true,
                     customAnimations = true,
                     containerViewId = R.id.mainFrame,

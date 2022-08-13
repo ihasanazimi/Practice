@@ -16,7 +16,7 @@ import ir.ha.dep.utility.extentions.dataStore
 import ir.ha.dep.utility.extentions.showToast
 import kotlinx.coroutines.flow.first
 
-class FirebaseFrg : BaseFragment() {
+class FirebaseCloudMessagingFrg : BaseFragment() {
 
     private lateinit var binding : FragmentFirebaseBinding
 
