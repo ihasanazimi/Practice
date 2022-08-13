@@ -47,7 +47,7 @@ class FirebaseFrg : BaseFragment() {
                     if (readFromPref("fireBase_token_key") != null && readFromPref("fireBase_token_key")!!.isNotEmpty()
                         && token == readFromPref("fireBase_token_key")){
                         binding.tokenTV.text = readFromPref("fireBase_token_key")
-                        showToast(requireContext(),"read from file")
+                        showToast(requireContext(),"read token from file")
                     }else {
                         binding.tokenTV.text = token
                         saveInput("fireBase_token_key",token)
