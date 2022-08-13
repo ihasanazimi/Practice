@@ -25,16 +25,13 @@ class App : Application() {
         super.onCreate()
         context = this.applicationContext
 
-        /** initialize fresco */
-        Fresco.initialize(this)
-        RoomDB.getDataBase(this)
-
         /** 1- Koin -> modules.. */
         val myModules = module {
             single<MyApiService> { apiService }
             single<ImageLoadingService> { ImageLoadingServiceImpl() } // fresco
             factory<RoomDB> { RoomDB.getDataBase(applicationContext) }
         }
+
 
         /** 2- Start Coin By Modules... */
         startKoin {
@@ -43,14 +40,20 @@ class App : Application() {
         }
 
 
+        /** initialize fresco */
+        Fresco.initialize(this)
+        RoomDB.getDataBase(this)
 
-        // eventBus publisher
+
+        /** eventBus publisher */
         timer = Timer().also {
             it.schedule(object : TimerTask(){
                 override fun run() {
                     EventBus.getDefault().post(MyEvent())
                 } },0,4000)
         }
+
+
 
     }
 }

@@ -59,7 +59,7 @@ class MVVMRxJavaFrg : BaseFragment() {
                     for (i in t){
                         binding.tvMvvmRxMessage.append("title : " + i.title+"\n\n\n\n")
                     }
-                    Toasty.success(requireContext(),"با موفقیت انجام شد").show()
+                    Toasty.success(requireContext(),"عملیات با موفقیت انجام شد").show()
                 }
 
                 override fun onError(e: Throwable) {
