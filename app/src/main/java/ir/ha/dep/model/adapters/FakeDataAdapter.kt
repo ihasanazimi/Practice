@@ -1,6 +1,5 @@
 package ir.ha.dep.model.adapters
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -32,14 +31,12 @@ class FakeDataAdapter(val callback : FakeDataEventListener) : RecyclerView.Adapt
     }
 
 
-    @SuppressLint("NotifyDataSetChanged")
     fun setNewList(newList : List<FakeDataModel>){
         list.clear()
         list.addAll(newList)
         notifyDataSetChanged()
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     fun clearList(){
         list.clear()
         notifyDataSetChanged()
