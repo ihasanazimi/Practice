@@ -7,10 +7,12 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/tokenTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="@dimen/text_size_32sp"
+        android:padding="@dimen/space_16dp"
+        android:textSize="@dimen/text_size_14sp"
         android:text="FirBase"/>
 
 </FrameLayout>
