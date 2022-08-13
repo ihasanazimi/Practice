@@ -45,7 +45,6 @@ class MVVMRxJavaFrg : BaseFragment() {
             .doFinally{
                requireActivity().runOnUiThread{
                    binding.pb.visibility = View.GONE
-                   Toasty.success(requireContext(),"با موفقیت انجام شد").show()
                }
             }
             .subscribeOn(Schedulers.io())
@@ -60,10 +59,11 @@ class MVVMRxJavaFrg : BaseFragment() {
                     for (i in t){
                         binding.tvMvvmRxMessage.append("title : " + i.title+"\n\n\n\n")
                     }
+                    Toasty.success(requireContext(),"با موفقیت انجام شد").show()
                 }
 
                 override fun onError(e: Throwable) {
-                    showToast(requireContext(),e.message.toString())
+                    Toasty.error(requireContext(),e.message.toString()).show()
                 }
             })
 
