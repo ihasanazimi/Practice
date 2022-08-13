@@ -7,8 +7,8 @@ import android.view.View
 import ir.ha.dep.R
 import ir.ha.dep.model.FakeDataModel
 import ir.ha.dep.ui.fragment.*
+import ir.ha.dep.ui.fragment.firebase.FirebaseFrg
 import ir.ha.dep.ui.fragment.material.MaterialViews
-import ir.ha.dep.ui.fragment.mvvm_arch.MvvmContainerFrg
 import ir.ha.dep.ui.fragment.mvvm_rx.MVVMRxJavaFrg
 import ir.ha.dep.ui.fragment.navigation_component.NavComponentActivity
 import ir.ha.dep.ui.fragment.rxjava.RxJavaContainer
@@ -51,6 +51,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding.btnNavComponent.setOnClickListener(this)
         binding.btnNavComponent.setOnClickListener(this)
         binding.btnMVVM.setOnClickListener(this)
+        binding.btnFirbase.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -238,9 +239,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
 
-            R.id.btn_MVVM -> {
-                binding.btnMVVM.isChecked = true
-                addFragmentByAnimation(MvvmContainerFrg(),"MvvmContainerFrg",
+            R.id.btn_firbase -> {
+                binding.btnFirbase.isChecked = true
+                addFragmentByAnimation(FirebaseFrg(),"FirebaseFrg",
                     addToBackStack = true,
                     customAnimations = true,
                     containerViewId = R.id.mainFrame,
