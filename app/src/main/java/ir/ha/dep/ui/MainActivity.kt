@@ -9,6 +9,7 @@ import ir.ha.dep.model.FakeDataModel
 import ir.ha.dep.ui.fragment.*
 import ir.ha.dep.ui.fragment.firebase.FirebaseFrg
 import ir.ha.dep.ui.fragment.material.MaterialViews
+import ir.ha.dep.ui.fragment.mvvm_arch.MvvmContainerFrg
 import ir.ha.dep.ui.fragment.mvvm_rx.MVVMRxJavaFrg
 import ir.ha.dep.ui.fragment.navigation_component.NavComponentActivity
 import ir.ha.dep.ui.fragment.rxjava.RxJavaContainer
@@ -236,6 +237,16 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             R.id.btn_nav_component -> {
                 binding.btnNavComponent.isChecked = true
                 startActivity(Intent(this, NavComponentActivity::class.java))
+            }
+
+
+            R.id.btn_MVVM -> {
+                binding.btnMVVM.isChecked = true
+                addFragmentByAnimation(MvvmContainerFrg(),"MvvmContainerFrg",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
             }
 
 

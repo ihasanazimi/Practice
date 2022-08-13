@@ -16,7 +16,7 @@ import ir.ha.dep.ui.BaseFragment
 class LoadImagesSampleFrg : BaseFragment() {
 
     lateinit var binding : FragmentLoadImagesBinding
-    val imageUrl = "https://media.wired.com/photos/5ec6fb698971d7886fd36024/125:94/w_1749,h_1315,c_limit/astronaut-urine-elena-lacey-wired-science.jpg"
+    val imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Android_logo_2019.png/800px-Android_logo_2019.png"
 
     override fun onCreateView(
         inflater: LayoutInflater,
