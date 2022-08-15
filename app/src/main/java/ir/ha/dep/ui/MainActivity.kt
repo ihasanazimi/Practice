@@ -15,7 +15,7 @@ import ir.ha.dep.ui.fragment.navigation_component.NavComponentActivity
 import ir.ha.dep.ui.fragment.rxjava.RxJavaContainer
 import ir.ha.dep.ui.fragment.services.ServicesFrg
 import ir.ha.dep.ui.fragment.viewPager.ViewPagerSampleFrg
-import ir.ha.dep.ui.httpSamples.RequestSampleFrg
+import ir.ha.dep.ui.fragment.httpSamples.RequestSampleFrg
 import ir.ha.dep.utility.extentions.addFragmentByAnimation
 import ir.ha.dep.utility.extentions.showToast
 

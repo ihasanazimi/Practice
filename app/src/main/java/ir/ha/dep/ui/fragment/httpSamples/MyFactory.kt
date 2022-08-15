@@ -1,4 +1,4 @@
-package ir.ha.dep.ui.httpSamples
+package ir.ha.dep.ui.fragment.httpSamples
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

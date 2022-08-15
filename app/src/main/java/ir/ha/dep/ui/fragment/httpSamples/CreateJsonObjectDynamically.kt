@@ -1,4 +1,4 @@
-package ir.ha.dep.ui.httpSamples
+package ir.ha.dep.ui.fragment.httpSamples
 
 import org.json.JSONArray
 import org.json.JSONException

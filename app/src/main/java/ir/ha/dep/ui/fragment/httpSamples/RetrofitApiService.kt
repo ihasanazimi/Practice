@@ -1,4 +1,4 @@
-package ir.ha.dep.ui.httpSamples
+package ir.ha.dep.ui.fragment.httpSamples
 
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient

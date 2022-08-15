@@ -1,4 +1,4 @@
-package ir.ha.dep.ui.httpSamples
+package ir.ha.dep.ui.fragment.httpSamples
 
 import android.os.Bundle
 import android.view.LayoutInflater
