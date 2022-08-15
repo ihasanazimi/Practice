@@ -12,7 +12,7 @@ import com.google.firebase.messaging.FirebaseMessaging
 import ir.ha.dep.R
 import ir.ha.dep.databinding.FragmentFirebaseBinding
 import ir.ha.dep.ui.BaseFragment
-import ir.ha.dep.utility.extentions.dataStore
+import ir.ha.dep.ui.dataStore
 import ir.ha.dep.utility.extentions.showToast
 import kotlinx.coroutines.flow.first
 

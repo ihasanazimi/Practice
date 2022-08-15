@@ -2,6 +2,9 @@ package ir.ha.dep.ui
 
 import android.app.Application
 import android.content.Context
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
 import com.facebook.drawee.backends.pipeline.Fresco
 import ir.ha.dep.repo.RoomDB
 import ir.ha.dep.services.ImageLoadingService
@@ -14,7 +17,6 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import java.util.*
-import kotlin.concurrent.schedule
 
 class App : Application() {
 
@@ -52,8 +54,10 @@ class App : Application() {
                     EventBus.getDefault().post(MyEvent())
                 } },0,4000)
         }
-
-
-
     }
+
 }
+
+
+// Singleton Data Store
+val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")

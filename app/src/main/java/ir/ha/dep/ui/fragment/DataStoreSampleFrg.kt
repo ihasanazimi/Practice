@@ -10,7 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import ir.ha.dep.R
 import ir.ha.dep.databinding.FragmentDataStoreSampleBinding
 import ir.ha.dep.ui.BaseFragment
-import ir.ha.dep.utility.extentions.dataStore
+import ir.ha.dep.ui.dataStore
 import kotlinx.coroutines.flow.first
 
 class DataStoreSampleFrg : BaseFragment() {
