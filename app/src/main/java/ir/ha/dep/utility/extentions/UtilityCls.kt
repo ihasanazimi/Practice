@@ -3,6 +3,7 @@ package ir.ha.dep.utility.extentions
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.ActivityManager
+import android.content.ClipData
 import android.content.Context
 import android.content.pm.PackageManager
 import android.content.res.Resources
@@ -12,6 +13,7 @@ import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+import android.text.ClipboardManager
 import android.text.SpannableStringBuilder
 import android.text.style.ImageSpan
 import android.util.DisplayMetrics
@@ -158,6 +160,19 @@ fun convertNumbersToFarsiNum(faNumbers: String): String {
         changedVariable = faNumbers.replace(num[0], num[1])
     }
     return faNumbers
+}
+
+
+fun String.extractNumberInString() = replace("\\D+".toRegex(),"").toInt()
+
+fun Context.copyToClipboard(text: String){
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
+        val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        clipboard.text = text
+    } else {
+        val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager
+        clipboard.setPrimaryClip(ClipData.newPlainText(getString(R.string.string_msg_clipboard_message), text))
+    }
 }
 
 
