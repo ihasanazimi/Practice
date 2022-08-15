@@ -1,12 +1,14 @@
 {
-  "id" : 25,
-  "fName" : " Hasan",
-  "lName" : "Azimi",
-  "jon" : "Android Developer",
-  "Birth Date" : "1376/07/02",
-  "resume" : {
-    "organize" : [
-      "android developer from april 2022" , "android developer in teavana from jun2021"
-      ]
-    }
+  "id": 25,
+  "fName": " Hasan",
+  "lName": "Azimi",
+  "jon": "Android Developer",
+  "Birth Date": "1997/Sep/23",
+  "resume": {
+    "organize": [
+      "Android developer in the Glad Cherry in september 2019",
+      "Android developer in Teavana from jun2021",
+      "Android Developer in Smart Land Solution from jun 2022"
+    ]
   }
+}
