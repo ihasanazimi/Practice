@@ -2,7 +2,7 @@ package ir.ha.dep.ui.fragment.httpSamples
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import ir.ha.dep.ui.App
+import ir.ha.dep.App
 
 class MyFactory(app : App) : ViewModelProvider.AndroidViewModelFactory(app) {
 

@@ -1,8 +1,8 @@
-package ir.ha.mobofit.utilities
+package ir.ha.dep.utility
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import ir.ha.dep.ui.App
+import ir.ha.dep.App
 
 class MyFactory(app : App) : ViewModelProvider.AndroidViewModelFactory(app) {
 
