@@ -1,4 +1,4 @@
-package ir.ha.dep.ui
+package ir.ha.dep
 
 import android.app.Application
 import android.content.Context
