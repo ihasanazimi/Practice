@@ -3,15 +3,16 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'com.google.gms.google-services'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
-    compileSdk 31
+    compileSdk 32
 
     defaultConfig {
         applicationId "ir.ha.dep"
         minSdk 23
-        targetSdk 31
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -20,6 +21,11 @@ android {
 
     buildTypes {
         release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -49,7 +55,7 @@ dependencies {
 
 
     // google services (fireBase)
-    implementation 'com.google.firebase:firebase-messaging:23.0.6'
+    implementation 'com.google.firebase:firebase-messaging:23.0.7'
     implementation platform('com.google.firebase:firebase-bom:30.3.0')
 //    implementation 'com.google.firebase:firebase-analytics-ktx'
 //    implementation 'com.google.firebase:firebase-messaging:20.1.0' // old version
@@ -122,11 +128,10 @@ dependencies {
 
 
     // room dataBase
-//    def room_version = "2.4.2"
-    // Room components
-    implementation "androidx.room:room-ktx:2.4.2"
-    kapt "androidx.room:room-compiler:2.4.2"
-    androidTestImplementation "androidx.room:room-testing:2.4.2"
+    def room_version = "2.4.3"
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    androidTestImplementation "androidx.room:room-testing:$room_version"
 
 
     // Nav Component
@@ -139,16 +144,13 @@ dependencies {
     implementation "androidx.navigation:navigation-ui:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 
-    // ( Dagger Hilt )
-    /* plugins :
-    // apply plugin: 'kotlin-kapt'
-    // apply plugin: 'dagger.hilt.android.plugin'
-
-    imple -> // implementation 'com.google.dagger:hilt-android-gradle-plugin:2.28-alpha'
-    // */
+    // Hilt
+    /* plugins :     apply plugin: 'kotlin-kapt'    -    apply plugin: 'dagger.hilt.android.plugin'
+    impl -> // implementation 'com.google.dagger:hilt-android-gradle-plugin:2.28-alpha'// */
     annotationProcessor  "androidx.hilt:hilt-compiler:1.0.0"
     implementation  "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
     implementation  "com.google.dagger:hilt-android:2.40.1"
+    kapt "com.google.dagger:hilt-compiler:2.38.1"
 
 
     // Circle Image View

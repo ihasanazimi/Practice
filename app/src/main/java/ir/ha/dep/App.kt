@@ -6,6 +6,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import com.facebook.drawee.backends.pipeline.Fresco
+import dagger.hilt.android.HiltAndroidApp
 import ir.ha.dep.repo.RoomDB
 import ir.ha.dep.services.ImageLoadingService
 import ir.ha.dep.services.ImageLoadingServiceImpl
@@ -18,6 +19,7 @@ import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import java.util.*
 
+@HiltAndroidApp
 class App : Application() {
 
     var context :Context ?= null

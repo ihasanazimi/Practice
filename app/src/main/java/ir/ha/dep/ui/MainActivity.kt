@@ -4,10 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import dagger.hilt.android.AndroidEntryPoint
 import ir.ha.dep.R
 import ir.ha.dep.model.FakeDataModel
 import ir.ha.dep.ui.fragment.*
 import ir.ha.dep.ui.fragment.firebase.FirebaseCloudMessagingFrg
+import ir.ha.dep.ui.fragment.hilt.HiltFrg
 import ir.ha.dep.ui.fragment.material.MaterialViews
 import ir.ha.dep.ui.fragment.mvvm_arch.MvvmContainerFrg
 import ir.ha.dep.ui.fragment.mvvm_rx.MVVMRxJavaFrg
@@ -19,6 +21,7 @@ import ir.ha.dep.ui.fragment.httpSamples.RequestSampleFrg
 import ir.ha.dep.utility.extentions.addFragmentByAnimation
 import ir.ha.dep.utility.extentions.showToast
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity(), View.OnClickListener {
 
     lateinit var binding : ir.ha.dep.databinding.ActivityMainBinding
@@ -53,6 +56,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding.btnNavComponent.setOnClickListener(this)
         binding.btnMVVM.setOnClickListener(this)
         binding.btnFirbase.setOnClickListener(this)
+        binding.btnHilt.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -259,6 +263,15 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     commitAllowingStateLoss = false)
             }
 
+
+            R.id.btn_hilt -> {
+                binding.btnHilt.isChecked = true
+                addFragmentByAnimation(HiltFrg(),"HiltFrg",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
+            }
 
 
 
