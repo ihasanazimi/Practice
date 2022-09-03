@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.scopes.ActivityScoped
 import ir.ha.dep.R
 import ir.ha.dep.databinding.FragmentHiltBinding
 import ir.ha.dep.ui.BaseFragment2
@@ -19,13 +20,30 @@ class HiltFrg :  BaseFragment2<FragmentHiltBinding>() {
         get() = R.layout.fragment_hilt
 
     @Inject
-    @Named("Str1")
-    lateinit var stringTest : String
+    lateinit var testClass2 : TestClass2
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        showToast(requireContext(),stringTest)
+//        showToast(requireContext(),testClass.logTestMessage())
+        showToast(requireContext(),testClass2.logTestMessage2())
     }
 
+}
+
+
+
+class TestClass
+@Inject
+constructor(){
+
+    fun logTestMessage() : String = "this is test msg"
+
+}
+
+@ActivityScoped
+class TestClass2
+@Inject
+constructor(private val testCls : TestClass){
+    fun logTestMessage2() : String = testCls.logTestMessage()
 }

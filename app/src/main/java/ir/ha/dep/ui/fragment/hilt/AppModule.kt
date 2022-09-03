@@ -11,7 +11,7 @@ import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
-@InstallIn(ActivityComponent::class)
+@InstallIn(SingletonComponent::class)
 object AppModule {
 
     @Provides
