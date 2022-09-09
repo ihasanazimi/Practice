@@ -2,6 +2,7 @@ package ir.ha.dep
 
 import android.app.Application
 import android.content.Context
+import android.os.Handler
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -22,12 +23,16 @@ import java.util.*
 @HiltAndroidApp
 class App : Application() {
 
-    var context :Context ?= null
-    var timer :Timer ?= null
+    companion object{
+        var context :Context ?= null
+        var timer :Timer ?= null
+        lateinit var applicationHandler : Handler
+    }
 
     override fun onCreate() {
         super.onCreate()
         context = this.applicationContext
+        applicationHandler = Handler(this.mainLooper)
 
         /** 1- Koin -> modules.. */
         val myModules = module {

@@ -10,13 +10,21 @@ import android.text.InputType
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.dynamicanimation.animation.DynamicAnimation
 import androidx.dynamicanimation.animation.SpringAnimation
 import androidx.dynamicanimation.animation.SpringForce
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import ir.ha.dep.App
 import kotlin.math.ceil
 
 fun View.show() { visibility = View.VISIBLE }
@@ -215,3 +223,32 @@ fun View.dp(value: Float): Int {
         0
     } else ceil(context.resources.displayMetrics.density * value.toDouble()).toInt()
 }
+
+
+
+fun hideSystemUI(window: Window) {
+    WindowCompat.setDecorFitsSystemWindows(window, false)
+    val controllerCompat = WindowInsetsControllerCompat(window, window.decorView)
+    controllerCompat.hide(WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.navigationBars())
+    controllerCompat.systemBarsBehavior =
+        WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+}
+
+
+fun showSystemUI(window: Window) {
+    val wic = WindowInsetsControllerCompat(window, window.decorView)
+    wic.isAppearanceLightStatusBars = true
+    // And then you can set any background color to the status bar.
+    WindowCompat.setDecorFitsSystemWindows(window, true)
+    WindowInsetsControllerCompat(window, window.decorView).show(WindowInsetsCompat.Type.systemBars())
+}
+
+
+fun addTurnScreenOnAlwaysFlag(window : Window){
+    window.addFlags(WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON)
+}
+
+fun clearTurnScreenOnAlwaysFlag(window : Window){
+    window.clearFlags(WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON)
+}
+

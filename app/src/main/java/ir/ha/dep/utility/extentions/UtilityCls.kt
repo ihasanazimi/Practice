@@ -5,6 +5,7 @@ import android.app.Activity
 import android.app.ActivityManager
 import android.content.ClipData
 import android.content.Context
+import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.graphics.Color
@@ -35,6 +36,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
 import com.google.gson.Gson
+import ir.ha.dep.App
 import ir.ha.dep.R
 import java.util.*
 
@@ -317,49 +319,42 @@ fun isAppAvailable(context: Context, appName: String): Boolean {
 }
 
 
-
-
-
-//fun CustomTextView.setIconWithText(icon: Drawable?){
-//    val internalIcon = icon ?: ColorDrawable(Color.TRANSPARENT)
-//    val iconSize: Int =
-//        context.resources.getDimensionPixelSize(R.dimen.menu_item_icon_size)
-//    internalIcon.setBounds(0, 0, iconSize, iconSize)
-//    val imageSpan = ImageSpan(internalIcon)
-//    val ssb = SpannableStringBuilder("     " + context.getString(R.string.AllActivities))
-//    ssb.setSpan(imageSpan, 1, 2, 0)
-//    text = ssb
-//}
-
-
-
-//
-//fun Fragment.runOnUIThread(runnable: Runnable, delay: Long = 0) {
-//    if (delay == 0L) {
-//        ApplicationLoader.applicationHandler.post(runnable)
-//    } else {
-//        ApplicationLoader.applicationHandler.postDelayed(runnable, delay)
-//    }
-//}
+fun getApplicationVersion(context : Context) : Pair<String , Int>{
+    var versionName = ""
+    var versionCode = -1
+    try {
+        val pInfo: PackageInfo = context.packageManager.getPackageInfo(context.getPackageName(), 0)
+        versionName = pInfo.versionName
+        versionCode = pInfo.versionCode
+    } catch (e: PackageManager.NameNotFoundException) { e.printStackTrace() }
+    return Pair(versionName , versionCode)
+}
 
 
 
 
-//fun AppCompatActivity.runOnUIThread(runnable: Runnable, delay: Long = 0) {
-//    if (delay == 0L) {
-//        ApplicationLoader.applicationHandler.post(runnable)
-//    } else {
-//        ApplicationLoader.applicationHandler.postDelayed(runnable, delay)
-//    }
-//}
 
+fun Fragment.runOnUIThread(runnable: Runnable, delay: Long = 0) {
+    if (delay == 0L) {
+        App.applicationHandler.post(runnable)
+    } else {
+        App.applicationHandler.postDelayed(runnable, delay)
+    }
+}
 
+fun AppCompatActivity.runOnUIThread(runnable: Runnable, delay: Long = 0) {
+    if (delay == 0L) {
+        App.applicationHandler.post(runnable)
+    } else {
+        App.applicationHandler.postDelayed(runnable, delay)
+    }
+}
 
+fun View.runOnUIThread(runnable: Runnable, delay: Long = 0) {
+    if (delay == 0L) {
+        App.applicationHandler.post(runnable)
+    } else {
+        App.applicationHandler.postDelayed(runnable, delay)
+    }
+}
 
-//fun View.runOnUIThread(runnable: Runnable, delay: Long = 0) {
-//    if (delay == 0L) {
-//        ApplicationLoader.applicationHandler.post(runnable)
-//    } else {
-//        ApplicationLoader.applicationHandler.postDelayed(runnable, delay)
-//    }
-//}
