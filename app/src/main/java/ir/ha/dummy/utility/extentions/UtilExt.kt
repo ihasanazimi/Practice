@@ -39,7 +39,6 @@ fun Fragment.runOnUIThread(runnable: Runnable, delay: Long = 0) {
 }
 
 
-
 fun AppCompatActivity.runOnUIThread(runnable: Runnable, delay: Long = 0) {
     if (delay == 0L) {
         App.applicationHandler.post(runnable)
@@ -48,7 +47,7 @@ fun AppCompatActivity.runOnUIThread(runnable: Runnable, delay: Long = 0) {
     }
 }
 
-
+//
 
 fun View.runOnUIThread(runnable: Runnable, delay: Long = 0) {
     if (delay == 0L) {
