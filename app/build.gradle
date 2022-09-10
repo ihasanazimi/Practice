@@ -10,7 +10,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "ir.ha.dep"
+        applicationId "ir.ha.dummy"
         minSdk 23
         targetSdk 32
         versionCode 1

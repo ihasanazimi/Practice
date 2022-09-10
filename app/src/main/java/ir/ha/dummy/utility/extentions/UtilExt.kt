@@ -25,10 +25,9 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.google.gson.Gson
-import ir.ha.dummy.App
 import ir.ha.dummy.R
+import ir.ha.dummy.App
 import java.util.*
-
 
 
 fun Fragment.runOnUIThread(runnable: Runnable, delay: Long = 0) {
