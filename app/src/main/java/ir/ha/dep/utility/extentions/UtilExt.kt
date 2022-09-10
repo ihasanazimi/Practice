@@ -41,6 +41,36 @@ import ir.ha.dep.R
 import java.util.*
 
 
+
+fun Fragment.runOnUIThread(runnable: Runnable, delay: Long = 0) {
+    if (delay == 0L) {
+        App.applicationHandler.post(runnable)
+    } else {
+        App.applicationHandler.postDelayed(runnable, delay)
+    }
+}
+
+
+
+fun AppCompatActivity.runOnUIThread(runnable: Runnable, delay: Long = 0) {
+    if (delay == 0L) {
+        App.applicationHandler.post(runnable)
+    } else {
+        App.applicationHandler.postDelayed(runnable, delay)
+    }
+}
+
+
+
+fun View.runOnUIThread(runnable: Runnable, delay: Long = 0) {
+    if (delay == 0L) {
+        App.applicationHandler.post(runnable)
+    } else {
+        App.applicationHandler.postDelayed(runnable, delay)
+    }
+}
+
+
 fun AppCompatActivity.addFragmentByAnimation(
     fragment: Fragment,
     tag: String,
@@ -66,6 +96,8 @@ fun AppCompatActivity.addFragmentByAnimation(
     if (commitAllowingStateLoss) { fragmentTransaction.commitAllowingStateLoss()
     } else { fragmentTransaction.commit() }
 }
+
+
 
 
 
@@ -98,6 +130,8 @@ fun PopupMenu.insertMenuItemIcons(
 }
 
 
+
+
 fun PopupMenu.hasIcon(): Boolean {
     for (i in 0 until menu.size()) {
         if (menu.getItem(i).icon != null) return true
@@ -121,25 +155,8 @@ fun PopupMenu.insertMenuItemIcon(context: Context, menuItem: MenuItem) {
 
 
 
+
 fun Context.drawable(@DrawableRes drawableRes: Int) = ResourcesCompat.getDrawable(resources, drawableRes, theme)
-
-
-fun convertDpToPixel(dp : Float , context : Context?) : Float {
-    return if (context != null){
-        val resource = context.resources
-        val metrics = resource.displayMetrics
-        dp / (metrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)
-    }else{
-        val metrics = Resources.getSystem().displayMetrics
-        dp * (metrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)
-    }
-}
-
-
-
-fun convertDpToPixel2(dp: Float): Float {
-    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, Resources.getSystem().displayMetrics)
-}
 
 
 
@@ -165,7 +182,9 @@ fun convertNumbersToFarsiNum(faNumbers: String): String {
 }
 
 
+
 fun String.extractNumberInString() = replace("\\D+".toRegex(),"").toInt()
+
 
 fun Context.copyToClipboard(text: String){
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
@@ -179,10 +198,10 @@ fun Context.copyToClipboard(text: String){
 
 
 
-
 inline fun <reified T:Any> String.fromJson(): T? {
     return Gson().fromJson(this, T::class.java)
 }
+
 
 
 
@@ -197,6 +216,7 @@ fun isNull(o: Any?): Boolean {
 fun isNotZero(f: Float): Boolean {
     return f != 0f
 }
+
 
 
 
@@ -228,6 +248,8 @@ fun isRPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R
 fun isSPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
 
 
+
+
  @SuppressLint("ServiceCast")
  fun isMyServiceRunning(applicationContext: Context?, serviceClass: Class<*>): Boolean {
     val manager = applicationContext?.getSystemService(Context.ACCOUNT_SERVICE) as ActivityManager?
@@ -240,35 +262,6 @@ fun isSPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
 }
 
 
-fun showToast(ctx : Context , message : String){
-    Toast.makeText(ctx,message.trim() ,Toast.LENGTH_LONG).show()
-}
-
-
-fun setStatusBarTransparent(activity: Activity, view: View) {
-    activity.apply {
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.statusBarColor = ContextCompat.getColor(this, R.color.transparent)
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-        ViewCompat.setOnApplyWindowInsetsListener(view) { root, windowInset ->
-            val inset = windowInset.getInsets(WindowInsetsCompat.Type.systemBars())
-            root.updateLayoutParams<ViewGroup.MarginLayoutParams> {
-                leftMargin = inset.left
-                bottomMargin = inset.bottom
-                rightMargin = inset.right
-            }
-            WindowInsetsCompat.CONSUMED
-        }
-    }
-}
-
-
-
-fun convertMilliSecondToMinute(millisecond: Long): String? {
-    val second = (millisecond / 1000) % 60
-    val minute = (millisecond / (1000 * 60)) % 60
-    return String.format(Locale.US,"%02d:%02d",minute,second)
-}
 
 
 fun checkConnection(context: Context?): Boolean {
@@ -302,11 +295,15 @@ fun checkConnection(context: Context?): Boolean {
 
 
 
+
 fun checkInternetConnection(context: Context?): Boolean {
     val connectivityManager = context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
     val activeNetworkInfo = connectivityManager!!.activeNetworkInfo
     return activeNetworkInfo != null && activeNetworkInfo.isConnected
 }
+
+
+
 
 fun isAppAvailable(context: Context, appName: String): Boolean {
     val pm = context.packageManager
@@ -316,6 +313,14 @@ fun isAppAvailable(context: Context, appName: String): Boolean {
     } catch (e: PackageManager.NameNotFoundException) {
         false
     }
+}
+
+
+
+fun convertMilliSecondToMinute(millisecond: Long): String? {
+    val second = (millisecond / 1000) % 60
+    val minute = (millisecond / (1000 * 60)) % 60
+    return String.format(Locale.US,"%02d:%02d",minute,second)
 }
 
 
@@ -334,27 +339,6 @@ fun getApplicationVersion(context : Context) : Pair<String , Int>{
 
 
 
-fun Fragment.runOnUIThread(runnable: Runnable, delay: Long = 0) {
-    if (delay == 0L) {
-        App.applicationHandler.post(runnable)
-    } else {
-        App.applicationHandler.postDelayed(runnable, delay)
-    }
-}
 
-fun AppCompatActivity.runOnUIThread(runnable: Runnable, delay: Long = 0) {
-    if (delay == 0L) {
-        App.applicationHandler.post(runnable)
-    } else {
-        App.applicationHandler.postDelayed(runnable, delay)
-    }
-}
 
-fun View.runOnUIThread(runnable: Runnable, delay: Long = 0) {
-    if (delay == 0L) {
-        App.applicationHandler.post(runnable)
-    } else {
-        App.applicationHandler.postDelayed(runnable, delay)
-    }
-}
 

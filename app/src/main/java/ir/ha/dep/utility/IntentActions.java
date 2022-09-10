@@ -1,6 +1,6 @@
 package ir.ha.dep.utility;
 
-import static ir.ha.dep.utility.extentions.UtilityClsKt.isAppAvailable;
+import static ir.ha.dep.utility.extentions.UtilExtKt.isAppAvailable;
 
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;

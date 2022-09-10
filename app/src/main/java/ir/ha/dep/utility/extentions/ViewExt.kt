@@ -2,29 +2,30 @@ package ir.ha.dep.utility.extentions
 
 import android.animation.*
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
+import android.content.res.Resources
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import android.graphics.drawable.Drawable
 import android.text.InputType
+import android.util.DisplayMetrics
 import android.util.Log
-import android.view.MotionEvent
-import android.view.View
-import android.view.Window
-import android.view.WindowManager
+import android.util.TypedValue
+import android.view.*
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
+import androidx.core.view.*
 import androidx.dynamicanimation.animation.DynamicAnimation
 import androidx.dynamicanimation.animation.SpringAnimation
 import androidx.dynamicanimation.animation.SpringForce
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import ir.ha.dep.App
+import ir.ha.dep.R
 import kotlin.math.ceil
 
 fun View.show() { visibility = View.VISIBLE }
@@ -176,13 +177,12 @@ fun EditText.showKeyboard() {
  * first imp this dependency on build.gradle :
  * implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'
  */
+@SuppressLint("ClickableViewAccessibility")
 fun View.implementSpringAnimationTrait(){
     val scaleXAnim = SpringAnimation(this,DynamicAnimation.SCALE_X,0.91f)
     val scaleYanim = SpringAnimation(this,DynamicAnimation.SCALE_Y,0.91f)
 
     setOnTouchListener { view, event ->
-
-        Log.i("setOnTouchListener", "implementSpringAnimationTrait: " + event.action.toString()) // log for test (print event actions)
 
         when(event.action){
             MotionEvent.ACTION_DOWN ->{
@@ -217,12 +217,52 @@ fun View.implementSpringAnimationTrait(){
 
 
 
-
 fun View.dp(value: Float): Int {
     return if (value == 0f) {
         0
     } else ceil(context.resources.displayMetrics.density * value.toDouble()).toInt()
 }
+
+
+
+fun convertDpToPixel(dp : Float , context : Context?) : Float {
+    return if (context != null){
+        val resource = context.resources
+        val metrics = resource.displayMetrics
+        dp / (metrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)
+    }else{
+        val metrics = Resources.getSystem().displayMetrics
+        dp * (metrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)
+    }
+}
+
+
+
+
+fun convertDpToPixel2(dp: Float): Float {
+    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, Resources.getSystem().displayMetrics)
+}
+
+
+
+
+fun setStatusBarTransparent(activity: Activity, view: View) {
+    activity.apply {
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.transparent)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        ViewCompat.setOnApplyWindowInsetsListener(view) { root, windowInset ->
+            val inset = windowInset.getInsets(WindowInsetsCompat.Type.systemBars())
+            root.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                leftMargin = inset.left
+                bottomMargin = inset.bottom
+                rightMargin = inset.right
+            }
+            WindowInsetsCompat.CONSUMED
+        }
+    }
+}
+
 
 
 
@@ -250,5 +290,10 @@ fun addTurnScreenOnAlwaysFlag(window : Window){
 
 fun clearTurnScreenOnAlwaysFlag(window : Window){
     window.clearFlags(WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON)
+}
+
+
+fun showToast(ctx : Context , message : String){
+    Toast.makeText(ctx,message.trim() , Toast.LENGTH_LONG).show()
 }
 
