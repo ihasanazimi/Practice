@@ -53,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:text="Coil"/>
 
-                <ir.ha.dep.utility.customViews.FrescoImageView
+                <ir.ha.dummy.utility.customViews.FrescoImageView
                     android:layout_marginTop="@dimen/space_16dp"
                     android:id="@+id/frescoImageView"
                     android:layout_width="100dp"

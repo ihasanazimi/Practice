@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/frg1"
-        android:name="ir.ha.dep.ui.fragment.navigation_component.Frg1"
+        android:name="ir.ha.dummy.ui.fragment.navigation_component.Frg1"
         android:label="Frg1"
         tools:layout="@layout/fragment_1">
         <action
@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/frg2"
-        android:name="ir.ha.dep.ui.fragment.navigation_component.Frg2"
+        android:name="ir.ha.dummy.ui.fragment.navigation_component.Frg2"
         android:label="Frg2"
         tools:layout="@layout/fragment_2">
         <action
@@ -34,7 +34,7 @@
 
     <fragment
         android:id="@+id/frg3"
-        android:name="ir.ha.dep.ui.fragment.navigation_component.Frg3"
+        android:name="ir.ha.dummy.ui.fragment.navigation_component.Frg3"
         android:label="Frg3"
         tools:layout="@layout/fragment_3">
         <action

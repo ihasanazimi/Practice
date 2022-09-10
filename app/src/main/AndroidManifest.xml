@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ir.ha.dep">
+    package="ir.ha.dummy">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:name="ir.ha.dep.App"
+        android:name="ir.ha.dummy.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,7 +17,7 @@
         android:theme="@style/Theme.MyApplication">
 
         <activity
-            android:name="ir.ha.dep.ui.MainActivity"
+            android:name="ir.ha.dummy.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,18 +26,18 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.fragment.navigation_component.NavComponentActivity"/>
+        <activity android:name="ir.ha.dummy.ui.fragment.navigation_component.NavComponentActivity"/>
 
 
 
-        <service android:name=".ui.fragment.services.BackgroundService" android:exported="false" />
-        <service android:name=".ui.fragment.services.ForegroundService" android:exported="false" />
-        <service android:name=".ui.fragment.services.BoundService" android:exported="false" />
+        <service android:name="ir.ha.dummy.ui.fragment.services.BackgroundService" android:exported="false" />
+        <service android:name="ir.ha.dummy.ui.fragment.services.ForegroundService" android:exported="false" />
+        <service android:name="ir.ha.dummy.ui.fragment.services.BoundService" android:exported="false" />
 
 
         <service
             android:exported="false"
-            android:name=".ui.fragment.firebase.MyFirebaseInstanceIDService">
+            android:name="ir.ha.dummy.ui.fragment.firebase.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
