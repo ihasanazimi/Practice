@@ -1,4 +1,4 @@
-package ir.ha.dummy.utility
+package ir.ha.dummy.utility.util
 
 fun convertTimeToMilliSecond(time: Long): Long {
     return time * 1000L

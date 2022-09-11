@@ -6,8 +6,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.scopes.ActivityScoped
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentHiltBinding
-import ir.ha.dummy.ui.BaseFragment2
 import ir.ha.dummy.utility.extentions.showToast
+import ir.ha.dummy.utility.base.BaseFragment2
 import javax.inject.Inject
 
 

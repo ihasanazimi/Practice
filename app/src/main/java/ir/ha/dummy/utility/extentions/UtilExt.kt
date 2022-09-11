@@ -25,8 +25,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.google.gson.Gson
-import ir.ha.dummy.R
 import ir.ha.dummy.App
+import ir.ha.dummy.R
 import java.util.*
 
 
@@ -39,6 +39,7 @@ fun Fragment.runOnUIThread(runnable: Runnable, delay: Long = 0) {
 }
 
 
+
 fun AppCompatActivity.runOnUIThread(runnable: Runnable, delay: Long = 0) {
     if (delay == 0L) {
         App.applicationHandler.post(runnable)
@@ -47,7 +48,7 @@ fun AppCompatActivity.runOnUIThread(runnable: Runnable, delay: Long = 0) {
     }
 }
 
-//
+
 
 fun View.runOnUIThread(runnable: Runnable, delay: Long = 0) {
     if (delay == 0L) {

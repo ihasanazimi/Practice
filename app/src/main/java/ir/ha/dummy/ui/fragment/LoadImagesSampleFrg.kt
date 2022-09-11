@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.squareup.picasso.Picasso
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentLoadImagesBinding
-import ir.ha.dummy.ui.BaseFragment
+import ir.ha.dummy.utility.base.BaseFragment
 
 class LoadImagesSampleFrg : BaseFragment() {
 

@@ -13,7 +13,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentRxJavaContainerBinding
-import ir.ha.dummy.ui.BaseFragment
+import ir.ha.dummy.utility.base.BaseFragment
 import ir.ha.dummy.utility.extentions.hide
 import ir.ha.dummy.utility.extentions.show
 import ir.ha.dummy.utility.extentions.showToast

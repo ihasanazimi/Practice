@@ -8,7 +8,7 @@ import es.dmoral.toasty.Toasty
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentSampleRequestBinding
 import ir.ha.dummy.model.UserModel
-import ir.ha.dummy.ui.BaseFragment
+import ir.ha.dummy.utility.base.BaseFragment
 import ir.ha.dummy.utility.extentions.showToast
 import retrofit2.Call
 import retrofit2.Callback

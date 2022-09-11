@@ -10,8 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentBroadCastRecevierBinding
-import ir.ha.dummy.ui.BaseFragment
 import ir.ha.dummy.utility.extentions.checkInternetConnection
+import ir.ha.dummy.utility.base.BaseFragment
 
 class BroadcastReceiverSampleFrg : BaseFragment() {
 

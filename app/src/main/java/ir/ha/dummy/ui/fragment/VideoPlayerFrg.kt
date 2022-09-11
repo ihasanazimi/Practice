@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.MediaController
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentVideoPlayerBinding
-import ir.ha.dummy.ui.BaseFragment
+import ir.ha.dummy.utility.base.BaseFragment
 import ir.ha.dummy.utility.extentions.hide
 import ir.ha.dummy.utility.extentions.showToast
 

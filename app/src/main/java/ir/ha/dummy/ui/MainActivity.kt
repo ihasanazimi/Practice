@@ -20,6 +20,7 @@ import ir.ha.dummy.ui.fragment.viewPager.ViewPagerSampleFrg
 import ir.ha.dummy.ui.fragment.httpSamples.RequestSampleFrg
 import ir.ha.dummy.utility.extentions.addFragmentByAnimation
 import ir.ha.dummy.utility.extentions.showToast
+import ir.ha.dummy.utility.base.BaseActivity
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity(), View.OnClickListener {

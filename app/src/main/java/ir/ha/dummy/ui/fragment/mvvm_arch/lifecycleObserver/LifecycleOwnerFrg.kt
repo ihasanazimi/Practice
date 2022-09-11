@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentLifeCycleOwnerBinding
-import ir.ha.dummy.ui.BaseFragment
+import ir.ha.dummy.utility.base.BaseFragment
 import ir.ha.dummy.utility.extentions.showToast
 
 class LifecycleOwnerFrg : BaseFragment(), MyLocationChecker.OnUpdate {

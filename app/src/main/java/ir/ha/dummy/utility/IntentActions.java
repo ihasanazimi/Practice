@@ -10,8 +10,8 @@ import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.widget.Toast;
 import java.util.List;
+import ir.ha.dummy.R;
 
-import ir.ha.dep.R;
 
 public class IntentActions {
 

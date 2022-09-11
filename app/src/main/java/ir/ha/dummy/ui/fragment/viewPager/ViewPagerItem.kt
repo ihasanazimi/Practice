@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import ir.ha.dummy.ui.BaseFragment
+import ir.ha.dummy.utility.base.BaseFragment
 import ir.ha.dummy.R
 import ir.ha.dummy.model.Banner
 import ir.ha.dummy.services.ImageLoadingService

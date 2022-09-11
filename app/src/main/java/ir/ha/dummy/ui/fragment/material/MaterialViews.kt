@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.google.android.material.snackbar.Snackbar
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentMaterialViewsBinding
-import ir.ha.dummy.ui.BaseFragment
+import ir.ha.dummy.utility.base.BaseFragment
 
 class MaterialViews : BaseFragment() {
 

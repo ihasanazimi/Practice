@@ -1,6 +1,6 @@
-package ir.ha.dummy.utility
+package ir.ha.dummy.utility.util
 
-object Validator {
+object ValidatorUtils {
     //check text is mobile number
     fun isMobile(number: String): Boolean {
         return number.isNotEmpty() && number.matches("09\\d{9}".toRegex())

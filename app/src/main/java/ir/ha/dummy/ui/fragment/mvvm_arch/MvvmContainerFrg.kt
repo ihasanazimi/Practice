@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentMvvmContainerBinding
-import ir.ha.dummy.ui.BaseFragment
+import ir.ha.dummy.utility.base.BaseFragment
 import ir.ha.dummy.ui.fragment.mvvm_arch.lifecycleObserver.LifecycleOwnerFrg
 import ir.ha.dummy.ui.fragment.mvvm_arch.live_data.SimpleLiveDataFrg
 import ir.ha.dummy.ui.fragment.mvvm_arch.live_data.MediatorLiveDataFrg

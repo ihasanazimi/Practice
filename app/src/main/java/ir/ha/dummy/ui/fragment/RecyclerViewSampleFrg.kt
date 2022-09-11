@@ -11,7 +11,7 @@ import ir.ha.dummy.databinding.FragmentRecyclerViewSampleBinding
 import ir.ha.dummy.repo.FakeDataGenerator
 import ir.ha.dummy.model.FakeDataModel
 import ir.ha.dummy.model.adapters.FakeDataAdapter
-import ir.ha.dummy.ui.BaseFragment
+import ir.ha.dummy.utility.base.BaseFragment
 
 class RecyclerViewSampleFrg : BaseFragment(){
 

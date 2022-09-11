@@ -1,4 +1,4 @@
-package ir.ha.dummy.utility
+package ir.ha.dummy.utility.util
 
 import androidx.appcompat.app.AppCompatDelegate
 

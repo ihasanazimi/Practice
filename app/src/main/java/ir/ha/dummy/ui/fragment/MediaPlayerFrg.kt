@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import com.google.android.material.slider.Slider
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentMediaPlayerBinding
-import ir.ha.dummy.ui.BaseFragment
+import ir.ha.dummy.utility.base.BaseFragment
 import ir.ha.dummy.utility.extentions.convertMilliSecondToMinute
 import java.util.*
 

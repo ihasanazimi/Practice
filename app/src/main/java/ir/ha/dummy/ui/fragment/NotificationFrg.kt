@@ -15,7 +15,7 @@ import android.view.ViewGroup
 import androidx.core.app.NotificationCompat
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentNotificationBinding
-import ir.ha.dummy.ui.BaseFragment
+import ir.ha.dummy.utility.base.BaseFragment
 import ir.ha.dummy.ui.MainActivity
 import ir.ha.dummy.utility.extentions.isOreoPlus
 

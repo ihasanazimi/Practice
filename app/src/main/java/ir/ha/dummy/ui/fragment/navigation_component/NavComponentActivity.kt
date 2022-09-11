@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.navigation.Navigation
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.ActivityNavComponentBinding
-import ir.ha.dummy.ui.BaseActivity
+import ir.ha.dummy.utility.base.BaseActivity
 
 class NavComponentActivity : BaseActivity() {
 

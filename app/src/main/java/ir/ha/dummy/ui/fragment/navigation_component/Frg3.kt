@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.Fragment3Binding
-import ir.ha.dummy.ui.BaseFragment
+import ir.ha.dummy.utility.base.BaseFragment
 
 class Frg3 : BaseFragment() {
 

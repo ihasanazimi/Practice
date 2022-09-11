@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentMediatorLiveDataBinding
-import ir.ha.dummy.ui.BaseFragment
+import ir.ha.dummy.utility.base.BaseFragment
 
 class MediatorLiveDataFrg : BaseFragment() {
 

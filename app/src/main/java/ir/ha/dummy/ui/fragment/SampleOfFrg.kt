@@ -9,7 +9,7 @@ import android.widget.Toast
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentSampleOfNewCreateFrgBinding
 import ir.ha.dummy.model.FakeDataModel
-import ir.ha.dummy.ui.BaseFragment
+import ir.ha.dummy.utility.base.BaseFragment
 
 class SampleOfFrg : BaseFragment(), View.OnClickListener {
 

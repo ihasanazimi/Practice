@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.view.animation.*
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentAnimationBinding
-import ir.ha.dummy.ui.BaseFragment
 import ir.ha.dummy.utility.extentions.showToast
+import ir.ha.dummy.utility.base.BaseFragment
 
 class AnimationsFrg : BaseFragment() {
 

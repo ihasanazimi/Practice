@@ -13,7 +13,7 @@ import io.reactivex.schedulers.Schedulers
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentMvvmRxJavaBinding
 import ir.ha.dummy.model.UserModel
-import ir.ha.dummy.ui.BaseFragment
+import ir.ha.dummy.utility.base.BaseFragment
 
 class MVVMRxJavaFrg : BaseFragment() {
 

@@ -12,7 +12,7 @@ import ir.ha.dummy.databinding.FragmentRoomDbSamplerBinding
 import ir.ha.dummy.model.adapters.ContactAdapter
 import ir.ha.dummy.model.ContactModel
 import ir.ha.dummy.repo.RoomDB
-import ir.ha.dummy.ui.BaseFragment
+import ir.ha.dummy.utility.base.BaseFragment
 import ir.ha.dummy.utility.extentions.showToast
 
 
