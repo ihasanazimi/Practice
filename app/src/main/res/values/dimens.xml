@@ -29,6 +29,8 @@
     <dimen name="space_64dp">64dp</dimen>
     <dimen name="space_128dp">128dp</dimen>
     <dimen name="space_256dp">256dp</dimen>
-    <dimen name="icon_size">24dp</dimen>
+    <dimen name="icon_size_24dp">24dp</dimen>
+    <dimen name="icon_size_28dp">28dp</dimen>
+    <dimen name="btn_height_58dp">58dp</dimen>
 
 </resources>
