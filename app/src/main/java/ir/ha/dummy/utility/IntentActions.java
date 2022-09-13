@@ -2,6 +2,7 @@ package ir.ha.dummy.utility;
 
 import static ir.ha.dummy.utility.extentions.UtilExtKt.isAppAvailable;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -19,6 +20,20 @@ public class IntentActions {
 
     public IntentActions(Context context){
         this.context = context;
+    }
+
+
+
+    public void callPhoneNumber(Activity activity , String phoneNumber){
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:"+phoneNumber));
+        activity.startActivity(intent);
+    }
+
+    public void sendMessageToPhoneNumber(Activity activity , String phoneNumber , String msg){
+        Intent intentSMS = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:"+phoneNumber));
+        intentSMS.putExtra("sms_body", msg);
+        activity.startActivity(intentSMS);
     }
 
 
