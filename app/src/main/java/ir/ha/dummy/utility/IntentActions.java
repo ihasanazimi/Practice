@@ -34,6 +34,17 @@ public class IntentActions {
         activity.startActivity(intentSMS);
     }
 
+    public void openWebSite(String url){
+        activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+    }
+
+    public void goToLocation(String Latitude , String longitude){
+        Uri uri = Uri.parse("google.navigation:q=" + Latitude + "," + longitude + "&mode=d");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        intent.setPackage("com.google.android.apps.maps");
+        activity.startActivity(intent);
+    }
+
 
     public void openLinkedInPage(String linkedId) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("linkedin://add/%@" + linkedId));
