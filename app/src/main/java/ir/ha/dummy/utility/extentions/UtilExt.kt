@@ -17,6 +17,8 @@ import android.text.SpannableStringBuilder
 import android.text.style.ImageSpan
 import android.view.MenuItem
 import android.view.View
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.addCallback
 import androidx.annotation.ChecksSdkIntAtLeast
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
@@ -29,6 +31,13 @@ import ir.ha.dummy.App
 import ir.ha.dummy.R
 import java.util.*
 
+
+fun Fragment.onBackClick(callback: (onBackPressedCallback: OnBackPressedCallback) -> Unit) {
+// This callback will only be called when MyFragment is at least Started.
+    activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner) {
+        callback.invoke(this)
+    }
+}
 
 fun Fragment.runOnUIThread(runnable: Runnable, delay: Long = 0) {
     if (delay == 0L) {
