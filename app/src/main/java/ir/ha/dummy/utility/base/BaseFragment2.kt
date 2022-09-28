@@ -22,6 +22,14 @@ abstract class BaseFragment2<V : ViewDataBinding> : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        registerObservers()
+    }
+
+
+    open fun registerObservers(){}
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

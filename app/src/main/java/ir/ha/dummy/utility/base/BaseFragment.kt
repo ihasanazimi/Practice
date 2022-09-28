@@ -1,7 +1,9 @@
 package ir.ha.dummy.utility.base
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
@@ -23,4 +25,14 @@ abstract class BaseFragment : Fragment(), BaseView {
     fun <T : ViewDataBinding> getBinding(layoutID: Int, parent : ViewGroup, attachToRoot : Boolean): T {
         return DataBindingUtil.inflate(LayoutInflater.from(requireContext()), layoutID , parent ,attachToRoot)
     }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        registerObservers()
+    }
+
+
+    open fun registerObservers(){}
+
 }
