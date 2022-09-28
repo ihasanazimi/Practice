@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import es.dmoral.toasty.Toasty
 import io.reactivex.SingleObserver
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -14,6 +13,7 @@ import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentMvvmRxJavaBinding
 import ir.ha.dummy.model.UserModel
 import ir.ha.dummy.utility.base.BaseFragment
+import ir.ha.dummy.utility.extentions.showToast
 
 class MVVMRxJavaFrg : BaseFragment() {
 
@@ -58,11 +58,11 @@ class MVVMRxJavaFrg : BaseFragment() {
                     for (i in t){
                         binding.tvMvvmRxMessage.append("title : " + i.title+"\n\n\n\n")
                     }
-                    Toasty.success(requireContext(),"عملیات با موفقیت انجام شد").show()
+                    showToast(requireContext(),"عملیات با موفقیت انجام شد")
                 }
 
                 override fun onError(e: Throwable) {
-                    Toasty.error(requireContext(),e.message.toString()).show()
+                    showToast(requireContext(),e.message.toString())
                 }
             })
 
