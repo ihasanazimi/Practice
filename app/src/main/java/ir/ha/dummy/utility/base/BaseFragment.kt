@@ -1,31 +1,26 @@
 package ir.ha.dummy.utility.base
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
-abstract class BaseFragment : Fragment(), BaseView {
-    override val rootView: ViewGroup?
-        get() = view as ViewGroup?
-    override val viewContext: Context?
-        get() = context
+abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
 
+    private var _binding: V? = null
 
-    // default
-    fun <T : ViewDataBinding> getBinding(layoutID: Int, parent : ViewGroup): T {
-        return DataBindingUtil.inflate(LayoutInflater.from(requireContext()), layoutID , parent , false)
+    val binding get() = _binding!!
+
+    val mainHelper by lazy { (requireActivity()) }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
+        return binding.root
     }
-
-    // for custom views
-    fun <T : ViewDataBinding> getBinding(layoutID: Int, parent : ViewGroup, attachToRoot : Boolean): T {
-        return DataBindingUtil.inflate(LayoutInflater.from(requireContext()), layoutID , parent ,attachToRoot)
-    }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -35,4 +30,15 @@ abstract class BaseFragment : Fragment(), BaseView {
 
     open fun registerObservers(){}
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    @get:LayoutRes
+    abstract val layoutId: Int
+
+    open fun onScrollToTop() {}
+
+    open fun onRetrievedTag(retrievedTag: String) {}
 }

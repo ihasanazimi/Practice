@@ -7,12 +7,12 @@ import dagger.hilt.android.scopes.ActivityScoped
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentHiltBinding
 import ir.ha.dummy.utility.extentions.showToast
-import ir.ha.dummy.utility.base.BaseFragment2
+import ir.ha.dummy.utility.base.BaseFragment
 import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class HiltFrg :  BaseFragment2<FragmentHiltBinding>() {
+class HiltFrg :  BaseFragment<FragmentHiltBinding>() {
     override val layoutId: Int
         get() = R.layout.fragment_hilt
 
