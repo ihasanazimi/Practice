@@ -1,4 +1,4 @@
-package ir.soleymani.clinic.utility.base
+package ir.ha.dummy.utility.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
