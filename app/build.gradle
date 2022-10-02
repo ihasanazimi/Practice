@@ -181,6 +181,10 @@ dependencies {
     //Encrypted Pref
 //    implementation "androidx.security:security-crypto:1.1.0-alpha03" // Encrypted prefManager By Crypto
 
+
+    implementation("com.github.hadilq:live-event:1.2.3")
+
+    implementation("com.squareup.okhttp3:logging-interceptor:4.8.1")
 }
 
 

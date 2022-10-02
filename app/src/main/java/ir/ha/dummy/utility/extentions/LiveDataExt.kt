@@ -4,8 +4,7 @@ import android.os.Looper
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
-//import com.github.musichin.reactivelivedata.combineLatestWith
-//import com.hadilq.liveevent.LiveEvent
+import com.hadilq.liveevent.LiveEvent
 import kotlinx.coroutines.*
 import kotlin.reflect.KProperty
 
@@ -87,10 +86,10 @@ val<T> MutableLiveData<T>.valDelegate: GenericNullableDelegate<T>
 }
 
 
-//fun <T> LiveData<T>.toEvent(): LiveData<T> {
-//    val result = LiveEvent<T>()
-//    result.addSource(this) {
-//        result.value = it
-//    }
-//    return result
-//}
+fun <T> LiveData<T>.toEvent(): LiveData<T> {
+    val result = LiveEvent<T>()
+    result.addSource(this) {
+        result.value = it
+    }
+    return result
+}
