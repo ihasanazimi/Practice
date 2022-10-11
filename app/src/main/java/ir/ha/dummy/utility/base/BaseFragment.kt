@@ -12,9 +12,9 @@ import androidx.fragment.app.Fragment
 abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
 
     private var _binding: V? = null
-
     val binding get() = _binding!!
-
+    @get:LayoutRes
+    abstract val layoutId: Int
     val mainHelper by lazy { (requireActivity()) }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -35,8 +35,6 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
         _binding = null
     }
 
-    @get:LayoutRes
-    abstract val layoutId: Int
 
     open fun onScrollToTop() {}
 

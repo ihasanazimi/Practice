@@ -1,20 +1,28 @@
 package ir.ha.dummy.utility.base
 
 import android.content.Context
+import android.os.Bundle
+import android.os.PersistableBundle
+import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import ir.ha.dummy.utility.localizedContext
 
-abstract class BaseActivity : AppCompatActivity(), BaseView {
-    override val rootView: ViewGroup?
-        get() = window.decorView.rootView as ViewGroup
-    override val viewContext: Context?
-        get() = this
+abstract class BaseActivity<V : ViewDataBinding> : AppCompatActivity(), BaseView {
+    override val rootView: ViewGroup? get() = window.decorView.rootView as ViewGroup
+    override val viewContext: Context? get() = this
+    private var _binding: V? = null
+    val binding get() = _binding!!
 
-    fun <T : ViewDataBinding?> getBinding(layoutID: Int): T {
-        return DataBindingUtil.setContentView(this, layoutID)
+    @get:LayoutRes
+    abstract val layoutId: Int
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        _binding = DataBindingUtil.setContentView(this,layoutId)
     }
 
     override fun attachBaseContext(context: Context) {
@@ -24,5 +32,10 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
     override fun onStart() {
         super.onStart()
         localizedContext(this)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

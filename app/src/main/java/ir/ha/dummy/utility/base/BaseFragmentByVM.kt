@@ -12,11 +12,11 @@ import ir.ha.dummy.utility.extentions.showToast
 
 abstract class BaseFragmentByVM<V : ViewDataBinding , VM : BaseViewModel> : Fragment() {
 
-    private var _binding: V? = null
     abstract val viewModel: VM
-
+    private var _binding: V? = null
     val binding get() = _binding!!
-
+    @get:LayoutRes
+    abstract val layoutId: Int
     val mainHelper by lazy { (requireActivity()) }
 
 
@@ -43,8 +43,7 @@ abstract class BaseFragmentByVM<V : ViewDataBinding , VM : BaseViewModel> : Frag
         _binding = null
     }
 
-    @get:LayoutRes
-    abstract val layoutId: Int
+
 
     open fun onScrollToTop() {}
 

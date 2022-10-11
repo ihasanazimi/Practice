@@ -22,17 +22,14 @@ import ir.ha.dummy.utility.extentions.addFragmentByAnimation
 import ir.ha.dummy.utility.extentions.showToast
 
 //@AndroidEntryPoint
-class MainActivity : BaseActivity(), View.OnClickListener {
+class MainActivity : BaseActivity<ActivityMainBinding>(), View.OnClickListener {
 
-    lateinit var binding : ActivityMainBinding
+    override val layoutId: Int get() = R.layout.activity_main
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = getBinding(R.layout.activity_main)
-        setContentView(binding.root)
 
-        binding.imageLoaderBtn.setOnCheckedChangeListener { compoundButton, b ->
-                compoundButton.isChecked = b
-        }
+        binding.imageLoaderBtn.setOnCheckedChangeListener { compoundButton, b -> compoundButton.isChecked = b }
         binding.imageLoaderBtn.setOnClickListener(this)
         binding.bannerSliderBtn.setOnClickListener(this)
         binding.recyclerViewSampleBtn.setOnClickListener(this)
