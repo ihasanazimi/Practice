@@ -1,9 +1,7 @@
 package ir.ha.dummy.ui.fragment
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.MediaController
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentVideoPlayerBinding
@@ -11,23 +9,10 @@ import ir.ha.dummy.utility.base.BaseFragment
 import ir.ha.dummy.utility.extentions.hide
 import ir.ha.dummy.utility.extentions.showToast
 
-class VideoPlayerFrg :  BaseFragment() {
+class VideoPlayerFrg :  BaseFragment<FragmentVideoPlayerBinding>() {
 
-    private lateinit var binding : FragmentVideoPlayerBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = getBinding(R.layout.fragment_video_player,container!!)
-        return binding.root
-    }
-
+    override val layoutId: Int
+        get() = R.layout.fragment_video_player
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -55,11 +40,6 @@ class VideoPlayerFrg :  BaseFragment() {
             binding.pb.hide()
             return@setOnErrorListener false
         }
-    }
-
-
-    override fun onDestroyView() {
-        super.onDestroyView()
     }
 
     override fun onDestroy() {

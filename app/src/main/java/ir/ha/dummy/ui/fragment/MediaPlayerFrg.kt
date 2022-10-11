@@ -1,12 +1,9 @@
 package ir.ha.dummy.ui.fragment
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.media.MediaPlayer
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import com.google.android.material.slider.Slider
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentMediaPlayerBinding
@@ -14,33 +11,13 @@ import ir.ha.dummy.utility.base.BaseFragment
 import ir.ha.dummy.utility.extentions.convertMilliSecondToMinute
 import java.util.*
 
-class MediaPlayerFrg : BaseFragment() {
+class MediaPlayerFrg : BaseFragment<FragmentMediaPlayerBinding>() {
 
-    private lateinit var binding : FragmentMediaPlayerBinding
+    override val layoutId: Int get() = R.layout.fragment_media_player
     private lateinit var mediaPlayer : MediaPlayer
     private lateinit var timer : Timer
     var isDragging = false
     var finish = false
-
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        finish = false
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = getBinding(R.layout.fragment_media_player,container!!)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -10,28 +10,9 @@ import ir.ha.dummy.databinding.DialogFragmentBottomSheetBinding
 
 class DialogBottomSheetFrg : BottomSheetDialogFragment() {
 
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val binding = DialogFragmentBottomSheetBinding.inflate(LayoutInflater.from(requireContext()),null,false)
         return binding.root
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-    }
-
-
 
 }

@@ -13,19 +13,12 @@ import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentLoadImagesBinding
 import ir.ha.dummy.utility.base.BaseFragment
 
-class LoadImagesSampleFrg : BaseFragment() {
+class LoadImagesSampleFrg : BaseFragment<FragmentLoadImagesBinding>() {
 
-    lateinit var binding : FragmentLoadImagesBinding
+    override val layoutId: Int
+        get() = R.layout.fragment_load_images
     val imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Android_logo_2019.png/800px-Android_logo_2019.png"
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = getBinding(R.layout.fragment_load_images, container!!)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

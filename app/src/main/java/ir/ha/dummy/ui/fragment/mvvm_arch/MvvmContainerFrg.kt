@@ -12,24 +12,9 @@ import ir.ha.dummy.ui.fragment.mvvm_arch.live_data.SimpleLiveDataFrg
 import ir.ha.dummy.ui.fragment.mvvm_arch.live_data.MediatorLiveDataFrg
 import ir.ha.dummy.ui.fragment.mvvm_arch.viewModel.SampleViewModelFrg
 
-class MvvmContainerFrg : BaseFragment() {
+class MvvmContainerFrg : BaseFragment<FragmentMvvmContainerBinding>() {
 
-
-    lateinit var binding : FragmentMvvmContainerBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = getBinding(R.layout.fragment_mvvm_container,container!!)
-        return binding.root
-    }
+    override val layoutId: Int get() = R.layout.fragment_mvvm_container
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

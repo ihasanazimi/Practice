@@ -1,10 +1,8 @@
 package ir.ha.dummy.ui.fragment.httpSamples
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import es.dmoral.toasty.Toasty
+import ir.ha.dummy.App
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentSampleRequestBinding
 import ir.ha.dummy.model.UserModel
@@ -14,19 +12,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RequestSampleFrg : BaseFragment() {
+class RequestSampleFrg : BaseFragment<FragmentSampleRequestBinding>() {
 
-    lateinit var binding  : FragmentSampleRequestBinding
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = getBinding(R.layout.fragment_sample_request,container!!)
-        return binding.root
-    }
-
+    override val layoutId: Int
+        get() = R.layout.fragment_sample_request
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -41,13 +30,13 @@ class RequestSampleFrg : BaseFragment() {
                 override fun onResponse(call: Call<List<UserModel>>, response: Response<List<UserModel>>) {
                     if (response.isSuccessful) {
                         binding.tv.text = "${response.body()?.get(0)?.title}"
-                        Toasty.success(requireContext(), "با موفقیت انجام شد").show()
+                        showToast(requireContext(),"با موفقیت انجام شد")
                         binding.pb.visibility = View.INVISIBLE
                     }
                 }
 
                 override fun onFailure(call: Call<List<UserModel>>, t: Throwable) {
-                    showToast(requireContext(),t.message.toString())
+                    showToast(App.context!!,t.message.toString())
                     binding.pb.visibility = View.INVISIBLE
                 }
             })

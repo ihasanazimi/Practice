@@ -2,9 +2,7 @@ package ir.ha.dummy.ui.fragment.firebase
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.lifecycle.lifecycleScope
@@ -12,27 +10,13 @@ import com.google.firebase.messaging.FirebaseMessaging
 import ir.ha.dummy.R
 import ir.ha.dummy.dataStore
 import ir.ha.dummy.databinding.FragmentFirebaseBinding
-import ir.ha.dummy.utility.extentions.showToast
 import ir.ha.dummy.utility.base.BaseFragment
+import ir.ha.dummy.utility.extentions.showToast
 import kotlinx.coroutines.flow.first
 
-class FirebaseCloudMessagingFrg : BaseFragment() {
-
-    private lateinit var binding : FragmentFirebaseBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
-        binding = getBinding(R.layout.fragment_firebase,container!!)
-        return binding.root
-    }
+class FirebaseCloudMessagingFrg : BaseFragment<FragmentFirebaseBinding>() {
+    override val layoutId: Int
+        get() = R.layout.fragment_firebase
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

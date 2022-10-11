@@ -9,18 +9,9 @@ import ir.ha.dummy.R
 import ir.ha.dummy.databinding.Fragment1Binding
 import ir.ha.dummy.utility.base.BaseFragment
 
-class Frg1 : BaseFragment() {
+class Frg1 : BaseFragment<Fragment1Binding>() {
 
-    private lateinit var binding : Fragment1Binding
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = getBinding(R.layout.fragment_1,container!!)
-        return binding.root
-    }
+    override val layoutId: Int get() = R.layout.fragment_1
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -1,14 +1,17 @@
 package ir.ha.dummy.utility.extentions
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.app.ActivityManager
 import android.content.ClipData
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
+import android.location.LocationManager
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
@@ -17,12 +20,14 @@ import android.text.SpannableStringBuilder
 import android.text.style.ImageSpan
 import android.view.MenuItem
 import android.view.View
+import android.view.Window
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
 import androidx.annotation.ChecksSdkIntAtLeast
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
@@ -330,6 +335,23 @@ fun getApplicationVersion(context : Context) : Pair<String , Int>{
         versionCode = pInfo.versionCode
     } catch (e: PackageManager.NameNotFoundException) { e.printStackTrace() }
     return Pair(versionName , versionCode)
+}
+
+
+private fun turnOnGPS (activity: Activity) {
+    val manager = activity.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+    if (manager.isProviderEnabled(LocationManager.GPS_PROVIDER).not()) {
+        // turnOnGPS
+        val intent = Intent("android.location.GPS_ENABLED_CHANGE")
+        intent.putExtra("enabled", true)
+        activity.sendBroadcast(intent)
+    }
+}
+
+fun changeStatusBarColor(window: Window, colorId : Int) {
+    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        window.statusBarColor = App.context?.resources!!.getColor(colorId,null)
+    }
 }
 
 

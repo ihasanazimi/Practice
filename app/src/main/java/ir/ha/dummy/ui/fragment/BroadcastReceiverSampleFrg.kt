@@ -5,30 +5,19 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentBroadCastRecevierBinding
-import ir.ha.dummy.utility.extentions.checkInternetConnection
 import ir.ha.dummy.utility.base.BaseFragment
+import ir.ha.dummy.utility.extentions.checkInternetConnection
 
-class BroadcastReceiverSampleFrg : BaseFragment() {
+class BroadcastReceiverSampleFrg : BaseFragment<FragmentBroadCastRecevierBinding>() {
+    override val layoutId: Int get() = R.layout.fragment_broad_cast_recevier
 
-    private lateinit var binding: FragmentBroadCastRecevierBinding
     private lateinit var service : BroadcastReceiver
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = getBinding(R.layout.fragment_broad_cast_recevier, container!!)
-        return binding.root
     }
 
 

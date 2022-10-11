@@ -9,11 +9,13 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.DialogFragment
+import ir.ha.dummy.utility.extentions.showToast
 
-abstract class BaseDialogFragment<V : ViewDataBinding> :
+abstract class BaseDialogFragmentByVM<V : ViewDataBinding , VM : BaseViewModel> :
     DialogFragment() {
 
     private var _binding: V? = null
+    abstract val viewModel: VM
 
     val binding get() = _binding!!
 
@@ -22,6 +24,19 @@ abstract class BaseDialogFragment<V : ViewDataBinding> :
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        registerObservers()
+    }
+
+    open fun registerObservers(){
+
+        viewModel.errorLiveData.observe(viewLifecycleOwner){
+            if (it.size != 0) showToast(requireContext(),it.first())
+        }
+
     }
 
     override fun onDestroyView() {

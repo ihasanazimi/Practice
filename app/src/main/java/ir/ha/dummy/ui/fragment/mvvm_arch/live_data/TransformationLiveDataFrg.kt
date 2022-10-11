@@ -8,28 +8,11 @@ import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentTransformationLiveDataBinding
 import ir.ha.dummy.utility.base.BaseFragment
 
-class TransformationLiveDataFrg : BaseFragment(){
+class TransformationLiveDataFrg : BaseFragment<FragmentTransformationLiveDataBinding>(){
 
-    private lateinit var binding :  FragmentTransformationLiveDataBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = getBinding(R.layout.fragment_transformation_live_data,container!!)
-        return binding.root
-    }
-
+    override val layoutId: Int get() = R.layout.fragment_transformation_live_data
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
     }
 }

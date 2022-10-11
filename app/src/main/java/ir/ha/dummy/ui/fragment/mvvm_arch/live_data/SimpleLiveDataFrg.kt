@@ -10,29 +10,15 @@ import ir.ha.dummy.databinding.FragmentLiveDataBinding
 import ir.ha.dummy.utility.base.BaseFragment
 import ir.ha.dummy.utility.extentions.showToast
 
-class SimpleLiveDataFrg : BaseFragment() {
-
+class SimpleLiveDataFrg : BaseFragment<FragmentLiveDataBinding>() {
+    override val layoutId: Int
+        get() = R.layout.fragment_live_data
 
     lateinit var simpleLiveDataChecker: SimpleLiveDataChecker
-    private lateinit var binding : FragmentLiveDataBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        simpleLiveDataChecker = SimpleLiveDataChecker()
-    }
-
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = getBinding(R.layout.fragment_live_data,container!!)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        simpleLiveDataChecker = SimpleLiveDataChecker()
 
         simpleLiveDataChecker.locationLiveData.observe(viewLifecycleOwner) {
             requireActivity().runOnUiThread{

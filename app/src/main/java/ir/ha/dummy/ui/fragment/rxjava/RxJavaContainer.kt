@@ -1,9 +1,7 @@
 package ir.ha.dummy.ui.fragment.rxjava
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import com.google.android.material.chip.Chip
@@ -20,21 +18,12 @@ import ir.ha.dummy.utility.extentions.showToast
 import java.io.IOException
 import java.util.concurrent.TimeUnit
 
-class RxJavaContainer : BaseFragment() {
+class RxJavaContainer : BaseFragment<FragmentRxJavaContainerBinding>() {
 
-    private lateinit var binding: FragmentRxJavaContainerBinding
+    override val layoutId: Int
+        get() = R.layout.fragment_rx_java_container
     private lateinit var compositeDisposable: CompositeDisposable
     private lateinit var disposable: Disposable // یعنی یه چیز دور ریختنی
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = getBinding(R.layout.fragment_rx_java_container, container!!)
-        return binding.root
-    }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

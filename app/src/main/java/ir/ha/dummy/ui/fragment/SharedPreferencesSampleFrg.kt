@@ -3,35 +3,22 @@ package ir.ha.dummy.ui.fragment
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentSharedPreferncesSampleBinding
 import ir.ha.dummy.utility.base.BaseFragment
 import ir.ha.dummy.utility.extentions.showToast
 
-class SharedPreferencesSampleFrg : BaseFragment() {
-
-    private lateinit var binding : FragmentSharedPreferncesSampleBinding
-    private lateinit var pref: SharedPreferences
+class SharedPreferencesSampleFrg : BaseFragment<FragmentSharedPreferncesSampleBinding>() {
+    override val layoutId: Int get() = R.layout.fragment_shared_prefernces_sample
+    lateinit var pref: SharedPreferences
     private val sharedPrefFileName  = "sharedPrefFileName"
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        pref = requireActivity().getSharedPreferences(sharedPrefFileName,Context.MODE_PRIVATE)
-    }
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        binding = getBinding(R.layout.fragment_shared_prefernces_sample, container!!)
-        return binding.root
-    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        pref = requireActivity().getSharedPreferences(sharedPrefFileName,Context.MODE_PRIVATE)
         // show default value from pref file
         binding.input.setText(pref.getString("test_key" , "متن پیش فرض"))
 

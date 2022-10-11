@@ -2,29 +2,18 @@ package ir.ha.dummy.ui.fragment
 
 import android.animation.Animator
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.view.animation.*
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentAnimationBinding
-import ir.ha.dummy.utility.extentions.showToast
 import ir.ha.dummy.utility.base.BaseFragment
+import ir.ha.dummy.utility.extentions.showToast
 
-class AnimationsFrg : BaseFragment() {
+class AnimationsFrg : BaseFragment<FragmentAnimationBinding>() {
 
+    override val layoutId: Int get() = R.layout.fragment_animation
     private lateinit var activeAnim : Animation
-    private lateinit var binding : FragmentAnimationBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-
-        binding = getBinding(R.layout.fragment_animation,container!!)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

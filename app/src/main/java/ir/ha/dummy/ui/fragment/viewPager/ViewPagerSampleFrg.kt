@@ -10,22 +10,16 @@ import ir.ha.dummy.databinding.FragmentViewPagerSampleBinding
 import ir.ha.dummy.repo.BannerDataGenerator
 import ir.ha.dummy.utility.base.BaseFragment
 
-class ViewPagerSampleFrg : BaseFragment() {
-
-    private lateinit var binding : FragmentViewPagerSampleBinding
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        binding = getBinding(R.layout.fragment_view_pager_sample, container!!)
-        return binding.root
-    }
-
+class ViewPagerSampleFrg : BaseFragment<FragmentViewPagerSampleBinding>() {
+    override val layoutId: Int
+        get() = R.layout.fragment_view_pager_sample
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.viewPager.apply {
             orientation = ViewPager2.ORIENTATION_HORIZONTAL
-            adapter = ViewPagerAdapter(this@ViewPagerSampleFrg , BannerDataGenerator.getBanners())
+            adapter = ViewPagerAdapter(this@ViewPagerSampleFrg, BannerDataGenerator.getBanners())
         }
 
     }

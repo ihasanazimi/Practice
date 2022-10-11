@@ -9,19 +9,18 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.app.NotificationCompat
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentNotificationBinding
-import ir.ha.dummy.utility.base.BaseFragment
 import ir.ha.dummy.ui.MainActivity
+import ir.ha.dummy.utility.base.BaseFragment
 import ir.ha.dummy.utility.extentions.isOreoPlus
 
-class NotificationFrg: BaseFragment() {
+class NotificationFrg: BaseFragment<FragmentNotificationBinding>() {
 
-    private lateinit var binding : FragmentNotificationBinding
+    override val layoutId: Int
+        get() = R.layout.fragment_notification
     private lateinit var notificationManager : NotificationManager
 
     private lateinit var simpleNotification : Notification
@@ -88,11 +87,6 @@ class NotificationFrg: BaseFragment() {
                     .addLine("line 3 message")
             )
             .build()
-    }
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        binding = getBinding(R.layout.fragment_notification,container!!)
-        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -1,9 +1,5 @@
 package ir.ha.dummy.ui.fragment
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.lifecycle.lifecycleScope
@@ -13,21 +9,8 @@ import ir.ha.dummy.databinding.FragmentDataStoreSampleBinding
 import ir.ha.dummy.utility.base.BaseFragment
 import kotlinx.coroutines.flow.first
 
-class DataStoreSampleFrg : BaseFragment() {
-
-    private lateinit var binding  : FragmentDataStoreSampleBinding
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        binding = getBinding(R.layout.fragment_data_store_sample,container!!)
-        return binding.root
-    }
+class DataStoreSampleFrg : BaseFragment<FragmentDataStoreSampleBinding>() {
+    override val layoutId: Int get() = R.layout.fragment_data_store_sample
 
 
     override fun onResume() {

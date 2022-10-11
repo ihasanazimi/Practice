@@ -2,31 +2,16 @@ package ir.ha.dummy.ui.fragment.mvvm_arch.live_data
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentMediatorLiveDataBinding
 import ir.ha.dummy.utility.base.BaseFragment
 
-class MediatorLiveDataFrg : BaseFragment() {
+class MediatorLiveDataFrg : BaseFragment<FragmentMediatorLiveDataBinding>() {
 
-    private lateinit var binding : FragmentMediatorLiveDataBinding
+    override val layoutId: Int get() = R.layout.fragment_mediator_live_data
     private lateinit var mediatorLiveDataChecker : MediatorLiveDataChecker
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = getBinding(R.layout.fragment_mediator_live_data,container!!)
-        return binding.root
-    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

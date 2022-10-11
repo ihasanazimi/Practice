@@ -4,12 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import dagger.hilt.android.AndroidEntryPoint
 import ir.ha.dummy.R
+import ir.ha.dummy.databinding.ActivityMainBinding
 import ir.ha.dummy.model.FakeDataModel
 import ir.ha.dummy.ui.fragment.*
 import ir.ha.dummy.ui.fragment.firebase.FirebaseCloudMessagingFrg
-import ir.ha.dummy.ui.fragment.hilt.HiltFrg
+import ir.ha.dummy.ui.fragment.httpSamples.RequestSampleFrg
 import ir.ha.dummy.ui.fragment.material.MaterialViews
 import ir.ha.dummy.ui.fragment.mvvm_arch.MvvmContainerFrg
 import ir.ha.dummy.ui.fragment.mvvm_rx.MVVMRxJavaFrg
@@ -17,15 +17,14 @@ import ir.ha.dummy.ui.fragment.navigation_component.NavComponentActivity
 import ir.ha.dummy.ui.fragment.rxjava.RxJavaContainer
 import ir.ha.dummy.ui.fragment.services.ServicesFrg
 import ir.ha.dummy.ui.fragment.viewPager.ViewPagerSampleFrg
-import ir.ha.dummy.ui.fragment.httpSamples.RequestSampleFrg
+import ir.ha.dummy.utility.base.BaseActivity
 import ir.ha.dummy.utility.extentions.addFragmentByAnimation
 import ir.ha.dummy.utility.extentions.showToast
-import ir.ha.dummy.utility.base.BaseActivity
 
-@AndroidEntryPoint
+//@AndroidEntryPoint
 class MainActivity : BaseActivity(), View.OnClickListener {
 
-    lateinit var binding : ir.ha.dummy.databinding.ActivityMainBinding
+    lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = getBinding(R.layout.activity_main)
@@ -266,12 +265,12 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
 
             R.id.btn_hilt -> {
-                binding.btnHilt.isChecked = true
-                addFragmentByAnimation(HiltFrg(),"HiltFrg",
-                    addToBackStack = true,
-                    customAnimations = true,
-                    containerViewId = R.id.mainFrame,
-                    commitAllowingStateLoss = false)
+//                binding.btnHilt.isChecked = true
+//                addFragmentByAnimation(HiltFrg(),"HiltFrg",
+//                    addToBackStack = true,
+//                    customAnimations = true,
+//                    containerViewId = R.id.mainFrame,
+//                    commitAllowingStateLoss = false)
             }
 
 

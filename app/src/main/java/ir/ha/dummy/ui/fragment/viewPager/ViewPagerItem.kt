@@ -1,32 +1,24 @@
 package ir.ha.dummy.ui.fragment.viewPager
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import ir.ha.dummy.utility.base.BaseFragment
 import ir.ha.dummy.R
+import ir.ha.dummy.databinding.FragmentViewPagerSampleBinding
 import ir.ha.dummy.model.Banner
 import ir.ha.dummy.services.ImageLoadingService
-import ir.ha.dummy.utility.customViews.FrescoImageView
+import ir.ha.dummy.utility.base.BaseFragment
 import org.koin.android.ext.android.inject
 
-class ViewPagerItem : BaseFragment() {
+class ViewPagerItem : BaseFragment<FragmentViewPagerSampleBinding>() {
+
+    override val layoutId: Int get() = R.layout.fragment_view_pager_sample
 
     // object from application class (by koin)
     private val imageLoadingService : ImageLoadingService by inject()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        // inflate item
-        val item = inflater.inflate(R.layout.item_view_pager,container,false) as FrescoImageView
-
-        // (load) fresco custom function
-        imageLoadingService.load(item,requireArguments().getParcelable<Banner>("data")!!.ImageUrl)
-
-        // return item view
-        return item
     }
 
 

@@ -1,40 +1,25 @@
 package ir.ha.dummy.ui.fragment
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentRoomDbSamplerBinding
-import ir.ha.dummy.model.adapters.ContactAdapter
 import ir.ha.dummy.model.ContactModel
+import ir.ha.dummy.model.adapters.ContactAdapter
 import ir.ha.dummy.repo.RoomDB
 import ir.ha.dummy.utility.base.BaseFragment
 import ir.ha.dummy.utility.extentions.showToast
 
 
-class RoomDBSamplerFrg : BaseFragment(), ContactAdapter.ContactEventListener {
+class RoomDBSamplerFrg : BaseFragment<FragmentRoomDbSamplerBinding>(), ContactAdapter.ContactEventListener {
 
-    private lateinit var binding  : FragmentRoomDbSamplerBinding
+    override val layoutId: Int get() = R.layout.fragment_room_db_sampler
+
     private lateinit var contactAdapter : ContactAdapter
 //    private val db  by inject<RoomDB>()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = getBinding(R.layout.fragment_room_db_sampler,container!!)
-        return binding.root
-    }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

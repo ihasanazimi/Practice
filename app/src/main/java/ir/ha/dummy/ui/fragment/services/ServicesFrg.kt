@@ -6,41 +6,20 @@ import android.content.Intent
 import android.content.ServiceConnection
 import android.os.Bundle
 import android.os.IBinder
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentServicesBinding
 import ir.ha.dummy.utility.base.BaseFragment
 import ir.ha.dummy.utility.extentions.showToast
 
-class ServicesFrg : BaseFragment(), View.OnClickListener {
+class ServicesFrg : BaseFragment<FragmentServicesBinding>(), View.OnClickListener {
 
 
-    private lateinit var binding : FragmentServicesBinding
+    override val layoutId: Int get() = R.layout.fragment_services
     private lateinit var backgroundIntent : Intent
     private lateinit var foregroundIntent : Intent
     private lateinit var boundIntent : Intent
     private var conn : ServiceConnection ? = null
-
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-    }
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding =  getBinding(R.layout.fragment_services,container!!)
-        return binding.root
-    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
