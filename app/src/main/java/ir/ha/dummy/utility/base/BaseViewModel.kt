@@ -12,9 +12,17 @@ abstract class BaseViewModel : ViewModel() {
     open val errorLiveData = MutableLiveData<ArrayList<String>>()
         get() = field
 
+    open var progressLiveData = MutableLiveData<Boolean>(false)
+        get() = field
+        set(value) { field = value }
 
     // for clear data after change state
-    open fun clearErrorLiveData(){}
+    open fun clearErrorLiveData(){
+        errorLiveData.value?.clear()
+    }
+
+
+
 
 
     override fun onCleared() {
