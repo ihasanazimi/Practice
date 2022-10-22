@@ -42,6 +42,7 @@ abstract class BaseDialogFragmentByVM<V : ViewDataBinding , VM : BaseViewModel> 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        viewModel.clearErrorLiveData()
     }
 
     @get:LayoutRes

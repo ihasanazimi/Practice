@@ -41,6 +41,7 @@ abstract class BaseFragmentByVM<V : ViewDataBinding , VM : BaseViewModel> : Frag
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        viewModel.clearErrorLiveData()
     }
 
 

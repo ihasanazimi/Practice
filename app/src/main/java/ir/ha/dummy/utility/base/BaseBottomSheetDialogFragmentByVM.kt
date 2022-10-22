@@ -45,6 +45,7 @@ abstract class BaseBottomSheetDialogFragmentByVM<V : ViewDataBinding, VM : BaseV
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        viewModel.clearErrorLiveData()
     }
 
     @get:LayoutRes

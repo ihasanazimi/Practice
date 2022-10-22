@@ -12,6 +12,7 @@ import androidx.databinding.ViewDataBinding
 import ir.ha.dummy.utility.localizedContext
 
 abstract class BaseActivity<V : ViewDataBinding> : AppCompatActivity(), BaseView {
+
     override val rootView: ViewGroup? get() = window.decorView.rootView as ViewGroup
     override val viewContext: Context? get() = this
     private var _binding: V? = null

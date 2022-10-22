@@ -3,26 +3,19 @@ package ir.ha.dummy.utility.base
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
+import ir.soleymani.clinic.utility.extentions.toEvent
 
 abstract class BaseViewModel : ViewModel() {
 
     open val composable = CompositeDisposable()
-        get() = field
-
     open val errorLiveData = MutableLiveData<ArrayList<String>>()
-        get() = field
-
     open var progressLiveData = MutableLiveData<Boolean>(false)
-        get() = field
-        set(value) { field = value }
 
     // for clear data after change state
     open fun clearErrorLiveData(){
-        errorLiveData.value?.clear()
+        val data = errorLiveData.value?.apply { clear() } ?: arrayListOf()
+        errorLiveData.value = data
     }
-
-
-
 
 
     override fun onCleared() {
@@ -31,3 +24,6 @@ abstract class BaseViewModel : ViewModel() {
         super.onCleared()
     }
 }
+
+
+
