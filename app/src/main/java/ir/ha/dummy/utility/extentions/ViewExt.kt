@@ -9,6 +9,8 @@ import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import android.graphics.drawable.Drawable
 import android.text.InputType
+import android.transition.Fade
+import android.transition.TransitionManager
 import android.util.DisplayMetrics
 import android.util.TypedValue
 import android.view.*
@@ -31,6 +33,13 @@ fun View.hide() { visibility = View.GONE }
 fun View.invisible() { visibility = View.INVISIBLE }
 
 
+fun ViewGroup.showParentByAnim() {
+    val transition = Fade()
+    transition.duration = 500
+    transition.addTarget(this)
+    TransitionManager.beginDelayedTransition(this, transition)
+    this.visibility = View.VISIBLE
+}
 
 /** get resources */
 fun View.getDrawable(drawableResID: Int): Drawable? =
@@ -293,3 +302,17 @@ fun showToast(ctx : Context , message : String){
     Toast.makeText(ctx,message.trim() , Toast.LENGTH_LONG).show()
 }
 
+
+/**
+ * ================================================
+ * Created by JessYan on 2020/4/8 18:43
+ * [Contact me](mailto:jess.yan.effort@gmail.com)
+ * [Follow me](https://github.com/JessYanCoding)
+ * ================================================
+ */
+open class AnimatorListenerImpl : Animator.AnimatorListener {
+    override fun onAnimationStart(animation: Animator) {}
+    override fun onAnimationEnd(animation: Animator) {}
+    override fun onAnimationCancel(animation: Animator) {}
+    override fun onAnimationRepeat(animation: Animator) {}
+}
