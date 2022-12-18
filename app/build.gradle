@@ -7,12 +7,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "ir.ha.dummy"
         minSdk 23
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -42,7 +42,7 @@ android {
         dataBinding true
         viewBinding true
     }
-    buildToolsVersion '31.0.0'
+    buildToolsVersion '32.0.0'
 }
 dependencies {
 
