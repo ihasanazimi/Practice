@@ -17,6 +17,7 @@ import ir.ha.dummy.ui.fragment.navigation_component.NavComponentActivity
 import ir.ha.dummy.ui.fragment.rxjava.RxJavaContainer
 import ir.ha.dummy.ui.fragment.services.ServicesFrg
 import ir.ha.dummy.ui.fragment.viewPager.ViewPagerSampleFrg
+import ir.ha.dummy.ui.sample.SamplePrjActivity
 import ir.ha.dummy.utility.base.BaseActivity
 import ir.ha.dummy.utility.extentions.addFragmentByAnimation
 import ir.ha.dummy.utility.extentions.showToast
@@ -54,6 +55,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), View.OnClickListener {
         binding.btnMVVM.setOnClickListener(this)
         binding.btnFirbase.setOnClickListener(this)
         binding.btnHilt.setOnClickListener(this)
+        binding.sampleRrj.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -268,6 +270,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), View.OnClickListener {
 //                    customAnimations = true,
 //                    containerViewId = R.id.mainFrame,
 //                    commitAllowingStateLoss = false)
+            }
+
+            R.id.sampleRrj ->{
+                startActivity(Intent(this@MainActivity, SamplePrjActivity::class.java))
             }
 
 
