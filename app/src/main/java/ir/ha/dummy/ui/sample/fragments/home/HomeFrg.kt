@@ -1,13 +1,13 @@
-package ir.ha.dummy.ui.sample.fragments
+package ir.ha.dummy.ui.sample.fragments.home
 
 import android.os.Bundle
 import android.view.View
 import ir.ha.dummy.R
-import ir.ha.dummy.databinding.SampleFrgCardBinding
+import ir.ha.dummy.databinding.SampleFrgHomeBinding
 import ir.ha.dummy.utility.base.BaseFragment
 
-class CardFrg : BaseFragment<SampleFrgCardBinding>() {
-    override val layoutId: Int get() = R.layout.sample_frg_card
+class HomeFrg: BaseFragment<SampleFrgHomeBinding>() {
+    override val layoutId: Int get() = R.layout.sample_frg_home
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

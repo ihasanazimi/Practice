@@ -16,9 +16,11 @@ class SamplePrjActivity : BaseActivity<ActivitySamplePrjBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         if (savedInstanceState == null) {
             setupBottomNavigationBar()
         } // Else, need to wait for onRestoreInstanceState
+
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {

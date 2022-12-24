@@ -1,4 +1,4 @@
-package ir.ha.dummy.ui.sample.fragments
+package ir.ha.dummy.ui.sample.fragments.profile
 
 import android.os.Bundle
 import android.view.View

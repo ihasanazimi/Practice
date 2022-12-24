@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/homeFrg"
-        android:name="ir.ha.dummy.ui.sample.fragments.HomeFrg"
+        android:name="ir.ha.dummy.ui.sample.fragments.home.HomeFrg"
         android:label="HomeFrg" />
 </navigation>
