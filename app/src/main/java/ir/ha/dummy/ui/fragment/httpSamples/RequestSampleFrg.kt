@@ -2,7 +2,7 @@ package ir.ha.dummy.ui.fragment.httpSamples
 
 import android.os.Bundle
 import android.view.View
-import ir.ha.dummy.App
+import ir.ha.dummy.ApplicationLoader
 import ir.ha.dummy.R
 import ir.ha.dummy.databinding.FragmentSampleRequestBinding
 import ir.ha.dummy.model.UserModel
@@ -36,7 +36,7 @@ class RequestSampleFrg : BaseFragment<FragmentSampleRequestBinding>() {
                 }
 
                 override fun onFailure(call: Call<List<UserModel>>, t: Throwable) {
-                    showToast(App.context!!,t.message.toString())
+                    showToast(ApplicationLoader.context!!,t.message.toString())
                     binding.pb.visibility = View.INVISIBLE
                 }
             })

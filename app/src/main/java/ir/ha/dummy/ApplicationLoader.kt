@@ -20,7 +20,7 @@ import org.koin.dsl.module
 import java.util.*
 
 //@HiltAndroidApp
-class App : Application() {
+class ApplicationLoader : Application() {
 
     companion object{
         var context :Context ?= null
@@ -43,7 +43,7 @@ class App : Application() {
 
         /** 2- Start Coin By Modules... */
         startKoin {
-            androidContext(this@App)
+            androidContext(this@ApplicationLoader)
             modules(myModules)
         }
 

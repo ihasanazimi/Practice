@@ -2,7 +2,7 @@ package ir.ha.dummy.utility
 
 import android.graphics.Bitmap
 import com.bumptech.glide.Glide
-import ir.ha.dummy.App
+import ir.ha.dummy.ApplicationLoader
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -17,7 +17,7 @@ fun saveUserCoverImage(userCover : String, saveDir : String){
     if (userCover.isNotEmpty() && saveDir.isNotEmpty()) {
         GlobalScope.launch(Dispatchers.IO) {
             saveImage(
-                Glide.with(App.context!!)
+                Glide.with(ApplicationLoader.context!!)
                     .asBitmap()
                     .load(userCover)
                     .placeholder(android.R.drawable.progress_indeterminate_horizontal)
