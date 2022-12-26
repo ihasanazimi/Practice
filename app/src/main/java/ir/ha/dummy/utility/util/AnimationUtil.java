@@ -1,6 +1,7 @@
 package ir.ha.dummy.utility.util;
 
 import android.animation.Animator;
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.view.View;
@@ -54,6 +55,7 @@ public class AnimationUtil {
 
         if (sdk >= Build.VERSION_CODES.LOLLIPOP) {
             target.post(new Runnable() {
+                @SuppressLint("SuspiciousIndentation")
                 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
                 @Override
                 public void run() {
