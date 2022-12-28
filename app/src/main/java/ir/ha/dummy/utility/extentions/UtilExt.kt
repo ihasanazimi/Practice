@@ -145,7 +145,7 @@ fun PopupMenu.hasIcon(): Boolean {
 fun PopupMenu.insertMenuItemIcon(context: Context, menuItem: MenuItem) {
     var icon: Drawable? = menuItem.icon
     if (icon == null) icon = ColorDrawable(Color.TRANSPARENT)
-    val iconSize: Int = context.resources.getDimensionPixelSize(R.dimen.space_8dp)
+    val iconSize: Int = context.resources.getDimensionPixelSize(R.dimen.space_8)
     icon.setBounds(0, 0, iconSize, iconSize)
     val imageSpan = ImageSpan(icon)
     val ssb = SpannableStringBuilder("     " + menuItem.title)
