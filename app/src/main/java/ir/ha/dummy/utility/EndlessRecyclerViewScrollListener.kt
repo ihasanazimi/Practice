@@ -20,21 +20,21 @@ abstract class EndlessRecyclerViewScrollListener : RecyclerView.OnScrollListener
 
     constructor(layoutManager: GridLayoutManager) {
         mLayoutManager = layoutManager
-        visibleThreshold = visibleThreshold * layoutManager.spanCount
+        visibleThreshold *= layoutManager.spanCount
     }
 
     constructor(layoutManager: StaggeredGridLayoutManager) {
         mLayoutManager = layoutManager
-        visibleThreshold = visibleThreshold * layoutManager.spanCount
+        visibleThreshold *= layoutManager.spanCount
     }
 
     constructor(manager: LayoutManager) {
         if (manager is GridLayoutManager) {
             mLayoutManager = manager
-            visibleThreshold = visibleThreshold * manager.spanCount
+            visibleThreshold *= manager.spanCount
         } else if (manager is StaggeredGridLayoutManager) {
             mLayoutManager = manager
-            visibleThreshold = visibleThreshold * manager.spanCount
+            visibleThreshold *= manager.spanCount
         } else {
             mLayoutManager = manager as LinearLayoutManager
         }

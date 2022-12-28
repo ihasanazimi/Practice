@@ -27,12 +27,11 @@ import androidx.annotation.ChecksSdkIntAtLeast
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.google.gson.Gson
-import ir.ha.dummy.App
+import ir.ha.dummy.ApplicationLoader
 import ir.ha.dummy.R
 import java.util.*
 
@@ -46,9 +45,9 @@ fun Fragment.onBackClick(callback: (onBackPressedCallback: OnBackPressedCallback
 
 fun Fragment.runOnUIThread(runnable: Runnable, delay: Long = 0) {
     if (delay == 0L) {
-        App.applicationHandler.post(runnable)
+        ApplicationLoader.applicationHandler.post(runnable)
     } else {
-        App.applicationHandler.postDelayed(runnable, delay)
+        ApplicationLoader.applicationHandler.postDelayed(runnable, delay)
     }
 }
 
@@ -56,9 +55,9 @@ fun Fragment.runOnUIThread(runnable: Runnable, delay: Long = 0) {
 
 fun AppCompatActivity.runOnUIThread(runnable: Runnable, delay: Long = 0) {
     if (delay == 0L) {
-        App.applicationHandler.post(runnable)
+        ApplicationLoader.applicationHandler.post(runnable)
     } else {
-        App.applicationHandler.postDelayed(runnable, delay)
+        ApplicationLoader.applicationHandler.postDelayed(runnable, delay)
     }
 }
 
@@ -66,9 +65,9 @@ fun AppCompatActivity.runOnUIThread(runnable: Runnable, delay: Long = 0) {
 
 fun View.runOnUIThread(runnable: Runnable, delay: Long = 0) {
     if (delay == 0L) {
-        App.applicationHandler.post(runnable)
+        ApplicationLoader.applicationHandler.post(runnable)
     } else {
-        App.applicationHandler.postDelayed(runnable, delay)
+        ApplicationLoader.applicationHandler.postDelayed(runnable, delay)
     }
 }
 
@@ -350,7 +349,7 @@ private fun turnOnGPS (activity: Activity) {
 
 fun changeStatusBarColor(window: Window, colorId : Int) {
     if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-        window.statusBarColor = App.context?.resources!!.getColor(colorId,null)
+        window.statusBarColor = ApplicationLoader.context?.resources!!.getColor(colorId,null)
     }
 }
 

@@ -1,4 +1,4 @@
-package ir.soleymani.clinic.utility.util
+package ir.ha.dummy.utility.util
 
 import android.content.Context
 import java.util.*

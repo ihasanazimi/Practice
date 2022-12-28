@@ -20,29 +20,11 @@ class AnimationsFrg : BaseFragment<FragmentAnimationBinding>() {
 
 
 
-        /** lottie animation properties */
-        binding.lottieAnimationView.apply {
-            setAnimation(R.raw.anim_file)
-            repeatMode
-            addAnimatorUpdateListener { valueAnimator -> // TODO }
-            addAnimatorListener(object :Animator.AnimatorListener{
-                override fun onAnimationStart(p0: Animator?) {
-
-                }
-
-                override fun onAnimationEnd(p0: Animator?) {
-
-                }
-
-                override fun onAnimationCancel(p0: Animator?) {
-
-                }
-
-                override fun onAnimationRepeat(p0: Animator?) {
-
-                }
-            })
-        }
+//        /** lottie animation properties */
+//        binding.lottieAnimationView.apply {
+//            setAnimation(R.raw.anim_file)
+//            repeatMode
+//        }
 
 
         /** Android Animations */
@@ -107,5 +89,4 @@ class AnimationsFrg : BaseFragment<FragmentAnimationBinding>() {
                 binding.lottieAnimationView.startAnimation(activeAnim)
         }
     }
-}
 }
