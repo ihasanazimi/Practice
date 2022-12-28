@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:background="@color/gray"
             android:layout_height="wrap_content"
-            android:padding="@dimen/space_8dp"
+            android:padding="@dimen/space_8"
             android:gravity="center"
             android:textColor="@color/black"
             android:text="dummy text for rxJava mvvm"
@@ -32,7 +32,7 @@
                 android:id="@+id/tvMvvmRxMessage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="@dimen/space_8dp"
+                android:padding="@dimen/space_8"
                 android:gravity="center"
                 tools:text="dummy text" />
         </androidx.core.widget.NestedScrollView>

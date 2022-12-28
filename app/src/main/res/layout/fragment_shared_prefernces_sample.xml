@@ -20,19 +20,19 @@
                 android:id="@+id/input"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_marginVertical="@dimen/space_8dp"
+                android:layout_marginVertical="@dimen/space_8"
                 android:background="@color/gray"
                 android:gravity="center"
                 android:hint="چیزی بنویسید"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_12sp" />
+                android:textSize="@dimen/textSize_12" />
 
             <Button
                 android:id="@+id/btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Save input"
-                android:textSize="@dimen/text_size_12sp" />
+                android:textSize="@dimen/textSize_12" />
 
 
         </LinearLayout>

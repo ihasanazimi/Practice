@@ -17,13 +17,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_marginVertical="@dimen/space_16dp"
+                android:layout_marginVertical="@dimen/space_16"
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/glideImageview"
                     android:layout_width="100dp"
-                    android:layout_marginTop="@dimen/space_16dp"
+                    android:layout_marginTop="@dimen/space_16"
                     android:layout_height="100dp"/>
 
                 <TextView
@@ -34,7 +34,7 @@
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/picassoImagesView"
                     android:layout_width="100dp"
-                    android:layout_marginTop="@dimen/space_16dp"
+                    android:layout_marginTop="@dimen/space_16"
                     android:layout_height="100dp"/>
 
                 <TextView
@@ -45,7 +45,7 @@
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/coilImages"
                     android:layout_width="100dp"
-                    android:layout_marginTop="@dimen/space_16dp"
+                    android:layout_marginTop="@dimen/space_16"
                     android:layout_height="100dp"/>
 
                 <TextView
@@ -54,7 +54,7 @@
                     android:text="Coil"/>
 
                 <ir.ha.dummy.utility.customViews.FrescoImageView
-                    android:layout_marginTop="@dimen/space_16dp"
+                    android:layout_marginTop="@dimen/space_16"
                     android:id="@+id/frescoImageView"
                     android:layout_width="100dp"
                     app:placeholderImage="@drawable/ic_baseline_image_24"

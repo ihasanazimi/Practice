@@ -19,8 +19,8 @@
                 android:id="@+id/btn_background_service"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:cornerRadius="@dimen/space_32dp"
-                android:textSize="@dimen/text_size_12sp"
+                app:cornerRadius="@dimen/space_32"
+                android:textSize="@dimen/textSize_12"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:text="background service"/>
@@ -30,8 +30,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                app:cornerRadius="@dimen/space_32dp"
-                android:textSize="@dimen/text_size_12sp"
+                app:cornerRadius="@dimen/space_32"
+                android:textSize="@dimen/textSize_12"
                 android:textColor="@color/white"
                 android:text="foreground service"/>
 
@@ -40,8 +40,8 @@
                 android:layout_width="match_parent"
                 android:textAllCaps="false"
                 android:layout_height="wrap_content"
-                app:cornerRadius="@dimen/space_32dp"
-                android:textSize="@dimen/text_size_12sp"
+                app:cornerRadius="@dimen/space_32"
+                android:textSize="@dimen/textSize_12"
                 android:textColor="@color/white"
                 android:text="btn bound service"/>
 
@@ -50,10 +50,10 @@
                 android:layout_width="match_parent"
                 android:textAllCaps="false"
                 android:enabled="false"
-                android:layout_marginVertical="@dimen/space_32dp"
+                android:layout_marginVertical="@dimen/space_32"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/text_size_12sp"
-                app:cornerRadius="@dimen/space_4dp"
+                android:textSize="@dimen/textSize_12"
+                app:cornerRadius="@dimen/space_4"
                 android:textColor="@color/white"
                 android:text="stop services"/>
 

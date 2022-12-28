@@ -30,7 +30,7 @@
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/space_16dp">
+                android:layout_margin="@dimen/space_16">
 
                 <com.google.android.material.chip.ChipGroup
                     android:id="@+id/chipGroup"
@@ -46,8 +46,8 @@
                         android:checkable="true"
                         android:text="Load Images"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/bannerSliderBtn"
@@ -56,8 +56,8 @@
                         android:checkable="true"
                         android:text="ViewPager2"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/recyclerViewSampleBtn"
@@ -66,8 +66,8 @@
                         android:checkable="true"
                         android:text="RecyclerView"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/FragmentSample"
@@ -76,8 +76,8 @@
                         android:checkable="true"
                         android:text="Fragments-Pass Data"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/materialDesign"
@@ -86,8 +86,8 @@
                         android:checkable="true"
                         android:text="Material Design"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/lottieAnimationView"
@@ -96,8 +96,8 @@
                         android:checkable="true"
                         android:text="Animation"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/multiThreadingBtn"
@@ -106,8 +106,8 @@
                         android:checkable="true"
                         android:text="MultiThreading"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/retrofitOkHttpBtn"
@@ -116,8 +116,8 @@
                         android:checkable="true"
                         android:text="Retrofit-OkHttp"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/btn_shared_preferences"
@@ -126,8 +126,8 @@
                         android:checkable="true"
                         android:text="SharedPreferences"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/btn_data_store_preferences"
@@ -136,8 +136,8 @@
                         android:checkable="true"
                         android:text="DataStorePref"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/btn_room_db"
@@ -146,8 +146,8 @@
                         android:checkable="true"
                         android:text="RoomDB"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/btn_broadCast_receiver_sample"
@@ -156,8 +156,8 @@
                         android:checkable="true"
                         android:text="BroadCastReceiver"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/btn_media_player"
@@ -166,8 +166,8 @@
                         android:checkable="true"
                         android:text="MediaPlayer"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/btn_video_player"
@@ -176,8 +176,8 @@
                         android:checkable="true"
                         android:text="VideoPlayer"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_16dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_16" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/btn_create_notification"
@@ -186,8 +186,8 @@
                         android:checkable="true"
                         android:text="Notifications - ex.."
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_16dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_16" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/btn_services"
@@ -196,8 +196,8 @@
                         android:checkable="true"
                         android:text="Services"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/btn_rxJava"
@@ -206,8 +206,8 @@
                         android:checkable="true"
                         android:text="RxJava"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/btn_eventBus"
@@ -216,8 +216,8 @@
                         android:checkable="true"
                         android:text="Event Bus"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/btn_mvvm_rx"
@@ -226,8 +226,8 @@
                         android:checkable="true"
                         android:text="MVVM / RxJava"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/btn_nav_component"
@@ -236,8 +236,8 @@
                         android:checkable="true"
                         android:text="Nav Component"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/btn_MVVM"
@@ -246,8 +246,8 @@
                         android:checkable="true"
                         android:text="MVVM"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
 
                     <com.google.android.material.chip.Chip
@@ -257,8 +257,8 @@
                         android:checkable="true"
                         android:text="FireBase"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/btn_hilt"
@@ -267,8 +267,8 @@
                         android:checkable="true"
                         android:text="Hilt"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/sampleRrj"
@@ -277,8 +277,8 @@
                         android:checkable="true"
                         android:text="SAMPLE PROJECT"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/text_size_14sp"
-                        app:cornerRadius="@dimen/space_32dp" />
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
 
 
                 </com.google.android.material.chip.ChipGroup>

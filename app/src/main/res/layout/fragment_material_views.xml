@@ -63,7 +63,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginVertical="@dimen/space_16dp"
+                android:layout_marginVertical="@dimen/space_32"
                 android:orientation="vertical">
 
                 <com.google.android.material.card.MaterialCardView
@@ -71,12 +71,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="@dimen/space_16dp"
+                    android:layout_margin="@dimen/space_32"
                     android:checkable="true"
                     android:clickable="true"
                     app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="@dimen/space_8dp"
-                    app:cardElevation="@dimen/space_4dp"
+                    app:cardCornerRadius="@dimen/space_8"
+                    app:cardElevation="@dimen/space_4"
                     app:strokeColor="@color/black"
                     app:strokeWidth="1dp">
 
@@ -84,13 +84,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:padding="@dimen/space_8dp">
+                        android:padding="@dimen/space_8">
 
                         <TextView
                             android:id="@+id/title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginVertical="@dimen/space_8dp"
+                            android:layout_marginVertical="@dimen/space_8"
                             android:text="Title Txt"
                             android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
@@ -99,12 +99,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginBottom="@dimen/space_8dp"
+                            android:layout_marginBottom="@dimen/space_8"
                             android:background="@android:color/transparent"
                             android:gravity="start|top"
                             android:text="this is a test message..this is a test message..this is a test message..this is a test message..this is a test message..this is a test message..this is a test message.."
                             android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                            android:textSize="@dimen/text_size_14sp" />
+                            android:textSize="@dimen/textSize_14" />
 
                     </LinearLayout>
 
@@ -114,12 +114,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:layout_marginHorizontal="@dimen/space_16dp"
-                    android:layout_marginVertical="@dimen/space_4dp"
+                    android:layout_marginHorizontal="@dimen/space_32"
+                    android:layout_marginVertical="@dimen/space_4"
                     android:clickable="true"
                     app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="@dimen/space_8dp"
-                    app:cardElevation="@dimen/space_4dp">
+                    app:cardCornerRadius="@dimen/space_8"
+                    app:cardElevation="@dimen/space_4">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -128,7 +128,7 @@
                         android:background="@android:color/transparent"
                         android:gravity="center"
                         android:text="this is a test message.."
-                        android:textSize="@dimen/text_size_14sp" />
+                        android:textSize="@dimen/textSize_14" />
 
                 </com.google.android.material.card.MaterialCardView>
 
@@ -136,12 +136,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:layout_marginHorizontal="@dimen/space_16dp"
-                    android:layout_marginVertical="@dimen/space_4dp"
+                    android:layout_marginHorizontal="@dimen/space_32"
+                    android:layout_marginVertical="@dimen/space_4"
                     android:clickable="true"
                     app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="@dimen/space_8dp"
-                    app:cardElevation="@dimen/space_4dp">
+                    app:cardCornerRadius="@dimen/space_8"
+                    app:cardElevation="@dimen/space_4">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -150,7 +150,7 @@
                         android:background="@android:color/transparent"
                         android:gravity="center"
                         android:text="this is a test message.."
-                        android:textSize="@dimen/text_size_14sp" />
+                        android:textSize="@dimen/textSize_14" />
 
                 </com.google.android.material.card.MaterialCardView>
 
@@ -158,12 +158,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:layout_marginHorizontal="@dimen/space_16dp"
-                    android:layout_marginVertical="@dimen/space_4dp"
+                    android:layout_marginHorizontal="@dimen/space_32"
+                    android:layout_marginVertical="@dimen/space_4"
                     android:clickable="true"
                     app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="@dimen/space_8dp"
-                    app:cardElevation="@dimen/space_4dp">
+                    app:cardCornerRadius="@dimen/space_8"
+                    app:cardElevation="@dimen/space_4">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -172,7 +172,7 @@
                         android:background="@android:color/transparent"
                         android:gravity="center"
                         android:text="this is a test message.."
-                        android:textSize="@dimen/text_size_14sp" />
+                        android:textSize="@dimen/textSize_14" />
 
                 </com.google.android.material.card.MaterialCardView>
 
@@ -187,8 +187,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start|bottom"
-            android:layout_marginStart="@dimen/space_16dp"
-            android:layout_marginBottom="@dimen/space_64dp"
+            android:layout_marginStart="@dimen/space_32"
+            android:layout_marginBottom="@dimen/space_64"
             android:text="sample fab"
             android:textAppearance="@style/TextAppearance.AppCompat.Caption"
             android:textColor="@color/white"

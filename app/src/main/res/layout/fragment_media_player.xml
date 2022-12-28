@@ -12,7 +12,7 @@
     android:id="@+id/tv"
     android:text="MEDIA PLAYER"
     android:textColor="@color/black"
-    android:textSize="@dimen/text_size_36sp"
+    android:textSize="@dimen/textSize_36"
     android:layout_gravity="center"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"/>
@@ -20,8 +20,8 @@
     <com.google.android.material.slider.Slider
         android:layout_gravity="bottom"
         android:id="@+id/slider"
-        android:layout_marginVertical="@dimen/space_64dp"
-        android:layout_marginHorizontal="@dimen/space_32dp"
+        android:layout_marginVertical="@dimen/space_64"
+        android:layout_marginHorizontal="@dimen/space_32"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

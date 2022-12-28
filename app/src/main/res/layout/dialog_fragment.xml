@@ -11,7 +11,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="Dialog Fragment"
-            android:textSize="@dimen/text_size_12sp" />
+            android:textSize="@dimen/textSize_12" />
 
     </FrameLayout>
 </layout>

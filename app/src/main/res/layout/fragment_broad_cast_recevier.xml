@@ -15,7 +15,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_size_14sp"
+            android:textSize="@dimen/textSize_14"
             tools:text="@string/dummy_message" />
 
     </FrameLayout>

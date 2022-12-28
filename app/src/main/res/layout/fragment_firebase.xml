@@ -11,8 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="@dimen/space_16dp"
-        android:textSize="@dimen/text_size_14sp"
+        android:padding="@dimen/space_16"
+        android:textSize="@dimen/textSize_14"
         android:text="FirBase"/>
 
 </FrameLayout>
