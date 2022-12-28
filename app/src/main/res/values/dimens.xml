@@ -2,35 +2,41 @@
 <resources>
 
     <!-- texts size -->
-    <dimen name="text_size_10sp">10sp</dimen>
-    <dimen name="text_size_12sp">12sp</dimen>
-    <dimen name="text_size_14sp">14sp</dimen>
-    <dimen name="text_size_16sp">16sp</dimen>
-    <dimen name="text_size_18sp">18sp</dimen>
-    <dimen name="text_size_20sp">20sp</dimen>
-    <dimen name="text_size_22sp">20sp</dimen>
-    <dimen name="text_size_24sp">22sp</dimen>
-    <dimen name="text_size_26sp">24sp</dimen>
-    <dimen name="text_size_28sp">24sp</dimen>
-    <dimen name="text_size_30sp">30sp</dimen>
-    <dimen name="text_size_32sp">32sp</dimen>
-    <dimen name="text_size_34sp">34sp</dimen>
-    <dimen name="text_size_36sp">36sp</dimen>
-    <dimen name="text_size_38sp">38sp</dimen>
-    <dimen name="text_size_40sp">40sp</dimen>
+    <dimen name="textSize_8">8sp</dimen>
+    <dimen name="textSize_10">10sp</dimen>
+    <dimen name="textSize_12">12sp</dimen>
+    <dimen name="textSize_14">14sp</dimen>
+    <dimen name="textSize_16">16sp</dimen>
+    <dimen name="textSize_18">18sp</dimen>
+    <dimen name="textSize_20">20sp</dimen>
+    <dimen name="textSize_22">20sp</dimen>
+    <dimen name="textSize_24">22sp</dimen>
+    <dimen name="textSize_26">24sp</dimen>
+    <dimen name="textSize_28">24sp</dimen>
+    <dimen name="textSize_30">30sp</dimen>
+    <dimen name="textSize_32">32sp</dimen>
+    <dimen name="textSize_34">34sp</dimen>
+    <dimen name="textSize_36">36sp</dimen>
+    <dimen name="textSize_38">38sp</dimen>
+    <dimen name="textSize_40">40sp</dimen>
 
 
     <!-- views size -->
-    <dimen name="space_2dp">2dp</dimen>
-    <dimen name="space_4dp">4dp</dimen>
-    <dimen name="space_8dp">8dp</dimen>
-    <dimen name="space_16dp">16dp</dimen>
-    <dimen name="space_32dp">32dp</dimen>
-    <dimen name="space_64dp">64dp</dimen>
-    <dimen name="space_128dp">128dp</dimen>
-    <dimen name="space_256dp">256dp</dimen>
-    <dimen name="icon_size_24dp">24dp</dimen>
-    <dimen name="icon_size_28dp">28dp</dimen>
-    <dimen name="btn_height_58dp">58dp</dimen>
+    <dimen name="space_2">2dp</dimen>
+    <dimen name="space_4">4dp</dimen>
+    <dimen name="space_8">8dp</dimen>
+    <dimen name="space_16">16dp</dimen>
+    <dimen name="space_32">32dp</dimen>
+    <dimen name="space_64">64dp</dimen>
+    <dimen name="space_128">128dp</dimen>
+    <dimen name="space_256">256dp</dimen>
+
+
+    <!-- icon sizes -->
+    <dimen name="iconSize_24">24dp</dimen>
+    <dimen name="iconSize_28">28dp</dimen>
+
+    <!-- btn or actionBar siz -->
+    <dimen name="btnHeight_56">56dp</dimen>
 
 </resources>
