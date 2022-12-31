@@ -13,6 +13,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
 
 class FlowFrg : BaseFragmentByVM<FragmentFlowBinding,FlowVM>() {
     override val layoutId: Int get() = R.layout.fragment_flow
@@ -24,6 +25,7 @@ class FlowFrg : BaseFragmentByVM<FragmentFlowBinding,FlowVM>() {
         setupFlow()
         lifecycleScope.launchWhenCreated {
             flow.collect{
+                binding.tv.text = it.toString()
             }
         }
 
@@ -37,12 +39,13 @@ class FlowFrg : BaseFragmentByVM<FragmentFlowBinding,FlowVM>() {
 
     fun setupFlow() {
         flow = flow<Int> {
-            Log.d("hsn", "Start flow")
             (0..10).forEach {
                 delay(1000)
-                Log.d("hsn", "Emitting $it")
+                Log.i("hsn", "setupFlow: " + "$it")
                 emit(it)
             }
-        }.flowOn(Dispatchers.Default)
+        }
+            .map { it * 10 }
+            .flowOn(Dispatchers.Main)
     }
 }
