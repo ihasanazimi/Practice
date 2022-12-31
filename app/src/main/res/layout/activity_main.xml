@@ -280,6 +280,16 @@
                         android:textSize="@dimen/textSize_14"
                         app:cornerRadius="@dimen/space_32" />
 
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/flow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:text="flow"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/textSize_14"
+                        app:cornerRadius="@dimen/space_32" />
+
 
                 </com.google.android.material.chip.ChipGroup>
 

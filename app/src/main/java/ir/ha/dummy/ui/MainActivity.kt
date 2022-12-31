@@ -9,6 +9,7 @@ import ir.ha.dummy.databinding.ActivityMainBinding
 import ir.ha.dummy.model.FakeDataModel
 import ir.ha.dummy.ui.fragment.*
 import ir.ha.dummy.ui.fragment.firebase.FirebaseCloudMessagingFrg
+import ir.ha.dummy.ui.fragment.flow.FlowFrg
 import ir.ha.dummy.ui.fragment.httpSamples.RequestSampleFrg
 import ir.ha.dummy.ui.fragment.material.MaterialViews
 import ir.ha.dummy.ui.fragment.mvvm_arch.MvvmContainerFrg
@@ -56,6 +57,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), View.OnClickListener {
         binding.btnFirbase.setOnClickListener(this)
         binding.btnHilt.setOnClickListener(this)
         binding.sampleRrj.setOnClickListener(this)
+        binding.flow.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -273,6 +275,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), View.OnClickListener {
             }
 
             R.id.sampleRrj ->{
+                binding.sampleRrj.isChecked = true
                 startActivity(Intent(this@MainActivity, SamplePrjActivity::class.java))
             }
 
@@ -302,6 +305,15 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), View.OnClickListener {
                     Log.e("hsn", "solution 3 by lambda  ->  " + Thread.currentThread().name)
                 }.start()
 
+            }
+
+            R.id.flow -> {
+                binding.flow.isChecked = true
+                addFragmentByAnimation(FlowFrg(),"FlowFrg",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
             }
 
             else -> { showToast(this,"ای دی مربوطه پیدا نشد")} }
