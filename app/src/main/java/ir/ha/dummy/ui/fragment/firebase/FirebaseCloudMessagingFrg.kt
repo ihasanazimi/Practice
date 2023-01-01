@@ -15,8 +15,7 @@ import ir.ha.dummy.utility.extentions.showToast
 import kotlinx.coroutines.flow.first
 
 class FirebaseCloudMessagingFrg : BaseFragment<FragmentFirebaseBinding>() {
-    override val layoutId: Int
-        get() = R.layout.fragment_firebase
+    override val layoutId: Int get() = R.layout.fragment_firebase
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

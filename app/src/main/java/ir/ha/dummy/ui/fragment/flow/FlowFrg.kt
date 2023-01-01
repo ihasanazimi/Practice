@@ -18,15 +18,12 @@ import kotlinx.coroutines.flow.map
 class FlowFrg : BaseFragmentByVM<FragmentFlowBinding,FlowVM>() {
     override val layoutId: Int get() = R.layout.fragment_flow
     override val viewModel: FlowVM get() = ViewModelProvider(this)[FlowVM::class.java]
-    private lateinit var flow : Flow<Int>
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupFlow()
         lifecycleScope.launchWhenCreated {
-            flow.collect{
-                binding.tv.text = it.toString()
-            }
+            viewModel.flow.collect{ binding.tv.text = it.toString() }
         }
 
     }
@@ -37,15 +34,5 @@ class FlowFrg : BaseFragmentByVM<FragmentFlowBinding,FlowVM>() {
 
     }
 
-    fun setupFlow() {
-        flow = flow<Int> {
-            (0..10).forEach {
-                delay(1000)
-                Log.i("hsn", "setupFlow: " + "$it")
-                emit(it)
-            }
-        }
-            .map { it * 10 }
-            .flowOn(Dispatchers.Main)
-    }
+
 }
