@@ -31,7 +31,7 @@ public class SmsReceiver extends BroadcastReceiver
 
             if(msgs[0].getMessageBody().split("\n")[0].equals("Done")){
 
-                Toast.makeText(context,"در خواست شما با موفقیت اننجام شد",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"در خواست شما با موفقیت انجام شد",Toast.LENGTH_SHORT).show();
 
             }else {
                 System.out.println("---------:aaa"+msgs[0].getMessageBody());
