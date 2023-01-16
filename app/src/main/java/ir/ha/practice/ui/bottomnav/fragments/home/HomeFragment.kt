@@ -6,7 +6,7 @@ import ir.ha.practice.R
 import ir.ha.practice.databinding.SampleFrgHomeBinding
 import ir.ha.practice.utility.base.BaseFragment
 
-class HomeFrg: BaseFragment<SampleFrgHomeBinding>() {
+class HomeFragment: BaseFragment<SampleFrgHomeBinding>() {
     override val layoutId: Int get() = R.layout.sample_frg_home
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

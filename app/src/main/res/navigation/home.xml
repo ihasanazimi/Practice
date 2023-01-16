@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/homeFrg"
-        android:name="ir.ha.practice.ui.bottomnav.fragments.home.HomeFrg"
+        android:name="ir.ha.practice.ui.bottomnav.fragments.home.HomeFragment"
         android:label="HomeFrg" />
 </navigation>
