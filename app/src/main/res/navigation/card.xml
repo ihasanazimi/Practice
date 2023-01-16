@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/cardFrg"
-        android:name="ir.ha.practice.ui.bottomnav.fragments.card.CardFrg"
+        android:name="ir.ha.practice.ui.bottomnav.fragments.card.CardFragment"
         android:label="CardFrg" />
 </navigation>
