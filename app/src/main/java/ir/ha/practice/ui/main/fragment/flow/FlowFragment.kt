@@ -8,7 +8,7 @@ import ir.ha.practice.R
 import ir.ha.practice.databinding.FragmentFlowBinding
 import ir.ha.practice.utility.base.BaseFragmentByVM
 
-class FlowFrg : BaseFragmentByVM<FragmentFlowBinding,FlowVM>() {
+class FlowFragment : BaseFragmentByVM<FragmentFlowBinding,FlowVM>() {
     override val layoutId: Int get() = R.layout.fragment_flow
     override val viewModel: FlowVM get() = ViewModelProvider(this)[FlowVM::class.java]
 
