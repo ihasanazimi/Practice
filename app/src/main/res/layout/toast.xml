@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ir.ha.dummy.utility.customViews.FarsiTextView xmlns:android="http://schemas.android.com/apk/res/android"
+<ir.ha.practice.utility.customViews.FarsiTextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@color/abc_search_url_text_normal"

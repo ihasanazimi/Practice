@@ -14,5 +14,5 @@ dependencyResolutionManagement {
         maven { url "https://oss.jfrog.org/libs-snapshot" }
     }
 }
-rootProject.name = "Dummy"
+rootProject.name = "Practice Prj"
 include ':app'

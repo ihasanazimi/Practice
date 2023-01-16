@@ -6,7 +6,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.sample.SamplePrjActivity">
+        tools:context=".ui.bottomnav.BottomNavigationActivity">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/nav"

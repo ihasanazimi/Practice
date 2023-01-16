@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "firstName": " Hasan",
+    "lastName": "Azimi",
+    "jobTitle": "Android Developer",
+    "birthDate": "1997/Sep/24",
+    "profileImage": "https://techcrunch.com/wp-content/uploads/2020/10/image9.png",
+    "skills": [
+      "android development",
+      "kotlin",
+      "java SE"
+    ],
+    "contactInfo": {
+      "call": "+989397106611",
+      "email": "ihasan.azimi@gmail.com",
+      "linkedin": "ihasanazimi",
+      "telegram": "ihasanazimi"
+    },
+    "resume": {
+      "organizes": [
+        {
+          "organizeName": "FreeLance",
+          "startedPositionDate": "jan 2019",
+          "finishedPositionDate": "sep 2019",
+          "positionTitle": "Android Developer",
+          "positionType": "junior",
+          "projects": []
+        },
+        {
+          "organizeName": "GladCherry",
+          "startedPositionDate": "sep 2019",
+          "finishedPositionDate": "dec 2019",
+          "positionTitle": "Android Developer",
+          "positionType": "junior",
+          "projects": [
+            {
+              "name": "fitSho",
+              "projectIcon": "",
+              "link": ""
+            },
+            {
+              "name": "parkSho",
+              "projectIcon": "",
+              "link": ""
+            },
+            {
+              "name": "online services similar to Achareh Project",
+              "projectIcon": "",
+              "link": ""
+            }
+          ]
+        },
+        {
+          "organizeName": "Teavan",
+          "startedPositionDate": "jan 2020",
+          "finishedPositionDate": "dec 2020",
+          "positionTitle": "Android Developer",
+          "positionType": "Middle",
+          "projects": [
+            {
+              "name": "AvangTodo",
+              "projectIcon": "https://s.cafebazaar.ir/images/icons/ir.ha.avanghtodo-afed8f00-8043-45fc-9a04-9c7d53690f33_128x128.png?x-img=v1/format,type_webp,lossless_true/resize,h_128,w_128,lossless_true",
+              "link": "https://cafebazaar.ir/app/ir.ha.avanghtodo"
+            },
+            {
+              "name": "DaneshYar",
+              "projectIcon": "https://s.cafebazaar.ir/images/icons/ir.formol-76f44acb-8af2-41a4-9673-32c5ec952407_128x128.png?x-img=v1/format,type_webp,lossless_true/resize,h_128,w_128,lossless_true",
+              "link": "https://cafebazaar.ir/app/ir.formol"
+            },
+            {
+              "name": "Online store selling bread",
+              "projectIcon": "",
+              "link": ""
+            },
+            {
+              "name": "MoboFit",
+              "projectIcon": "https://s.cafebazaar.ir/images/icons/ir.ha.mobofit-0dca4118-98ce-4a6d-8892-d88659f2dd3b_128x128.png?x-img=v1/format,type_webp,lossless_true/resize,h_128,w_128,lossless_true",
+              "link": "https://cafebazaar.ir/app/ir.ha.mobofit"
+            }
+          ]
+        },
+        {
+          "organizeName": "SLS (Smart Land Solution)",
+          "startedPositionDate": "Mar 2022",
+          "finishedPositionDate": "I am currently working",
+          "positionTitle": "Android Developer",
+          "positionType": "Middle",
+          "projects": [
+            {
+              "name": "BankPlus",
+              "projectIcon": "https://bplus.bankmellat.ir/images/logo.1669181864535.svg",
+              "link": "https://bplus.bankmellat.ir/"
+            },
+            {
+              "name": "Ravaq",
+              "projectIcon": "https://ravaq.me/images/ravaqlogo1.svg",
+              "link": "https://ravaq.me/"
+            },
+            {
+              "name": "Clinic",
+              "projectIcon": "",
+              "link": "https://clinicSoleymani.ir/"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
