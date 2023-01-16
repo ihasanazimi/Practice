@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/profileFrg"
-        android:name="ir.ha.practice.ui.bottomnav.fragments.profile.ProfileFrg"
+        android:name="ir.ha.practice.ui.bottomnav.fragments.profile.ProfileFragment"
         android:label="ProfileFrg" />
 </navigation>

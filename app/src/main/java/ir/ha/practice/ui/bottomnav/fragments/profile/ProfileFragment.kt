@@ -6,7 +6,7 @@ import ir.ha.practice.R
 import ir.ha.practice.databinding.SampleFrgProfileBinding
 import ir.ha.practice.utility.base.BaseFragment
 
-class ProfileFrg : BaseFragment<SampleFrgProfileBinding>() {
+class ProfileFragment : BaseFragment<SampleFrgProfileBinding>() {
     override val layoutId: Int get() = R.layout.sample_frg_profile
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
