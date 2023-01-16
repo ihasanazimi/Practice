@@ -16,7 +16,7 @@ import ir.ha.practice.ui.main.fragment.db.RoomDBFragment
 import ir.ha.practice.ui.main.fragment.db.pref.DataStoreFragment
 import ir.ha.practice.ui.main.fragment.db.pref.SharedPreferencesFragment
 import ir.ha.practice.ui.main.fragment.firebase.FirebaseCloudMessagingFrg
-import ir.ha.practice.ui.main.fragment.flow.FlowFrg
+import ir.ha.practice.ui.main.fragment.flow.FlowFragment
 import ir.ha.practice.ui.main.fragment.fragment_types.MyFragments
 import ir.ha.practice.ui.main.fragment.loadimage.LoadImagesFragment
 import ir.ha.practice.ui.main.fragment.material.MaterialDesignFragment
@@ -332,7 +332,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), View.OnClickListener {
 
             R.id.flow -> {
                 binding.flow.isChecked = true
-                addFragmentByAnimation(FlowFrg(),"FlowFrg",
+                addFragmentByAnimation(FlowFragment(),"FlowFrg",
                     addToBackStack = true,
                     customAnimations = true,
                     containerViewId = R.id.mainFrame,
