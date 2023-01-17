@@ -18,8 +18,15 @@ class BackgroundService : Service()  {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Log.i(this@BackgroundService::class.java.simpleName, "onStartCommand")
         showToast(this,intent?.extras?.getString("key").toString())
-        stopSelf()
+        /* stopSelf() */ /* when process is finished com in stop service */
         return START_STICKY
+        /* START_STICKY :   */
+        /* START_NOT_STICKY :   */
+        /* START_REDELIVER_INTENT :   */
+        /* START_STICKY_COMPATIBILITY :   */
+        /* START_TASK_REMOVED_COMPLETE :   */
+        /* START_FLAG_REDELIVERY :   */
+        /* START_FLAG_RETRY :   */
     }
 
     override fun onBind(p0: Intent?): IBinder? {
