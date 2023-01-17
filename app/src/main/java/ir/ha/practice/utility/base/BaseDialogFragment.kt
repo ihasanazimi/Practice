@@ -24,6 +24,15 @@ abstract class BaseDialogFragment<V : ViewDataBinding> :
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initializes()
+        listeners()
+    }
+
+    open fun listeners(){}
+    open fun initializes(){}
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

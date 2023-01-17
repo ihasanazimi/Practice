@@ -27,6 +27,8 @@ abstract class BaseFragmentByVM<V : ViewDataBinding , VM : BaseViewModel> : Frag
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initializes()
+        listeners()
         registerObservers()
     }
 
@@ -37,6 +39,9 @@ abstract class BaseFragmentByVM<V : ViewDataBinding , VM : BaseViewModel> : Frag
         }
 
     }
+
+    open fun listeners(){}
+    open fun initializes(){}
 
     override fun onDestroyView() {
         super.onDestroyView()

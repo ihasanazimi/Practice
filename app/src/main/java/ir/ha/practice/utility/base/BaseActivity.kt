@@ -22,7 +22,12 @@ abstract class BaseActivity<V : ViewDataBinding> : AppCompatActivity(), BaseView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = DataBindingUtil.setContentView(this,layoutId)
+        initializes()
+        listeners()
     }
+
+    open fun listeners(){}
+    open fun initializes(){}
 
     override fun attachBaseContext(context: Context) {
         super.attachBaseContext(localizedContext(context))

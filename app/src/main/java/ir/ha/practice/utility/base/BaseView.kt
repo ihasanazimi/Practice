@@ -11,6 +11,7 @@ interface BaseView {
 
     val rootView: ViewGroup?
     val viewContext: Context?
+
     fun setProgressIndicator(mustShow: Boolean) {
         rootView.let {
             viewContext.let { context ->
