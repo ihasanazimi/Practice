@@ -18,8 +18,7 @@ class BackgroundService : Service()  {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Log.i(this@BackgroundService::class.java.simpleName, "onStartCommand")
         showToast(this,intent?.extras?.getString("key").toString())
-        /* stopSelf() */ /* when process is finished com in stop service */
-        return START_STICKY
+        return START_NOT_STICKY
         /* START_STICKY :   */
         /* START_NOT_STICKY :   */
         /* START_REDELIVER_INTENT :   */
@@ -36,6 +35,6 @@ class BackgroundService : Service()  {
     override fun onDestroy() {
         super.onDestroy()
         Log.i(this@BackgroundService::class.java.simpleName, "onDestroy")
-        stopSelf()
+        stopSelf() /* when process is finished com in stop service */
     }
 }

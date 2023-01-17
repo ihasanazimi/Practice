@@ -11,6 +11,17 @@ class BoundService : Service()  {
 
     private val myBinder = MyBinder()
 
+    companion object {
+        class MyBinder : Binder() {
+            fun getServiceInstance(): MyBinder {
+                return MyBinder()
+            }
+            fun getTestMessage() : String {
+                return "Hi Hasan Azimi (Bound Service)"
+            }
+        }
+    }
+
     override fun onCreate() {
         super.onCreate()
         Log.i(this@BoundService::class.java.simpleName, "onCreate")
@@ -19,9 +30,8 @@ class BoundService : Service()  {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Log.i(this@BoundService::class.java.simpleName, "onStartCommand")
         showToast(this,intent?.extras?.getString("key").toString())
-        Thread.sleep(1000)
         stopSelf()
-        return START_STICKY
+        return START_NOT_STICKY
         /* START_STICKY :   */
         /* START_NOT_STICKY :   */
         /* START_REDELIVER_INTENT :   */
@@ -38,17 +48,8 @@ class BoundService : Service()  {
     override fun onDestroy() {
         super.onDestroy()
         Log.i(this@BoundService::class.java.simpleName, "onDestroy")
-        stopSelf()
+        stopSelf() /* when process is finished com in stop service */
     }
 
-    companion object {
-        class MyBinder : Binder() {
-            fun getServiceInstance(): MyBinder {
-                return MyBinder()
-            }
-            fun getTestMessage() : String {
-                return "Hi Hasan Azimi (Bound Service)"
-            }
-        }
-    }
+
 }

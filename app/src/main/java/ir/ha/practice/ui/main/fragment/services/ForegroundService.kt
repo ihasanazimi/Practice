@@ -62,6 +62,6 @@ class ForegroundService : Service()  {
     override fun onDestroy() {
         super.onDestroy()
         Log.i(this@ForegroundService::class.java.simpleName, "onDestroy")
-        stopForeground(true)
+        stopForeground(true) /* when process is finished com in stop service */
     }
 }
