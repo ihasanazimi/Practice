@@ -16,7 +16,7 @@ import ir.ha.practice.utility.extentions.showToast
 class ForegroundService : Service()  {
 
     private val channelID = "PRACTICE_PRJ"
-    private val notificationID = 1001
+    private val notificationID = 13760702
 
     override fun onCreate() {
         super.onCreate()
@@ -27,9 +27,14 @@ class ForegroundService : Service()  {
         Log.i(this@ForegroundService::class.java.simpleName, "onStartCommand")
         startForeground(notificationID,notification())
         showToast(this,intent?.extras?.getString("key").toString())
-        Thread.sleep(2000)
-        stopForeground(true)
         return START_NOT_STICKY
+        /* START_STICKY :   */
+        /* START_NOT_STICKY :   */
+        /* START_REDELIVER_INTENT :   */
+        /* START_STICKY_COMPATIBILITY :   */
+        /* START_TASK_REMOVED_COMPLETE :   */
+        /* START_FLAG_REDELIVERY :   */
+        /* START_FLAG_RETRY :   */
     }
 
     override fun onBind(p0: Intent?): IBinder? {
@@ -37,8 +42,8 @@ class ForegroundService : Service()  {
     }
 
     private fun notification(): Notification {
-        val nManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
 
+        val nManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
         // first create notification channel
         if (isOreoPlus()) {
             val nChannel = NotificationChannel(channelID, getString(R.string.app_name), NotificationManager.IMPORTANCE_HIGH)
@@ -56,7 +61,7 @@ class ForegroundService : Service()  {
 
     override fun onDestroy() {
         super.onDestroy()
-        stopForeground(true)
         Log.i(this@ForegroundService::class.java.simpleName, "onDestroy")
+        stopForeground(true)
     }
 }

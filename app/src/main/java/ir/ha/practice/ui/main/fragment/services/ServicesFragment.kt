@@ -91,7 +91,7 @@ class ServicesFragment : BaseFragment<FragmentServicesBinding>(), View.OnClickLi
 
     override fun onDestroy() {
         super.onDestroy()
-        /* conn.let { requireActivity().unbindService(conn!!) }*/
+         /* serviceConnection.let { requireActivity().unbindService(serviceConnection!!) } */
     }
 
 }

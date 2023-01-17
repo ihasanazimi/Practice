@@ -22,6 +22,13 @@ class BoundService : Service()  {
         Thread.sleep(1000)
         stopSelf()
         return START_STICKY
+        /* START_STICKY :   */
+        /* START_NOT_STICKY :   */
+        /* START_REDELIVER_INTENT :   */
+        /* START_STICKY_COMPATIBILITY :   */
+        /* START_TASK_REMOVED_COMPLETE :   */
+        /* START_FLAG_REDELIVERY :   */
+        /* START_FLAG_RETRY :   */
     }
 
     override fun onBind(p0: Intent?): IBinder? {
@@ -31,6 +38,7 @@ class BoundService : Service()  {
     override fun onDestroy() {
         super.onDestroy()
         Log.i(this@BoundService::class.java.simpleName, "onDestroy")
+        stopSelf()
     }
 
     companion object {

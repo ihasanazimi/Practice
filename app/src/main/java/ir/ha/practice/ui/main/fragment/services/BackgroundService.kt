@@ -36,5 +36,6 @@ class BackgroundService : Service()  {
     override fun onDestroy() {
         super.onDestroy()
         Log.i(this@BackgroundService::class.java.simpleName, "onDestroy")
+        stopSelf()
     }
 }
