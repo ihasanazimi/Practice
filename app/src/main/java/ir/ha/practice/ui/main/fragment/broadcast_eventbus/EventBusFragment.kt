@@ -10,7 +10,6 @@ import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
 class EventBusFragment : BaseFragment<FragmentEventBusBinding>() {
-
     override val layoutId: Int get() = R.layout.fragment_event_bus
 
     override fun onCreate(savedInstanceState: Bundle?) {
