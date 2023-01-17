@@ -18,11 +18,11 @@ class AnimationsFragment : BaseFragment<FragmentAnimationBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        /** lottie animation properties */
-        /* binding.lottieAnimationView.apply {
+        /*lottie animation properties */
+        binding.lottieAnimationView.apply {
             setAnimation(R.raw.anim_file)
             repeatMode
-        } todo */
+        }
 
 
         /** Android Animations */
