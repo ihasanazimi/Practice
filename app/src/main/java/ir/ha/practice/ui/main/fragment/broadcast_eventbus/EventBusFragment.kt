@@ -9,7 +9,7 @@ import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
-class EventBusFrg : BaseFragment<FragmentEventBusBinding>() {
+class EventBusFragment : BaseFragment<FragmentEventBusBinding>() {
 
     override val layoutId: Int get() = R.layout.fragment_event_bus
 
@@ -30,7 +30,3 @@ class EventBusFrg : BaseFragment<FragmentEventBusBinding>() {
         EventBus.getDefault().unregister(this)
     }
 }
-
-
-
-class MyEvent(val message : String = "Hellooooo Event Bus")
