@@ -50,7 +50,6 @@ abstract class BaseCustomView<B : ViewDataBinding> : RelativeLayout {
             return
         }
         binding = DataBindingUtil.inflate(LayoutInflater.from(context), layout(), this, true)
-
         binding.setView(this)
 
     }

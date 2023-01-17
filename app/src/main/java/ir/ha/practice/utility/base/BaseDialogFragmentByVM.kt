@@ -16,9 +16,7 @@ abstract class BaseDialogFragmentByVM<V : ViewDataBinding , VM : BaseViewModel> 
 
     private var _binding: V? = null
     abstract val viewModel: VM
-
     val binding get() = _binding!!
-
     val mainHelper by lazy { (requireActivity()) }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

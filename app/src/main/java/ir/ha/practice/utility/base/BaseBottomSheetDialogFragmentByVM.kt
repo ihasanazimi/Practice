@@ -18,11 +18,8 @@ abstract class BaseBottomSheetDialogFragmentByVM<V : ViewDataBinding, VM : BaseV
     val binding get() = _binding!!
     val mainHelper by lazy { (requireActivity()) }
 
-    override val rootView: ViewGroup?
-        get() = dialog?.window?.decorView?.parent as ViewGroup
-    override val viewContext: Context?
-        get() = this.requireContext()
-
+    override val rootView: ViewGroup? get() = dialog?.window?.decorView?.parent as ViewGroup
+    override val viewContext: Context? get() = this.requireContext()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)

@@ -11,8 +11,7 @@ import androidx.databinding.ViewDataBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import ir.ha.practice.utility.base.BaseView
 
-abstract class BaseBottomSheetDialogFragment<V : ViewDataBinding>: BottomSheetDialogFragment() ,
-    BaseView {
+abstract class BaseBottomSheetDialogFragment<V : ViewDataBinding>: BottomSheetDialogFragment() , BaseView {
 
     private var _binding: V? = null
     val binding get() = _binding!!
