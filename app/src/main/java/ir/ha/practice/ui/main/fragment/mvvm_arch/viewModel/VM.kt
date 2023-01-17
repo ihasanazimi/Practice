@@ -2,7 +2,7 @@ package ir.ha.practice.ui.main.fragment.mvvm_arch.viewModel
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import ir.ha.practice.utility.base.BaseViewModel
 import java.util.*
 
 
@@ -19,12 +19,11 @@ import java.util.*
  * va injori asl sahed view model beyn fragment ha ro beja avordim..
  * */
 
-class SampleViewModel : ViewModel()  {
+class VM : BaseViewModel()  {
 
     var counterNumber : Int = -1
     val timer = Timer()
     val counterMutableLiveData = MutableLiveData<Int>()
-
 
     fun startTimerOnViewModel() {
         timer.schedule(object : TimerTask() {

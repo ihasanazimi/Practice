@@ -22,7 +22,7 @@ import ir.ha.practice.ui.main.fragment.loadimage.LoadImagesFragment
 import ir.ha.practice.ui.main.fragment.material.MaterialDesignFragment
 import ir.ha.practice.ui.main.fragment.mediaplayer.MediaPlayerFragment
 import ir.ha.practice.ui.main.fragment.mediaplayer.VideoPlayerFragment
-import ir.ha.practice.ui.main.fragment.mvvm_arch.MvvmContainerFrg
+import ir.ha.practice.ui.main.fragment.mvvm_arch.MvvmContainerFragment
 import ir.ha.practice.ui.main.fragment.mvvm_rx.MvvmRxFragment
 import ir.ha.practice.ui.main.fragment.navigation_component.NavComponentActivity
 import ir.ha.practice.ui.main.fragment.notification.NotificationFragment
@@ -270,7 +270,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), View.OnClickListener {
 
             R.id.btn_MVVM -> {
                 binding.btnMVVM.isChecked = true
-                addFragmentByAnimation(MvvmContainerFrg(),"MvvmContainerFrg",
+                addFragmentByAnimation(MvvmContainerFragment(),"MvvmContainerFrg",
                     addToBackStack = true,
                     customAnimations = true,
                     containerViewId = R.id.mainFrame,

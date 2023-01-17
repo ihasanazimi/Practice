@@ -5,20 +5,21 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import ir.ha.practice.R
 import ir.ha.practice.databinding.FragmentViewModelSampleBinding
-import ir.ha.practice.utility.base.BaseFragment
+import ir.ha.practice.utility.base.BaseFragmentByVM
 
-class SampleViewModelFrg : BaseFragment<FragmentViewModelSampleBinding>() {
-    override val layoutId: Int
-        get() = R.layout.fragment_view_model_sample
-
+class VmFragment : BaseFragmentByVM<FragmentViewModelSampleBinding,VM>() {
+    override val layoutId: Int get() = R.layout.fragment_view_model_sample
+    override val viewModel get() = ViewModelProvider(this)[VM::class.java]
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val viewModel = ViewModelProvider(this)[SampleViewModel::class.java]
         viewModel.startTimerOnViewModel()
+    }
+
+    override fun registerObservers() {
+        super.registerObservers()
         viewModel.counterMutableLiveData.observe(this.viewLifecycleOwner) {
             binding.counterTV.text = viewModel.counterNumber.toString()
         }
-
     }
 }

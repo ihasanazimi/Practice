@@ -16,6 +16,11 @@ class SimpleLiveDataFragment : BaseFragment<FragmentLiveDataBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         simpleLiveDataChecker = SimpleLiveDataChecker()
+    }
+
+
+    override fun registerObservers() {
+        super.registerObservers()
 
         simpleLiveDataChecker.locationLiveData.observe(viewLifecycleOwner) {
             requireActivity().runOnUiThread{ showToast(requireContext(),it) }
@@ -26,6 +31,5 @@ class SimpleLiveDataFragment : BaseFragment<FragmentLiveDataBinding>() {
                 Snackbar.make(requireContext(),binding.snackBarContainer,it,Snackbar.LENGTH_INDEFINITE).show()
             }
         }
-
     }
 }

@@ -8,16 +8,19 @@ import ir.ha.practice.utility.base.BaseFragment
 import ir.ha.practice.ui.main.fragment.mvvm_arch.lifecycleObserver.LifecycleOwnerFragment
 import ir.ha.practice.ui.main.fragment.mvvm_arch.live_data.SimpleLiveDataFragment
 import ir.ha.practice.ui.main.fragment.mvvm_arch.live_data.MediatorLiveDataFragment
-import ir.ha.practice.ui.main.fragment.mvvm_arch.viewModel.SampleViewModelFrg
+import ir.ha.practice.ui.main.fragment.mvvm_arch.viewModel.VmFragment
 
-class MvvmContainerFrg : BaseFragment<FragmentMvvmContainerBinding>() {
+class MvvmContainerFragment : BaseFragment<FragmentMvvmContainerBinding>() {
 
     override val layoutId: Int get() = R.layout.fragment_mvvm_container
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+    }
 
 
+    override fun listeners() {
+        super.listeners()
         binding.btnLifecycleObserver.setOnClickListener{
             childFragmentManager.beginTransaction().replace(R.id.mvvmContainerFrame , LifecycleOwnerFragment()).addToBackStack(LifecycleOwnerFragment().tag).commit()
         }
@@ -28,7 +31,7 @@ class MvvmContainerFrg : BaseFragment<FragmentMvvmContainerBinding>() {
         }
 
         binding.btnViewModel.setOnClickListener{
-            childFragmentManager.beginTransaction().replace(R.id.mvvmContainerFrame , SampleViewModelFrg()).addToBackStack(SampleViewModelFrg().tag).commit()
+            childFragmentManager.beginTransaction().replace(R.id.mvvmContainerFrame , VmFragment()).addToBackStack(VmFragment().tag).commit()
         }
 
 

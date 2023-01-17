@@ -5,6 +5,6 @@ import io.reactivex.Observable
 import ir.ha.practice.model.Developers
 import ir.ha.practice.services.http.ApiService
 
-class UsersViewModel : ViewModel() {
+class UsersVM : ViewModel() {
     fun getDevelopers() : Observable<Developers> = ApiService().api.getDevelopersByRx()
 }
