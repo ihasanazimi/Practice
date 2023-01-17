@@ -8,22 +8,23 @@ import ir.ha.practice.databinding.FragmentVideoPlayerBinding
 import ir.ha.practice.utility.base.BaseFragment
 import ir.ha.practice.utility.extentions.hide
 import ir.ha.practice.utility.extentions.showToast
+import java.io.IOException
 
 class VideoPlayerFragment :  BaseFragment<FragmentVideoPlayerBinding>() {
     override val layoutId: Int get() = R.layout.fragment_video_player
 
-    val videoUrl = "https://hajifirouz6.asset.aparat.com/aparat-video/41d9bd95cd3f6d419b4b9435f9b2ee9146709585-360p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6ImNiMTQyMTZiYmQ5MjU1YWM0ZGVjZGRjYmRiYTJmOTI1IiwiZXhwIjoxNjYwNDEyMDY1LCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.lW-MHak7uNL66sk8OaoiRA4KnEIzlr_2JvIfRlGPQ_U"
+    private val videoUrl = "https://hajifirouz10.asset.aparat.com/aparat-video/3f9b17a17f0a77644ab730cc9186a06249895267-240p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjExYmI4OTBhN2I0MDhjNGI4YzUyMWNmMTg0YTQ5ZGVmIiwiZXhwIjoxNjczOTc0Mjc5LCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.NLsHY2kNTKQL0Al2HYj2u5AnNSreDRJwYXlUGoK8Q98"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.videoPlayer.setVideoPath(videoUrl)
     }
 
 
     override fun listeners() {
         super.listeners()
 
-        binding.videoPlayer.setOnPreparedListener {
+        binding.videoPlayer.setVideoPath(videoUrl)
+        binding.videoPlayer.setOnPreparedListener { mediaPlayer ->
             // set controller for video player
             MediaController(requireContext()).apply {
                 setMediaPlayer(binding.videoPlayer)
@@ -31,7 +32,7 @@ class VideoPlayerFragment :  BaseFragment<FragmentVideoPlayerBinding>() {
                 setAnchorView(binding.videoPlayer)
                 binding.pb.hide()
             }
-            it.start()
+            mediaPlayer.start()
         }
 
         // when video is finished!
@@ -45,8 +46,8 @@ class VideoPlayerFragment :  BaseFragment<FragmentVideoPlayerBinding>() {
 
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
         binding.videoPlayer.stopPlayback()
+        super.onDestroyView()
     }
 }

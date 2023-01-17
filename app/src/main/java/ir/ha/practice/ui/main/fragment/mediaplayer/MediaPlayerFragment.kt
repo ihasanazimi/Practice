@@ -19,11 +19,14 @@ class MediaPlayerFragment : BaseFragment<FragmentMediaPlayerBinding>() {
     var isDragging = false
     var finish = false
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        mediaPlayer = MediaPlayer.create(requireContext(),R.raw.xaniar)
+        timer = Timer()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mediaPlayer = MediaPlayer.create(requireContext(),R.raw.xaniar)
-        mediaPlayer.start()
-        timer = Timer()
     }
 
 
@@ -84,11 +87,13 @@ class MediaPlayerFragment : BaseFragment<FragmentMediaPlayerBinding>() {
     }
 
 
-    override fun onDestroy() {
-        super.onDestroy()
-        mediaPlayer.stop()
-        mediaPlayer.reset()
-        mediaPlayer.release()
+    override fun onDestroyView() {
+        if (::mediaPlayer.isInitialized){
+            mediaPlayer.stop()
+            mediaPlayer.reset()
+            mediaPlayer.release()
+        }
+        super.onDestroyView()
     }
 
     override fun onDetach() {
