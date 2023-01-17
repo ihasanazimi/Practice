@@ -17,6 +17,12 @@ class VideoPlayerFragment :  BaseFragment<FragmentVideoPlayerBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.videoPlayer.setVideoPath(videoUrl)
+    }
+
+
+    override fun listeners() {
+        super.listeners()
+
         binding.videoPlayer.setOnPreparedListener {
             // set controller for video player
             MediaController(requireContext()).apply {
@@ -36,6 +42,7 @@ class VideoPlayerFragment :  BaseFragment<FragmentVideoPlayerBinding>() {
             binding.pb.hide()
             return@setOnErrorListener false
         }
+
     }
 
     override fun onDestroy() {

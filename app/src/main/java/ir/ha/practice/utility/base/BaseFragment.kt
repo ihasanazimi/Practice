@@ -24,7 +24,6 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initializes()
         listeners()
         registerObservers()
     }
@@ -32,7 +31,6 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
 
     open fun registerObservers(){}
     open fun listeners(){}
-    open fun initializes(){}
 
     override fun onDestroyView() {
         super.onDestroyView()

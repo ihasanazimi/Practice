@@ -13,6 +13,14 @@ class MaterialDesignFragment : BaseFragment<FragmentMaterialViewsBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /** SnackBar Sample */
+        Snackbar.make(binding.root , "this is test msg.." , Snackbar.ANIMATION_MODE_SLIDE).show()
+    }
+
+
+    override fun listeners() {
+        super.listeners()
+
         /** material card view */
         binding.materialCardView.setOnClickListener{
             // how to check material card view selected mode (checked) ?
@@ -21,9 +29,5 @@ class MaterialDesignFragment : BaseFragment<FragmentMaterialViewsBinding>() {
                 isChecked = !this.isChecked
             }
         }
-
-
-        /** SnackBar Sample */
-        Snackbar.make(binding.root , "this is test msg.." , Snackbar.ANIMATION_MODE_SLIDE).show()
     }
 }

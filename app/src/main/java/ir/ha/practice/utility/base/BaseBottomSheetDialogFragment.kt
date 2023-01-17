@@ -29,7 +29,6 @@ abstract class BaseBottomSheetDialogFragment<V : ViewDataBinding>: BottomSheetDi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         registerObservers()
-        initializes()
         listeners()
     }
 
@@ -37,7 +36,6 @@ abstract class BaseBottomSheetDialogFragment<V : ViewDataBinding>: BottomSheetDi
 
     open fun listeners(){}
 
-    open fun initializes(){}
 
     override fun onDestroyView() {
         super.onDestroyView()

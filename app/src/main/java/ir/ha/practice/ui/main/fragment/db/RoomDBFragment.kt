@@ -23,8 +23,12 @@ class RoomDBFragment : BaseFragment<FragmentRoomDbSamplerBinding>(), UserAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         showContacts()
+    }
+
+
+    override fun listeners() {
+        super.listeners()
 
         // insert
         binding.saveBtn.setOnClickListener{

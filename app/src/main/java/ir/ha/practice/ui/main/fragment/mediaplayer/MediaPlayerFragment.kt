@@ -24,8 +24,11 @@ class MediaPlayerFragment : BaseFragment<FragmentMediaPlayerBinding>() {
         mediaPlayer = MediaPlayer.create(requireContext(),R.raw.xaniar)
         mediaPlayer.start()
         timer = Timer()
+    }
 
 
+    override fun listeners() {
+        super.listeners()
 
         sliderChangedListener(binding.slider)
         binding.slider.addOnSliderTouchListener(object : Slider.OnSliderTouchListener {
