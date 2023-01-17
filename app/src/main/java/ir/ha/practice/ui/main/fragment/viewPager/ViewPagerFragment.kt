@@ -9,8 +9,7 @@ import ir.ha.practice.repo.BannerDataGenerator
 import ir.ha.practice.utility.base.BaseFragment
 
 class ViewPagerFragment : BaseFragment<FragmentViewPagerSampleBinding>() {
-    override val layoutId: Int
-        get() = R.layout.fragment_view_pager_sample
+    override val layoutId: Int get() = R.layout.fragment_view_pager_sample
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
