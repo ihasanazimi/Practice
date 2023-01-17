@@ -11,7 +11,7 @@ import ir.ha.practice.ui.bottomnav.BottomNavigationActivity
 import ir.ha.practice.ui.fragment.MultiThreadingClass
 import ir.ha.practice.ui.fragment.MyRunnableThread
 import ir.ha.practice.ui.main.fragment.broadcast_eventbus.BroadcastReceiverFragment
-import ir.ha.practice.ui.main.fragment.broadcast_eventbus.EventBusFrg
+import ir.ha.practice.ui.main.fragment.broadcast_eventbus.EventBusFragment
 import ir.ha.practice.ui.main.fragment.db.RoomDBFragment
 import ir.ha.practice.ui.main.fragment.db.pref.DataStoreFragment
 import ir.ha.practice.ui.main.fragment.db.pref.SharedPreferencesFragment
@@ -245,7 +245,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), View.OnClickListener {
             R.id.btn_eventBus -> {
                 binding.btnEventBus.isChecked = true
                 addFragmentByAnimation(
-                    EventBusFrg(),"EventBusFrg",
+                    EventBusFragment(),"EventBusFrg",
                     addToBackStack = true,
                     customAnimations = true,
                     containerViewId = R.id.mainFrame,
