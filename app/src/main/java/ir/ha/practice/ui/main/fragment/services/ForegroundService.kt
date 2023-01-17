@@ -20,11 +20,11 @@ class ForegroundService : Service()  {
 
     override fun onCreate() {
         super.onCreate()
-        Timber.tag("onCreate: ")
+        Timber.e("onCreate: ")
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        Timber.tag("onStartCommand: ")
+        Timber.e("onStartCommand: ")
         startForeground(notificationID,notification())
         showToast(this,intent?.extras?.getString("key").toString())
         Thread.sleep(2000)
@@ -57,6 +57,6 @@ class ForegroundService : Service()  {
     override fun onDestroy() {
         super.onDestroy()
         stopForeground(true)
-        Timber.tag("onDestroy: ")
+        Timber.e("onDestroy: ")
     }
 }

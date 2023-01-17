@@ -13,7 +13,7 @@ class BackgroundService : Service()  {
 
     override fun onCreate() {
         super.onCreate()
-        Timber.tag("onCreate: ")
+        Timber.e("onCreate: ")
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -29,7 +29,7 @@ class BackgroundService : Service()  {
 
     override fun onDestroy() {
         super.onDestroy()
-        Timber.tag("onDestroy: ")
+        Timber.e("onDestroy: ")
 
 
     }

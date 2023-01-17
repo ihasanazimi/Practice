@@ -14,11 +14,11 @@ class BoundService : Service()  {
 
     override fun onCreate() {
         super.onCreate()
-        Timber.tag("onCreate: ")
+        Timber.e("onCreate: ")
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        Timber.tag("onStartCommand: ")
+        Timber.e("onStartCommand: ")
         showToast(this,intent?.extras?.getString("key").toString())
         Thread.sleep(1000)
         stopSelf()
@@ -31,7 +31,7 @@ class BoundService : Service()  {
 
     override fun onDestroy() {
         super.onDestroy()
-        Timber.tag("onDestroy: ")
+        Timber.e("onDestroy: ")
     }
 
     companion object {
