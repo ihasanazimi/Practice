@@ -14,6 +14,7 @@ import org.greenrobot.eventbus.EventBus
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
+import timber.log.Timber
 import java.util.*
 
 //@HiltAndroidApp
@@ -33,6 +34,10 @@ class ApplicationLoader : Application() {
 
         /** init fresco */
         Fresco.initialize(this)
+
+        /** Init Timber */
+        if(BuildConfig.DEBUG) Timber.plant(Timber.DebugTree())
+
 
         /** 1- Koin -> modules.. */
         val myModules = module {
