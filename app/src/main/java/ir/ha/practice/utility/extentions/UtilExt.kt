@@ -21,12 +21,14 @@ import android.text.style.ImageSpan
 import android.view.MenuItem
 import android.view.View
 import android.view.Window
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
 import androidx.annotation.ChecksSdkIntAtLeast
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
@@ -245,8 +247,11 @@ fun isQPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q
 @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.R)
 fun isRPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R
 
-@ChecksSdkIntAtLeast(api = Build.VERSION_CODES.S)
-fun isSPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
+@ChecksSdkIntAtLeast(api = Build.VERSION_CODES.S_V2)
+fun isSV2() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S_V2
+
+@ChecksSdkIntAtLeast(api = Build.VERSION_CODES.TIRAMISU)
+fun isTIRAMISU() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
 
 
 
@@ -350,6 +355,17 @@ private fun turnOnGPS (activity: Activity) {
 fun changeStatusBarColor(window: Window, colorId : Int) {
     if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
         window.statusBarColor = ApplicationLoader.context?.resources!!.getColor(colorId,null)
+    }
+}
+
+
+
+fun checkPermission(activity: Activity , permission: String, requestCode: Int) {
+    if (ContextCompat.checkSelfPermission(activity, permission) == PackageManager.PERMISSION_DENIED) {
+        // Requesting the permission
+        ActivityCompat.requestPermissions(activity, arrayOf(permission), requestCode)
+    } else {
+        Toast.makeText(activity, "Permission already granted", Toast.LENGTH_SHORT).show()
     }
 }
 
