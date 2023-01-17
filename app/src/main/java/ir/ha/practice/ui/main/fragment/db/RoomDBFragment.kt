@@ -27,8 +27,8 @@ class RoomDBFragment : BaseFragment<FragmentRoomDbSamplerBinding>(), UserAdapter
     }
 
 
-    override fun listeners() {
-        super.listeners()
+    override fun clickEvents() {
+        super.clickEvents()
 
         // insert
         binding.saveBtn.setOnClickListener{

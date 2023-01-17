@@ -89,8 +89,8 @@ class NotificationFragment: BaseFragment<FragmentNotificationBinding>() {
 
     }
 
-    override fun listeners() {
-        super.listeners()
+    override fun clickEvents() {
+        super.clickEvents()
 
         binding.btnSimpleNotification.setOnClickListener{ notificationManager.notify(notificationID,simpleNotification) }
         binding.btnBigPictureNotification.setOnClickListener{ notificationManager.notify(notificationID,bigPictureStyleNotification) }

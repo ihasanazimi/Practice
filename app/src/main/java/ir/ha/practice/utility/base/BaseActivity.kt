@@ -23,10 +23,10 @@ abstract class BaseActivity<V : ViewDataBinding> : AppCompatActivity(), BaseView
         super.onCreate(savedInstanceState)
         _binding = DataBindingUtil.setContentView(this,layoutId)
         initWhenUiCreated()
-        listeners()
+        clickEvents()
     }
 
-    open fun listeners(){}
+    open fun clickEvents(){}
     open fun initWhenUiCreated(){}
 
     override fun attachBaseContext(context: Context) {

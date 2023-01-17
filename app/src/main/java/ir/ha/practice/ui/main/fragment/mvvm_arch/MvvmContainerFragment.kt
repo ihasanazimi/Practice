@@ -19,8 +19,8 @@ class MvvmContainerFragment : BaseFragment<FragmentMvvmContainerBinding>() {
     }
 
 
-    override fun listeners() {
-        super.listeners()
+    override fun clickEvents() {
+        super.clickEvents()
         binding.btnLifecycleObserver.setOnClickListener{
             childFragmentManager.beginTransaction().replace(R.id.mvvmContainerFrame , LifecycleOwnerFragment()).addToBackStack(LifecycleOwnerFragment().tag).commit()
         }

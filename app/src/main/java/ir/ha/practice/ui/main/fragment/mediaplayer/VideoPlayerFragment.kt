@@ -8,7 +8,6 @@ import ir.ha.practice.databinding.FragmentVideoPlayerBinding
 import ir.ha.practice.utility.base.BaseFragment
 import ir.ha.practice.utility.extentions.hide
 import ir.ha.practice.utility.extentions.showToast
-import java.io.IOException
 
 class VideoPlayerFragment :  BaseFragment<FragmentVideoPlayerBinding>() {
     override val layoutId: Int get() = R.layout.fragment_video_player
@@ -20,8 +19,8 @@ class VideoPlayerFragment :  BaseFragment<FragmentVideoPlayerBinding>() {
     }
 
 
-    override fun listeners() {
-        super.listeners()
+    override fun clickEvents() {
+        super.clickEvents()
 
         binding.videoPlayer.setVideoPath(videoUrl)
         binding.videoPlayer.setOnPreparedListener { mediaPlayer ->

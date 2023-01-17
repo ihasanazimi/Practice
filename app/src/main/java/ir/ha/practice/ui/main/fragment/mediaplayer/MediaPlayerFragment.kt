@@ -30,8 +30,8 @@ class MediaPlayerFragment : BaseFragment<FragmentMediaPlayerBinding>() {
     }
 
 
-    override fun listeners() {
-        super.listeners()
+    override fun clickEvents() {
+        super.clickEvents()
 
         sliderChangedListener(binding.slider)
         binding.slider.addOnSliderTouchListener(object : Slider.OnSliderTouchListener {

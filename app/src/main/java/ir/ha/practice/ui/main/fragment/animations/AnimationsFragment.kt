@@ -23,8 +23,8 @@ class AnimationsFragment : BaseFragment<FragmentAnimationBinding>() {
         }
     }
 
-    override fun listeners() {
-        super.listeners()
+    override fun clickEvents() {
+        super.clickEvents()
 
         /** Android Animations */
         binding.play.setOnClickListener{
