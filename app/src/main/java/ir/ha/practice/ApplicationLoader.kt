@@ -4,17 +4,16 @@ import android.app.Application
 import android.content.Context
 import android.os.Handler
 import com.facebook.drawee.backends.pipeline.Fresco
-import ir.ha.practice.ui.main.fragment.db.room.RoomDB
 import ir.ha.practice.services.fresco.ImageLoadingService
 import ir.ha.practice.services.fresco.ImageLoadingServiceImpl
 import ir.ha.practice.services.http.ApiService
 import ir.ha.practice.ui.main.fragment.broadcast_eventbus.MyEvent
+import ir.ha.practice.ui.main.fragment.db.room.RoomDB
 import ir.ha.practice.utility.util.ThemeUtils
 import org.greenrobot.eventbus.EventBus
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
-import timber.log.Timber
 import java.util.*
 
 //@HiltAndroidApp
@@ -35,8 +34,8 @@ class ApplicationLoader : Application() {
         /** init fresco */
         Fresco.initialize(this)
 
-        /** Init Timber */
-        if(BuildConfig.DEBUG) Timber.plant(Timber.DebugTree())
+        /** Init Timber
+        if(BuildConfig.DEBUG) Timber.plant(Timber.DebugTree())*/
 
 
         /** 1- Koin -> modules.. */

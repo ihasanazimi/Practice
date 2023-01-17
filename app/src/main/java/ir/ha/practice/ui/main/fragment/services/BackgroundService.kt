@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.IBinder
 import android.util.Log
 import ir.ha.practice.utility.extentions.showToast
-import timber.log.Timber
 
 /* IntentService -> creating a worker thread for process in background */
 /* Service -> use main thread for process in background */
@@ -13,11 +12,11 @@ class BackgroundService : Service()  {
 
     override fun onCreate() {
         super.onCreate()
-        Timber.e("onCreate: ")
+        Log.i(this@BackgroundService::class.java.simpleName, "onCreate")
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        Timber.tag("onStartCommand: ")
+        Log.i(this@BackgroundService::class.java.simpleName, "onStartCommand")
         showToast(this,intent?.extras?.getString("key").toString())
         stopSelf()
         return START_STICKY
@@ -29,8 +28,6 @@ class BackgroundService : Service()  {
 
     override fun onDestroy() {
         super.onDestroy()
-        Timber.e("onDestroy: ")
-
-
+        Log.i(this@BackgroundService::class.java.simpleName, "onDestroy")
     }
 }
