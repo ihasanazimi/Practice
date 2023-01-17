@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
+
         <activity
             android:name=".ui.bottomnav.BottomNavigationActivity"
             android:exported="false">
@@ -23,6 +24,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true">
@@ -32,6 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".ui.main.fragment.navigation_component.NavComponentActivity" />
 
         <service
