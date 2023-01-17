@@ -2,7 +2,7 @@ package ir.ha.practice.utility.remote.api
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.google.gson.annotations.SerializedName as SN
-@JsonIgnoreProperties(ignoreUnknown = true)
+//@JsonIgnoreProperties(ignoreUnknown = true)
 data class NetworkError (
 
     @SN("code")
