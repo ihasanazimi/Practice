@@ -7,11 +7,11 @@ import android.app.Service
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.IBinder
-import android.util.Log
 import androidx.core.app.NotificationCompat
 import ir.ha.practice.R
 import ir.ha.practice.utility.extentions.isOreoPlus
 import ir.ha.practice.utility.extentions.showToast
+import timber.log.Timber
 
 class ForegroundService : Service()  {
 
@@ -20,11 +20,11 @@ class ForegroundService : Service()  {
 
     override fun onCreate() {
         super.onCreate()
-        Log.i("services_lifecycle_tag", "onCreate: " )
+        Timber.tag("onCreate: ")
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        Log.i("services_lifecycle_tag", "onStartCommand: " )
+        Timber.tag("onStartCommand: ")
         startForeground(notificationID,notification())
         showToast(this,intent?.extras?.getString("key").toString())
         Thread.sleep(2000)
@@ -57,6 +57,6 @@ class ForegroundService : Service()  {
     override fun onDestroy() {
         super.onDestroy()
         stopForeground(true)
-        Log.i("services_lifecycle_tag", "onDestroy: " )
+        Timber.tag("onDestroy: ")
     }
 }

@@ -6,6 +6,7 @@ import android.os.Binder
 import android.os.IBinder
 import android.util.Log
 import ir.ha.practice.utility.extentions.showToast
+import timber.log.Timber
 
 class BoundService : Service()  {
 
@@ -13,11 +14,11 @@ class BoundService : Service()  {
 
     override fun onCreate() {
         super.onCreate()
-        Log.i("services_lifecycle_tag", "onCreate: " )
+        Timber.tag("onCreate: ")
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        Log.i("services_lifecycle_tag", "onStartCommand: " )
+        Timber.tag("onStartCommand: ")
         showToast(this,intent?.extras?.getString("key").toString())
         Thread.sleep(1000)
         stopSelf()
@@ -30,7 +31,7 @@ class BoundService : Service()  {
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.i("services_lifecycle_tag", "onDestroy: " )
+        Timber.tag("onDestroy: ")
     }
 
     companion object {
