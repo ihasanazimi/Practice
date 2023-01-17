@@ -20,6 +20,14 @@ class ServicesFragment : BaseFragment<FragmentServicesBinding>(), View.OnClickLi
     private lateinit var boundIntent : Intent
     private var serviceConnection : ServiceConnection ? = null
 
+
+    companion object{
+        const val BACKGROUND_SERVICE_KEY = "background_service"
+        const val FOREGROUND_SERVICE_KEY = "foreground_service"
+        const val BOUND_SERVICE_KEY = "bound_service"
+        const val SERVICE_KEY = "key"
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnStopService.isEnabled = false
@@ -47,7 +55,7 @@ class ServicesFragment : BaseFragment<FragmentServicesBinding>(), View.OnClickLi
         when(v?.id){
             R.id.btn_background_service ->{
                 backgroundIntent.apply {
-                    putExtra("key", "background_service")
+                    putExtra(SERVICE_KEY, BACKGROUND_SERVICE_KEY)
                     requireActivity().startService(this)
                     binding.btnStopService.isEnabled = true
                     binding.btnForegroundService.isEnabled = false
@@ -56,7 +64,7 @@ class ServicesFragment : BaseFragment<FragmentServicesBinding>(), View.OnClickLi
             }
             R.id.btn_foreground_service ->{
                 foregroundIntent.apply {
-                    putExtra("key", "foreground_service")
+                    putExtra(SERVICE_KEY, FOREGROUND_SERVICE_KEY)
                     requireActivity().startService(this)
                     binding.btnStopService.isEnabled = true
                     binding.btnBackgroundService.isEnabled = false
@@ -65,7 +73,7 @@ class ServicesFragment : BaseFragment<FragmentServicesBinding>(), View.OnClickLi
             }
             R.id.btn_bound_service ->{
                 boundIntent.apply {
-                    putExtra("key", "bound_service")
+                    putExtra(SERVICE_KEY, BOUND_SERVICE_KEY)
                     requireActivity().bindService(this,serviceConnection!! , Context.BIND_AUTO_CREATE)
                     binding.btnStopService.isEnabled = true
                     binding.btnBackgroundService.isEnabled = false
