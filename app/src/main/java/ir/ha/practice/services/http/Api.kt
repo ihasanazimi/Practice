@@ -16,6 +16,9 @@ interface Api {
     fun getDevelopersByRx() : Observable<Developers>
 
     @GET("b9e6a9d9-89cd-4053-ad75-ab0ca70d44c2")
+    fun getDevelopersBySingleObservable() : Single<Developers>
+
+    @GET("b9e6a9d9-89cd-4053-ad75-ab0ca70d44c2")
     fun getDevelopersByRetrofit() : Call<Developers>
 
 

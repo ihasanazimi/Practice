@@ -13,9 +13,13 @@ class SimpleLiveDataFragment : BaseFragment<FragmentLiveDataBinding>() {
 
     lateinit var simpleLiveDataChecker: SimpleLiveDataChecker
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        simpleLiveDataChecker = SimpleLiveDataChecker()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        simpleLiveDataChecker = SimpleLiveDataChecker()
     }
 
 

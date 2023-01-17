@@ -6,7 +6,7 @@ import io.reactivex.disposables.CompositeDisposable
 
 abstract class BaseViewModel : ViewModel() {
 
-    open val composable = CompositeDisposable() // for RxJava
+    open val compositeDisposable = CompositeDisposable() // for RxJava
     open val errorLiveData = MutableLiveData<ArrayList<String>>()
     open var showProgress = MutableLiveData<Boolean>(false)
 
@@ -18,7 +18,7 @@ abstract class BaseViewModel : ViewModel() {
 
     override fun onCleared() {
         super.onCleared()
-        composable.clear() // for RxJava
+        compositeDisposable.clear() // for RxJava
         clearErrorLiveData()
     }
 }
