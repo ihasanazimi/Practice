@@ -17,7 +17,9 @@ import ir.ha.practice.R
 import ir.ha.practice.databinding.FragmentNotificationBinding
 import ir.ha.practice.ui.main.MainActivity
 import ir.ha.practice.utility.base.BaseFragment
+import ir.ha.practice.utility.extentions.checkPermission
 import ir.ha.practice.utility.extentions.isOreoPlus
+import ir.ha.practice.utility.extentions.isTIRAMISU
 
 class NotificationFragment: BaseFragment<FragmentNotificationBinding>() {
     override val layoutId: Int get() = R.layout.fragment_notification
@@ -28,6 +30,7 @@ class NotificationFragment: BaseFragment<FragmentNotificationBinding>() {
     private lateinit var bigTextStyleNotification : Notification
     private lateinit var inboxStyleNotification : Notification
     private val channelId = "MYAPP"
+    private val notificationID = 1002
 
 
     override fun onAttach(context: Context) {
@@ -81,28 +84,25 @@ class NotificationFragment: BaseFragment<FragmentNotificationBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnSimpleNotification.setOnClickListener{
-            notificationManager.notify(1002,simpleNotification)
-        }
+        if (isTIRAMISU())
+        checkPermission(requireActivity(),android.Manifest.permission.POST_NOTIFICATIONS,1256)
 
-        binding.btnBigPictureNotification.setOnClickListener{
-            notificationManager.notify(1002,bigPictureStyleNotification)
-        }
+    }
 
-        binding.btnBigTextNotification.setOnClickListener{
-            notificationManager.notify(1002,bigTextStyleNotification)
-        }
+    override fun listeners() {
+        super.listeners()
 
-        binding.btnInboxNotification.setOnClickListener{
-            notificationManager.notify(1002,inboxStyleNotification)
-        }
+        binding.btnSimpleNotification.setOnClickListener{ notificationManager.notify(notificationID,simpleNotification) }
+        binding.btnBigPictureNotification.setOnClickListener{ notificationManager.notify(notificationID,bigPictureStyleNotification) }
+        binding.btnBigTextNotification.setOnClickListener{ notificationManager.notify(notificationID,bigTextStyleNotification) }
+        binding.btnInboxNotification.setOnClickListener{ notificationManager.notify(notificationID,inboxStyleNotification) }
+
     }
 
     private fun pendingIntentSample() : PendingIntent{
         val intent = Intent(requireActivity(), MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        return getActivities(requireActivity(),0, arrayOf(intent),
-            FLAG_UPDATE_CURRENT or FLAG_IMMUTABLE)
+        return getActivities(requireActivity(),0, arrayOf(intent), FLAG_UPDATE_CURRENT or FLAG_IMMUTABLE)
     }
     @RequiresApi(Build.VERSION_CODES.O)
     private fun createNotificationChannel() {
