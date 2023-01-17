@@ -8,7 +8,8 @@ import android.util.Log
 import ir.ha.practice.utility.extentions.showToast
 
 class BoundService : Service()  {
-    val myBinder = MyBinder()
+
+    private val myBinder = MyBinder()
 
     override fun onCreate() {
         super.onCreate()
@@ -16,8 +17,8 @@ class BoundService : Service()  {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        showToast(this,intent?.extras?.getString("key")+"")
         Log.i("services_lifecycle_tag", "onStartCommand: " )
+        showToast(this,intent?.extras?.getString("key").toString())
         Thread.sleep(1000)
         stopSelf()
         return START_STICKY
@@ -38,7 +39,7 @@ class BoundService : Service()  {
                 return MyBinder()
             }
             fun getTestMessage() : String {
-                return "Hi Hasan Azimi"
+                return "Hi Hasan Azimi (Bound Service)"
             }
         }
     }

@@ -15,6 +15,9 @@ import ir.ha.practice.utility.extentions.showToast
 
 class ForegroundService : Service()  {
 
+    private val channelID = "PRACTICE_PRJ"
+    private val notificationID = 1001
+
     override fun onCreate() {
         super.onCreate()
         Log.i("services_lifecycle_tag", "onCreate: " )
@@ -22,8 +25,8 @@ class ForegroundService : Service()  {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Log.i("services_lifecycle_tag", "onStartCommand: " )
-        showToast(this,intent?.extras?.getString("key")+"")
-        startForeground(1001,notification())
+        startForeground(notificationID,notification())
+        showToast(this,intent?.extras?.getString("key").toString())
         Thread.sleep(2000)
         stopForeground(true)
         return START_NOT_STICKY
@@ -33,25 +36,27 @@ class ForegroundService : Service()  {
         TODO("Not yet implemented")
     }
 
-    private fun notification () :  Notification {
-        val notificationChannelID = "notificationChannelID"
-        val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
-        if (isOreoPlus()){
-            val notificationChannel = NotificationChannel("notificationChannelID", getString(R.string.app_name),NotificationManager.IMPORTANCE_HIGH)
-            notificationManager.createNotificationChannel(notificationChannel)
+    private fun notification(): Notification {
+        val nManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+
+        // first create notification channel
+        if (isOreoPlus()) {
+            val nChannel = NotificationChannel(channelID, getString(R.string.app_name), NotificationManager.IMPORTANCE_HIGH)
+            nManager.createNotificationChannel(nChannel)
         }
-        val notification = NotificationCompat.Builder(this,notificationChannelID)
+
+        // create notification
+        return NotificationCompat.Builder(this, channelID)
             .setContentTitle("Notification Title")
-            .setContentText("this is notification description and text")
+            .setContentText("this is notification description")
             .setSmallIcon(R.mipmap.ic_launcher)
-            .setLargeIcon(BitmapFactory.decodeResource(resources,R.drawable.baner))
+            .setLargeIcon(BitmapFactory.decodeResource(resources, R.drawable.baner))
             .build()
-        return notification
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.i("services_lifecycle_tag", "onDestroy: " )
         stopForeground(true)
+        Log.i("services_lifecycle_tag", "onDestroy: " )
     }
 }

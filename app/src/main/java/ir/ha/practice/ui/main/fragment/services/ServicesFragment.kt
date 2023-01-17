@@ -18,7 +18,7 @@ class ServicesFragment : BaseFragment<FragmentServicesBinding>(), View.OnClickLi
     private lateinit var backgroundIntent : Intent
     private lateinit var foregroundIntent : Intent
     private lateinit var boundIntent : Intent
-    private var conn : ServiceConnection ? = null
+    private var serviceConnection : ServiceConnection ? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -33,14 +33,14 @@ class ServicesFragment : BaseFragment<FragmentServicesBinding>(), View.OnClickLi
     }
 
     override fun onClick(v: View?) {
-        conn = object : ServiceConnection{
+        serviceConnection = object : ServiceConnection{
             override fun onServiceConnected(comName: ComponentName?, service : IBinder?) {
                 val myBinder = service as BoundService.Companion.MyBinder
                 val serviceInstance  =  myBinder.getServiceInstance()
                 showToast(requireContext(),serviceInstance.getTestMessage())
             }
             override fun onServiceDisconnected(p0: ComponentName?) {
-                conn = null
+                serviceConnection = null
             }
         }
 
@@ -66,7 +66,7 @@ class ServicesFragment : BaseFragment<FragmentServicesBinding>(), View.OnClickLi
             R.id.btn_bound_service ->{
                 boundIntent.apply {
                     putExtra("key", "bound_service")
-                    requireActivity().bindService(this,conn!! , Context.BIND_AUTO_CREATE)
+                    requireActivity().bindService(this,serviceConnection!! , Context.BIND_AUTO_CREATE)
                     binding.btnStopService.isEnabled = true
                     binding.btnBackgroundService.isEnabled = false
                     binding.btnForegroundService.isEnabled = false

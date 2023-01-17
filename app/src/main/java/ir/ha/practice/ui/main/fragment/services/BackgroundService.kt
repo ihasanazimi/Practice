@@ -16,8 +16,8 @@ class BackgroundService : Service()  {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        showToast(this,intent?.extras?.getString("key")+"")
         Log.i("services_lifecycle_tag", "onStartCommand: " )
+        showToast(this,intent?.extras?.getString("key").toString())
         stopSelf()
         return START_STICKY
     }
