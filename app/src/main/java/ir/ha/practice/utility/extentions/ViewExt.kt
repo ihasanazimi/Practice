@@ -302,14 +302,6 @@ fun showToast(ctx : Context , message : String){
     Toast.makeText(ctx,message.trim() , Toast.LENGTH_LONG).show()
 }
 
-
-/**
- * ================================================
- * Created by JessYan on 2020/4/8 18:43
- * [Contact me](mailto:jess.yan.effort@gmail.com)
- * [Follow me](https://github.com/JessYanCoding)
- * ================================================
- */
 open class AnimatorListenerImpl : Animator.AnimatorListener {
     override fun onAnimationStart(animation: Animator) {}
     override fun onAnimationEnd(animation: Animator) {}
