@@ -1,4 +1,4 @@
-package ir.soleymani.clinic.utility.base
+package ir.ha.practice.utility.base
 
 import android.content.Context
 import android.os.Bundle
@@ -9,16 +9,13 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import ir.ha.practice.utility.base.BaseView
 
-abstract class BaseBottomSheetDialogFragment<V : ViewDataBinding>: BottomSheetDialogFragment() , BaseView {
+abstract class BaseBottomSheetDialogFragment<V : ViewDataBinding>: BottomSheetDialogFragment() {
 
     private var _binding: V? = null
     val binding get() = _binding!!
     val mainHelper by lazy { (requireActivity()) }
 
-    override val rootView: ViewGroup? get() = dialog?.window?.decorView?.parent as ViewGroup
-    override val viewContext: Context? get() = this.requireContext()
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

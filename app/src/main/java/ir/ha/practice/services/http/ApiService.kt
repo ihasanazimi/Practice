@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiService {
 
-    val BASE_URL = "https://run.mocky.io/v3/"
+    private val baseUrl = "https://run.mocky.io/v3/"
 
     private fun logger(): HttpLoggingInterceptor {
         val interceptor = HttpLoggingInterceptor()
@@ -19,20 +19,20 @@ class ApiService {
         return interceptor
     }
 
-    private val client = OkHttpClient.Builder()
+    private val tokenClient = OkHttpClient.Builder()
         .addInterceptor(logger())
         .addInterceptor(Interceptor {
             val oldRequest = it.request()
             val newRequestBuilder = oldRequest.newBuilder()
-            newRequestBuilder.addHeader("x-token" , "ebcom")
+            newRequestBuilder.addHeader("x-token" , "")
             return@Interceptor it.proceed(newRequestBuilder.build())
         }).build()
 
 
     val api : Api by lazy {
         val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .client(client)
+            .baseUrl(baseUrl)
+            .client(tokenClient)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()

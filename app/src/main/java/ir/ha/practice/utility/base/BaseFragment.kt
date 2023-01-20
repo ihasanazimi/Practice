@@ -8,6 +8,7 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import ir.ha.practice.utility.LoadingFragment
 
 abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
 
@@ -16,6 +17,8 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
     @get:LayoutRes
     abstract val layoutId: Int
     val mainHelper by lazy { (requireActivity()) }
+
+    private lateinit var loadingFrg : LoadingFragment
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
@@ -41,4 +44,14 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
     open fun onScrollToTop() {}
 
     open fun onRetrievedTag(retrievedTag: String) {}
+
+    open fun showLoading(container : Int){
+        loadingFrg = LoadingFragment()
+        mainHelper.supportFragmentManager.beginTransaction().addToBackStack("loadingFrg")
+            .replace(container, loadingFrg, "loadingFrg").commit()
+    }
+
+    open fun hideLoading(){
+        if (::loadingFrg.isInitialized) mainHelper.supportFragmentManager.beginTransaction().remove(loadingFrg).commit()
+    }
 }

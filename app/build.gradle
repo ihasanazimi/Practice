@@ -125,7 +125,7 @@ dependencies {
 
 
     // room dataBase
-    def room_version = "2.5.0"
+    def room_version = "2.4.2"
     implementation "androidx.room:room-ktx:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
     androidTestImplementation "androidx.room:room-testing:$room_version"
