@@ -30,7 +30,7 @@ import java.util.GregorianCalendar;
  * Persian calendar for 3000 years</a>
  */
 
-public class Roozh {
+public class HsnDateConverter {
 
     private String[] mounths = {"فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"};
 
