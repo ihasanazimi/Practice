@@ -339,6 +339,15 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), View.OnClickListener {
                     commitAllowingStateLoss = false)
             }
 
+            R.id.costumeView -> {
+                binding.flow.isChecked = true
+                addFragmentByAnimation(FlowFragment(),"FlowFrg",
+                    addToBackStack = true,
+                    customAnimations = true,
+                    containerViewId = R.id.mainFrame,
+                    commitAllowingStateLoss = false)
+            }
+
             else -> { showToast(this,"ای دی مربوطه پیدا نشد")} }
     }
 }

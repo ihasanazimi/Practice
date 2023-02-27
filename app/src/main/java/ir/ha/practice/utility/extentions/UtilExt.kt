@@ -18,9 +18,8 @@ import android.os.Build
 import android.text.ClipboardManager
 import android.text.SpannableStringBuilder
 import android.text.style.ImageSpan
-import android.view.MenuItem
-import android.view.View
-import android.view.Window
+import android.view.*
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
@@ -31,11 +30,18 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.NavDirections
+import androidx.navigation.NavOptions
 import com.google.gson.Gson
 import ir.ha.practice.ApplicationLoader
 import ir.ha.practice.R
+import kotlinx.coroutines.*
+import java.lang.Runnable
 import java.util.*
+import java.util.regex.Pattern
 
 
 fun Fragment.onBackClick(callback: (onBackPressedCallback: OnBackPressedCallback) -> Unit) {
@@ -369,6 +375,48 @@ fun checkPermission(activity: Activity , permission: String, requestCode: Int) {
     }
 }
 
+fun Activity.statusBarIconsColor(shouldBeLight :Boolean){
+    val insetsControllerCompat = WindowInsetsControllerCompat(window,window.decorView)
+    insetsControllerCompat.isAppearanceLightStatusBars = !shouldBeLight
+}
+
+fun Activity.setStatusBarColor(color: Int) {
+    val window = this.window
+    window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+    window.statusBarColor = color
+}
+
+fun NavController.navigateSafe(direction: NavDirections, navOptions: NavOptions? = null) {
+
+    currentDestination?.getAction(direction.actionId)?.let {
+        navigate(direction.actionId, direction.arguments, navOptions)
+    }
+}
+
+private val viewScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
+fun View.singleClick(callback: () -> Unit) {
+    this.setOnClickListener {
+        viewScope.launch {
+            callback.invoke()
+            this@singleClick.isClickable = false
+            delay(300)
+            this@singleClick.isClickable = true
+            this.cancel()
+        }
+    }
+}
+
+private fun keepOnlyNumbers(text: String): String {
+    val regex = "[0-9]|[۰-۹]|[٠١٢٣٤٥٦٧٨٩]"
+    var result = ""
+    val pattern = Pattern.compile(regex, Pattern.MULTILINE)
+    val matcher = pattern.matcher(text)
+    while (matcher.find()) {
+        result += matcher.group(0)
+    }
+    return result
+}
 
 
 
