@@ -16,7 +16,9 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import android.text.ClipboardManager
+import android.text.Editable
 import android.text.SpannableStringBuilder
+import android.text.TextWatcher
 import android.text.style.ImageSpan
 import android.view.*
 import android.widget.EditText
@@ -407,7 +409,7 @@ fun View.singleClick(callback: () -> Unit) {
     }
 }
 
-private fun keepOnlyNumbers(text: String): String {
+fun keepOnlyNumbers(text: String): String {
     val regex = "[0-9]|[۰-۹]|[٠١٢٣٤٥٦٧٨٩]"
     var result = ""
     val pattern = Pattern.compile(regex, Pattern.MULTILINE)
@@ -416,6 +418,72 @@ private fun keepOnlyNumbers(text: String): String {
         result += matcher.group(0)
     }
     return result
+}
+
+fun String.removeNumbers(): String {
+    return try {
+        this.replace("0", "")
+            .replace("1", "")
+            .replace("2", "")
+            .replace("3", "")
+            .replace("4", "")
+            .replace("5", "")
+            .replace("6", "")
+            .replace("7", "")
+            .replace("8", "")
+            .replace("9", "")
+            .replace("۰", "")
+            .replace("۱", "")
+            .replace("۲", "")
+            .replace("۳", "")
+            .replace("۴", "")
+            .replace("۵", "")
+            .replace("۶", "")
+            .replace("۷", "")
+            .replace("۸", "")
+            .replace("۹", "")
+
+    } catch (e: Exception) {
+        e.printStackTrace()
+        this
+    }
+}
+
+fun getStandardMobileNumber(mobileNumber: String): String {
+    var result = mobileNumber
+    return try {
+        result = result.replace(" ", "")
+        result = result.replace("+98", "")
+        if (result.length == 11) result = result.substring(1)
+        result
+    } catch (e: java.lang.Exception) {
+        e.printStackTrace()
+        mobileNumber
+    }
+}
+
+fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
+    this.addTextChangedListener(object : TextWatcher {
+        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+        override fun afterTextChanged(editable: Editable?) {
+            afterTextChanged.invoke(editable.toString())
+        }
+    })
+}
+
+fun EditText.afterTextChangedEditable(afterTextChanged: (Editable?) -> Unit) {
+    this.addTextChangedListener(object : TextWatcher {
+        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+        override fun afterTextChanged(editable: Editable?) {
+            afterTextChanged.invoke(editable)
+        }
+    })
 }
 
 
