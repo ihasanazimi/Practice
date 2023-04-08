@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
-        android:icon="@drawable/ic_baseline_error_24"
-        android:title="home" />
+        android:icon="@drawable/baseline_account_circle_24"
+        android:title="developer" />
     <item
         android:id="@+id/card"
-        android:icon="@drawable/ic_baseline_error_24"
-        android:title="card" />
+        android:icon="@drawable/baseline_apps_24"
+        android:title="samples" />
     <item
         android:id="@+id/profile"
-        android:icon="@drawable/ic_baseline_error_24"
-        android:title="profile" />
+        android:icon="@drawable/baseline_help_24"
+        android:title="test" />
 </menu>

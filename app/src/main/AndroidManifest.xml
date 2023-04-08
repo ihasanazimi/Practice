@@ -17,16 +17,10 @@
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
 
-        <activity
-            android:name=".ui.bottomnav.BottomNavigationActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
 
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name=".ui.tabs.HostActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,19 +29,18 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.main.fragment.navigation_component.NavComponentActivity" />
 
         <service
-            android:name=".ui.main.fragment.services.BackgroundService"
+            android:name=".ui.tabs.samples_tab.services.BackgroundService"
             android:exported="false" />
         <service
-            android:name=".ui.main.fragment.services.ForegroundService"
+            android:name=".ui.tabs.samples_tab.services.ForegroundService"
             android:exported="false" />
         <service
-            android:name=".ui.main.fragment.services.BoundService"
+            android:name=".ui.tabs.samples_tab.services.BoundService"
             android:exported="false" />
         <service
-            android:name=".ui.main.fragment.firebase.MyFirebaseInstanceIDService"
+            android:name=".ui.tabs.samples_tab.firebase.MyFirebaseInstanceIDService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />

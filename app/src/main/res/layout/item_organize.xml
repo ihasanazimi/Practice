@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_margin="@dimen/iconSize_24"
+        android:layout_marginHorizontal="@dimen/space_8"
+        android:layout_marginStart="24dp"
+        android:src="@drawable/baseline_account_circle_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/organizationName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_8"
+        android:layout_marginTop="@dimen/space_4"
+        android:gravity="center"
+        android:text="EBCOM"
+        android:textSize="@dimen/textSize_16"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/circleImageView"
+        app:layout_constraintTop_toTopOf="@+id/circleImageView" />
+
+    <TextView
+        android:id="@+id/jobPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_8"
+        android:layout_marginTop="@dimen/space_4"
+        android:gravity="center"
+        android:text="Android Developer  |  Middle"
+        android:textSize="@dimen/textSize_12"
+        android:textStyle="normal"
+        app:layout_constraintTop_toBottomOf="@id/organizationName"
+        app:layout_constraintStart_toEndOf="@+id/circleImageView"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Jun 2023  -  I am currently working"
+        android:textSize="@dimen/textSize_12"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/jobPosition"
+        app:layout_constraintTop_toBottomOf="@+id/jobPosition" />
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="-  I have participated in the development of these projects"
+        android:textSize="@dimen/textSize_12"
+        android:textStyle="normal"
+        android:paddingHorizontal="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_16"
+        app:layout_constraintStart_toStartOf="@+id/circleImageView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/projectRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:orientation="vertical"
+        android:paddingVertical="@dimen/space_8"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="@+id/circleImageView"
+        app:layout_constraintTop_toBottomOf="@+id/t1"
+        tools:listitem="@layout/item_projects" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

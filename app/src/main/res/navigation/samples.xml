@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_component"
+    app:startDestination="@id/SamplesFragment">
+
+    <fragment
+        android:id="@+id/SamplesFragment"
+        tools:layout="@layout/fragment_components"
+        android:name="ir.ha.practice.ui.tabs.samples_tab.SamplesFragment"
+        android:label="SamplesFragment" />
+
+</navigation>

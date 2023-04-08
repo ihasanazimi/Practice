@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/projectLogo"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_margin="@dimen/iconSize_24"
+        android:layout_marginHorizontal="@dimen/space_8"
+        android:src="@drawable/baseline_account_circle_24"
+        app:layout_constraintEnd_toEndOf="@+id/circleImageView"
+        app:layout_constraintStart_toStartOf="@+id/circleImageView"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
+
+    <TextView
+        android:id="@+id/projectName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Ewano"
+        android:layout_marginHorizontal="@dimen/space_8"
+        android:textSize="@dimen/textSize_14"
+        android:textStyle="normal"
+        android:textColor="@color/blue"
+        app:layout_constraintStart_toEndOf="@+id/projectLogo"
+        app:layout_constraintTop_toTopOf="@+id/projectLogo" />
+
+    <TextView
+        android:id="@+id/projectLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="https://cafebazaar.ir/app/com.ebcom.ewano"
+        android:textSize="@dimen/textSize_12"
+        android:textStyle="normal"
+        android:textColor="@color/blue"
+        android:layout_marginHorizontal="@dimen/space_8"
+        app:layout_constraintStart_toEndOf="@+id/projectLogo"
+        app:layout_constraintTop_toBottomOf="@+id/projectName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

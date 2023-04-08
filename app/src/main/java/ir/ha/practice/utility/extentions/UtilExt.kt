@@ -108,6 +108,32 @@ fun AppCompatActivity.addFragmentByAnimation(
     } else { fragmentTransaction.commit() }
 }
 
+fun Fragment.addFragmentByAnimation(
+    fragment: Fragment,
+    tag: String,
+    addToBackStack: Boolean,
+    customAnimations: Boolean,
+    containerViewId: Int,
+    commitAllowingStateLoss: Boolean = false
+) {
+
+    val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+
+    if (customAnimations) {
+        fragmentTransaction.setCustomAnimations(
+            R.anim.enter_from_right,
+            R.anim.exit_to_left,
+            R.anim.enter_from_left,
+            R.anim.exit_to_right
+        )
+    }
+
+    if (addToBackStack) { fragmentTransaction.addToBackStack(tag) }
+    fragmentTransaction.add(containerViewId, fragment, tag)
+    if (commitAllowingStateLoss) { fragmentTransaction.commitAllowingStateLoss()
+    } else { fragmentTransaction.commit() }
+}
+
 
 
 
