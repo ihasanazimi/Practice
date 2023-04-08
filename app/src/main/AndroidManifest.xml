@@ -31,16 +31,16 @@
 
 
         <service
-            android:name=".ui.tabs.samples_tab.services.BackgroundService"
+            android:name=".ui.tabs.components_tab.services.BackgroundService"
             android:exported="false" />
         <service
-            android:name=".ui.tabs.samples_tab.services.ForegroundService"
+            android:name=".ui.tabs.components_tab.services.ForegroundService"
             android:exported="false" />
         <service
-            android:name=".ui.tabs.samples_tab.services.BoundService"
+            android:name=".ui.tabs.components_tab.services.BoundService"
             android:exported="false" />
         <service
-            android:name=".ui.tabs.samples_tab.firebase.MyFirebaseInstanceIDService"
+            android:name=".ui.tabs.components_tab.firebase.MyFirebaseInstanceIDService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
