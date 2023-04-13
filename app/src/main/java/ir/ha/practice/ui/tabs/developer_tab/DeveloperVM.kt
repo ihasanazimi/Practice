@@ -22,8 +22,12 @@ class DeveloperVM @Inject constructor(
 
     fun getDeveloperDetails() {
         viewModelScope.launch {
+            showProgress.value = true
             developerUseCase.getDeveloperDetails().collect{
-                if (it != null)  _developerRes.emit(it)
+                if (it != null) {
+                    showProgress.value = false
+                    _developerRes.emit(it)
+                }
                 else errorLiveData.postValue(arrayListOf("connection error"))
             }
         }

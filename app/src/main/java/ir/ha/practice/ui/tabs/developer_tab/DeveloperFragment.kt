@@ -17,6 +17,8 @@ import ir.ha.practice.model.adapters.ContactInfoAdapter
 import ir.ha.practice.model.adapters.DeveloperTagsAdapter
 import ir.ha.practice.model.adapters.OrganizeAdapter
 import ir.ha.practice.utility.base.BaseFragmentByVM
+import ir.ha.practice.utility.extentions.hide
+import ir.ha.practice.utility.extentions.show
 import ir.ha.practice.utility.extentions.showToast
 import ir.ha.practice.utility.util.IntentActionsUtil
 import kotlinx.coroutines.launch
@@ -41,6 +43,11 @@ class DeveloperFragment : BaseFragmentByVM<FragmentDeveloperBinding,DeveloperVM>
                     updateUi(it)
                 }
             }
+        }
+
+        viewModel.showProgress.observe(viewLifecycleOwner){
+            if (it) binding.loadingbar.root.show()
+            else binding.loadingbar.root.hide()
         }
 
 

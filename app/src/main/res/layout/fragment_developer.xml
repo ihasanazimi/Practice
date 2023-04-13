@@ -3,264 +3,273 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-<androidx.core.widget.NestedScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        android:clickable="true"
-        android:focusable="true">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/developerProfileImage"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="@dimen/space_32"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/me" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/profileOwnerInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="@+id/developerProfileImage"
-            app:layout_constraintStart_toStartOf="@+id/developerProfileImage"
-            app:layout_constraintTop_toBottomOf="@id/developerProfileImage">
-
-            <TextView
-                android:id="@+id/developerNameTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/space_8"
-                android:gravity="center"
-                android:textColor="@color/black"
-                android:textSize="@dimen/textSize_18"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Hasan Azimi" />
-
-            <TextView
-                android:id="@+id/jobTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingVertical="@dimen/space_4"
-                android:textStyle="normal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/developerNameTv"
-                tools:text="Android Developer in MCI" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/followLinkedinBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/space_4"
-                android:text="Follow me On Linkedin"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="@dimen/textSize_12"
-                app:backgroundTint="@color/blue"
-                app:cornerRadius="@dimen/space_32"
-                app:icon="@drawable/linkedin"
-                app:iconTint="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/jobTv" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <LinearLayout
+        android:layout_height="match_parent">
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/profileOwnerInfo">
-
-            <TextView
-                android:gravity="center"
-                android:text="Info : "
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:layout_marginVertical="@dimen/space_8"
-                android:textSize="@dimen/textSize_12"
-                android:paddingHorizontal="@dimen/space_16"
-                android:layout_height="wrap_content"/>
-            <LinearLayout
-                android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/root"
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:paddingHorizontal="@dimen/space_16"
-                android:background="@color/gray">
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:clickable="true"
+                android:focusable="true">
 
-                <TextView
-                    android:gravity="center"
-                    android:text="Full Name : "
-                    android:layout_gravity="center_vertical"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/developerProfileImage"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="@dimen/space_32"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/me" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/profileOwnerInfo"
                     android:layout_width="wrap_content"
-                    android:textColor="@color/text_color"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/textSize_12"
-                    android:paddingHorizontal="@dimen/space_8"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@+id/developerProfileImage"
+                    app:layout_constraintStart_toStartOf="@+id/developerProfileImage"
+                    app:layout_constraintTop_toBottomOf="@id/developerProfileImage">
 
-                <TextView
-                    android:id="@+id/developerNameTvFiled"
-                    android:gravity="center"
-                    tools:text="Hasan Azimi"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="wrap_content"
-                    android:textStyle="normal"
-                    android:textSize="@dimen/textSize_12"
-                    android:textColor="@color/text_color"
-                    android:paddingHorizontal="@dimen/space_8"
-                    android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/developerNameTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/space_8"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textSize_18"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Hasan Azimi" />
 
+                    <TextView
+                        android:id="@+id/jobTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingVertical="@dimen/space_4"
+                        android:textStyle="normal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/developerNameTv"
+                        tools:text="Android Developer in MCI" />
 
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:paddingHorizontal="@dimen/space_16"
-                android:background="@color/white">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/followLinkedinBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/space_4"
+                        android:text="Follow me On Linkedin"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/textSize_12"
+                        app:backgroundTint="@color/blue"
+                        app:cornerRadius="@dimen/space_32"
+                        app:icon="@drawable/linkedin"
+                        app:iconTint="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/jobTv" />
 
-                <TextView
-                    android:gravity="center"
-                    android:text="Job : "
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="wrap_content"
-                    android:textColor="@color/text_color"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/textSize_12"
-                    android:paddingHorizontal="@dimen/space_8"
-                    android:layout_height="wrap_content"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
-                    android:id="@+id/jobTitle2"
-                    android:gravity="center"
-                    tools:text="Android Developer"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="wrap_content"
-                    android:textStyle="normal"
-                    android:textSize="@dimen/textSize_12"
-                    android:textColor="@color/text_color"
-                    android:paddingHorizontal="@dimen/space_8"
-                    android:layout_height="wrap_content"/>
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/space_16"
-                android:background="@color/gray">
-
-                <TextView
-                    android:gravity="center"
-                    android:text="Skill`s : "
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="wrap_content"
-                    android:textColor="@color/text_color"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/textSize_12"
-                    android:paddingHorizontal="@dimen/space_8"
-                    android:layout_height="wrap_content"/>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/skillRecyclerView"
-                    android:layout_width="wrap_content"
-                    tools:listitem="@layout/item_simple_tag"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    android:orientation="horizontal"
-                    android:layout_marginVertical="@dimen/space_8"
-                    android:layout_height="wrap_content">
-
-                </androidx.recyclerview.widget.RecyclerView>
-
-
-            </LinearLayout>
-
-
-            <TextView
-                android:gravity="center"
-                android:text="contact Info : "
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:layout_marginTop="@dimen/space_16"
-                android:textSize="@dimen/textSize_12"
-                android:paddingHorizontal="@dimen/space_16"
-                android:layout_height="wrap_content"/>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/space_16"
-                android:background="@color/white">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/contactInfoRecyclerView"
-                    android:layout_width="wrap_content"
-                    tools:listitem="@layout/item_simple_tag"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    android:orientation="horizontal"
-                    android:layout_marginVertical="@dimen/space_8"
-                    android:layout_height="wrap_content">
-
-                </androidx.recyclerview.widget.RecyclerView>
-
-
-            </LinearLayout>
-
-
-            <TextView
-                android:gravity="center"
-                android:text="resume : "
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:layout_marginVertical="@dimen/space_16"
-                android:textSize="@dimen/textSize_12"
-                android:paddingHorizontal="@dimen/space_16"
-                android:layout_height="wrap_content"/>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/space_16"
-                android:background="@color/gray">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/projectsRecyclerView"
-                    android:layout_width="wrap_content"
-                    tools:listitem="@layout/item_organize"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     android:orientation="vertical"
-                    android:layout_marginVertical="@dimen/space_8"
-                    android:layout_height="wrap_content">
+                    app:layout_constraintTop_toBottomOf="@+id/profileOwnerInfo">
 
-                </androidx.recyclerview.widget.RecyclerView>
+                    <TextView
+                        android:gravity="center"
+                        android:text="Info : "
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_marginVertical="@dimen/space_8"
+                        android:textSize="@dimen/textSize_12"
+                        android:paddingHorizontal="@dimen/space_16"
+                        android:layout_height="wrap_content"/>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:paddingHorizontal="@dimen/space_16"
+                        android:background="@color/gray">
+
+                        <TextView
+                            android:gravity="center"
+                            android:text="Full Name : "
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:textColor="@color/text_color"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/textSize_12"
+                            android:paddingHorizontal="@dimen/space_8"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/developerNameTvFiled"
+                            android:gravity="center"
+                            tools:text="Hasan Azimi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:textStyle="normal"
+                            android:textSize="@dimen/textSize_12"
+                            android:textColor="@color/text_color"
+                            android:paddingHorizontal="@dimen/space_8"
+                            android:layout_height="wrap_content"/>
 
 
-            </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:paddingHorizontal="@dimen/space_16"
+                        android:background="@color/white">
 
-        </LinearLayout>
+                        <TextView
+                            android:gravity="center"
+                            android:text="Job : "
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:textColor="@color/text_color"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/textSize_12"
+                            android:paddingHorizontal="@dimen/space_8"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/jobTitle2"
+                            android:gravity="center"
+                            tools:text="Android Developer"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:textStyle="normal"
+                            android:textSize="@dimen/textSize_12"
+                            android:textColor="@color/text_color"
+                            android:paddingHorizontal="@dimen/space_8"
+                            android:layout_height="wrap_content"/>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/space_16"
+                        android:background="@color/gray">
+
+                        <TextView
+                            android:gravity="center"
+                            android:text="Skill`s : "
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:textColor="@color/text_color"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/textSize_12"
+                            android:paddingHorizontal="@dimen/space_8"
+                            android:layout_height="wrap_content"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/skillRecyclerView"
+                            android:layout_width="wrap_content"
+                            tools:listitem="@layout/item_simple_tag"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            android:orientation="horizontal"
+                            android:layout_marginVertical="@dimen/space_8"
+                            android:layout_height="wrap_content">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:text="contact Info : "
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_marginTop="@dimen/space_16"
+                        android:textSize="@dimen/textSize_12"
+                        android:paddingHorizontal="@dimen/space_16"
+                        android:layout_height="wrap_content"/>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/space_16"
+                        android:background="@color/white">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/contactInfoRecyclerView"
+                            android:layout_width="wrap_content"
+                            tools:listitem="@layout/item_simple_tag"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            android:orientation="horizontal"
+                            android:layout_marginVertical="@dimen/space_8"
+                            android:layout_height="wrap_content">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:text="resume : "
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_marginVertical="@dimen/space_16"
+                        android:textSize="@dimen/textSize_12"
+                        android:paddingHorizontal="@dimen/space_16"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/space_16"
+                        android:background="@color/gray">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/projectsRecyclerView"
+                            android:layout_width="wrap_content"
+                            tools:listitem="@layout/item_organize"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            android:orientation="vertical"
+                            android:layout_marginVertical="@dimen/space_8"
+                            android:layout_height="wrap_content">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+        <include
+            android:id="@+id/loadingbar"
+            layout="@layout/loading_bar"/>
+    </FrameLayout>
+
+
 </layout>
