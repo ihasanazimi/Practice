@@ -1,5 +1,8 @@
 package ir.ha.practice.services.http
 
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import ir.ha.practice.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -8,6 +11,8 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
+@Module
+@InstallIn(SingletonComponent::class)
 class ApiService {
 
     private val baseUrl = "https://run.mocky.io/v3/"

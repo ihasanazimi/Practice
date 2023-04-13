@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/projectLogo"
         android:layout_width="42dp"
         android:layout_height="42dp"
-        android:layout_margin="@dimen/iconSize_24"
-        android:layout_marginHorizontal="@dimen/space_8"
+        android:layout_margin="@dimen/space_8"
         android:src="@drawable/baseline_account_circle_24"
-        app:layout_constraintEnd_toEndOf="@+id/circleImageView"
-        app:layout_constraintStart_toStartOf="@+id/circleImageView"
-        app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/projectName"
@@ -34,7 +32,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="https://cafebazaar.ir/app/com.ebcom.ewano"
-        android:textSize="@dimen/textSize_12"
+        android:textSize="@dimen/textSize_10"
         android:textStyle="normal"
         android:textColor="@color/blue"
         android:layout_marginHorizontal="@dimen/space_8"

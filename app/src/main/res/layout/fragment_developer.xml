@@ -21,7 +21,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/baseline_account_circle_24" />
+            android:src="@drawable/me" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/profileOwnerInfo"
@@ -46,7 +46,7 @@
                 tools:text="Hasan Azimi" />
 
             <TextView
-                android:id="@+id/JobTv"
+                android:id="@+id/jobTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -66,13 +66,13 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="@dimen/textSize_12"
-                app:backgroundTint="@color/dark_gray"
+                app:backgroundTint="@color/blue"
                 app:cornerRadius="@dimen/space_32"
                 app:icon="@drawable/linkedin"
                 app:iconTint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/JobTv" />
+                app:layout_constraintTop_toBottomOf="@id/jobTv" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -100,7 +100,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="42dp"
                 android:paddingHorizontal="@dimen/space_16"
-                android:background="@color/gray_light">
+                android:background="@color/gray">
 
                 <TextView
                     android:gravity="center"
@@ -114,6 +114,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
+                    android:id="@+id/developerNameTvFiled"
                     android:gravity="center"
                     tools:text="Hasan Azimi"
                     android:layout_gravity="center_vertical"
@@ -145,6 +146,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
+                    android:id="@+id/jobTitle2"
                     android:gravity="center"
                     tools:text="Android Developer"
                     android:layout_gravity="center_vertical"
@@ -162,7 +164,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/space_16"
-                android:background="@color/gray_light">
+                android:background="@color/gray">
 
                 <TextView
                     android:gravity="center"
@@ -176,10 +178,10 @@
                     android:layout_height="wrap_content"/>
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/skillRecyclerView"
                     android:layout_width="wrap_content"
-                    tools:listitem="@layout/simple_item"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                    app:spanCount="3"
+                    tools:listitem="@layout/item_simple_tag"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     android:orientation="horizontal"
                     android:layout_marginVertical="@dimen/space_8"
                     android:layout_height="wrap_content">
@@ -209,10 +211,10 @@
                 android:background="@color/white">
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/contactInfoRecyclerView"
                     android:layout_width="wrap_content"
-                    tools:listitem="@layout/simple_item"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                    app:spanCount="3"
+                    tools:listitem="@layout/item_simple_tag"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     android:orientation="horizontal"
                     android:layout_marginVertical="@dimen/space_8"
                     android:layout_height="wrap_content">
@@ -230,7 +232,7 @@
                 android:layout_width="wrap_content"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:layout_marginTop="@dimen/space_16"
+                android:layout_marginVertical="@dimen/space_16"
                 android:textSize="@dimen/textSize_12"
                 android:paddingHorizontal="@dimen/space_16"
                 android:layout_height="wrap_content"/>
@@ -240,14 +242,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/space_16"
-                android:background="@color/white">
+                android:background="@color/gray">
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/projectsRecyclerView"
                     android:layout_width="wrap_content"
                     tools:listitem="@layout/item_organize"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                    app:spanCount="3"
-                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="vertical"
                     android:layout_marginVertical="@dimen/space_8"
                     android:layout_height="wrap_content">
 

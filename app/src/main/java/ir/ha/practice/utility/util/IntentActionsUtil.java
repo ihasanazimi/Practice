@@ -17,12 +17,10 @@ import ir.ha.practice.R;
 public class IntentActionsUtil {
 
     private Activity activity;
-    private Context context;
 
     public IntentActionsUtil(Activity activity){
         this.activity = activity;
     }
-    public IntentActionsUtil(Context context){this.context = context;}
 
     public void callPhoneNumber(String phoneNumber){
         Intent intent = new Intent(Intent.ACTION_DIAL);
@@ -37,6 +35,7 @@ public class IntentActionsUtil {
     }
 
     public void openWebSite(String url){
+        if (url.isEmpty()) return;
         activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
     }
 
@@ -87,7 +86,7 @@ public class IntentActionsUtil {
     public void shareMessageToTelegram(String msg)
     {
         final String appName = "org.telegram.messenger";
-        final boolean isAppInstalled = isAppAvailable(context, appName);
+        final boolean isAppInstalled = isAppAvailable(activity, appName);
         if (isAppInstalled)
         {
             Intent myIntent = new Intent(Intent.ACTION_SEND);

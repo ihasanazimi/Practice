@@ -30,10 +30,10 @@ class SimpleLiveDataFragment : BaseFragment<FragmentLiveDataBinding>() {
             requireActivity().runOnUiThread{ showToast(requireContext(),it) }
         }
 
-        simpleLiveDataChecker.getFullLiveDataTitle().observe(viewLifecycleOwner){
-            requireActivity().runOnUiThread{
-                Snackbar.make(requireContext(),binding.snackBarContainer,it,Snackbar.LENGTH_INDEFINITE).show()
-            }
-        }
+//        simpleLiveDataChecker.getFullLiveDataTitle().observe(viewLifecycleOwner){
+//            requireActivity().runOnUiThread{
+//                Snackbar.make(requireContext(),binding.snackBarContainer,it,Snackbar.LENGTH_INDEFINITE).show()
+//            }
+//        }
     }
 }

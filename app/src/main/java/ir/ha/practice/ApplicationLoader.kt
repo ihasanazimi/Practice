@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.os.Handler
 import com.facebook.drawee.backends.pipeline.Fresco
+import dagger.hilt.android.HiltAndroidApp
 import ir.ha.practice.services.fresco.ImageLoadingService
 import ir.ha.practice.services.fresco.ImageLoadingServiceImpl
 import ir.ha.practice.services.http.ApiService
@@ -16,7 +17,7 @@ import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import java.util.*
 
-//@HiltAndroidApp
+@HiltAndroidApp
 class ApplicationLoader : Application() {
 
     companion object{

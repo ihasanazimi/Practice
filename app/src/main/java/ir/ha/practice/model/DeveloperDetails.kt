@@ -10,4 +10,8 @@ data class DeveloperDetails(
     val contactInfo: ContactInfo,
     val skills: List<String>,
     val resume: Resume
-)
+) : java.io.Serializable {
+
+    fun getFullName() = "$firstName $lastName"
+    fun getJobInOrganization() = "$jobTitle in ${resume.organizes[0].organizeName}"
+}

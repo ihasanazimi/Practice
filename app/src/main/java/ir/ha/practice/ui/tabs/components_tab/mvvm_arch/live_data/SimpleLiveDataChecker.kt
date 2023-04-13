@@ -21,12 +21,12 @@ class SimpleLiveDataChecker {
     }
 
 
-    fun getFullLiveDataTitle() : LiveData<String>{
-        // map : taqir mide be on chizi k ma mikhayim masalan ma inja goftim biyad masalan 2 bar tekraresh kone
-        val userNameByTransFormation = Transformations.map(locationLiveData) {
-            "TransFormation LiveData -> $it  $it"
-        }
-        return userNameByTransFormation
-    }
+//    fun getFullLiveDataTitle() : LiveData<String>{
+//        // map : taqir mide be on chizi k ma mikhayim masalan ma inja goftim biyad masalan 2 bar tekraresh kone
+//        val userNameByTransFormation = Transformations.map(locationLiveData) {
+//            "TransFormation LiveData -> $it  $it"
+//        }
+//        return userNameByTransFormation
+//    }
 
 }

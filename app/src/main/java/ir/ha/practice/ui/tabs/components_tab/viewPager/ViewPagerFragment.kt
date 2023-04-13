@@ -5,7 +5,7 @@ import android.view.View
 import androidx.viewpager2.widget.ViewPager2
 import ir.ha.practice.R
 import ir.ha.practice.databinding.FragmentViewPagerBinding
-import ir.ha.practice.repo.BannerDataGenerator
+import ir.ha.practice.repository.fake.BannerDataGenerator
 import ir.ha.practice.utility.base.BaseFragment
 
 class ViewPagerFragment : BaseFragment<FragmentViewPagerBinding>() {

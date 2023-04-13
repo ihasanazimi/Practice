@@ -1,4 +1,4 @@
-package ir.ha.practice.repo
+package ir.ha.practice.repository.fake
 
 import ir.ha.practice.model.FakePojo
 

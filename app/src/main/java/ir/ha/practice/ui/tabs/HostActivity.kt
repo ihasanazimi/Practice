@@ -4,11 +4,13 @@ import android.os.Bundle
 import androidx.lifecycle.LiveData
 import androidx.navigation.NavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 import ir.ha.practice.R
 import ir.ha.practice.databinding.ActivityNavHostBinding
 import ir.ha.practice.utility.base.BaseActivity
 import ir.ha.practice.utility.extentions.setupWithNavController
 
+@AndroidEntryPoint
 class HostActivity : BaseActivity<ActivityNavHostBinding>() {
     override val layoutId: Int get() = R.layout.activity_nav_host
 

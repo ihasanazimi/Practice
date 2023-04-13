@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import ir.ha.practice.R
 import ir.ha.practice.databinding.FragmentRvBinding
 import ir.ha.practice.model.FakePojo
-import ir.ha.practice.repo.FakeDataGenerator
+import ir.ha.practice.repository.fake.FakeDataGenerator
 import ir.ha.practice.utility.base.BaseFragment
 
 class RecyclerViewFragment : BaseFragment<FragmentRvBinding>(){
