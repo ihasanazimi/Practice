@@ -5,8 +5,11 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/mainFrame"
+        android:background="@color/white"
+        android:clickable="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:focusable="true">
 
         <LinearLayout
             android:layout_width="match_parent"

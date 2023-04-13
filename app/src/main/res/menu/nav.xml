@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/home"
+        android:id="@+id/developer"
         android:icon="@drawable/baseline_account_circle_24"
         android:title="developer" />
     <item
-        android:id="@+id/card"
+        android:id="@+id/samples"
         android:icon="@drawable/baseline_apps_24"
         android:title="samples" />
     <item
-        android:id="@+id/profile"
+        android:id="@+id/test"
         android:icon="@drawable/baseline_help_24"
         android:title="test" />
 </menu>

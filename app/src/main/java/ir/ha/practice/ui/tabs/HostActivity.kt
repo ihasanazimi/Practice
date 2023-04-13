@@ -39,13 +39,13 @@ class HostActivity : BaseActivity<ActivityNavHostBinding>() {
     private fun setupBottomNavigationBar() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNav)
 
-        val navGraphIds = listOf(R.navigation.developer, R.navigation.tabs, R.navigation.test)
+        val navGraphIds = listOf(R.navigation.developer, R.navigation.samples, R.navigation.test)
 
         // Setup the bottom navigation view with a list of navigation graphs
         val controller = bottomNavigationView.setupWithNavController(
             navGraphIds = navGraphIds,
             fragmentManager = supportFragmentManager,
-            containerId = R.id.nav,
+            containerId = R.id.tab_nav,
             intent = intent
         )
 
