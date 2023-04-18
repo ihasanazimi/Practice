@@ -31,7 +31,7 @@ class SamplesFragment  : BaseFragment<FragmentComponentsBinding>(), View.OnClick
     ComponentsAdapter.ComponentsEvent {
     override val layoutId: Int get() = R.layout.fragment_components
 
-    lateinit var componentsAdapter : ComponentsAdapter
+    private lateinit var componentsAdapter : ComponentsAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
