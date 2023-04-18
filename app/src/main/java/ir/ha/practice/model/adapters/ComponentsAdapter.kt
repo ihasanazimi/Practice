@@ -5,9 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ir.ha.practice.databinding.ItemSimpleTagBinding
 
-class ComponentsAdapter : RecyclerView.Adapter<ComponentsAdapter.VH>() {
+class ComponentsAdapter(val callBack : ComponentsEvent) : RecyclerView.Adapter<ComponentsAdapter.VH>() {
 
     private val items = arrayListOf<String>()
+
+    interface ComponentsEvent{
+        fun onComponentNameClick(component : String)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
         return VH(ItemSimpleTagBinding.inflate(LayoutInflater.from(parent.context),parent,false))
@@ -38,6 +42,9 @@ class ComponentsAdapter : RecyclerView.Adapter<ComponentsAdapter.VH>() {
 
         fun bind(tag : String){
             binding.tagTv.text = tag
+            binding.tagTv.setOnClickListener {
+                callBack.onComponentNameClick(items[absoluteAdapterPosition])
+            }
         }
 
     }

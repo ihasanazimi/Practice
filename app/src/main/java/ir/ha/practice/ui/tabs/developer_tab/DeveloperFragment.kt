@@ -54,6 +54,12 @@ class DeveloperFragment : BaseFragmentByVM<FragmentDeveloperBinding,DeveloperVM>
     }
 
     private fun updateUi(d : DeveloperDetails) {
+
+        if (d == null) {
+            showToast(requireContext(),"your model is the null")
+            return
+        }
+
         binding.apply {
 //            Glide.with(requireContext()).load(d.profileImage).into(developerProfileImage)
             developerNameTv.text = d.getFullName()

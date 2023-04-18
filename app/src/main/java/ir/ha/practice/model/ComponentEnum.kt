@@ -5,7 +5,7 @@ enum class ComponentEnum {
     costume_view,
     flow,
     animation,
-    braodcast_receiver,
+    broadcast_receiver,
     room,
     fragment,
     material,
@@ -18,7 +18,7 @@ enum class ComponentEnum {
     view_pager,
     medial_player,
     video_player,
-    exo_palyer,
+    exo_player,
     mvvm,
     rx,
     rx_mvvm
@@ -32,7 +32,7 @@ object Components {
         sampleComponents.add("costume_view")
         sampleComponents.add("flow")
         sampleComponents.add("animation")
-        sampleComponents.add("braodcast_receiver")
+        sampleComponents.add("broadcast_receiver")
         sampleComponents.add("room")
         sampleComponents.add("fragment")
         sampleComponents.add("material")
@@ -45,7 +45,7 @@ object Components {
         sampleComponents.add("view_pager")
         sampleComponents.add("medial_player")
         sampleComponents.add("video_player")
-        sampleComponents.add("exo_palyer")
+        sampleComponents.add("exo_player")
         sampleComponents.add("mvvm")
         sampleComponents.add("rx")
         sampleComponents.add("rx_mvvm")
