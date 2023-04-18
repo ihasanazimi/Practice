@@ -112,7 +112,7 @@ class SamplesFragment  : BaseFragment<FragmentComponentsBinding>(), View.OnClick
     }
 
 
-    fun openFragment(fragment : Fragment){
+    private fun openFragment(fragment : Fragment){
         addFragmentByAnimation(fragment,fragment::class.java.simpleName,true,true,R.id.container)
     }
 
