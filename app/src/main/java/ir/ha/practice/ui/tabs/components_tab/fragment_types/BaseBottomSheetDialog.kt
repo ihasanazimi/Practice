@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import ir.ha.practice.databinding.BottomSheetBinding
 
-class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
+class BaseBottomSheetDialog : BottomSheetDialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val binding = BottomSheetBinding.inflate(LayoutInflater.from(requireContext()),null,false)

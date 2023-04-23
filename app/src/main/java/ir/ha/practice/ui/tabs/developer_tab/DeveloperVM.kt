@@ -5,6 +5,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import ir.ha.practice.model.DeveloperDetails
 import ir.ha.practice.usecases.DeveloperUseCase
 import ir.ha.practice.utility.base.BaseViewModel
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -15,20 +16,21 @@ class DeveloperVM @Inject constructor(
     private val developerUseCase: DeveloperUseCase
 ) : BaseViewModel() {
 
+    val coroutineExceptionHandler = CoroutineExceptionHandler { c ,t ->
+        errorLiveData.postValue(arrayListOf(t.message.toString()))
+    }
+
     private val _developerRes = MutableSharedFlow<DeveloperDetails>()
     val developerRes = _developerRes.asSharedFlow()
 
 
 
     fun getDeveloperDetails() {
-        viewModelScope.launch {
+        viewModelScope.launch(coroutineExceptionHandler) {
             showProgress.value = true
             developerUseCase.getDeveloperDetails().collect{
-                if (it != null) {
-                    showProgress.value = false
-                    _developerRes.emit(it)
-                }
-                else errorLiveData.postValue(arrayListOf("connection error"))
+                showProgress.value = false
+                _developerRes.emit(it)
             }
         }
     }

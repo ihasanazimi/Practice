@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import androidx.fragment.app.DialogFragment
 import ir.ha.practice.databinding.DialogFragmentBinding
 
-class MyDialogFragment : DialogFragment() {
+class BaseDialogFragment : DialogFragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

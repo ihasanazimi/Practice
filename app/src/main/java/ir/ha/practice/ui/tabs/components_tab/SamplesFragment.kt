@@ -13,6 +13,8 @@ import ir.ha.practice.ui.tabs.components_tab.broadcast_eventbus.BroadcastReceive
 import ir.ha.practice.ui.tabs.components_tab.db.RoomDBFragment
 import ir.ha.practice.ui.tabs.components_tab.firebase.FirebaseCloudMessagingFragment
 import ir.ha.practice.ui.tabs.components_tab.flow.FlowFragment
+import ir.ha.practice.ui.tabs.components_tab.fragment_types.FragmentsContainer
+import ir.ha.practice.ui.tabs.components_tab.loadimage.LoadImagesFragment
 import ir.ha.practice.ui.tabs.components_tab.material.MaterialDesignFragment
 import ir.ha.practice.ui.tabs.components_tab.mediaplayer.MediaPlayerFragment
 import ir.ha.practice.ui.tabs.components_tab.mediaplayer.VideoPlayerFragment
@@ -65,6 +67,9 @@ class SamplesFragment  : BaseFragment<FragmentComponentsBinding>(), View.OnClick
             ComponentEnum.room.toString() -> {
                 openFragment(RoomDBFragment())
             }
+            ComponentEnum.fragment.toString() -> {
+                openFragment(FragmentsContainer())
+            }
             ComponentEnum.material.toString() -> {
                 openFragment(MaterialDesignFragment())
             }
@@ -72,7 +77,7 @@ class SamplesFragment  : BaseFragment<FragmentComponentsBinding>(), View.OnClick
                 openFragment(FirebaseCloudMessagingFragment())
             }
             ComponentEnum.load_images.toString() -> {
-                openFragment(RetrofitFragment())
+                openFragment(LoadImagesFragment())
             }
             ComponentEnum.retrofit.toString() -> {
                 openFragment(RetrofitFragment())
