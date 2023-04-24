@@ -21,12 +21,14 @@ class RetrofitFragment : BaseFragment<FragmentHttpRequestBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.pb.invisible()
-
         binding.requestBtn.setOnClickListener{
             binding.pb.show()
             ApiService().api.getDevelopersByRetrofit().enqueue(object : Callback<DeveloperDetails>{
                 override fun onResponse(call: Call<DeveloperDetails>, response: Response<DeveloperDetails>) {
-                    if (response.isSuccessful) { /* code */ }
+                    if (response.isSuccessful) {
+                        showToast(requireContext(),response.body()?.firstName.toString())
+                        binding.pb.invisible()
+                    }
                 }
                 override fun onFailure(call: Call<DeveloperDetails>, t: Throwable) {
                     showToast(requireContext(),t.message.toString())
