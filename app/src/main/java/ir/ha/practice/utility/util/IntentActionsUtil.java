@@ -1,10 +1,9 @@
 package ir.ha.practice.utility.util;
-import static ir.ha.practice.utility.extentions.UtilExtKt.isAppAvailable;
+import static ir.ha.practice.utility.extentions.ExtentionsKt.isAppAvailable;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
