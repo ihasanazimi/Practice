@@ -21,7 +21,11 @@ import android.animation.*
 import android.content.res.Resources
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
+import android.graphics.Rect
 import android.text.InputType
+import android.text.Selection
+import android.text.Spannable
+import android.text.SpannableString
 import android.transition.Fade
 import android.transition.TransitionManager
 import android.util.DisplayMetrics
@@ -35,9 +39,15 @@ import androidx.dynamicanimation.animation.SpringForce
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.math.ceil
 import android.text.SpannableStringBuilder
+import android.text.Spanned
+import android.text.TextPaint
 import android.text.TextWatcher
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
 import android.text.style.ImageSpan
+import android.util.Log
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
@@ -53,17 +63,24 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
 import androidx.viewbinding.ViewBinding
+import com.google.android.material.appbar.AppBarLayout
 import com.google.gson.Gson
 import ir.ha.practice.ApplicationLoader
 import ir.ha.practice.R
 import kotlinx.coroutines.*
 import java.lang.Runnable
+import java.text.DecimalFormat
+import java.text.DecimalFormatSymbols
+import java.text.NumberFormat
 import java.util.*
 import java.util.regex.Pattern
+import kotlin.math.abs
+import kotlin.reflect.KClass
 
 fun isNonNull(o: Any?) = o != null
 fun isNull(o: Any?) = o == null
@@ -211,9 +228,6 @@ fun RecyclerView.scrollToTop() {
     if(canScrollVertically(-1))
         smoothScrollToPosition(0)
 }
-
-
-
 fun ViewGroup.showParentByAnim() {
     val transition = Fade()
     transition.duration = 500
@@ -228,10 +242,6 @@ fun View.getDrawable(drawableResID: Int): Drawable? =
 
 fun View.getColor(colorResID: Int): Int =
     ContextCompat.getColor(context, colorResID)
-
-
-
-
 
 fun View.getColoredDrawable(drawableResID: Int, colorResID: Int, mode: PorterDuff.Mode): Drawable? {
     val drawable = ContextCompat.getDrawable(context, drawableResID)?.mutate()
@@ -321,6 +331,33 @@ fun EditText.showKeyboard() {
     imm.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
 }
 
+fun TextView.makeLinks(vararg links: Pair<String, View.OnClickListener>) {
+    val spannableString = SpannableString(this.text)
+    var startIndexOfLink = -1
+    for (link in links) {
+        val clickableSpan = object : ClickableSpan() {
+            override fun updateDrawState(textPaint: TextPaint) {
+                // use this to change the link color
+                textPaint.color = textPaint.linkColor
+                // toggle below value to enable/disable
+                // the underline shown below the clickable text
+                textPaint.isUnderlineText = true
+            }
+
+            override fun onClick(view: View) {
+                Selection.setSelection((view as TextView).text as Spannable, 0)
+                view.invalidate()
+                link.second.onClick(view)
+            }
+        }
+        startIndexOfLink = this.text.toString().indexOf(link.first, startIndexOfLink + 1)
+        if(startIndexOfLink == -1) { continue }
+        spannableString.setSpan(clickableSpan, startIndexOfLink, startIndexOfLink + link.first.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+    }
+    this.movementMethod = LinkMovementMethod.getInstance() // without LinkMovementMethod, link can not click
+    this.setText(spannableString, TextView.BufferType.SPANNABLE)
+}
+
 private val viewScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
 fun View.singleClick(callback: () -> Unit) {
     this.setOnClickListener {
@@ -332,6 +369,15 @@ fun View.singleClick(callback: () -> Unit) {
             this.cancel()
         }
     }
+}
+
+fun View.findLocationOfCenterOnTheScreen(): IntArray {
+    val positions = intArrayOf(0, 0)
+    getLocationInWindow(positions)
+    // Get the center of the view
+    positions[0] = positions[0] + width / 2
+    positions[1] = positions[1] + height / 2
+    return positions
 }
 
 
@@ -628,7 +674,61 @@ fun String.removeNumbers(): String {
 }
 
 
+
 fun String.extractNumberInString() = replace("\\D+".toRegex(),"").toInt()
+
+fun String.toAmountFormat(): String {
+    return try {
+        val decimalFormat = DecimalFormat()
+        val decimalFormatSymbol = DecimalFormatSymbols()
+        decimalFormatSymbol.groupingSeparator = ','
+        decimalFormat.decimalFormatSymbols = decimalFormatSymbol
+        decimalFormat.format(if (this.isNotEmpty()) this.toLong() else "0".toLong())
+    }
+    catch (ex: java.lang.Exception) { this.toString() }
+}
+
+fun String.getMoneyFormat(): String {
+    if (this.isEmpty())
+        return ""
+    var result = this
+
+    try {
+        val formatter: NumberFormat = DecimalFormat("#,###")
+        if (result.contains(",") || result.contains('٬') || result.contains("،")) {
+            result = result.replace(",", "")
+            result = result.replace("٬", "")
+            result = result.replace("،", "")
+        }
+        result = formatter.format(result.toLong())
+        result = result.getPersianNumber()
+    } catch (ex: java.lang.Exception) {
+        ex.printStackTrace()
+    }
+    return result
+}
+
+fun String.getPersianNumber(): String {
+    var number = this
+    try {
+        val persianNumbers = arrayOf("۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹")
+        for (i in 0..9) number = number.replace(i.toString(), persianNumbers[i])
+
+    } catch (e: java.lang.Exception) {
+        e.printStackTrace()
+    }
+    return number
+}
+
+fun Double.formatForQta(): String {
+    val floatString = this.toString()
+    val decimalString: String = floatString.substring(floatString.indexOf('.') + 1, floatString.length)
+
+    return when (decimalString.toInt() == 0) {
+        true -> this.toInt().toString()
+        false -> "%.3f".format(this)
+    }
+}
 
 fun getStandardMobileNumber(mobileNumber: String): String {
     var result = mobileNumber
@@ -665,9 +765,126 @@ fun showToast(ctx : Context , message : String){
     Toast.makeText(ctx,message.trim() , Toast.LENGTH_LONG).show()
 }
 
+fun KClass<*>.simpleClassName():String{
+    // returned -> ClassName -> className
+    return this.toString().split(".").last().convertPascalCaseToCamelCase()
+}
+fun String.convertPascalCaseToCamelCase():String{
+    return this.replaceFirst(this.substring(0,1),this.substring(0,1).toLowerCase())
+}
 
 
+fun Activity.keyboardListener(
+    view: View,
+    lifecycleOwner: Lifecycle,
+    callBack: (keyboardIsOpen: Boolean) -> Unit
+) {
+    var isKeyboardOpenLastState = false
+    var isKeyboardOpen = false
+    val TAG = ""
+    Log.i(TAG, "handleKeyboardAndAnimation: ")
+    view.viewTreeObserver.addOnGlobalLayoutListener(ViewTreeObserver.OnGlobalLayoutListener {
+        Log.i(
+            TAG,
+            "onGlobalLayout: ======================================================================================================"
+        )
+        val layoutRect = Rect()
+        var translationYAnimator: ObjectAnimator? = null
+        //r will be populated with the coordinates of your view that area still visible.
+        view.getWindowVisibleDisplayFrame(layoutRect)
+        val statusBarHeight = layoutRect.top
+        Log.i(TAG, "onGlobalLayout: statusBarHeight => $statusBarHeight")
+//        isKeyboardOpenLastState = isKeyboardOpen
 
+        ///////////////////////////// get focus view ////////////////////////////////////////
+        val focusedView: View?
+        val focusedViewRect = Rect()
+        var focusedViewHeight = 0
+        var focusedViewY = 0
+        var heightDiff = 0
+        heightDiff = view.rootView.height - (layoutRect.bottom - layoutRect.top)
+        focusedView = currentFocus
+        if (focusedView != null) {
+            Log.i(TAG, "onGlobalLayout: focusedView is not null => " + focusedView.id)
+            focusedView.getWindowVisibleDisplayFrame(focusedViewRect)
+            focusedViewHeight = focusedView.height
+            Log.i(TAG, "onGlobalLayout: focusedViewHeight => $focusedViewHeight")
+            val locationWin = IntArray(2)
+            focusedView.getLocationInWindow(locationWin)
+            focusedViewY = locationWin[1]
+            Log.i(
+                TAG, "onGlobalLayout: focusedViewY => $focusedViewY"
+            )
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////
+//        if (isKeyboardOpenLastState==isKeyboardOpen)
+//            return@OnGlobalLayoutListener
+
+        if (heightDiff > 0.25 * view.rootView.height) { // if more than 25% of the screen, its probably a keyboard...
+            Log.i(TAG, "onGlobalLayout: keyboard opened")
+            isKeyboardOpen = true
+        } else {
+            Log.i(TAG, "onGlobalLayout: keyboard closed")
+            isKeyboardOpen = false
+        }
+
+        if (isKeyboardOpen == isKeyboardOpenLastState)
+            return@OnGlobalLayoutListener
+
+
+        if (lifecycleOwner.currentState.isAtLeast(Lifecycle.State.STARTED))
+            callBack.invoke(isKeyboardOpen)
+
+        isKeyboardOpenLastState = isKeyboardOpen
+    })
+}
+
+
+fun AppBarLayout.offsetChangeListener(
+    callBack: (
+        offset: Int,
+        percent: Float,
+        anchorHeight: Int,
+        maxScrollRange: Float
+    ) -> Unit
+) {
+    Log.i("offsetChangeListener", "offsetChangeListener: ")
+    var offset = 0
+    var correctHeight = 0f
+    var percent = 0f
+    var lastOffset = -1
+    addOnOffsetChangedListener { appBarLayout, verticalOffset ->
+        if (lastOffset == verticalOffset)
+            return@addOnOffsetChangedListener
+
+        lastOffset = verticalOffset
+
+        val maxScroll = appBarLayout.totalScrollRange.toFloat()
+        offset = abs(verticalOffset)
+        percent =
+            if (offset != 0)
+                (offset / maxScroll)
+            else
+                0f
+
+        // used for anchor view
+        correctHeight = abs((percent * height) - height)
+
+
+        Log.i("offsetChangeListener", "offset: $offset percent: $percent")
+        callBack.invoke(
+            offset,
+            percent,
+            correctHeight.toInt(),
+            maxScroll
+        )
+    }
+}
+
+inline fun <T : Any , R> T?.withNotNull(block : (T) -> R) : R? {
+    return this?.let(block)
+    // means -> if(B != null) { run this code block }
+}
 
 open class AnimatorListenerImpl : Animator.AnimatorListener {
     override fun onAnimationStart(animation: Animator) {}
@@ -721,7 +938,6 @@ fun ViewBinding.setVm(vm: Any){
     try{ javaClass.getMethod("setVm", vm.javaClass).invoke(this,vm)
     }catch (e: Exception){ /**e.printStackTrace()*/ }
 }
-
 
 // Singleton Data Store
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
