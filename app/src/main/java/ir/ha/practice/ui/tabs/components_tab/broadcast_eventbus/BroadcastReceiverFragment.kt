@@ -9,7 +9,7 @@ import android.view.View
 import ir.ha.practice.R
 import ir.ha.practice.databinding.FragmentBroadcastRecevierBinding
 import ir.ha.practice.utility.base.BaseFragment
-import ir.ha.practice.utility.extentions.checkInternetConnection
+import ir.ha.practice.utility.extentions.isInternetConnected
 
 class BroadcastReceiverFragment : BaseFragment<FragmentBroadcastRecevierBinding>() {
     override val layoutId: Int get() = R.layout.fragment_broadcast_recevier
@@ -28,7 +28,7 @@ class BroadcastReceiverFragment : BaseFragment<FragmentBroadcastRecevierBinding>
     }
 
     private fun checkNet(ctx : Context) {
-        if (checkInternetConnection(this@BroadcastReceiverFragment.requireContext()))
+        if (isInternetConnected(this@BroadcastReceiverFragment.requireContext()))
             binding.iv.setImageResource(R.drawable.ic_online)
         else binding.iv.setImageResource(R.drawable.ic_offline)
     }

@@ -1,5 +1,5 @@
 package ir.ha.practice.utility.util;
-import static ir.ha.practice.utility.extentions.ExtentionsKt.isAppAvailable;
+import static ir.ha.practice.utility.extentions.ExtensionsKt.isAppAvailable;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

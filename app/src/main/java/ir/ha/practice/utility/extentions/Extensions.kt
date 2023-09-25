@@ -18,6 +18,7 @@ import android.os.Build
 import android.text.ClipboardManager
 import android.text.Editable
 import android.animation.*
+import android.content.res.Configuration
 import android.content.res.Resources
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
@@ -54,6 +55,7 @@ import androidx.activity.addCallback
 import androidx.annotation.ChecksSdkIntAtLeast
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -139,7 +141,7 @@ fun Fragment.addFragmentByAnimation(
 }
 
 
-fun Activity.statusBarIconsColor(shouldBeLight :Boolean){
+fun Activity.setStatusBarLightMode(shouldBeLight :Boolean){
     val insetsControllerCompat = WindowInsetsControllerCompat(window,window.decorView)
     insetsControllerCompat.isAppearanceLightStatusBars = !shouldBeLight
 }
@@ -214,9 +216,7 @@ fun EditText.afterTextChangedEditable(afterTextChanged: (Editable?) -> Unit) {
 
 fun EditText.customRequestFocus() {
     requestFocus()
-    val imm: InputMethodManager =
-        context.getSystemService(Context.INPUT_METHOD_SERVICE)
-                as InputMethodManager
+    val imm: InputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     imm.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
 }
 fun EditText.setReadOnly(value: Boolean, inputType: Int = InputType.TYPE_NULL) {
@@ -225,8 +225,7 @@ fun EditText.setReadOnly(value: Boolean, inputType: Int = InputType.TYPE_NULL) {
     this.inputType = inputType
 }
 fun RecyclerView.scrollToTop() {
-    if(canScrollVertically(-1))
-        smoothScrollToPosition(0)
+    if(canScrollVertically(-1)) smoothScrollToPosition(0)
 }
 fun ViewGroup.showParentByAnim() {
     val transition = Fade()
@@ -245,12 +244,7 @@ fun View.getColor(colorResID: Int): Int =
 
 fun View.getColoredDrawable(drawableResID: Int, colorResID: Int, mode: PorterDuff.Mode): Drawable? {
     val drawable = ContextCompat.getDrawable(context, drawableResID)?.mutate()
-    val colorFilter = PorterDuffColorFilter(
-        ContextCompat.getColor(
-            context,
-            colorResID
-        ), mode
-    )
+    val colorFilter = PorterDuffColorFilter(ContextCompat.getColor(context, colorResID), mode)
     drawable?.colorFilter = colorFilter
     return drawable
 }
@@ -259,36 +253,23 @@ fun View.getColoredDrawable(drawableResID: Int, colorResID: Int, mode: PorterDuf
 
 fun View.shakeView(x: Float, num: Int, finish: Boolean = false) {
 
-    if (finish) {
-        translationX = 0f
-    }
+    if (finish) translationX = 0f
+
     val animatorSet = AnimatorSet()
-    val valueAnimator = ObjectAnimator.ofFloat(
-        this,
-        "translationX",
-        dp(x).toFloat()
-    )
-    animatorSet.playTogether(
-        valueAnimator
-    )
+    val valueAnimator = ObjectAnimator.ofFloat(this, "translationX", dp(x).toFloat())
+    animatorSet.playTogether(valueAnimator)
     valueAnimator.repeatCount = ValueAnimator.INFINITE
     animatorSet.duration = 50
     animatorSet.addListener(object : AnimatorListenerAdapter() {
         override fun onAnimationEnd(animation: Animator) {
-            if (!finish)
-                shakeView(if (num == 5) 0f else -x, num + 1)
+            if (!finish) shakeView(if (num == 5) 0f else -x, num + 1)
         }
     })
     animatorSet.start()
 }
 
 fun View.getColoredDrawable(drawable: Drawable, colorResID: Int, mode: PorterDuff.Mode): Drawable? {
-    val colorFilter = PorterDuffColorFilter(
-        ContextCompat.getColor(
-            context,
-            colorResID
-        ), mode
-    )
+    val colorFilter = PorterDuffColorFilter(ContextCompat.getColor(context, colorResID), mode)
     drawable.colorFilter = colorFilter
     return drawable
 }
@@ -319,13 +300,12 @@ fun View.hideFadeOut() {
     animate().alpha(0f).setDuration(150L).withEndAction { hide() }.start()
 }
 
-fun EditText.hideKeyboard() {
-    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as
-            InputMethodManager
+fun View.hideKeyboard() {
+    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     imm.hideSoftInputFromWindow(this.windowToken, 0)
 }
 
-fun EditText.showKeyboard() {
+fun View.showKeyboard() {
     this.requestFocus()
     val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     imm.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
@@ -382,9 +362,7 @@ fun View.findLocationOfCenterOnTheScreen(): IntArray {
 
 
 fun View.dp(value: Float): Int {
-    return if (value == 0f) {
-        0
-    } else ceil(context.resources.displayMetrics.density * value.toDouble()).toInt()
+    return if (value == 0f) 0 else ceil(context.resources.displayMetrics.density * value.toDouble()).toInt()
 }
 
 fun View.runOnUIThread(runnable: Runnable, delay: Long = 0) {
@@ -444,11 +422,7 @@ fun View.implementSpringAnimationTrait(){
 
 fun PopupMenu.insertMenuItemIcons(
     context: Context, ) {
-    if (hasIcon()) {
-        for (i in 0 until menu.size()) {
-            insertMenuItemIcon(context, menu.getItem(i))
-        }
-    }
+    if (hasIcon()) for (i in 0 until menu.size()) insertMenuItemIcon(context, menu.getItem(i))
 }
 
 fun PopupMenu.hasIcon(): Boolean {
@@ -469,6 +443,7 @@ fun PopupMenu.insertMenuItemIcon(context: Context, menuItem: MenuItem) {
 }
 
 fun Context.drawable(@DrawableRes drawableRes: Int) = ResourcesCompat.getDrawable(resources, drawableRes, theme)
+
 fun Context.copyToClipboard(text: String){
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
         val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
@@ -490,7 +465,7 @@ fun isMyServiceRunning(applicationContext: Context?, serviceClass: Class<*>): Bo
     return false
 }
 
-fun convertNumbersToFarsiNum(faNumbers: String): String {
+fun convertEnNumbersToPersianNumbers(faNumbers: String): String {
     var changedVariable = ""
     val mChars = arrayOf(
         arrayOf("0", "۰"),
@@ -508,7 +483,7 @@ fun convertNumbersToFarsiNum(faNumbers: String): String {
     return faNumbers
 }
 
-fun checkConnection(context: Context?): Boolean {
+fun isNetConnected(context: Context?): Boolean {
     var isConnected = false
     val connectivityManager =
         context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
@@ -537,7 +512,7 @@ fun checkConnection(context: Context?): Boolean {
     return isConnected
 }
 
-fun checkInternetConnection(context: Context?): Boolean {
+fun isInternetConnected(context: Context?): Boolean {
     val connectivityManager = context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
     val activeNetworkInfo = connectivityManager!!.activeNetworkInfo
     return activeNetworkInfo != null && activeNetworkInfo.isConnected
@@ -578,7 +553,7 @@ fun getApplicationVersion(context : Context) : Pair<String , Int>{
     }
 }
 
-fun changeStatusBarColor(window: Window, colorId : Int) {
+fun setStatusBarColor(window: Window, colorId : Int) {
     if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
         window.statusBarColor = ApplicationLoader.context?.resources!!.getColor(colorId,null)
     }
@@ -677,7 +652,7 @@ fun String.removeNumbers(): String {
 
 fun String.extractNumberInString() = replace("\\D+".toRegex(),"").toInt()
 
-fun String.toAmountFormat(): String {
+fun String.getSeparatorAmountFormat(): String {
     return try {
         val decimalFormat = DecimalFormat()
         val decimalFormatSymbol = DecimalFormatSymbols()
@@ -730,7 +705,7 @@ fun Double.formatForQta(): String {
     }
 }
 
-fun getStandardMobileNumber(mobileNumber: String): String {
+fun getStandardPhoneNumber(mobileNumber: String): String {
     var result = mobileNumber
     return try {
         result = result.replace(" ", "")
@@ -743,7 +718,7 @@ fun getStandardMobileNumber(mobileNumber: String): String {
     }
 }
 
-fun convertDpToPixel(dp : Float , context : Context?) : Float {
+fun convertDpToPx(dp : Float, context : Context?) : Float {
     return if (context != null){
         val resource = context.resources
         val metrics = resource.displayMetrics
@@ -754,7 +729,7 @@ fun convertDpToPixel(dp : Float , context : Context?) : Float {
     }
 }
 
-fun convertDpToPixel2(dp: Float) = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, Resources.getSystem().displayMetrics)
+fun convertDpiToPixel(dp: Float) = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, Resources.getSystem().displayMetrics)
 fun addTurnScreenOnAlwaysFlag(window : Window){
     window.addFlags(WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON)
 }
@@ -886,6 +861,39 @@ inline fun <T : Any , R> T?.withNotNull(block : (T) -> R) : R? {
     // means -> if(B != null) { run this code block }
 }
 
+
+fun Context.isDarkThemeOn(context: Context): Boolean {
+    Log.i("TAG", "isDarkThemeOn: ${context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK}")
+    return when (context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
+        /* 32 */ Configuration.UI_MODE_NIGHT_YES -> true
+        /* 16 */ Configuration.UI_MODE_NIGHT_NO -> false
+        /* 0 */ Configuration.UI_MODE_NIGHT_UNDEFINED -> false
+        else -> false
+    }
+}
+
+
+fun Context.isEnabledDarkMode() : Boolean{
+    val darkModeFlags = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK// Retrieve the Mode of the App.
+    return darkModeFlags == Configuration.UI_MODE_NIGHT_YES //Check if the Dark Mode is On
+}
+
+fun Context.switchToDarkModeIfNeeded(){
+    Log.i("TAG", "switchTheme - dakMode is ${this.isEnabledDarkMode()}")
+    if (this.isEnabledDarkMode()) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES) //Switch on the dark mode.
+    }
+}
+
+fun Context.switchToLightModeIfNeeded(){
+    Log.i("TAG", "switchTheme - dakMode is ${this.isEnabledDarkMode()}")
+    if (this.isEnabledDarkMode()) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO) //Switch off the dark mode.
+    }
+}
+
+
+
 open class AnimatorListenerImpl : Animator.AnimatorListener {
     override fun onAnimationStart(animation: Animator) {}
     override fun onAnimationEnd(animation: Animator) {}
@@ -941,6 +949,10 @@ fun ViewBinding.setVm(vm: Any){
 
 // Singleton Data Store
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+
+
+
+
 
 
 
