@@ -84,6 +84,9 @@ import java.util.regex.Pattern
 import kotlin.math.abs
 import kotlin.reflect.KClass
 
+
+private const val TAG = "utility_extensions"
+
 fun isNonNull(o: Any?) = o != null
 fun isNull(o: Any?) = o == null
 fun isNotZero(f: Float) = f != 0f
@@ -756,7 +759,6 @@ fun Activity.keyboardListener(
 ) {
     var isKeyboardOpenLastState = false
     var isKeyboardOpen = false
-    val TAG = ""
     Log.i(TAG, "handleKeyboardAndAnimation: ")
     view.viewTreeObserver.addOnGlobalLayoutListener(ViewTreeObserver.OnGlobalLayoutListener {
         Log.i(
@@ -787,9 +789,7 @@ fun Activity.keyboardListener(
             val locationWin = IntArray(2)
             focusedView.getLocationInWindow(locationWin)
             focusedViewY = locationWin[1]
-            Log.i(
-                TAG, "onGlobalLayout: focusedViewY => $focusedViewY"
-            )
+            Log.i(TAG, "onGlobalLayout: focusedViewY => $focusedViewY")
         }
         ////////////////////////////////////////////////////////////////////////////////////////////
 //        if (isKeyboardOpenLastState==isKeyboardOpen)
@@ -879,15 +879,15 @@ fun Context.isEnabledDarkMode() : Boolean{
 }
 
 fun Context.switchToDarkModeIfNeeded(){
-    Log.i("TAG", "switchTheme - dakMode is ${this.isEnabledDarkMode()}")
+    Log.i(TAG, "switchToDarkModeIfNeeded - dakMode is ${this.isEnabledDarkMode()}")
     if (this.isEnabledDarkMode()) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES) //Switch on the dark mode.
     }
 }
 
 fun Context.switchToLightModeIfNeeded(){
-    Log.i("TAG", "switchTheme - dakMode is ${this.isEnabledDarkMode()}")
-    if (this.isEnabledDarkMode()) {
+    Log.i(TAG, "switchToLightModeIfNeeded - dakMode is ${this.isEnabledDarkMode()}")
+    if (!this.isEnabledDarkMode()) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO) //Switch off the dark mode.
     }
 }
@@ -899,6 +899,15 @@ open class AnimatorListenerImpl : Animator.AnimatorListener {
     override fun onAnimationEnd(animation: Animator) {}
     override fun onAnimationCancel(animation: Animator) {}
     override fun onAnimationRepeat(animation: Animator) {}
+}
+
+
+fun enableOrDisableThisViews(vararg views : View,enable : Boolean){
+    for (i in views){
+        i.isEnabled = enable
+        i.isClickable = enable
+        i.isFocusable = enable
+    }
 }
 
 
