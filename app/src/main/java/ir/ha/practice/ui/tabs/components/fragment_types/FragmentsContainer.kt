@@ -38,11 +38,11 @@ class FragmentsContainer : BaseFragment<FragmentFragmentsContainerBinding>() {
         super.registerClickListeners()
 
         binding.dialogFragmentBtn.singleClick {
-            BaseDialogFragment().show(requireActivity().supportFragmentManager,BaseDialogFragment::class.java.simpleName)
+            DialogSample().show(requireActivity().supportFragmentManager,DialogSample::class.java.simpleName)
         }
 
         binding.bottomSheetBtn.singleClick {
-            BaseBottomSheetDialog().show(requireActivity().supportFragmentManager,BaseBottomSheetDialog::class.java.simpleName)
+            BottomSheetSample().show(requireActivity().supportFragmentManager,BottomSheetSample::class.java.simpleName)
         }
 
         binding.fragment1Btn.singleClick {

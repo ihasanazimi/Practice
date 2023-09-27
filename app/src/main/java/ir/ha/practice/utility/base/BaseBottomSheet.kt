@@ -1,6 +1,5 @@
 package ir.ha.practice.utility.base
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,14 +8,14 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import ir.ha.practice.utility.extentions.showToast
 
-abstract class BaseBottomSheetDialogFragmentByVM<V : ViewDataBinding, VM : BaseViewModel>: BottomSheetDialogFragment()  {
+abstract class BaseBottomSheet<V : ViewDataBinding>: BottomSheetDialogFragment() {
 
-    abstract val viewModel: VM
     private var _binding: V? = null
     val binding get() = _binding!!
     val mainHelper by lazy { (requireActivity()) }
+
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
@@ -29,20 +28,14 @@ abstract class BaseBottomSheetDialogFragmentByVM<V : ViewDataBinding, VM : BaseV
         clickEvents()
     }
 
-    open fun registerObservers() {
-
-        viewModel.errorLiveData.observe(viewLifecycleOwner){
-            if (it.size != 0) showToast(requireContext(),it.first())
-        }
-
-    }
+    open fun registerObservers() {}
 
     open fun clickEvents(){}
+
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        viewModel.clearErrorLiveData()
     }
 
     @get:LayoutRes

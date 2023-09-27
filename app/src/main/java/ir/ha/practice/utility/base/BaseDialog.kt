@@ -9,14 +9,14 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.DialogFragment
-import ir.ha.practice.utility.extentions.showToast
 
-abstract class BaseDialogFragmentByVM<V : ViewDataBinding , VM : BaseViewModel> :
+abstract class BaseDialog<V : ViewDataBinding> :
     DialogFragment() {
 
     private var _binding: V? = null
-    abstract val viewModel: VM
+
     val binding get() = _binding!!
+
     val mainHelper by lazy { (requireActivity()) }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -27,15 +27,6 @@ abstract class BaseDialogFragmentByVM<V : ViewDataBinding , VM : BaseViewModel> 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         clickEvents()
-        registerObservers()
-    }
-
-    open fun registerObservers(){
-
-        viewModel.errorLiveData.observe(viewLifecycleOwner){
-            if (it.size != 0) showToast(requireContext(),it.first())
-        }
-
     }
 
     open fun clickEvents(){}
@@ -43,7 +34,6 @@ abstract class BaseDialogFragmentByVM<V : ViewDataBinding , VM : BaseViewModel> 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        viewModel.clearErrorLiveData()
     }
 
     @get:LayoutRes
