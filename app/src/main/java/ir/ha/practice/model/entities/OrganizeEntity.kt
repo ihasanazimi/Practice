@@ -6,7 +6,7 @@ data class OrganizeEntity(
     val organizeLogo: String,
     val positionTitle: String,
     val positionType: String,
-    val projectEntities: List<ProjectEntity>,
+    val projects: List<ProjectEntity>,
     val startedPositionDate: String
 ) {
 

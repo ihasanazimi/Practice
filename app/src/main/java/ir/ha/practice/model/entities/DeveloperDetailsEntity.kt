@@ -1,6 +1,7 @@
 package ir.ha.practice.model.entities
 
 import android.util.Log
+import java.io.Serializable
 
 data class DeveloperDetailsEntity (
     val id: Int,
@@ -12,7 +13,7 @@ data class DeveloperDetailsEntity (
     val contactInfo: ContactInfoEntity,
     val skills: List<String>,
     val resume: ResumeEntity
-){
+) : Serializable{
     fun getFullName() = "$firstName $lastName"
     fun getJobInOrganization() : String{
         return  ("$jobTitle in ${resume.organizes[0].organizeName}").also {

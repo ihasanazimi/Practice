@@ -1,6 +1,5 @@
 package ir.ha.practice.model.data
 
-import android.util.Log
 import com.google.gson.annotations.SerializedName
 import ir.ha.practice.model.entities.ContactInfoEntity
 import ir.ha.practice.model.entities.ResumeEntity

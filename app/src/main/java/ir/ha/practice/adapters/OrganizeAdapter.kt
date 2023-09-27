@@ -51,8 +51,8 @@ class OrganizeAdapter(val activity : Activity) : RecyclerView.Adapter<OrganizeAd
             binding.organizationName.text = model.organizeName
             binding.jobPosition.text = model.getPositionByType()
             binding.positionToPositionDateTime.text = model.getDistanceOfTowPosition()
-            adapter.setNewList(model.projectEntities)
-            if (model.projectEntities.isEmpty()) binding.t1.hide()
+            adapter.setNewList(model.projects)
+            if (model.projects.isEmpty()) binding.t1.hide()
         }
 
     }
