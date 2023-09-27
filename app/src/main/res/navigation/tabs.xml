@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/developerFragment"
-        android:name="ir.ha.practice.ui.tabs.developer_about.DeveloperFragment"
+        android:name="ir.ha.practice.ui.developer_about.DeveloperFragment"
         android:label="DeveloperFragment"
         tools:layout="@layout/fragment_developer" />
 
     <fragment
         android:id="@+id/SamplesFragment"
-        android:name="ir.ha.practice.ui.tabs.components.SamplesFragment"
+        android:name="ir.ha.practice.ui.components.SamplesFragment"
         android:label="SamplesFragment"
         tools:layout="@layout/fragment_components" />
 
     <fragment
         android:id="@+id/testFragment"
-        android:name="ir.ha.practice.ui.tabs.test.TestFragment"
+        android:name="ir.ha.practice.ui.test.TestFragment"
         android:label="TestFragment"
         tools:layout="@layout/fragment_test" />
 </navigation>

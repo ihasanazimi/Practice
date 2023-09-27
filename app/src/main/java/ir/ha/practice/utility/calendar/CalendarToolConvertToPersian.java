@@ -58,8 +58,7 @@ public class CalendarToolConvertToPersian {
      * @param month int
      * @param day int
      */
-    public CalendarToolConvertToPersian(int year, int month, int day)
-    {
+    public CalendarToolConvertToPersian(int year, int month, int day) {
         setGregorianDate(year,month,day);
     }
 

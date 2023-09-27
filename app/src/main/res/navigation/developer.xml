@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/developerFragment"
         tools:layout="@layout/fragment_developer"
-        android:name="ir.ha.practice.ui.tabs.developer_about.DeveloperFragment"
+        android:name="ir.ha.practice.ui.developer_about.DeveloperFragment"
         android:label="DeveloperFragment" />
 
 

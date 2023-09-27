@@ -32,7 +32,7 @@ fun saveUserCoverImage(userCover : String, saveDir : String){
 
 private fun saveImage(image: Bitmap, saveDir : String) {
     var savedImagePath: String? = null
-    val imageFileName = "JPEG_" + "RVQ_USER_COVER_FILE" + ".jpg"
+    val imageFileName = "JPEG_" + "YOUR_IMAGE_DOWNLOADED" + ".jpg"
     val storageDir = File(saveDir , "userCoverDir")
     var success = true
     if (!storageDir.exists()) success = storageDir.mkdirs()

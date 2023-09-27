@@ -21,7 +21,7 @@
 
 
         <activity
-            android:name=".ui.tabs.HostActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,20 +32,20 @@
 
 
         <service
-            android:name=".ui.tabs.components.services.BackgroundService"
+            android:name=".ui.components.services.BackgroundService"
             android:exported="false" />
 
         <service
-            android:name=".ui.tabs.components.services.ForegroundService"
+            android:name=".ui.components.services.ForegroundService"
             android:exported="false" />
 
         <service
-            android:name=".ui.tabs.components.services.BoundService"
+            android:name=".ui.components.services.BoundService"
             android:exported="false" />
 
 
         <service
-            android:name=".ui.tabs.components.firebase.MyFirebaseInstanceIDService"
+            android:name=".ui.components.firebase.MyFirebaseInstanceIDService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />

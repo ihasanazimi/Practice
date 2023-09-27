@@ -16,5 +16,4 @@ object UtilModules {
     @Provides
     fun provideContext(@ApplicationContext appContext: Context): Context = appContext
 
-
 }

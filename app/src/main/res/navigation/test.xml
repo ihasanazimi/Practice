@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/testFragment"
         tools:layout="@layout/fragment_test"
-        android:name="ir.ha.practice.ui.tabs.test.TestFragment"
+        android:name="ir.ha.practice.ui.test.TestFragment"
         android:label="TestFragment" />
 
 </navigation>
