@@ -7,18 +7,18 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-interface DeveloperRepository {
-    suspend fun developerDetails() : Flow<DeveloperDetailsEntity>
-}
 
+interface DeveloperRepository {
+    suspend fun developerDetails(): Flow<DeveloperDetailsEntity>
+}
 
 
 class DeveloperRepositoryImpl @Inject constructor(
     private val apiService: ApiService
-    ) : DeveloperRepository {
+) : DeveloperRepository {
 
 
-    override suspend fun developerDetails()= flow {
+    override suspend fun developerDetails() = flow {
         emit(apiService.api.getDevelopersByCoroutines().toDeveloperDetailsEntity())
     }
 }

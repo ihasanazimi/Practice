@@ -7,19 +7,17 @@ import javax.inject.Inject
 
 interface DeveloperUseCase {
 
-    suspend fun getDeveloperDetails() : Flow<DeveloperDetailsEntity>
+    suspend fun getDeveloperDetails(): Flow<DeveloperDetailsEntity>
 
 
 }
 
 
-
-
 class DeveloperUseCaseImpl @Inject constructor(
-    private val developerRepository : DeveloperRepository
-): DeveloperUseCase{
+    private val developerRepository: DeveloperRepository
+) : DeveloperUseCase {
 
-    override suspend fun getDeveloperDetails() : Flow<DeveloperDetailsEntity>{
+    override suspend fun getDeveloperDetails(): Flow<DeveloperDetailsEntity> {
         return developerRepository.developerDetails()
     }
 
