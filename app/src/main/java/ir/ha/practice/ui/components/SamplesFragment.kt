@@ -7,7 +7,7 @@ import ir.ha.practice.Components
 import ir.ha.practice.R
 import ir.ha.practice.adapters.ComponentsAdapter
 import ir.ha.practice.databinding.FragmentComponentsBinding
-import ir.ha.practice.model.enums.ComponentEnum
+import ir.ha.practice.data.enums.ComponentEnum
 import ir.ha.practice.ui.components.animations.AnimationsFragment
 import ir.ha.practice.ui.components.broadcast_eventbus.BroadcastReceiverFragment
 import ir.ha.practice.ui.components.firebase.FirebaseCloudMessagingFragment

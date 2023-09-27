@@ -9,7 +9,7 @@ import ir.ha.practice.R
 import ir.ha.practice.databinding.FragmentRoomBinding
 import ir.ha.practice.adapters.UserAdapter
 import ir.ha.practice.ui.components.local_data_base.room.core.RoomDB
-import ir.ha.practice.model.entities.PersonEntity
+import ir.ha.practice.data.entities.PersonEntity
 import ir.ha.practice.utility.base.BaseFragment
 import ir.ha.practice.utility.extentions.showToast
 import org.koin.android.ext.android.inject

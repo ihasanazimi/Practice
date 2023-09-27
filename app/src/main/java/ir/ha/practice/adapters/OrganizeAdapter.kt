@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import ir.ha.practice.databinding.ItemAdapterOrganizeBinding
-import ir.ha.practice.model.entities.OrganizeEntity
+import ir.ha.practice.data.entities.OrganizeEntity
 import ir.ha.practice.utility.extentions.hide
 
 class OrganizeAdapter(val activity : Activity) : RecyclerView.Adapter<OrganizeAdapter.VH>() {

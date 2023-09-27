@@ -2,7 +2,7 @@ package ir.ha.practice.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import ir.ha.practice.model.entities.BannerSliderEntity
+import ir.ha.practice.data.entities.BannerSliderEntity
 import ir.ha.practice.ui.components.viewPager.ViewPagerItemFragment
 
 class ViewPagerAdapter(

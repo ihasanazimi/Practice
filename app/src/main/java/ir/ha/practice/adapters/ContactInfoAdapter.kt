@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import ir.ha.practice.databinding.ItemAdapterSimpleTagBinding
-import ir.ha.practice.model.entities.ContactInfoByIconEntity
-import ir.ha.practice.model.enums.ContactInfoEnum
+import ir.ha.practice.data.entities.ContactInfoByIconEntity
+import ir.ha.practice.data.enums.ContactInfoEnum
 import ir.ha.practice.utility.util.IntentActionsUtil
 
 class ContactInfoAdapter(val activity : Activity) : RecyclerView.Adapter<ContactInfoAdapter.VH>() {

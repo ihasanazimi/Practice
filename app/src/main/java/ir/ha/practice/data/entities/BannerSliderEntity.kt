@@ -1,4 +1,4 @@
-package ir.ha.practice.model.entities
+package ir.ha.practice.data.entities
 
 import android.os.Parcel
 import android.os.Parcelable

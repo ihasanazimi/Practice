@@ -1,4 +1,4 @@
-package ir.ha.practice.model.enums
+package ir.ha.practice.data.enums
 enum class ContactInfoEnum {
     call , email , linkedin , telegram
 }

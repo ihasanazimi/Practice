@@ -1,6 +1,6 @@
-package ir.ha.practice.model.entities
+package ir.ha.practice.data.entities
 
-import ir.ha.practice.model.enums.ContactInfoEnum
+import ir.ha.practice.data.enums.ContactInfoEnum
 
 class ContactInfoByIconEntity(
     val addressId: String,

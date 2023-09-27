@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import ir.ha.practice.databinding.ItemAdapterProjectsBinding
-import ir.ha.practice.model.entities.ProjectEntity
+import ir.ha.practice.data.entities.ProjectEntity
 import ir.ha.practice.utility.util.IntentActionsUtil
 
 class ProjectAdapter(val activity : Activity) : RecyclerView.Adapter<ProjectAdapter.VH>() {

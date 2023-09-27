@@ -2,7 +2,7 @@ package ir.ha.practice.services.http
 
 import io.reactivex.Observable
 import io.reactivex.Single
-import ir.ha.practice.model.data.DeveloperDetailsRemoteResponse
+import ir.ha.practice.data.remote_data.DeveloperDetailsRemoteResponse
 import retrofit2.Call
 import retrofit2.http.*
 

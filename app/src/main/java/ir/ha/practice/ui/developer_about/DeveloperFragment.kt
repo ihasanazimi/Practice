@@ -11,9 +11,9 @@ import ir.ha.practice.R
 import ir.ha.practice.adapters.ContactInfoAdapter
 import ir.ha.practice.adapters.DeveloperTagsAdapter
 import ir.ha.practice.adapters.OrganizeAdapter
-import ir.ha.practice.model.entities.ContactInfoByIconEntity
-import ir.ha.practice.model.entities.DeveloperDetailsEntity
-import ir.ha.practice.model.enums.ContactInfoEnum
+import ir.ha.practice.data.entities.ContactInfoByIconEntity
+import ir.ha.practice.data.entities.DeveloperDetailsEntity
+import ir.ha.practice.data.enums.ContactInfoEnum
 import ir.ha.practice.utility.base.BaseFragmentByVM
 import ir.ha.practice.utility.extentions.hide
 import ir.ha.practice.utility.extentions.show

@@ -1,6 +1,6 @@
 package ir.ha.practice
 
-import ir.ha.practice.model.entities.FakeEntity
+import ir.ha.practice.data.entities.FakeEntity
 
 object FakeDataGenerator {
 

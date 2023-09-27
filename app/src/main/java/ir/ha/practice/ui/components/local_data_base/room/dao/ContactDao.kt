@@ -1,7 +1,7 @@
 package ir.ha.practice.ui.components.local_data_base.room.dao
 
 import androidx.room.*
-import ir.ha.practice.model.entities.PersonEntity
+import ir.ha.practice.data.entities.PersonEntity
 
 @Dao
 interface ContactDao {

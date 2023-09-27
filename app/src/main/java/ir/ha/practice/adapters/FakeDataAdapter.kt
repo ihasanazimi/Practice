@@ -9,7 +9,7 @@ import coil.load
 import coil.transform.CircleCropTransformation
 import ir.ha.practice.R
 import ir.ha.practice.databinding.ItemAdapterFakeDataBinding
-import ir.ha.practice.model.entities.FakeEntity
+import ir.ha.practice.data.entities.FakeEntity
 
 class FakeDataAdapter(private val callback : FakeDataEventListener) : RecyclerView.Adapter<FakeDataAdapter.VH>() {
 

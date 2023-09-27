@@ -1,8 +1,8 @@
-package ir.ha.practice.model.data
+package ir.ha.practice.data.remote_data
 
 import com.google.gson.annotations.SerializedName
-import ir.ha.practice.model.entities.ContactInfoEntity
-import ir.ha.practice.model.entities.ResumeEntity
+import ir.ha.practice.data.entities.ContactInfoEntity
+import ir.ha.practice.data.entities.ResumeEntity
 
 data class DeveloperDetailsRemoteResponse(
     @SerializedName("id")

@@ -1,7 +1,7 @@
 package ir.ha.practice.ui.components.mvvm_arch.live_data
 
 import androidx.lifecycle.*
-import ir.ha.practice.model.entities.UserEntity
+import ir.ha.practice.data.entities.UserEntity
 import java.util.*
 
 class LiveDataChecker {

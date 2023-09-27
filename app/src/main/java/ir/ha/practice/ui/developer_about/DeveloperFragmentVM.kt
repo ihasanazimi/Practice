@@ -2,8 +2,7 @@ package ir.ha.practice.ui.developer_about
 
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import ir.ha.practice.model.data.DeveloperDetailsRemoteResponse
-import ir.ha.practice.model.entities.DeveloperDetailsEntity
+import ir.ha.practice.data.entities.DeveloperDetailsEntity
 import ir.ha.practice.usecases.DeveloperUseCase
 import ir.ha.practice.utility.base.BaseViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler

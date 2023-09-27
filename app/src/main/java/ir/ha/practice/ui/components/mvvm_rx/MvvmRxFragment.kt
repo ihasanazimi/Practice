@@ -10,7 +10,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import ir.ha.practice.R
 import ir.ha.practice.databinding.FragmentMvvmRxBinding
-import ir.ha.practice.model.data.DeveloperDetailsRemoteResponse
+import ir.ha.practice.data.remote_data.DeveloperDetailsRemoteResponse
 import ir.ha.practice.utility.base.BaseFragmentByVM
 
 class MvvmRxFragment : BaseFragmentByVM<FragmentMvvmRxBinding, MvvmRxJavaFragmentVM>() {

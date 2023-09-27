@@ -9,7 +9,7 @@ import coil.load
 import coil.transform.CircleCropTransformation
 import ir.ha.practice.R
 import ir.ha.practice.databinding.ItemAdapterFakeDataBinding
-import ir.ha.practice.model.entities.PersonEntity
+import ir.ha.practice.data.entities.PersonEntity
 
 class UserAdapter(private val callback : ContactEventListener) : RecyclerView.Adapter<UserAdapter.VH>() {
 

@@ -1,7 +1,6 @@
 package ir.ha.practice.usecases
 
-import ir.ha.practice.model.data.DeveloperDetailsRemoteResponse
-import ir.ha.practice.model.entities.DeveloperDetailsEntity
+import ir.ha.practice.data.entities.DeveloperDetailsEntity
 import ir.ha.practice.repository.DeveloperRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

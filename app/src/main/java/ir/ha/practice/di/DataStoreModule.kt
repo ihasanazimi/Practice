@@ -27,7 +27,7 @@ object DataStoreModule {
             corruptionHandler = ReplaceFileCorruptionHandler(
                 produceNewData = { emptyPreferences() }
             ),
-            produceFile = { appContext.preferencesDataStoreFile("ewano_data_store") }
+            produceFile = { appContext.preferencesDataStoreFile("setting_store_file") }
         )
     }
 }

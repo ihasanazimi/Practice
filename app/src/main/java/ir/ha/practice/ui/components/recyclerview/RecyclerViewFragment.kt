@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import ir.ha.practice.FakeDataGenerator
 import ir.ha.practice.R
 import ir.ha.practice.databinding.FragmentRvBinding
-import ir.ha.practice.model.entities.FakeEntity
+import ir.ha.practice.data.entities.FakeEntity
 import ir.ha.practice.adapters.FakeDataAdapter
 import ir.ha.practice.utility.base.BaseFragment
 

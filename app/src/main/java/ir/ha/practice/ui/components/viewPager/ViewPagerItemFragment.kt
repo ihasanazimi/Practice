@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import ir.ha.practice.R
 import ir.ha.practice.databinding.FragmentViewPagerBinding
-import ir.ha.practice.model.entities.BannerSliderEntity
+import ir.ha.practice.data.entities.BannerSliderEntity
 import ir.ha.practice.services.fresco.ImageLoadingService
 import ir.ha.practice.utility.base.BaseFragment
 import org.koin.android.ext.android.inject

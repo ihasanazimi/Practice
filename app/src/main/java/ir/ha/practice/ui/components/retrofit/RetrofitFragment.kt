@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import ir.ha.practice.R
 import ir.ha.practice.databinding.FragmentHttpRequestBinding
-import ir.ha.practice.model.data.DeveloperDetailsRemoteResponse
+import ir.ha.practice.data.remote_data.DeveloperDetailsRemoteResponse
 import ir.ha.practice.services.http.ApiService
 import ir.ha.practice.utility.base.BaseFragment
 import ir.ha.practice.utility.extentions.invisible

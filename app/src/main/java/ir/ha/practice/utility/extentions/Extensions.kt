@@ -994,13 +994,6 @@ fun ViewBinding.setVm(vm: Any){
 
 
 
-// Singleton Data Store
-val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
-
-
-
-
-
 
 
 

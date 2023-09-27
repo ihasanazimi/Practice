@@ -1,6 +1,6 @@
 package ir.ha.practice
 
-import ir.ha.practice.model.entities.BannerSliderEntity
+import ir.ha.practice.data.entities.BannerSliderEntity
 
 object BannerDataGenerator {
     private val bannerSliderEntities = arrayListOf<BannerSliderEntity>()
