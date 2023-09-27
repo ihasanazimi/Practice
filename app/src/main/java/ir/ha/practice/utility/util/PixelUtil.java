@@ -20,7 +20,7 @@ package ir.ha.practice.utility.util;
 import android.content.Context;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
-import ir.ha.practice.ApplicationLoader;
+import ir.ha.practice.App;
 
 /**
  * Util class for converting between dp, px and other magical pixel units
@@ -31,7 +31,7 @@ public class PixelUtil {
     }
 
     public static int dpToPx(float dp) {
-        return dpToPx(ApplicationLoader.Companion.getContext(), dp);
+        return dpToPx(App.Companion.getContext(), dp);
     }
     public static int dpToPx(Context context, int dp) {
         return dpToPx(context, (float)dp);
@@ -41,11 +41,11 @@ public class PixelUtil {
         return px;
     }
     public static int spToPx(float sp) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, ApplicationLoader.Companion.getContext().getResources().getDisplayMetrics());
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, App.Companion.getContext().getResources().getDisplayMetrics());
     }
 
     public static float pxToDp(float px) {
-        return px / getPixelScaleFactor(ApplicationLoader.Companion.getContext());
+        return px / getPixelScaleFactor(App.Companion.getContext());
     }
 
     private static float getPixelScaleFactor(Context context) {
@@ -55,7 +55,7 @@ public class PixelUtil {
 
     public static int getWidth(){
 
-        return getWidth(ApplicationLoader.Companion.getContext());
+        return getWidth(App.Companion.getContext());
     }
     public static int getWidth(Context context){
 
@@ -65,7 +65,7 @@ public class PixelUtil {
         return (int)dpWidth ;
     }
     public static int getWidthPx(){
-        return getWidthPx(ApplicationLoader.Companion.getContext());
+        return getWidthPx(App.Companion.getContext());
     }
     public static int getWidthPx(Context context){
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
@@ -73,7 +73,7 @@ public class PixelUtil {
     }
 
     public static int getHeight(){
-        return getHeight(ApplicationLoader.Companion.getContext());
+        return getHeight(App.Companion.getContext());
     }
     public static int getHeight(Context context){
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
@@ -82,7 +82,7 @@ public class PixelUtil {
         return (int)dpHeight ;
     }
     public static int getHeightPx(){
-        return getHeightPx(ApplicationLoader.Companion.getContext());
+        return getHeightPx(App.Companion.getContext());
     }
     public static int getHeightPx(Context context){
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();

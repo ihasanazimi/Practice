@@ -3,7 +3,6 @@ package ir.ha.practice.services.http
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import ir.ha.practice.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -19,8 +18,8 @@ class ApiService {
 
     private fun logger(): HttpLoggingInterceptor {
         val interceptor = HttpLoggingInterceptor()
-        if (BuildConfig.DEBUG) interceptor.level = HttpLoggingInterceptor.Level.BODY
-        else interceptor.level = HttpLoggingInterceptor.Level.NONE
+//        if (BuildConfig.DEBUG) interceptor.level = HttpLoggingInterceptor.Level.BODY
+//        else interceptor.level = HttpLoggingInterceptor.Level.NONE
         return interceptor
     }
 

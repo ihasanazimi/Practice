@@ -16,7 +16,8 @@ interface DeveloperUseCase {
 
 
 class DeveloperUseCaseImpl @Inject constructor(
-    private val developerRepository : DeveloperRepository): DeveloperUseCase{
+    private val developerRepository : DeveloperRepository
+): DeveloperUseCase{
 
     override suspend fun getDeveloperDetails() : Flow<DeveloperDetails>{
         return developerRepository.developerDetails()

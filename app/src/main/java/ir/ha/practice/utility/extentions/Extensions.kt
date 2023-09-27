@@ -72,7 +72,7 @@ import androidx.navigation.NavOptions
 import androidx.viewbinding.ViewBinding
 import com.google.android.material.appbar.AppBarLayout
 import com.google.gson.Gson
-import ir.ha.practice.ApplicationLoader
+import ir.ha.practice.App
 import ir.ha.practice.R
 import kotlinx.coroutines.*
 import java.lang.Runnable
@@ -177,18 +177,18 @@ fun Fragment.onBackClick(callback: (onBackPressedCallback: OnBackPressedCallback
 
 fun Fragment.runOnUIThread(runnable: Runnable, delay: Long = 0) {
     if (delay == 0L) {
-        ApplicationLoader.applicationHandler.post(runnable)
+        App.applicationHandler.post(runnable)
     } else {
-        ApplicationLoader.applicationHandler.postDelayed(runnable, delay)
+        App.applicationHandler.postDelayed(runnable, delay)
     }
 }
 
 
 fun AppCompatActivity.runOnUIThread(runnable: Runnable, delay: Long = 0) {
     if (delay == 0L) {
-        ApplicationLoader.applicationHandler.post(runnable)
+        App.applicationHandler.post(runnable)
     } else {
-        ApplicationLoader.applicationHandler.postDelayed(runnable, delay)
+        App.applicationHandler.postDelayed(runnable, delay)
     }
 }
 
@@ -371,9 +371,9 @@ fun View.dp(value: Float): Int {
 
 fun View.runOnUIThread(runnable: Runnable, delay: Long = 0) {
     if (delay == 0L) {
-        ApplicationLoader.applicationHandler.post(runnable)
+        App.applicationHandler.post(runnable)
     } else {
-        ApplicationLoader.applicationHandler.postDelayed(runnable, delay)
+        App.applicationHandler.postDelayed(runnable, delay)
     }
 }
 
@@ -559,7 +559,7 @@ fun getApplicationVersion(context : Context) : Pair<String , Int>{
 
 fun setStatusBarColor(window: Window, colorId : Int) {
     if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-        window.statusBarColor = ApplicationLoader.context?.resources!!.getColor(colorId,null)
+        window.statusBarColor = App.context?.resources!!.getColor(colorId,null)
     }
 }
 

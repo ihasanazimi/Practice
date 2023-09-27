@@ -18,7 +18,7 @@ import org.koin.dsl.module
 import java.util.*
 
 @HiltAndroidApp
-class ApplicationLoader : Application() {
+class App : Application() {
 
     companion object{
         var context :Context ?= null
@@ -43,12 +43,12 @@ class ApplicationLoader : Application() {
         val myModules = module {
             single { ApiService().api }
             factory<ImageLoadingService> { ImageLoadingServiceImpl() } // fresco
-            single { RoomDB.getDataBase(this@ApplicationLoader) }
+            single { RoomDB.getDataBase(this@App) }
         }
 
         /** 2- Start Coin By Modules... */
         startKoin {
-            androidContext(this@ApplicationLoader)
+            androidContext(this@App)
             modules(myModules)
         }
 
