@@ -27,9 +27,9 @@ class DeveloperFragmentVM @Inject constructor(
 
     fun getDeveloperDetails() {
         viewModelScope.launch(coroutineExceptionHandler) {
-            showProgress.value = true
+            showLoading.value = true
             developerUseCase.getDeveloperDetails().collect{
-                showProgress.value = false
+                showLoading.value = false
                 _developerRes.emit(it)
             }
         }

@@ -8,7 +8,10 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import ir.ha.practice.utility.extentions.showToast
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 abstract class BaseFragmentByVM<V : ViewDataBinding , VM : BaseViewModel> : Fragment() {
 
@@ -26,30 +29,30 @@ abstract class BaseFragmentByVM<V : ViewDataBinding , VM : BaseViewModel> : Frag
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        clickEvents()
+        registerClickListeners()
         registerObservers()
     }
 
     open fun registerObservers(){
 
-        viewModel.errorLiveData.observe(viewLifecycleOwner){
-            if (it.size != 0) showToast(requireContext(),it.first())
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.errorFlow.collectLatest {
+                showToast(requireContext(), it)
+            }
         }
 
+        viewModel.errorLiveData.observe(viewLifecycleOwner) {
+            if (it.size != 0) showToast(requireContext(), it.first())
+        }
     }
 
-    open fun clickEvents(){}
+    open fun registerClickListeners(){}
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+
+    override fun onDestroy() {
+        super.onDestroy()
         _binding = null
         viewModel.clearErrorLiveData()
     }
-
-
-
-    open fun onScrollToTop() {}
-
-    open fun onRetrievedTag(retrievedTag: String) {}
 
 }

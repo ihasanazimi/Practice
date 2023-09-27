@@ -45,7 +45,7 @@ class DeveloperFragment : BaseFragmentByVM<FragmentDeveloperBinding,DeveloperFra
             }
         }
 
-        viewModel.showProgress.observe(viewLifecycleOwner){
+        viewModel.showLoading.observe(viewLifecycleOwner){
             if (it) binding.loadingbar.root.show()
             else binding.loadingbar.root.hide()
         }

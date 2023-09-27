@@ -18,11 +18,11 @@ import ir.ha.practice.utility.extentions.singleClick
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class FragmentsContainer : BaseFragment<FragmentFragmentsContainerBinding>() {
+class FragmentSamplesContainer : BaseFragment<FragmentFragmentsContainerBinding>() {
     override val layoutId: Int get() = R.layout.fragment_fragments_container
     private val viewModel: SharedViewModel by viewModels()
 
-    val TAG = FragmentsContainer::class.java.simpleName
+    val TAG = FragmentSamplesContainer::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,17 +46,17 @@ class FragmentsContainer : BaseFragment<FragmentFragmentsContainerBinding>() {
         }
 
         binding.fragment1Btn.singleClick {
-            addFragmentByAnimation(Fragment1(),Fragment1::class.java.simpleName,false,false,R.id.container1)
+            addFragmentByAnimation(FragmentSample1(),FragmentSample1::class.java.simpleName,false,false,R.id.container1)
         }
 
         binding.fragment2Btn.singleClick {
-            addFragmentByAnimation(Fragment2(),Fragment2::class.java.simpleName,false,false,R.id.container2)
+            addFragmentByAnimation(FragmentSample2(),FragmentSample2::class.java.simpleName,false,false,R.id.container2)
         }
 
         binding.shareDataToF1.singleClick {
            lifecycleScope.launch {
                repeatOnLifecycle(Lifecycle.State.CREATED){
-                   viewModel.dataFragment1.emit(Fragment1.data)
+                   viewModel.dataFragment1.emit(FragmentSample1.data)
                }
            }
         }
@@ -64,7 +64,7 @@ class FragmentsContainer : BaseFragment<FragmentFragmentsContainerBinding>() {
         binding.shareDataToF2.singleClick {
             lifecycleScope.launch {
                 repeatOnLifecycle(Lifecycle.State.CREATED){
-                    viewModel.dataFragment2.emit(Fragment2.DATA)
+                    viewModel.dataFragment2.emit(FragmentSample2.DATA)
                 }
             }
         }

@@ -2,14 +2,16 @@ package ir.ha.practice.utility.base
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.disposables.CompositeDisposable
+import kotlinx.coroutines.flow.MutableSharedFlow
 
 abstract class BaseViewModel : ViewModel() {
 
     open val compositeDisposable = CompositeDisposable() // for RxJava
+
     open val errorLiveData = MutableLiveData<ArrayList<String>>()
-    open var showProgress = MutableLiveData<Boolean>(false)
+    open val errorFlow = MutableSharedFlow<String>()
+    open var showLoading = MutableLiveData(false)
 
     // clear data after change state and was destroyed view
     open fun clearErrorLiveData(){

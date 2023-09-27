@@ -32,13 +32,9 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
     open fun registerObservers(){}
     open fun registerClickListeners(){}
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+    override fun onDestroy() {
+        super.onDestroy()
         _binding = null
     }
 
-
-    open fun onScrollToTop() {}
-
-    open fun onRetrievedTag(retrievedTag: String) {}
 }

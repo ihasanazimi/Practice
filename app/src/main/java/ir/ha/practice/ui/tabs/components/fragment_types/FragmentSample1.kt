@@ -12,19 +12,19 @@ import ir.ha.practice.databinding.Fragment1Binding
 import ir.ha.practice.utility.base.BaseFragment
 import kotlinx.coroutines.launch
 
-class Fragment1 : BaseFragment<Fragment1Binding>() {
+class FragmentSample1 : BaseFragment<Fragment1Binding>() {
     override val layoutId: Int get() = R.layout.fragment_1
     private val viewModel: SharedViewModel by viewModels()
 
-    val TAG = Fragment1::class.java.simpleName
+    val TAG = FragmentSample1::class.java.simpleName
 
     companion object{
         const val data = "this is data from fragment_1"
     }
 
-    fun newInstance(message : String):Fragment1 {
+    fun newInstance(message : String):FragmentSample1 {
         val args = Bundle()
-        val fragment = Fragment1()
+        val fragment = FragmentSample1()
         fragment.arguments = args
         return fragment
     }

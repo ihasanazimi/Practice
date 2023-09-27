@@ -13,7 +13,7 @@ import ir.ha.practice.ui.tabs.components.broadcast_eventbus.BroadcastReceiverFra
 import ir.ha.practice.ui.tabs.components.db.RoomDBFragment
 import ir.ha.practice.ui.tabs.components.firebase.FirebaseCloudMessagingFragment
 import ir.ha.practice.ui.tabs.components.flow.FlowFragment
-import ir.ha.practice.ui.tabs.components.fragment_types.FragmentsContainer
+import ir.ha.practice.ui.tabs.components.fragment_types.FragmentSamplesContainer
 import ir.ha.practice.ui.tabs.components.loadimage.LoadImagesFragment
 import ir.ha.practice.ui.tabs.components.material.MaterialDesignFragment
 import ir.ha.practice.ui.tabs.components.mediaplayer.MediaPlayerFragment
@@ -68,7 +68,7 @@ class SamplesFragment  : BaseFragment<FragmentComponentsBinding>(), View.OnClick
                 openFragment(RoomDBFragment())
             }
             ComponentEnum.fragment.toString() -> {
-                openFragment(FragmentsContainer())
+                openFragment(FragmentSamplesContainer())
             }
             ComponentEnum.material.toString() -> {
                 openFragment(MaterialDesignFragment())

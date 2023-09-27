@@ -7,6 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import ir.ha.practice.R
 import ir.ha.practice.databinding.FragmentFlowBinding
 import ir.ha.practice.utility.base.BaseFragmentByVM
+import kotlinx.coroutines.launch
 
 class FlowFragment : BaseFragmentByVM<FragmentFlowBinding, FlowVM>() {
     override val layoutId: Int get() = R.layout.fragment_flow
@@ -20,12 +21,16 @@ class FlowFragment : BaseFragmentByVM<FragmentFlowBinding, FlowVM>() {
             sharedFlow()
         }
 
-        lifecycleScope.launchWhenCreated {
-            viewModel.statFlow.collect{ binding.tvStateFlow.text = "StateFlow : " +it.toString() }
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.stateFlow.collect{
+                binding.tvStateFlow.text = "stateFlow is : $it"
+            }
         }
 
-        lifecycleScope.launchWhenCreated {
-            viewModel.sharedFlow.collect{ binding.tvSharedFlow.text = "SharedFlow : " + it[0] }
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.sharedFlow.collect{
+                binding.tvSharedFlow.text = "sharedFlow is : " + it
+            }
         }
     }
 
