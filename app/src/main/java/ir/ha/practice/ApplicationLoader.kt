@@ -10,7 +10,7 @@ import ir.ha.practice.services.fresco.ImageLoadingServiceImpl
 import ir.ha.practice.services.http.ApiService
 import ir.ha.practice.ui.tabs.components_tab.broadcast_eventbus.MyEvent
 import ir.ha.practice.ui.tabs.components_tab.db.room.RoomDB
-import ir.ha.practice.utility.util.ThemeUtils
+import ir.ha.practice.utility.extentions.changeTheme
 import org.greenrobot.eventbus.EventBus
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -30,7 +30,7 @@ class ApplicationLoader : Application() {
         super.onCreate()
         context = this.applicationContext
         applicationHandler = Handler(this.mainLooper)
-        ThemeUtils.changeTheme(false)
+        changeTheme(false)
 
         /** init fresco */
         Fresco.initialize(this)

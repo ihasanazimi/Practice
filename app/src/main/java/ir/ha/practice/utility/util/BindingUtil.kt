@@ -12,8 +12,7 @@ import ir.ha.practice.R
 object BindingUtil {
     @BindingAdapter("image_loader")
     fun loadImage(iv: ImageView, url: String?) {
-        Glide
-            .with(iv.context)
+        Glide.with(iv.context)
             .load(url)
             .transition(DrawableTransitionOptions.withCrossFade())
             .placeholder(R.mipmap.ic_launcher)
