@@ -1,13 +1,11 @@
 package ir.ha.practice.model.adapters
 
 import android.app.Activity
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import ir.ha.practice.databinding.ItemOrganizeBinding
-import ir.ha.practice.databinding.ItemSimpleTagBinding
+import ir.ha.practice.databinding.ItemAdapterOrganizeBinding
 import ir.ha.practice.model.Organize
 import ir.ha.practice.utility.extentions.hide
 
@@ -16,7 +14,7 @@ class OrganizeAdapter(val activity : Activity) : RecyclerView.Adapter<OrganizeAd
     private val items = arrayListOf<Organize>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
-        return VH(ItemOrganizeBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+        return VH(ItemAdapterOrganizeBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
     override fun getItemCount(): Int {
@@ -40,7 +38,7 @@ class OrganizeAdapter(val activity : Activity) : RecyclerView.Adapter<OrganizeAd
 
 
 
-    inner class VH(val binding: ItemOrganizeBinding) : RecyclerView.ViewHolder(binding.root){
+    inner class VH(val binding: ItemAdapterOrganizeBinding) : RecyclerView.ViewHolder(binding.root){
 
         val adapter = ProjectAdapter(activity)
 

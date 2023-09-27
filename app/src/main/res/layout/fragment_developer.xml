@@ -184,7 +184,7 @@
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/skillRecyclerView"
                             android:layout_width="wrap_content"
-                            tools:listitem="@layout/item_simple_tag"
+                            tools:listitem="@layout/item_adapter_simple_tag"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                             android:orientation="horizontal"
                             android:layout_marginVertical="@dimen/space_8"
@@ -217,7 +217,7 @@
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/contactInfoRecyclerView"
                             android:layout_width="wrap_content"
-                            tools:listitem="@layout/item_simple_tag"
+                            tools:listitem="@layout/item_adapter_simple_tag"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                             android:orientation="horizontal"
                             android:layout_marginVertical="@dimen/space_8"
@@ -251,7 +251,7 @@
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/projectsRecyclerView"
                             android:layout_width="wrap_content"
-                            tools:listitem="@layout/item_organize"
+                            tools:listitem="@layout/item_adapter_organize"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                             android:orientation="vertical"
                             android:layout_marginVertical="@dimen/space_8"

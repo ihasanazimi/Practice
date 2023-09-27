@@ -24,13 +24,13 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        clickEvents()
+        registerClickListeners()
         registerObservers()
     }
 
 
     open fun registerObservers(){}
-    open fun clickEvents(){}
+    open fun registerClickListeners(){}
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -3,7 +3,7 @@ package ir.ha.practice.model.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import ir.ha.practice.databinding.ItemSimpleTagBinding
+import ir.ha.practice.databinding.ItemAdapterSimpleTagBinding
 
 class ComponentsAdapter(val callBack : ComponentsEvent) : RecyclerView.Adapter<ComponentsAdapter.VH>() {
 
@@ -14,7 +14,7 @@ class ComponentsAdapter(val callBack : ComponentsEvent) : RecyclerView.Adapter<C
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
-        return VH(ItemSimpleTagBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+        return VH(ItemAdapterSimpleTagBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
     override fun getItemCount(): Int {
@@ -38,7 +38,7 @@ class ComponentsAdapter(val callBack : ComponentsEvent) : RecyclerView.Adapter<C
 
 
 
-    inner class VH(val binding: ItemSimpleTagBinding) : RecyclerView.ViewHolder(binding.root){
+    inner class VH(val binding: ItemAdapterSimpleTagBinding) : RecyclerView.ViewHolder(binding.root){
 
         fun bind(tag : String){
             binding.tagTv.text = tag

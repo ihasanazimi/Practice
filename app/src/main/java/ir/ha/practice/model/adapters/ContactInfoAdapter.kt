@@ -4,10 +4,9 @@ import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import ir.ha.practice.databinding.ItemSimpleTagBinding
+import ir.ha.practice.databinding.ItemAdapterSimpleTagBinding
 import ir.ha.practice.model.ContactInfoByIcon
 import ir.ha.practice.model.ContactInfoEnum
 import ir.ha.practice.utility.util.IntentActionsUtil
@@ -17,7 +16,7 @@ class ContactInfoAdapter(val activity : Activity) : RecyclerView.Adapter<Contact
     private val items = arrayListOf<ContactInfoByIcon>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
-        return VH(ItemSimpleTagBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+        return VH(ItemAdapterSimpleTagBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
     override fun getItemCount(): Int {
@@ -41,7 +40,7 @@ class ContactInfoAdapter(val activity : Activity) : RecyclerView.Adapter<Contact
 
 
 
-    inner class VH(val binding: ItemSimpleTagBinding) : RecyclerView.ViewHolder(binding.root){
+    inner class VH(val binding: ItemAdapterSimpleTagBinding) : RecyclerView.ViewHolder(binding.root){
 
         val context : Context = binding.tagTv.context
         fun bind(m : ContactInfoByIcon){

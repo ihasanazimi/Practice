@@ -6,9 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import ir.ha.practice.databinding.ItemOrganizeBinding
-import ir.ha.practice.databinding.ItemProjectsBinding
-import ir.ha.practice.model.Organize
+import ir.ha.practice.databinding.ItemAdapterProjectsBinding
 import ir.ha.practice.model.Project
 import ir.ha.practice.utility.util.IntentActionsUtil
 
@@ -17,7 +15,7 @@ class ProjectAdapter(val activity : Activity) : RecyclerView.Adapter<ProjectAdap
     private val items = arrayListOf<Project>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
-        return VH(ItemProjectsBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+        return VH(ItemAdapterProjectsBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
     override fun getItemCount(): Int {
@@ -41,7 +39,7 @@ class ProjectAdapter(val activity : Activity) : RecyclerView.Adapter<ProjectAdap
 
 
 
-    inner class VH(val binding: ItemProjectsBinding) : RecyclerView.ViewHolder(binding.root){
+    inner class VH(val binding: ItemAdapterProjectsBinding) : RecyclerView.ViewHolder(binding.root){
 
         val context : Context = binding.projectLogo.context
 

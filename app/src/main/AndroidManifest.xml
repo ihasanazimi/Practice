@@ -32,20 +32,20 @@
 
 
         <service
-            android:name=".ui.tabs.components_tab.services.BackgroundService"
+            android:name=".ui.tabs.components.services.BackgroundService"
             android:exported="false" />
 
         <service
-            android:name=".ui.tabs.components_tab.services.ForegroundService"
+            android:name=".ui.tabs.components.services.ForegroundService"
             android:exported="false" />
 
         <service
-            android:name=".ui.tabs.components_tab.services.BoundService"
+            android:name=".ui.tabs.components.services.BoundService"
             android:exported="false" />
 
 
         <service
-            android:name=".ui.tabs.components_tab.firebase.MyFirebaseInstanceIDService"
+            android:name=".ui.tabs.components.firebase.MyFirebaseInstanceIDService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />

@@ -20,7 +20,7 @@
             android:padding="@dimen/space_16"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="2"
-            tools:listitem="@layout/item_simple_tag" />
+            tools:listitem="@layout/item_adapter_simple_tag" />
     </FrameLayout>
 
 
