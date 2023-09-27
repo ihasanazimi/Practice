@@ -990,6 +990,10 @@ fun ViewBinding.setVm(vm: Any){
     }catch (e: Exception){ /**e.printStackTrace()*/ }
 }
 
+
+
+
+
 // Singleton Data Store
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
