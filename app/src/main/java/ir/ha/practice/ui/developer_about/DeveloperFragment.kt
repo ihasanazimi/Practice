@@ -18,7 +18,7 @@ import ir.ha.practice.data.enums.ContactInfoEnum
 import ir.ha.practice.utility.base.BaseFragmentByVM
 import ir.ha.practice.utility.extentions.hide
 import ir.ha.practice.utility.extentions.show
-import ir.ha.practice.utility.extentions.showToast
+import ir.ha.practice.utility.extentions.singleClick
 import ir.ha.practice.utility.util.IntentActionsUtil
 import kotlinx.coroutines.launch
 
@@ -28,8 +28,13 @@ class DeveloperFragment : BaseFragmentByVM<ir.ha.practice.databinding.FragmentDe
     override val viewModel: DeveloperFragmentVM by viewModels()
     override val layoutId: Int get() = R.layout.fragment_developer
 
+    private lateinit var skillAdapter : DeveloperTagsAdapter
+    private lateinit var contactInfoAdapter : ContactInfoAdapter
+    private lateinit var organizeAdapter : OrganizeAdapter
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        init()
         viewModel.getDeveloperDetails()
     }
 
@@ -53,48 +58,67 @@ class DeveloperFragment : BaseFragmentByVM<ir.ha.practice.databinding.FragmentDe
 
     }
 
-    private fun updateUi(d : DeveloperDetailsEntity) {
+    private fun init(){
+        skillAdapter = DeveloperTagsAdapter()
+        contactInfoAdapter = ContactInfoAdapter(requireActivity())
+        organizeAdapter = OrganizeAdapter(requireActivity())
+    }
 
-        if (d == null) {
+    override fun registerClickListeners() {
+
+        binding.header.info.singleClick {
+            // todo
+        }
+
+    }
+
+    private fun updateUi(developerEntity : DeveloperDetailsEntity) {
+
+        if (developerEntity == null) {
             showErrorMessage("your model is the null")
             return
         }
 
         binding.apply {
 
-            heder.info.visibility = View.VISIBLE
-            heder.help.visibility = View.GONE
-            heder.titleTV.text = getString(R.string.app_name)
-            heder.logoIV.setImageResource(R.drawable.ic_launcher_background)
-            heder.headerBackground.setBackgroundColor(ContextCompat.getColor(this@DeveloperFragment.requireContext(),R.color.green_persian))
+            // header config
+            header.info.show()
+            header.help.hide()
+            header.titleTV.text = getString(R.string.app_name)
+            header.logoIV.setImageResource(R.drawable.ic_launcher_background)
+            header.headerBackground.setBackgroundColor(ContextCompat.getColor(this@DeveloperFragment.requireContext(),R.color.green_persian))
+            header.titleTV.setTextColor(ContextCompat.getColor(requireContext(),R.color.white))
+            binding.header.info.setColorFilter(ContextCompat.getColor(requireContext(), R.color.white))
+            binding.header.help.setColorFilter(ContextCompat.getColor(requireContext(), R.color.white))
 
-            developerNameTv.text = d.getFullName()
-            developerNameTvFiled.text = d.getFullName()
-            jobTv.text = d.getJobInOrganization()
-            jobTitle2.text = d.jobTitle
-            followLinkedinBtn.setOnClickListener {
-                IntentActionsUtil(requireActivity()).openLinkedInPage(d.contactInfo.linkedin)
-            }
-            val skillAdapter = DeveloperTagsAdapter()
-            val contactInfoAdapter = ContactInfoAdapter(requireActivity())
-            val organizeAdapter = OrganizeAdapter(requireActivity())
+            // fill views
+            developerNameTv.text = developerEntity.getFullName()
+            developerNameTvFiled.text = developerEntity.getFullName()
+            jobTv.text = developerEntity.getJobInOrganization()
+            jobTitle2.text = developerEntity.jobTitle
+
+            // init recyclerViews
             skillRecyclerView.adapter = skillAdapter
             contactInfoRecyclerView.adapter = contactInfoAdapter
             projectsRecyclerView.adapter = organizeAdapter
-            skillAdapter.setNewList(d.skills)
+
+            followLinkedinBtn.setOnClickListener {
+                IntentActionsUtil(requireActivity()).openLinkedInPage(developerEntity.contactInfo.linkedin)
+            }
+
+
+            // fill lists
+            skillAdapter.setNewList(developerEntity.skills)
+
             contactInfoAdapter.setNewList(
                 arrayListOf(
-                    ContactInfoByIconEntity(d.contactInfo.call,R.drawable.baseline_call_24,
-                        ContactInfoEnum.call),
-                    ContactInfoByIconEntity(d.contactInfo.email,R.drawable.outline_email_24,
-                        ContactInfoEnum.email),
-                    ContactInfoByIconEntity(d.contactInfo.linkedin,R.drawable.linkedin,
-                        ContactInfoEnum.linkedin),
-                    ContactInfoByIconEntity(d.contactInfo.telegram,R.drawable.ic_telegram_logo_light_icon,
-                        ContactInfoEnum.telegram)
+                    ContactInfoByIconEntity(developerEntity.contactInfo.call,R.drawable.baseline_call_24, ContactInfoEnum.call),
+                    ContactInfoByIconEntity(developerEntity.contactInfo.email,R.drawable.outline_email_24, ContactInfoEnum.email),
+                    ContactInfoByIconEntity(developerEntity.contactInfo.linkedin,R.drawable.linkedin, ContactInfoEnum.linkedin),
+                    ContactInfoByIconEntity(developerEntity.contactInfo.telegram,R.drawable.ic_telegram_logo_light_icon, ContactInfoEnum.telegram)
                 )
             )
-            organizeAdapter.setNewList(d.resume.organizes)
+            organizeAdapter.setNewList(developerEntity.resume.organizes)
         }
     }
 }

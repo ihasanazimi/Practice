@@ -6,6 +6,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -19,18 +20,26 @@
                 android:focusable="true">
 
                 <include
-                    android:id="@+id/heder"
-                    layout="@layout/layout_header"/>
+                    android:id="@+id/header"
+                    layout="@layout/layout_header" />
+
+
+                <View
+                    android:id="@+id/header2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/green_persian"
+                    app:layout_constraintTop_toBottomOf="@+id/header" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/developerProfileImage"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
+                    android:layout_marginTop="-54dp"
                     android:src="@drawable/me"
-                    android:layout_marginVertical="@dimen/space_8"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/heder" />
+                    app:layout_constraintTop_toBottomOf="@+id/header2" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/profileOwnerInfo"
@@ -88,112 +97,115 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:orientation="vertical"
                     app:layout_constraintTop_toBottomOf="@+id/profileOwnerInfo">
 
                     <TextView
-                        android:gravity="center"
-                        android:text="Info : "
-                        android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginVertical="@dimen/space_8"
-                        android:textSize="@dimen/textSize_12"
+                        android:gravity="center"
                         android:paddingHorizontal="@dimen/space_16"
-                        android:layout_height="wrap_content"/>
+                        android:text="Info : "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textSize_12"
+                        android:textStyle="bold" />
+
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="42dp"
-                        android:paddingHorizontal="@dimen/space_16"
-                        android:background="@color/gray">
+                        android:background="@color/gray"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/space_16">
 
                         <TextView
-                            android:gravity="center"
-                            android:text="Full Name : "
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
-                            android:textColor="@color/text_color"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/textSize_12"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
                             android:paddingHorizontal="@dimen/space_8"
-                            android:layout_height="wrap_content"/>
+                            android:text="Full Name : "
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize_12"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/developerNameTvFiled"
-                            android:gravity="center"
-                            tools:text="Hasan Azimi"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
-                            android:textStyle="normal"
-                            android:textSize="@dimen/textSize_12"
-                            android:textColor="@color/text_color"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
                             android:paddingHorizontal="@dimen/space_8"
-                            android:layout_height="wrap_content"/>
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize_12"
+                            android:textStyle="normal"
+                            tools:text="Hasan Azimi" />
 
 
                     </LinearLayout>
+
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="42dp"
-                        android:paddingHorizontal="@dimen/space_16"
-                        android:background="@color/white">
+                        android:background="@color/white"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/space_16">
 
                         <TextView
-                            android:gravity="center"
-                            android:text="Job : "
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
-                            android:textColor="@color/text_color"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/textSize_12"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
                             android:paddingHorizontal="@dimen/space_8"
-                            android:layout_height="wrap_content"/>
+                            android:text="Job : "
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize_12"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/jobTitle2"
-                            android:gravity="center"
-                            tools:text="Android Developer"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
-                            android:textStyle="normal"
-                            android:textSize="@dimen/textSize_12"
-                            android:textColor="@color/text_color"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
                             android:paddingHorizontal="@dimen/space_8"
-                            android:layout_height="wrap_content"/>
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize_12"
+                            android:textStyle="normal"
+                            tools:text="Android Developer" />
 
 
                     </LinearLayout>
+
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingHorizontal="@dimen/space_16"
-                        android:background="@color/gray">
+                        android:background="@color/gray"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/space_16">
 
                         <TextView
-                            android:gravity="center"
-                            android:text="Skill`s : "
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
-                            android:textColor="@color/text_color"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/textSize_12"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
                             android:paddingHorizontal="@dimen/space_8"
-                            android:layout_height="wrap_content"/>
+                            android:text="Skill`s : "
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize_12"
+                            android:textStyle="bold" />
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/skillRecyclerView"
                             android:layout_width="wrap_content"
-                            tools:listitem="@layout/item_adapter_simple_tag"
-                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                            android:orientation="horizontal"
+                            android:layout_height="wrap_content"
                             android:layout_marginVertical="@dimen/space_8"
-                            android:layout_height="wrap_content">
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/item_adapter_simple_tag">
 
                         </androidx.recyclerview.widget.RecyclerView>
 
@@ -202,31 +214,32 @@
 
 
                     <TextView
-                        android:gravity="center"
-                        android:text="contact Info : "
-                        android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginTop="@dimen/space_16"
-                        android:textSize="@dimen/textSize_12"
+                        android:gravity="center"
                         android:paddingHorizontal="@dimen/space_16"
-                        android:layout_height="wrap_content"/>
+                        android:text="contact Info : "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textSize_12"
+                        android:textStyle="bold" />
+
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingHorizontal="@dimen/space_16"
-                        android:background="@color/white">
+                        android:background="@color/white"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/space_16">
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/contactInfoRecyclerView"
                             android:layout_width="wrap_content"
-                            tools:listitem="@layout/item_adapter_simple_tag"
-                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                            android:orientation="horizontal"
+                            android:layout_height="wrap_content"
                             android:layout_marginVertical="@dimen/space_8"
-                            android:layout_height="wrap_content">
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/item_adapter_simple_tag">
 
                         </androidx.recyclerview.widget.RecyclerView>
 
@@ -235,32 +248,32 @@
 
 
                     <TextView
-                        android:gravity="center"
-                        android:text="resume : "
-                        android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginVertical="@dimen/space_16"
-                        android:textSize="@dimen/textSize_12"
+                        android:gravity="center"
                         android:paddingHorizontal="@dimen/space_16"
-                        android:layout_height="wrap_content"/>
+                        android:text="resume : "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textSize_12"
+                        android:textStyle="bold" />
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingHorizontal="@dimen/space_16"
-                        android:background="@color/gray">
+                        android:background="@color/gray"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/space_16">
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/projectsRecyclerView"
                             android:layout_width="wrap_content"
-                            tools:listitem="@layout/item_adapter_organize"
-                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                            android:orientation="vertical"
+                            android:layout_height="wrap_content"
                             android:layout_marginVertical="@dimen/space_8"
-                            android:layout_height="wrap_content">
+                            android:orientation="vertical"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/item_adapter_organize">
 
                         </androidx.recyclerview.widget.RecyclerView>
 
@@ -271,9 +284,10 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
+
         <include
             android:id="@+id/loadingbar"
-            layout="@layout/loading_bar"/>
+            layout="@layout/loading_bar" />
     </FrameLayout>
 
 
