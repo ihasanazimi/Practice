@@ -1,16 +1,131 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+
+
     <style name="Theme.MyApplication" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/green_persian</item>
+        <item name="colorPrimaryVariant">@color/green_persian</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorSecondary">@color/green_persian</item>
+        <item name="colorSecondaryVariant">@color/green_persian</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+
+
+
+
+
+
+
+    <!-- typography styles -->
+    <style name="title1">
+        <item name="android:fontFamily">@font/iran_yekan_xfa_numb_demi_bold</item>
+        <item name="android:textColor">@color/title1_TextColor</item>
+        <item name="android:textSize">@dimen/title1</item>
+    </style>
+
+    <style name="title2">
+        <item name="android:fontFamily">@font/iran_yekan_xfa_numb_demi_bold</item>
+        <item name="android:textColor">@color/title2_TextColor</item>
+        <item name="android:textSize">@dimen/title2</item>
+    </style>
+
+    <style name="subtitle1">
+        <item name="android:fontFamily">@font/iran_yekan_xfa_num_bold</item>
+        <item name="android:textColor">@color/subTitle1_TextColor</item>
+        <item name="android:textSize">@dimen/subtitle1</item>
+    </style>
+
+    <style name="subtitle2">
+        <item name="android:fontFamily">@font/iran_yekan_xfa_numb_demi_bold</item>
+        <item name="android:textColor">@color/subTitle2_TextColor</item>
+        <item name="android:textSize">@dimen/subtitle2</item>
+    </style>
+
+    <style name="body">
+        <item name="android:fontFamily">@font/iran_yekan_xfa_num_regular</item>
+        <item name="android:textColor">@color/body_TextColor</item>
+        <item name="android:textSize">@dimen/body</item>
+    </style>
+
+    <style name="bodySelected">
+        <item name="android:fontFamily">@font/iran_yekan_xfa_num_medium</item>
+        <item name="android:textColor">@color/bodySelected_TextColor</item>
+        <item name="android:textSize">@dimen/bodySelected</item>
+    </style>
+
+    <style name="paragraph">
+        <item name="android:fontFamily">@font/iran_yekan_xfa_num_regular</item>
+        <item name="android:textColor">@color/paragraph_TextColor</item>
+        <item name="android:textSize">@dimen/paragraph</item>
+    </style>
+
+    <style name="paragraphSelected">
+        <item name="android:fontFamily">@font/iran_yekan_xfa_numb_demi_bold</item>
+        <item name="android:textColor">@color/paragraph_selected_TextColor</item>
+        <item name="android:textSize">@dimen/paragraphSelected</item>
+    </style>
+
+    <style name="captionAndHelperText">
+        <item name="android:fontFamily">@font/iran_yekan_xfa_num_regular</item>
+        <item name="android:textColor">@color/caption_TextColor</item>
+        <item name="android:textSize">@dimen/captionHelperText</item>
+    </style>
+
+    <style name="button">
+        <item name="android:fontFamily">@font/iran_yekan_xfa_numb_demi_bold</item>
+        <item name="android:textColor">@color/button_TextColor</item>
+        <item name="android:textSize">@dimen/button</item>
+    </style>
+
+    <style name="textButton">
+        <item name="android:fontFamily">@font/iran_yekan_xfa_num_medium</item>
+        <item name="android:textColor">@color/button_TextColor</item>
+        <item name="android:textSize">@dimen/textButton</item>
+    </style>
+
+    <style name="textButtonUnderline">
+        <item name="android:fontFamily">@font/iran_yekan_xfa_num_medium</item>
+        <item name="android:textColor">@color/textButton_underline_TextColor</item>
+        <item name="android:textSize">@dimen/textButtonUnderline</item>
+    </style>
+
+    <style name="snackBarBody">
+        <item name="android:fontFamily">@font/iran_yekan_xfa_num_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/snackBar_Body_TextColor</item>
+        <item name="android:textSize">@dimen/body</item>
+    </style>
+
+    <style name="badgeTextNormal">
+        <item name="android:fontFamily">@font/iran_yekan_xfa_numb_demi_bold</item>
+        <item name="android:textColor">@color/badge_TextColor</item>
+        <item name="android:textSize">@dimen/badge</item>
+    </style>
+
+    <style name="badgeTextLight">
+        <item name="android:fontFamily">@font/iran_yekan_xfa_num_regular</item>
+        <item name="android:textColor">@color/badge_white_TextColor</item>
+        <item name="android:textSize">@dimen/badgeSmall</item>
+    </style>
+
+    <style name="badgeTextForLightGrayBackground">
+        <item name="android:fontFamily">@font/iran_yekan_xfa_num_regular</item>
+        <item name="android:textColor">@color/paragraph_TextColor</item>
+        <item name="android:textSize">@dimen/badgeSmall</item>
+    </style>
+
+    <style name="counterOverflowStyle" parent="body">
+        <item name="android:textColor">@color/error_TextColor</item>
+    </style>
+
+
+
+
 </resources>

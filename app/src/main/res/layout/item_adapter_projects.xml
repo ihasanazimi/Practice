@@ -22,7 +22,7 @@
         android:layout_marginHorizontal="@dimen/space_8"
         android:textSize="@dimen/textSize_14"
         android:textStyle="normal"
-        android:textColor="@color/blue"
+        android:textColor="@color/green_persian"
         app:layout_constraintStart_toEndOf="@+id/projectLogo"
         app:layout_constraintTop_toTopOf="@+id/projectLogo" />
 
@@ -34,7 +34,8 @@
         android:text="https://cafebazaar.ir/app/com.ebcom.ewano"
         android:textSize="@dimen/textSize_10"
         android:textStyle="normal"
-        android:textColor="@color/blue"
+        android:alpha="0.7"
+        android:textColor="@color/green_persian"
         android:layout_marginHorizontal="@dimen/space_8"
         app:layout_constraintStart_toEndOf="@+id/projectLogo"
         app:layout_constraintTop_toBottomOf="@+id/projectName" />

@@ -39,4 +39,21 @@
     <!-- btn or actionBar siz -->
     <dimen name="btnHeight_56">56dp</dimen>
 
+
+    <dimen name="title1">18dp</dimen>
+    <dimen name="title2">16dp</dimen>
+    <dimen name="subtitle1">14dp</dimen>
+    <dimen name="subtitle2">13dp</dimen>
+    <dimen name="body">14dp</dimen>
+    <dimen name="bodySelected">13dp</dimen>
+    <dimen name="bodySelected2">12dp</dimen>
+    <dimen name="paragraph">14dp</dimen>
+    <dimen name="captionHelperText">12dp</dimen>
+    <dimen name="button">14dp</dimen>
+    <dimen name="textButton">14dp</dimen>
+    <dimen name="textButtonUnderline">14dp</dimen>
+    <dimen name="badge">11dp</dimen>
+    <dimen name="badgeSmall">8dp</dimen>
+    <dimen name="paragraphSelected">14dp</dimen>
+
 </resources>

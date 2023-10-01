@@ -55,7 +55,7 @@ class DeveloperFragment : BaseFragmentByVM<ir.ha.practice.databinding.FragmentDe
     private fun updateUi(d : DeveloperDetailsEntity) {
 
         if (d == null) {
-            showToast(requireContext(),"your model is the null")
+            showErrorMessage("your model is the null")
             return
         }
 

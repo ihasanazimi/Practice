@@ -1,19 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--! GREEN COLORS -->
+    <color name="green_success">#45C26F</color>
+    <color name="green_success_background">#EFFFEF</color>
+    <color name="green_persian">#00A693</color> <!-- primary color -->
+    <color name="green_secondary">#00C9AC</color> <!-- secondary green -->
+    <color name="green_light">#9BFCEA</color>
+    <color name="green_lightest">#EBFFFA</color>
+    <color name="green_dark">#8B8B8B</color>
+    <color name="green_transparency">#99DBD4</color>
+
+
+    <!-- BLACK, WHITE ,GRAY COLORS -->
+    <color name="white">#ffffff</color>
+    <color name="white_transparency">#2DFFFFFF</color>
+    <color name="black">#1A1A1A</color>
+    <color name="black_transparency">#12000000</color>
+    <color name="gray_loading_background">#B31A1A1A</color>
+    <color name="gray_middle">#646464</color>
+    <color name="gray_medium">#8B8B8B</color>
+    <color name="gray_light">#B1B1B1</color>
+    <color name="gray_lightest">#D8D8D8</color>
+    <color name="gray_high_light">#EEEEEE</color>
+    <color name="gray_divider_ultra_light">#F8F8F8</color>
+    <color name="gray_dark">#3D3D3D</color>
+
+
+    <!-- BLUE COLORS -->
+    <color name="esteghlal">#0000ff</color>
+    <color name="blue">#0066CC</color> <!-- main blue -->
+    <color name="blue_airline">#4DA0E6</color>
+    <color name="blue_main_airline">#0077DB</color>
+    <color name="blue_airline_light">#99C9F1</color>
+    <color name="blue_lightens">#E6F1F8</color>
+    <color name="blue_info">#1E78D2</color>
+    <color name="blue_gray">#687CA7</color>
+    <color name="blue_background_info">#EDF4FB</color>
+    <color name="blue_mci">#54C4CF</color>
+    <color name="blue_welfare">#0079B1</color>
+
+
+    <!--WARM COLORS-->
+    <!--RED-->
+    <color name="red_error">#E54141</color> <!-- main red -->
+    <color name="red_error_background">#FFF2F5</color>
+    <color name="perspolis">#c80201</color>
+    <color name="teraktor">#ed1b24</color>
+    <!--Orange-->
+    <color name="orange">#FF7722</color>
+    <color name="orange_ewano">#FFBA34</color> <!-- main orange -->
+    <color name="orange_ewano_light">#FFE4D3</color>
+    <color name="orange_mci">#F9A51A</color>
+    <!--Yellow-->
+    <color name="sepahan">#FFBD07</color>
+    <color name="yellow_mtn">#FECA08</color>
+    <color name="yellow_alert">#F9B300</color>
+    <color name="yellow_alert_background">#FFFAE6</color>
+    <color name="yellow_airLine">#F6B023</color>
+    <color name="yellow_airLine_light">#FCE7ED</color>
+    <!--Purple-->
+    <color name="purple_rightel">#9B2876</color>
+    <color name="purple_compin">#6F59A9</color>
+    <color name="purple_compin_background">#EDF4FB</color>
+
+
+    <!--OTHER COLORS-->
+    <color name="transparent">#00ffffff</color>
+    <color name="dark_general">@color/transparent</color> <!-- no usage in light_mode ! -->
+    <color name="dark_background">@color/transparent</color>  <!-- no usage in light_mode ! -->
+
+
+    <!-- (Light Mode) Values -->
+    <!-- bg colors -->
+    <color name="backgroundColor">@color/white</color>
+    <color name="nav_BackgroundColor">@color/white</color>
+    <color name="snackBar_BackgroundColor">@color/gray_dark</color>
+    <color name="statusBar_BackgroundColor">@color/white</color>
+    <color name="statusBar_colored_BackgroundColor">@color/green_persian</color>
+    <color name="loading_button_disableState_BackgroundColor">@color/gray_high_light</color>
+    <color name="loading_button_enableState_BackgroundColor">@color/green_persian</color>
+    <color name="loading_button_loadingState_BackgroundColor">@color/gray_high_light</color>
+    <color name="shapes_BackgroundColor">@color/gray_divider_ultra_light</color>
+    <color name="banners_indicator_active_BackgroundColor">@color/white</color>
+    <color name="banners_indicator_deActive_BackgroundColor">@color/gray_high_light</color>
+    <color name="cards_indicator_active_BackgroundColor">@color/gray_dark</color>
+    <color name="cards_indicator_deActive_BackgroundColor">@color/gray_light</color>
+    <color name="balanceBannerSubItems_BackgroundColor">@color/white</color>
+    <color name="bottomSheet_touchBar_BackgroundColor">@color/gray_lightest</color>
+    <color name="page_messages_backgroundColor">@color/green_lightest</color>
+    <color name="top_header_children_color">@color/gray_medium</color> <!-- icons and title color -->
+
+    <!-- txt colors -->
+    <color name="title1_TextColor">@color/black</color>
+    <color name="title2_TextColor">@color/gray_middle</color>
+    <color name="subTitle1_TextColor">@color/gray_dark</color>
+    <color name="subTitle2_TextColor">@color/gray_middle</color>
+    <color name="body_TextColor">@color/gray_middle</color>
+    <color name="bodySelected_TextColor">@color/black</color>
+    <color name="paragraph_TextColor">@color/gray_medium</color>
+    <color name="paragraph_selected_TextColor">@color/black</color>
+    <color name="caption_TextColor">@color/gray_middle</color>
+    <color name="text_color_for_coloredBackground">@color/white</color>
+    <color name="error_TextColor">@color/red_error</color>
+    <color name="badge_white_TextColor">@color/white</color>
+    <color name="badgeSelected_TextColor">@color/gray_middle</color>
+    <color name="button_TextColor">@color/gray_dark</color>
+    <color name="textButton_underline_TextColor">@color/green_persian</color>
+    <color name="badge_TextColor">@color/gray_dark</color>
+    <color name="nav_active_item_textColor">@color/green_persian</color>
+    <color name="nav_deActive_item_textColor">@color/gray_medium</color>
+    <color name="snackBar_Body_TextColor">@color/white</color>
+    <color name="link_TextColor">@color/green_persian</color>
+    <color name="generalTextField_TextColor">@color/subTitle1_TextColor</color>
+    <color name="active_hint_textColor">@color/gray_medium</color>
+    <color name="deActive_hint_textColor">@color/gray_light</color>
+
+    <!-- stroke & divider colors -->
+    <color name="stroke_Color">@color/gray_high_light</color>
+    <color name="inputLayout_border_Color">@color/gray_high_light</color>
+    <color name="divider_Color">@color/gray_high_light</color>
+    <color name="ewano_logo_in_services_appbar_Color">@color/black_transparency</color>
+    <color name="nav_active_item_icon_Color">@color/green_persian</color>
+    <color name="nav_deActive_item_icon_Color">@color/gray_medium</color>
+
+
+
+    <!-- fake -->
     <color name="purple_200">#206DAA</color>
     <color name="purple_500">#206DAA</color>
     <color name="purple_700">#206DAA</color>
     <color name="teal_200">#206DAA</color>
     <color name="teal_700">#0D1123</color>
-    <color name="black">#FF000000</color>
-    <color name="blue">#206DAA</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="gray_light">#F8F8F8</color>
     <color name="gray">#EFEFEF</color>
     <color name="dark_gray">#222425</color>
     <color name="text_color">#707070</color>
     <color name="red">#EE6161</color>
     <color name="complete">#91C2D8</color>
     <color name="yellow">#FFEB3B</color>
-    <color name="transparent">#00C8C8C8</color>
+
+
 </resources>

@@ -70,7 +70,7 @@
                         android:textAllCaps="false"
                         android:textColor="@color/white"
                         android:textSize="@dimen/textSize_12"
-                        app:backgroundTint="@color/blue"
+                        app:backgroundTint="@color/green_persian"
                         app:cornerRadius="@dimen/space_32"
                         app:icon="@drawable/linkedin"
                         app:iconTint="@color/white"
