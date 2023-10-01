@@ -10,7 +10,6 @@ import android.view.View
 import ir.ha.practice.R
 import ir.ha.practice.databinding.FragmentServicesBinding
 import ir.ha.practice.utility.base.BaseFragment
-import ir.ha.practice.utility.extentions.showToast
 
 class ServicesFragment : BaseFragment<FragmentServicesBinding>(), View.OnClickListener {
     override val layoutId: Int get() = R.layout.fragment_services
@@ -45,7 +44,7 @@ class ServicesFragment : BaseFragment<FragmentServicesBinding>(), View.OnClickLi
             override fun onServiceConnected(comName: ComponentName?, service : IBinder?) {
                 val myBinder = service as BoundService.Companion.MyBinder
                 val serviceInstance  =  myBinder.getServiceInstance()
-                showToast(requireContext(),serviceInstance.getTestMessage())
+                showMessage(serviceInstance.getTestMessage())
             }
             override fun onServiceDisconnected(p0: ComponentName?) {
                 serviceConnection = null
@@ -91,7 +90,7 @@ class ServicesFragment : BaseFragment<FragmentServicesBinding>(), View.OnClickLi
                 binding.btnStopService.isEnabled = false
             }
             else ->{
-                showToast(requireContext(),"unKnow error else expression")
+                showErrorMessage("unKnow error else expression")
                 binding.btnStopService.isEnabled = false
             }
         }
