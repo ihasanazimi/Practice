@@ -8,6 +8,7 @@
         <item name="colorPrimaryVariant">@color/green_persian</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
+        <item name="fontFamily">@font/iran_yekan_xfa_num_bold</item>
         <item name="colorSecondary">@color/green_persian</item>
         <item name="colorSecondaryVariant">@color/green_persian</item>
         <item name="colorOnSecondary">@color/black</item>

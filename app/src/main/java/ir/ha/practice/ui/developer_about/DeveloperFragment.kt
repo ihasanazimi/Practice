@@ -2,6 +2,7 @@ package ir.ha.practice.ui.developer_about
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -60,7 +61,13 @@ class DeveloperFragment : BaseFragmentByVM<ir.ha.practice.databinding.FragmentDe
         }
 
         binding.apply {
-//            Glide.with(requireContext()).load(d.profileImage).into(developerProfileImage)
+
+            heder.info.visibility = View.VISIBLE
+            heder.help.visibility = View.GONE
+            heder.titleTV.text = getString(R.string.app_name)
+            heder.logoIV.setImageResource(R.drawable.ic_launcher_background)
+            heder.headerBackground.setBackgroundColor(ContextCompat.getColor(this@DeveloperFragment.requireContext(),R.color.green_persian))
+
             developerNameTv.text = d.getFullName()
             developerNameTvFiled.text = d.getFullName()
             jobTv.text = d.getJobInOrganization()
