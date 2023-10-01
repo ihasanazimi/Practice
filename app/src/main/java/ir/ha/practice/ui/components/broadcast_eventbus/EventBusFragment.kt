@@ -20,7 +20,7 @@ class EventBusFragment : BaseFragment<FragmentEventBusBinding>() {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun getMyEvent(myEvent: MyEvent){
-        showToast(requireContext(),myEvent.message)
+        showMessage(myEvent.message)
     }
 
 
