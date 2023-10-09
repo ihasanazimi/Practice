@@ -1,6 +1,7 @@
 package ir.ha.practice.ui.developer_about
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
@@ -15,16 +16,19 @@ import ir.ha.practice.adapters.OrganizeAdapter
 import ir.ha.practice.data.entities.ContactInfoByIconEntity
 import ir.ha.practice.data.entities.DeveloperDetailsEntity
 import ir.ha.practice.data.enums.ContactInfoEnum
+import ir.ha.practice.utility.DialogUtil
 import ir.ha.practice.utility.base.BaseFragmentByVM
 import ir.ha.practice.utility.extentions.hide
 import ir.ha.practice.utility.extentions.show
 import ir.ha.practice.utility.extentions.singleClick
 import ir.ha.practice.utility.util.IntentActionsUtil
 import kotlinx.coroutines.launch
+import java.lang.ref.WeakReference
 
 @AndroidEntryPoint
 class DeveloperFragment : BaseFragmentByVM<ir.ha.practice.databinding.FragmentDeveloperBinding, DeveloperFragmentVM>() {
 
+    val TAG = DeveloperFragment::class.java.simpleName
     override val viewModel: DeveloperFragmentVM by viewModels()
     override val layoutId: Int get() = R.layout.fragment_developer
 
@@ -35,12 +39,18 @@ class DeveloperFragment : BaseFragmentByVM<ir.ha.practice.databinding.FragmentDe
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
+        invokeNeededData()
+    }
+
+    private fun invokeNeededData() {
+        Log.i(TAG, "invokeNeededData: ")
         viewModel.getDeveloperDetails()
     }
 
 
     override fun registerObservers() {
         super.registerObservers()
+        Log.i(TAG, "registerObservers: ")
 
         lifecycleScope.launch{
             lifecycle.repeatOnLifecycle(Lifecycle.State.CREATED){
@@ -59,6 +69,7 @@ class DeveloperFragment : BaseFragmentByVM<ir.ha.practice.databinding.FragmentDe
     }
 
     private fun init(){
+        Log.i(TAG, "init: ")
         skillAdapter = DeveloperTagsAdapter()
         contactInfoAdapter = ContactInfoAdapter(requireActivity())
         organizeAdapter = OrganizeAdapter(requireActivity())
@@ -67,7 +78,9 @@ class DeveloperFragment : BaseFragmentByVM<ir.ha.practice.databinding.FragmentDe
     override fun registerClickListeners() {
 
         binding.header.info.singleClick {
-            // todo
+            DialogUtil.showInfoDialog(
+                WeakReference(requireContext()),"title","message","cancel" , "ok" ,true
+            )
         }
 
     }

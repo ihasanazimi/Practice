@@ -4,4 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="dummy_message">this is sample message</string>
     <string name="string_msg_clipboard_message">Copied Text:</string>
+    <string name="this_is_a_description">this is a description</string>
+    <string name="no">no</string>
+    <string name="yes">yes</string>
 </resources>

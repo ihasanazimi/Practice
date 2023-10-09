@@ -126,6 +126,22 @@
         <item name="android:textColor">@color/error_TextColor</item>
     </style>
 
+    <style name="primaryButton" parent="Widget.Material3.Button.UnelevatedButton">
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:paddingStart">30dp</item>
+        <item name="android:paddingEnd">30dp</item>
+        <item name="android:layout_marginTop">@dimen/space_8</item>
+        <item name="android:layout_marginBottom">@dimen/space_4</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/button_text_state_color</item>
+        <item name="android:fontFamily">@font/iran_yekan_xfa_numb_demi_bold</item>
+        <item name="android:textSize">@dimen/subtitle2</item>
+        <item name="backgroundTint">@color/button_states_primary_color</item>
+    </style>
+
+
+
 
 
 

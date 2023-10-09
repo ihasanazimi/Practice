@@ -12,9 +12,9 @@
     android:gravity="center"
     android:paddingHorizontal="12dp"
     android:drawablePadding="@dimen/space_8"
-    android:paddingVertical="@dimen/space_16"
+    android:paddingVertical="@dimen/space_4"
     android:textColor="@color/white"
-    android:textSize="@dimen/textSize_16"
+    android:textSize="@dimen/textSize_12"
     android:textStyle="normal"
     tools:text="Android Developer">
 </TextView>
