@@ -22,10 +22,10 @@ class AnimationsFragment : BaseFragment<FragmentAnimationBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /*lottie animation properties */
+        /* lottie animation properties */
         binding.lottieAnimationView.apply {
             setAnimation(R.raw.anim_file)
-            repeatMode
+            repeatCount = 5 //** count */
         }
     }
 
@@ -35,10 +35,12 @@ class AnimationsFragment : BaseFragment<FragmentAnimationBinding>() {
         /** Android Animations */
         binding.play.setOnClickListener{
 
+            val durationMil = 2000L
+
             when (binding.toggleGroup.checkedButtonId) {
                 R.id.rotateAnimBtn -> {
                     RotateAnimation(0F, 360F, Animation.RELATIVE_TO_SELF.toFloat(), Animation.RELATIVE_TO_SELF.toFloat()).apply {
-                        duration = 2000L
+                        duration = durationMil
                         repeatCount = Animation.INFINITE
                         interpolator = AccelerateInterpolator()
                         activeAnim = this
@@ -48,7 +50,7 @@ class AnimationsFragment : BaseFragment<FragmentAnimationBinding>() {
                 R.id.scaleAnimBtn -> {
                     // 2X
                     ScaleAnimation(0F, 2F, 0F, 2F, Animation.RELATIVE_TO_SELF.toFloat(), Animation.RELATIVE_TO_SELF.toFloat()).apply {
-                        duration = 2000L
+                        duration = durationMil
                         repeatCount = Animation.INFINITE
                         interpolator = AccelerateInterpolator()
                         activeAnim = this
@@ -58,7 +60,7 @@ class AnimationsFragment : BaseFragment<FragmentAnimationBinding>() {
                 R.id.translateAnimBtn -> {
                     TranslateAnimation(0F, -200F, Animation.RELATIVE_TO_SELF.toFloat(), -1F).apply {
                         repeatCount = Animation.INFINITE
-                        duration = 2000L
+                        duration = durationMil
                         interpolator = AccelerateInterpolator()
                         activeAnim = this
                     }
@@ -67,7 +69,7 @@ class AnimationsFragment : BaseFragment<FragmentAnimationBinding>() {
                 R.id.alphaAnimBtn -> {
                     AlphaAnimation(0F, 1F).apply {
                         repeatCount = Animation.INFINITE
-                        duration = 2000L
+                        duration = durationMil
                         interpolator = AccelerateInterpolator()
                         activeAnim = this
                     }
@@ -78,7 +80,7 @@ class AnimationsFragment : BaseFragment<FragmentAnimationBinding>() {
                         interpolator = AccelerateInterpolator()
                         repeatCount = Animation.INFINITE
                         fillAfter = true
-                        duration = 2000L
+                        duration = durationMil
                         addAnimation(AlphaAnimation(0F, 1F))
                         addAnimation(RotateAnimation(0F, 360F, Animation.RELATIVE_TO_SELF.toFloat(), Animation.RELATIVE_TO_SELF.toFloat()))
                         addAnimation(ScaleAnimation(0F, 2F, 0F, 2F, Animation.RELATIVE_TO_SELF.toFloat(), Animation.RELATIVE_TO_SELF.toFloat()))

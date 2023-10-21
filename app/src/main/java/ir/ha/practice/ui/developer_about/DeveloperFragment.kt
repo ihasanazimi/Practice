@@ -52,7 +52,7 @@ class DeveloperFragment : BaseFragmentByVM<ir.ha.practice.databinding.FragmentDe
         super.registerObservers()
         Log.i(TAG, "registerObservers: ")
 
-        lifecycleScope.launch{
+        viewLifecycleOwner.lifecycleScope.launch{
             lifecycle.repeatOnLifecycle(Lifecycle.State.CREATED){
                 viewModel.developerRes.collect{
                     updateUi(it)
@@ -77,10 +77,19 @@ class DeveloperFragment : BaseFragmentByVM<ir.ha.practice.databinding.FragmentDe
 
     override fun registerClickListeners() {
 
+
+        /** SAMPLE of InfoDialog */
         binding.header.info.singleClick {
             DialogUtil.showInfoDialog(
-                WeakReference(requireContext()),"title","message","cancel" , "ok" ,true
-            )
+                context = WeakReference(requireContext()),
+                title = "Title",
+                message = "Message",
+                cancelBtnTitle = "Cancel" ,
+                okBtnTitle = "OK" ,
+                isSingleBtn = true
+            ){
+                /** if IT is TRUE -> user Clicked on OK btn Else user clicked on cancel Btn */
+            }
         }
 
     }
@@ -115,7 +124,7 @@ class DeveloperFragment : BaseFragmentByVM<ir.ha.practice.databinding.FragmentDe
             contactInfoRecyclerView.adapter = contactInfoAdapter
             projectsRecyclerView.adapter = organizeAdapter
 
-            followLinkedinBtn.setOnClickListener {
+            followLinkedinBtn.singleClick {
                 IntentActionsUtil(requireActivity()).openLinkedInPage(developerEntity.contactInfo.linkedin)
             }
 
