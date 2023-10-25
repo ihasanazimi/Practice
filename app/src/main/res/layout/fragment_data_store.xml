@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <FrameLayout
-        android:clickable="true"
-        android:focusable="true"
+<layout>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        tools:context=".ui.fragment.db.pref.SharedPreferencesFragment">
+        android:clickable="true"
+        android:focusable="true">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -34,9 +31,9 @@
                 android:text="Save input on dataStore"
                 android:textSize="@dimen/textSize_12" />
 
-
         </LinearLayout>
 
 
     </FrameLayout>
+
 </layout>

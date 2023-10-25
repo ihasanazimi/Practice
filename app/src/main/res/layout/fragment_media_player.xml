@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
-<FrameLayout
-    android:focusable="true"
-    android:background="@color/white"
-    android:clickable="true"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout>
 
-
-<TextView
-    android:id="@+id/tv"
-    android:text="MEDIA PLAYER"
-    android:textColor="@color/black"
-    android:textSize="@dimen/textSize_36"
-    android:layout_gravity="center"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
-
-    <com.google.android.material.slider.Slider
-        android:layout_gravity="bottom"
-        android:id="@+id/slider"
-        android:layout_marginVertical="@dimen/space_64"
-        android:layout_marginHorizontal="@dimen/space_32"
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true">
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="MEDIA PLAYER"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textSize_36" />
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="@dimen/space_32"
+            android:layout_marginVertical="@dimen/space_64" />
+    </FrameLayout>
 
-</FrameLayout>
 </layout>

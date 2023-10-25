@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <FrameLayout
-        android:clickable="true"
-        android:focusable="true"
-        android:background="@color/white"
+<layout>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -19,48 +18,47 @@
                 android:id="@+id/btn_background_service"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:cornerRadius="@dimen/space_32"
-                android:textSize="@dimen/textSize_12"
+                android:text="background service"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:text="background service"/>
+                android:textSize="@dimen/textSize_12"
+                app:cornerRadius="@dimen/space_32" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_foreground_service"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="foreground service"
                 android:textAllCaps="false"
-                app:cornerRadius="@dimen/space_32"
-                android:textSize="@dimen/textSize_12"
                 android:textColor="@color/white"
-                android:text="foreground service"/>
+                android:textSize="@dimen/textSize_12"
+                app:cornerRadius="@dimen/space_32" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_bound_service"
                 android:layout_width="match_parent"
-                android:textAllCaps="false"
                 android:layout_height="wrap_content"
-                app:cornerRadius="@dimen/space_32"
-                android:textSize="@dimen/textSize_12"
+                android:text="btn bound service"
+                android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:text="btn bound service"/>
+                android:textSize="@dimen/textSize_12"
+                app:cornerRadius="@dimen/space_32" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_stop_service"
                 android:layout_width="match_parent"
-                android:textAllCaps="false"
-                android:enabled="false"
-                android:layout_marginVertical="@dimen/space_32"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/textSize_12"
-                app:cornerRadius="@dimen/space_4"
+                android:layout_marginVertical="@dimen/space_32"
+                android:enabled="false"
+                android:text="stop services"
+                android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:text="stop services"/>
+                android:textSize="@dimen/textSize_12"
+                app:cornerRadius="@dimen/space_4" />
 
 
         </LinearLayout>
 
 
     </FrameLayout>
-
 </layout>

@@ -6,12 +6,11 @@ import androidx.fragment.app.Fragment
 import ir.ha.practice.Components
 import ir.ha.practice.R
 import ir.ha.practice.adapters.ComponentsAdapter
-import ir.ha.practice.databinding.FragmentComponentsBinding
 import ir.ha.practice.data.enums.ComponentEnum
+import ir.ha.practice.databinding.FragmentComponentsBinding
 import ir.ha.practice.ui.components.animations.AnimationsFragment
 import ir.ha.practice.ui.components.broadcast_eventbus.BroadcastReceiverFragment
 import ir.ha.practice.ui.components.firebase.FirebaseCloudMessagingFragment
-import ir.ha.practice.ui.components.flow.FlowFragment
 import ir.ha.practice.ui.components.fragment_types.FragmentSamplesContainer
 import ir.ha.practice.ui.components.load_image.LoadImagesFragment
 import ir.ha.practice.ui.components.local_data_base.RoomDBFragment
@@ -38,7 +37,7 @@ class SamplesFragment  : BaseFragment<FragmentComponentsBinding>(), View.OnClick
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         componentsAdapter = ComponentsAdapter(this)
-        binding.rv.adapter = componentsAdapter
+        binding.recyclerView.adapter = componentsAdapter
         componentsAdapter.setNewList(Components.sampleComponents)
     }
 
@@ -54,9 +53,6 @@ class SamplesFragment  : BaseFragment<FragmentComponentsBinding>(), View.OnClick
             }
             ComponentEnum.costume_view.toString() -> {
                 //todo
-            }
-            ComponentEnum.flow.toString() -> {
-                openFragment(FlowFragment())
             }
             ComponentEnum.animation.toString() -> {
                 openFragment(AnimationsFragment())

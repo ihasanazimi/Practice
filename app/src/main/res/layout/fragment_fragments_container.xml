@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
@@ -14,11 +13,11 @@
             android:id="@+id/messageTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/space_8"
             android:text="Click to see the concepts below"
             android:textSize="@dimen/textSize_16"
             app:layout_constraintBottom_toTopOf="@+id/linearLayoutCompat"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginVertical="@dimen/space_8"
             app:layout_constraintStart_toStartOf="parent" />
 
 
@@ -129,9 +128,9 @@
             android:id="@+id/shareDataToF1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_8"
             android:gravity="start|center_vertical"
             android:text="pass data to F1"
-            android:layout_margin="@dimen/space_8"
             android:textAllCaps="false"
             app:cornerRadius="@dimen/space_16"
             app:layout_constraintStart_toStartOf="parent"
@@ -141,10 +140,10 @@
             android:id="@+id/shareDataToF2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:gravity="start|center_vertical"
             android:text="pass data to F2"
             android:textAllCaps="false"
-            android:layout_margin="8dp"
             app:cornerRadius="@dimen/space_16"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearlayout" />

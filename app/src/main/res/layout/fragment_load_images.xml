@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout>
 
-    <FrameLayout
-        android:clickable="true"
-        android:focusable="true"
-        android:background="?colorSurface"
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="?colorSurface"
+        android:clickable="true"
+        android:focusable="true">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -16,54 +16,54 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_marginVertical="@dimen/space_16"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/glideImageview"
                     android:layout_width="100dp"
-                    android:layout_marginTop="@dimen/space_16"
-                    android:layout_height="100dp"/>
+                    android:layout_height="100dp"
+                    android:layout_marginTop="@dimen/space_16" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Glide"/>
+                    android:text="Glide" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/picassoImagesView"
                     android:layout_width="100dp"
-                    android:layout_marginTop="@dimen/space_16"
-                    android:layout_height="100dp"/>
+                    android:layout_height="100dp"
+                    android:layout_marginTop="@dimen/space_16" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Picasso"/>
+                    android:text="Picasso" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/coilImages"
                     android:layout_width="100dp"
-                    android:layout_marginTop="@dimen/space_16"
-                    android:layout_height="100dp"/>
+                    android:layout_height="100dp"
+                    android:layout_marginTop="@dimen/space_16" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Coil"/>
+                    android:text="Coil" />
 
                 <ir.ha.practice.utility.customViews.FrescoImageView
-                    android:layout_marginTop="@dimen/space_16"
                     android:id="@+id/frescoImageView"
                     android:layout_width="100dp"
-                    app:placeholderImage="@drawable/ic_baseline_image_24"
-                    android:layout_height="100dp"/>
+                    android:layout_height="100dp"
+                    android:layout_marginTop="@dimen/space_16"
+                    app:placeholderImage="@drawable/ic_baseline_image_24" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fresco"/>
+                    android:text="Fresco" />
 
             </LinearLayout>
 

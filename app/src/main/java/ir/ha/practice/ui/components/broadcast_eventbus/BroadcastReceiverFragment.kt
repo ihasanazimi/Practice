@@ -23,21 +23,21 @@ class BroadcastReceiverFragment : BaseFragment<FragmentBroadcastRecevierBinding>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        checkNet(requireContext())
+        checkConnection()
         requireActivity().registerReceiver(service, IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"))
     }
 
-    private fun checkNet(ctx : Context) {
+    private fun checkConnection() {
         if (isInternetConnected(this@BroadcastReceiverFragment.requireContext()))
             binding.iv.setImageResource(R.drawable.ic_online)
         else binding.iv.setImageResource(R.drawable.ic_offline)
     }
 
-    /** in class fazife ino dare k hamishe goosh bede be action change connection
+    /** in class vazife ino dare k hamishe goosh bede be action change connection
      * va aqar taqir kard method onreceived ro call kone
      */
     inner class BroadCastSample : BroadcastReceiver(){
-        override fun onReceive(context: Context?, p1: Intent?) { checkNet(context!!) }
+        override fun onReceive(context: Context?, p1: Intent?) { checkConnection() }
     }
 
     override fun onDestroy() {

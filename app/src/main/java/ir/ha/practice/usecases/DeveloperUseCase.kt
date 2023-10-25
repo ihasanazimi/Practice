@@ -9,9 +9,7 @@ interface DeveloperUseCase {
 
     suspend fun getDeveloperDetails(): Flow<DeveloperDetailsEntity>
 
-
 }
-
 
 class DeveloperUseCaseImpl @Inject constructor(
     private val developerRepository: DeveloperRepository

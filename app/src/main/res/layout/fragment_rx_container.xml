@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <LinearLayout
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
@@ -40,26 +39,25 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_gravity="end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="end"
                 android:orientation="horizontal">
 
                 <ProgressBar
                     android:id="@+id/pb"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/clear_text"
                     android:layout_width="wrap_content"
-                    android:backgroundTint="@color/black"
-                    android:textSize="@dimen/textSize_12"
-                    android:textColor="@color/white"
-                    android:text="clear TEXT"
                     android:layout_height="wrap_content"
-                    app:cornerRadius="@dimen/space_32"/>
-
+                    android:backgroundTint="@color/black"
+                    android:text="clear TEXT"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textSize_12"
+                    app:cornerRadius="@dimen/space_32" />
 
 
             </LinearLayout>
@@ -67,23 +65,23 @@
             <TextView
                 android:id="@+id/currentOperator"
                 android:layout_width="wrap_content"
-                android:backgroundTint="@color/black"
-                android:textSize="@dimen/textSize_14"
-                android:gravity="center"
-                android:layout_marginBottom="@dimen/space_8"
+                android:layout_height="wrap_content"
                 android:layout_gravity="start"
+                android:layout_marginBottom="@dimen/space_8"
+                android:backgroundTint="@color/black"
+                android:gravity="center"
                 android:paddingHorizontal="@dimen/space_16"
                 android:textColor="@color/purple_200"
-                tools:text="just"
-                android:layout_height="wrap_content"
-                app:cornerRadius="@dimen/space_32"/>
+                android:textSize="@dimen/textSize_14"
+                app:cornerRadius="@dimen/space_32"
+                tools:text="just" />
 
             <TextView
                 android:id="@+id/message"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.8"
                 android:layout_gravity="center"
+                android:layout_weight="0.8"
                 android:background="@color/gray"
                 android:gravity="center"
                 android:textColor="@color/black"
@@ -93,8 +91,8 @@
                 android:id="@+id/result_message"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.25"
                 android:layout_gravity="center"
+                android:layout_weight="0.25"
                 android:background="@color/gray"
                 android:gravity="center"
                 android:textColor="@color/white"
@@ -102,6 +100,4 @@
         </LinearLayout>
 
     </LinearLayout>
-
-
 </layout>

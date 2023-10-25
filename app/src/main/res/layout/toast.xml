@@ -6,10 +6,10 @@
     android:background="@color/abc_search_url_text_normal"
     android:gravity="center"
     android:orientation="vertical"
-    android:paddingBottom="5dip"
     android:paddingLeft="10dip"
-    android:paddingRight="10dip"
     android:paddingTop="5dip"
+    android:paddingRight="10dip"
+    android:paddingBottom="5dip"
     android:textColor="@color/white"
     android:textSize="12sp" />
 
