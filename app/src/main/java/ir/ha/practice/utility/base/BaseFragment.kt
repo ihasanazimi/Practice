@@ -20,6 +20,7 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
     @get:LayoutRes
     abstract val layoutId: Int
     val mainHelper by lazy { (requireActivity()) }
+    private val TAG = BaseFragment::class.java.simpleName
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
@@ -28,16 +29,16 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        registerClickListeners()
+        registerListeners()
         registerObservers()
     }
 
 
     open fun registerObservers(){}
-    open fun registerClickListeners(){}
+    open fun registerListeners(){}
 
     fun showErrorMessage(message: String) {
-        Log.e("TAG", "showErrorMessage: Error")
+        Log.e(TAG, "showErrorMessage - $message")
         SnackBarUtils.showSnackBar(
             WeakReference(requireActivity()), message, R.drawable.baseline_error_outline_24
         )

@@ -19,8 +19,8 @@ class VideoPlayerFragment :  BaseFragment<FragmentVideoPlayerBinding>() {
     }
 
 
-    override fun registerClickListeners() {
-        super.registerClickListeners()
+    override fun registerListeners() {
+        super.registerListeners()
 
         binding.videoPlayer.setVideoPath(videoUrl)
         binding.videoPlayer.setOnPreparedListener { mediaPlayer ->

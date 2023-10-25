@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 @InstallIn(SingletonComponent::class)
 class ApiService {
 
-    private val baseUrl = "https://run.mocky.io/v3/"
+    private val baseUrl = "https://mocki.io/v1/"
 
     private fun logger(): HttpLoggingInterceptor {
         val interceptor = HttpLoggingInterceptor()

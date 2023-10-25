@@ -18,8 +18,8 @@ class MaterialDesignFragment : BaseFragment<FragmentMaterialViewsBinding>() {
     }
 
 
-    override fun registerClickListeners() {
-        super.registerClickListeners()
+    override fun registerListeners() {
+        super.registerListeners()
 
         /** material card view */
         binding.materialCardView.setOnClickListener{

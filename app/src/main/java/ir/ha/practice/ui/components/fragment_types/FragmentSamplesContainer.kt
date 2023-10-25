@@ -37,8 +37,8 @@ class FragmentSamplesContainer : BaseFragment<FragmentFragmentsContainerBinding>
         Log.i(TAG, "onCreateView: ")
     }
 
-    override fun registerClickListeners() {
-        super.registerClickListeners()
+    override fun registerListeners() {
+        super.registerListeners()
 
         binding.dialogFragmentBtn.singleClick {
             DialogSample().show(requireActivity().supportFragmentManager, DialogSample::class.java.simpleName)

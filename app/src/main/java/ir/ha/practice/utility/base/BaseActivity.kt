@@ -17,18 +17,18 @@ abstract class BaseActivity<V : ViewDataBinding> : AppCompatActivity() {
     private var _binding: V? = null
     val binding get() = _binding!!
 
+    private val TAG = BaseActivity::class.java.simpleName
+
     @get:LayoutRes
     abstract val layoutId: Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = DataBindingUtil.setContentView(this,layoutId)
-        initWhenUiCreated()
-        clickEvents()
+        registerListeners()
     }
 
-    open fun clickEvents(){}
-    open fun initWhenUiCreated(){}
+    open fun registerListeners(){}
 
     override fun attachBaseContext(context: Context) {
         super.attachBaseContext(localizedContext(context))
@@ -46,14 +46,14 @@ abstract class BaseActivity<V : ViewDataBinding> : AppCompatActivity() {
 
 
     fun showErrorMessage(message: String) {
-        Log.e("TAG", "showErrorMessage: Error")
+        Log.e(TAG, "showErrorMessage - $message")
         SnackBarUtils.showSnackBar(
             WeakReference(this), message, R.drawable.baseline_error_outline_24
         )
     }
 
     fun showMessage(message: String, icon: Int = R.drawable.baseline_done_24) {
-        Log.e("TAG", "showMessage: ")
+        Log.e(TAG, "showMessage : $message")
         SnackBarUtils.showSnackBar(
             WeakReference(this), message, icon
         )

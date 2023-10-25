@@ -88,8 +88,8 @@ class NotificationFragment: BaseFragment<FragmentNotificationBinding>() {
         checkPermission(requireActivity(),android.Manifest.permission.POST_NOTIFICATIONS,1256)
     }
 
-    override fun registerClickListeners() {
-        super.registerClickListeners()
+    override fun registerListeners() {
+        super.registerListeners()
         binding.btnSimpleNotification.setOnClickListener{ notificationManager.notify(notificationID,simpleNotification) }
         binding.btnBigPictureNotification.setOnClickListener{ notificationManager.notify(notificationID,bigPictureStyleNotification) }
         binding.btnBigTextNotification.setOnClickListener{ notificationManager.notify(notificationID,bigTextStyleNotification) }

@@ -8,16 +8,16 @@ import retrofit2.http.*
 
 interface Api {
 
-    @GET("8bf97e92-a3f7-4e4c-bb0f-75ac9412eca6")
+    @GET("06945cde-487a-4dd1-8f22-059002444ded")
     suspend fun getDevelopersByCoroutines() : DeveloperDetailsRemoteResponse
 
-    @GET("8bf97e92-a3f7-4e4c-bb0f-75ac9412eca6")
+    @GET("06945cde-487a-4dd1-8f22-059002444ded")
     fun getDevelopersByRx() : Observable<DeveloperDetailsRemoteResponse>
 
-    @GET("8bf97e92-a3f7-4e4c-bb0f-75ac9412eca6")
+    @GET("06945cde-487a-4dd1-8f22-059002444ded")
     fun getDevelopersBySingleObservable() : Single<DeveloperDetailsRemoteResponse>
 
-    @GET("8bf97e92-a3f7-4e4c-bb0f-75ac9412eca6")
+    @GET("06945cde-487a-4dd1-8f22-059002444ded")
     fun getDevelopersByRetrofit() : Call<DeveloperDetailsRemoteResponse>
 
 

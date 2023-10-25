@@ -75,7 +75,7 @@ class DeveloperFragment : BaseFragmentByVM<ir.ha.practice.databinding.FragmentDe
         organizeAdapter = OrganizeAdapter(requireActivity())
     }
 
-    override fun registerClickListeners() {
+    override fun registerListeners() {
 
 
         /** SAMPLE of InfoDialog */
