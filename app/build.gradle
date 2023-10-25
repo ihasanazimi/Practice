@@ -111,6 +111,18 @@ dependencies {
     def koin_version= "3.5.0"
     implementation "io.insert-koin:koin-android:$koin_version"
 
+
+
+    /*  Hilt  */
+    /*  plugins :     apply plugin: 'kotlin-kapt'  */
+    /*  apply plugin: 'dagger.hilt.android.plugin'  */
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    androidTestImplementation 'androidx.test:rules:1.5.0'
+    implementation 'com.google.dagger:hilt-android:2.44'
+    kapt 'com.google.dagger:hilt-compiler:2.43.2'
+
+
+
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.13.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
@@ -145,17 +157,8 @@ dependencies {
     implementation "androidx.navigation:navigation-ui:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 
-    /*  Hilt  */
-    /*  plugins :     apply plugin: 'kotlin-kapt'  */
-    /*  apply plugin: 'dagger.hilt.android.plugin'  */
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    androidTestImplementation 'androidx.test:rules:1.5.0'
-    implementation 'com.google.dagger:hilt-android:2.44'
-    kapt 'com.google.dagger:hilt-compiler:2.43.2'
-
     // Circle Image View
     implementation 'de.hdodenhof:circleimageview:3.1.0'
-
 
     // Compose tooling
     debugImplementation "androidx.compose.ui:ui-tooling:1.5.1"
@@ -179,9 +182,6 @@ dependencies {
 
     // Encrypted Pref ( Encrypted prefManager By Crypto )
     /* implementation "androidx.security:security-crypto:1.1.0-alpha03" */
-
-    // easy LOG by it name class
-    /* implementation 'com.jakewharton.timber:timber:4.7.1'  */
 }
 
 
