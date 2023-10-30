@@ -20,6 +20,8 @@ import android.text.Editable
 import android.animation.*
 import android.content.res.Configuration
 import android.content.res.Resources
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import android.graphics.Rect
@@ -75,6 +77,8 @@ import com.google.gson.Gson
 import ir.ha.practice.App
 import ir.ha.practice.R
 import kotlinx.coroutines.*
+import java.io.ByteArrayOutputStream
+import java.io.FileOutputStream
 import java.lang.Runnable
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
@@ -988,6 +992,28 @@ fun ViewBinding.setView(view: Any){
 fun ViewBinding.setVm(vm: Any){
     try{ javaClass.getMethod("setVm", vm.javaClass).invoke(this,vm)
     }catch (e: Exception){ /**e.printStackTrace()*/ }
+}
+
+
+fun openBitmap(context: Context? , imageFileName: String?): Bitmap {
+    return BitmapFactory.decodeStream(context!!.openFileInput(imageFileName))
+}
+
+fun createImageFromBitmap(context: Context?, bitmap: Bitmap, signFileName : String): String? {
+    var fileName :String ?= signFileName
+    try {
+        val bytes = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
+        val fo: FileOutputStream = context!!.openFileOutput(fileName, Context.MODE_PRIVATE)
+        fo.write(bytes.toByteArray())
+        // remember close file output
+        fo.close()
+    } catch (e: Exception) {
+        e.printStackTrace()
+        fileName = null
+    }
+    Log.i(TAG, "createImageFromBitmap: ${fileName}")
+    return fileName
 }
 
 
