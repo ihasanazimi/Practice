@@ -463,9 +463,9 @@ fun Context.copyToClipboard(text: String){
 }
 
 @SuppressLint("ServiceCast")
-fun isMyServiceRunning(applicationContext: Context?, serviceClass: Class<*>): Boolean {
-    val manager = applicationContext?.getSystemService(Context.ACCOUNT_SERVICE) as ActivityManager?
-    for (service in manager!!.getRunningServices(Int.MAX_VALUE)) {
+fun isMyServiceRunning(applicationContext: Context, serviceClass: Class<*>): Boolean {
+    val manager = applicationContext.getSystemService(Context.ACCOUNT_SERVICE) as ActivityManager
+    for (service in manager.getRunningServices(Int.MAX_VALUE)) {
         if (serviceClass.name == service.service.className) {
             return true
         }
@@ -520,9 +520,9 @@ fun isNetConnected(context: Context?): Boolean {
     return isConnected
 }
 
-fun isInternetConnected(context: Context?): Boolean {
-    val connectivityManager = context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
-    val activeNetworkInfo = connectivityManager!!.activeNetworkInfo
+fun isInternetConnected(context: Context): Boolean {
+    val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
+    val activeNetworkInfo = connectivityManager?.activeNetworkInfo
     return activeNetworkInfo != null && activeNetworkInfo.isConnected
 }
 
@@ -995,16 +995,16 @@ fun ViewBinding.setVm(vm: Any){
 }
 
 
-fun openBitmap(context: Context? , imageFileName: String?): Bitmap {
-    return BitmapFactory.decodeStream(context!!.openFileInput(imageFileName))
+fun openBitmap(context: Context , imageFileName: String?): Bitmap {
+    return BitmapFactory.decodeStream(context.openFileInput(imageFileName))
 }
 
-fun createImageFromBitmap(context: Context?, bitmap: Bitmap, signFileName : String): String? {
+fun createImageFromBitmap(context: Context, bitmap: Bitmap, signFileName : String): String? {
     var fileName :String ?= signFileName
     try {
         val bytes = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
-        val fo: FileOutputStream = context!!.openFileOutput(fileName, Context.MODE_PRIVATE)
+        val fo: FileOutputStream = context.openFileOutput(fileName, Context.MODE_PRIVATE)
         fo.write(bytes.toByteArray())
         // remember close file output
         fo.close()

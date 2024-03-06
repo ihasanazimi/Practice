@@ -1,6 +1,6 @@
 buildscript {
 
-    ext { kotlin_version = '1.8.10' }
+//    ext { kotlin_version = '1.9.22' }
     dependencies {
         classpath 'com.google.gms:google-services:4.4.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.20"
@@ -8,16 +8,21 @@ buildscript {
         classpath 'com.google.dagger:hilt-android-gradle-plugin:2.43.2'
     }
     repositories {
+
+        google()
         mavenCentral()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url "https://maven.google.com" }
     }
 
 }
 
 
 plugins {
-    id 'com.android.application' version '8.0.2' apply false
-    id 'com.android.library' version '8.0.2' apply false
-    id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
+    id 'com.android.application' version '8.0.0' apply false
+    id 'com.android.library' version '8.0.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.10' apply false
 }
 
 
